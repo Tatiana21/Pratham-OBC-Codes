@@ -1,0 +1,1011 @@
+
+hMaster_Torqtest.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000078  00800100  000005fe  00000692  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000005fe  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000092  00800178  00800178  0000070a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000070a  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000001f8  00000000  00000000  0000073a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00002354  00000000  00000000  00000932  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000a72  00000000  00000000  00002c86  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000c0a  00000000  00000000  000036f8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000003ac  00000000  00000000  00004304  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000558  00000000  00000000  000046b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000005f6  00000000  00000000  00004c08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000168  00000000  00000000  000051fe  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+#include "hm.h"
+#include "twi.h"
+#include "peripherals.h"
+
+void get_HM_data(void)
+{
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  uint8_t HMCounter;
+  
+  for(HMCounter = 0; HMCounter < 7; HMCounter++)
+    ///* Receive each of the bytes by sending a write request to the power muc.
+    ///* data stored in the hm structure with the same ordering as that in the power muc
+    TWI_rec_byte(ADDR, ((uint8_t *) &Current_state.hm) + HMCounter);
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+void get_HM_data(void)
+{
+  ///Counter for the 7 bytes of Health monitoring data
+  uint8_t HMCounter;
+  
+  for(HMCounter = 0; HMCounter < 7; HMCounter++)
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    ///* Receive each of the bytes by sending a write request to the power muc.
+    ///* data stored in the hm structure with the same ordering as that in the power muc
+    TWI_rec_byte(ADDR, ((uint8_t *) &Current_state.hm) + HMCounter);
+}
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  ///Enable Transmission and Reception
+  UCSR1B |= _BV(TXEN1) | _BV(RXEN1);
+  ///8-bit Data Byte
+  UCSR1C |= _BV(UCSZ11) | _BV(UCSZ10);
+  ///Set Baud Rate to 9600
+  UBRR1L = 103;
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  UBRR1H = 0;
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+}
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    SPI_transfer(0b00011000 | (channel >> 1));
+    SPI_transfer(((channel & 0x01) << 7) | 0x40);
+    sbi(PORTB, ADC_S);
+    _delay_us(1);
+    
+    cbi(PORTB, ADC_S);
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    SPI_transfer(0b00011000 | (channel >> 1));
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    SPI_transfer(((channel & 0x01) << 7) | 0x40);
+  48:	0c 94 67 00 	jmp	0xce	; 0xce <__vector_18>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    sbi(PORTB, ADC_S);
+    _delay_us(1);
+    
+    cbi(PORTB, ADC_S);
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    Current_state.ss.reading[channel] = SPI_transfer(0b00011000 | (channel >> 1));;
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    Current_state.ss.reading[channel] = Current_state.ss.reading[channel] << 8;
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    Current_state.ss.reading[channel] &= 0x0F00;
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+    Current_state.ss.reading[channel] |= SPI_transfer(((channel & 0x01) << 7) | 0x40);
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+    sbi(PORTB, ADC_S);
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ee ef       	ldi	r30, 0xFE	; 254
+  a0:	f5 e0       	ldi	r31, 0x05	; 5
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+///Power Down PD low
+  cbi(PORTB, PB6);
+  return;*/
+  
+  ///Loop for reading the 6 sun sensor values
+  while(channel <= 5)
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a8 37       	cpi	r26, 0x78	; 120
+  ae:	b1 07       	cpc	r27, r17
+    
+    channel++;
+    
+  }
+  ///Power Down PD low
+  cbi(PORTB, PB6);
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+}
+  b2:	22 e0       	ldi	r18, 0x02	; 2
+  b4:	a8 e7       	ldi	r26, 0x78	; 120
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	aa 30       	cpi	r26, 0x0A	; 10
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  case TW_MR_DATA_NACK: // FALLTHROUGH
+  case TW_MR_DATA_ACK:
+    *buf = TWDR;
+    break;
+  default:
+    {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return -1;}
+  c2:	0e 94 b7 01 	call	0x36e	; 0x36e <main>
+    ///* send start cond.
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+  }while(TW_STATUS == TW_MT_ARB_LOST);
+
+  if ( (TW_STATUS != TW_REP_START) && (TW_STATUS != TW_START)) return -1;
+  c6:	0c 94 fd 02 	jmp	0x5fa	; 0x5fa <_exit>
+
+000000ca <__bad_interrupt>:
+  TWDR = (addr << 1) + TW_READ;
+  TWCR = (1 << TWINT) | (1 << TWEN);
+
+  while (!(TWCR & (1 << TWINT)));
+  if (TW_STATUS == TW_MR_SLA_NACK) {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return 1;}
+  if (TW_STATUS == TW_MR_ARB_LOST) return -2;
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <__vector_18>:
+  default:
+    {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return -1;}
+  }
+
+  TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return 1;
+}
+  ce:	1f 92       	push	r1
+}
+
+/** @brief Interrupt on receiving a byte through UART GPS
+ */
+ISR(USART0_RX_vect)
+{
+  d0:	0f 92       	push	r0
+  d2:	0f b6       	in	r0, 0x3f	; 63
+  d4:	0f 92       	push	r0
+  d6:	11 24       	eor	r1, r1
+  d8:	0b b6       	in	r0, 0x3b	; 59
+  da:	0f 92       	push	r0
+  dc:	2f 93       	push	r18
+  de:	8f 93       	push	r24
+  e0:	9f 93       	push	r25
+  e2:	af 93       	push	r26
+  e4:	bf 93       	push	r27
+  e6:	ef 93       	push	r30
+  e8:	ff 93       	push	r31
+  
+  ///Buffer the Received Byte
+  last_byte = UDR0;
+  ea:	8c b1       	in	r24, 0x0c	; 12
+  ec:	80 93 79 01 	sts	0x0179, r24
+  
+  ///Put the received byte in the last 4-bytes buffer
+  buffer = buffer << 8;
+  f0:	80 91 7a 01 	lds	r24, 0x017A
+  f4:	90 91 7b 01 	lds	r25, 0x017B
+  f8:	a0 91 7c 01 	lds	r26, 0x017C
+  fc:	b0 91 7d 01 	lds	r27, 0x017D
+ 100:	ba 2f       	mov	r27, r26
+ 102:	a9 2f       	mov	r26, r25
+ 104:	98 2f       	mov	r25, r24
+ 106:	88 27       	eor	r24, r24
+ 108:	80 93 7a 01 	sts	0x017A, r24
+ 10c:	90 93 7b 01 	sts	0x017B, r25
+ 110:	a0 93 7c 01 	sts	0x017C, r26
+ 114:	b0 93 7d 01 	sts	0x017D, r27
+  buffer &= 0xFFFFFF00;
+ 118:	80 91 7a 01 	lds	r24, 0x017A
+ 11c:	90 91 7b 01 	lds	r25, 0x017B
+ 120:	a0 91 7c 01 	lds	r26, 0x017C
+ 124:	b0 91 7d 01 	lds	r27, 0x017D
+ 128:	88 27       	eor	r24, r24
+ 12a:	80 93 7a 01 	sts	0x017A, r24
+ 12e:	90 93 7b 01 	sts	0x017B, r25
+ 132:	a0 93 7c 01 	sts	0x017C, r26
+ 136:	b0 93 7d 01 	sts	0x017D, r27
+  buffer |= (uint32_t) last_byte;
+ 13a:	20 91 79 01 	lds	r18, 0x0179
+ 13e:	80 91 7a 01 	lds	r24, 0x017A
+ 142:	90 91 7b 01 	lds	r25, 0x017B
+ 146:	a0 91 7c 01 	lds	r26, 0x017C
+ 14a:	b0 91 7d 01 	lds	r27, 0x017D
+ 14e:	82 2b       	or	r24, r18
+ 150:	80 93 7a 01 	sts	0x017A, r24
+ 154:	90 93 7b 01 	sts	0x017B, r25
+ 158:	a0 93 7c 01 	sts	0x017C, r26
+ 15c:	b0 93 7d 01 	sts	0x017D, r27
+  
+  ///Check if the last byte was for position
+  if(pos < 12)
+ 160:	80 91 06 01 	lds	r24, 0x0106
+ 164:	8c 30       	cpi	r24, 0x0C	; 12
+ 166:	a0 f4       	brcc	.+40     	; 0x190 <__vector_18+0xc2>
+  {
+    
+    ///* Put the data into the structure
+    *((uint8_t *)&gps.x + pos) = last_byte;
+ 168:	e0 91 06 01 	lds	r30, 0x0106
+ 16c:	80 91 79 01 	lds	r24, 0x0179
+ 170:	f0 e0       	ldi	r31, 0x00	; 0
+ 172:	e2 58       	subi	r30, 0x82	; 130
+ 174:	fe 4f       	sbci	r31, 0xFE	; 254
+ 176:	80 83       	st	Z, r24
+    
+    ///* Increment position and terminate it if full
+    pos++;
+ 178:	80 91 06 01 	lds	r24, 0x0106
+ 17c:	8f 5f       	subi	r24, 0xFF	; 255
+ 17e:	80 93 06 01 	sts	0x0106, r24
+    if(pos == 12)
+ 182:	80 91 06 01 	lds	r24, 0x0106
+ 186:	8c 30       	cpi	r24, 0x0C	; 12
+ 188:	19 f4       	brne	.+6      	; 0x190 <__vector_18+0xc2>
+      pos = 0xFF;
+ 18a:	8f ef       	ldi	r24, 0xFF	; 255
+ 18c:	80 93 06 01 	sts	0x0106, r24
+  }
+  
+  ///Check if the last byte was for velocity
+  if(vel < 12)
+ 190:	80 91 05 01 	lds	r24, 0x0105
+ 194:	8c 30       	cpi	r24, 0x0C	; 12
+ 196:	a0 f4       	brcc	.+40     	; 0x1c0 <__vector_18+0xf2>
+  {
+    *((uint8_t *)&gps.v_x + vel) = last_byte;
+ 198:	e0 91 05 01 	lds	r30, 0x0105
+ 19c:	80 91 79 01 	lds	r24, 0x0179
+ 1a0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a2:	e6 57       	subi	r30, 0x76	; 118
+ 1a4:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1a6:	80 83       	st	Z, r24
+    
+    vel++;
+ 1a8:	80 91 05 01 	lds	r24, 0x0105
+ 1ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 1ae:	80 93 05 01 	sts	0x0105, r24
+    if(vel == 12)
+ 1b2:	80 91 05 01 	lds	r24, 0x0105
+ 1b6:	8c 30       	cpi	r24, 0x0C	; 12
+ 1b8:	19 f4       	brne	.+6      	; 0x1c0 <__vector_18+0xf2>
+      vel = 0xFF;
+ 1ba:	8f ef       	ldi	r24, 0xFF	; 255
+ 1bc:	80 93 05 01 	sts	0x0105, r24
+  }
+  
+  ///Check if the last byte was for PDOP
+  if(dop < 4)
+ 1c0:	80 91 04 01 	lds	r24, 0x0104
+ 1c4:	84 30       	cpi	r24, 0x04	; 4
+ 1c6:	c0 f4       	brcc	.+48     	; 0x1f8 <__vector_18+0x12a>
+  {
+    if(dop >= 2)
+ 1c8:	80 91 04 01 	lds	r24, 0x0104
+ 1cc:	82 30       	cpi	r24, 0x02	; 2
+ 1ce:	40 f0       	brcs	.+16     	; 0x1e0 <__vector_18+0x112>
+      *((uint8_t *)&pdop + (dop - 2)) = last_byte;
+ 1d0:	e0 91 04 01 	lds	r30, 0x0104
+ 1d4:	80 91 79 01 	lds	r24, 0x0179
+ 1d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1da:	e2 50       	subi	r30, 0x02	; 2
+ 1dc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1de:	80 83       	st	Z, r24
+      
+    dop++;
+ 1e0:	80 91 04 01 	lds	r24, 0x0104
+ 1e4:	8f 5f       	subi	r24, 0xFF	; 255
+ 1e6:	80 93 04 01 	sts	0x0104, r24
+    if(dop == 4)
+ 1ea:	80 91 04 01 	lds	r24, 0x0104
+ 1ee:	84 30       	cpi	r24, 0x04	; 4
+ 1f0:	19 f4       	brne	.+6      	; 0x1f8 <__vector_18+0x12a>
+      dop = 0xFF;
+ 1f2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1f4:	80 93 04 01 	sts	0x0104, r24
+  }
+  
+  ///Check if the last byte was for Geodetic position
+  if(geo < 16)
+ 1f8:	80 91 03 01 	lds	r24, 0x0103
+ 1fc:	80 31       	cpi	r24, 0x10	; 16
+ 1fe:	c0 f4       	brcc	.+48     	; 0x230 <__vector_18+0x162>
+  {
+    if(geo >= 4)
+ 200:	80 91 03 01 	lds	r24, 0x0103
+ 204:	84 30       	cpi	r24, 0x04	; 4
+ 206:	40 f0       	brcs	.+16     	; 0x218 <__vector_18+0x14a>
+    *((uint8_t *)&gps.lat + (geo - 4)) = last_byte;
+ 208:	e0 91 03 01 	lds	r30, 0x0103
+ 20c:	80 91 79 01 	lds	r24, 0x0179
+ 210:	f0 e0       	ldi	r31, 0x00	; 0
+ 212:	ee 56       	subi	r30, 0x6E	; 110
+ 214:	fe 4f       	sbci	r31, 0xFE	; 254
+ 216:	80 83       	st	Z, r24
+    
+    geo++;
+ 218:	80 91 03 01 	lds	r24, 0x0103
+ 21c:	8f 5f       	subi	r24, 0xFF	; 255
+ 21e:	80 93 03 01 	sts	0x0103, r24
+    if(geo == 16)
+ 222:	80 91 03 01 	lds	r24, 0x0103
+ 226:	80 31       	cpi	r24, 0x10	; 16
+ 228:	19 f4       	brne	.+6      	; 0x230 <__vector_18+0x162>
+      geo = 0xFF;
+ 22a:	8f ef       	ldi	r24, 0xFF	; 255
+ 22c:	80 93 03 01 	sts	0x0103, r24
+  }
+  
+  ///Check if the last byte was for Time
+  if(time < 7)
+ 230:	80 91 02 01 	lds	r24, 0x0102
+ 234:	87 30       	cpi	r24, 0x07	; 7
+ 236:	b8 f4       	brcc	.+46     	; 0x266 <__vector_18+0x198>
+  {
+    *((uint8_t *)&gps.hours + time) = last_byte;
+ 238:	e0 91 02 01 	lds	r30, 0x0102
+ 23c:	80 91 79 01 	lds	r24, 0x0179
+ 240:	f0 e0       	ldi	r31, 0x00	; 0
+ 242:	ee 55       	subi	r30, 0x5E	; 94
+ 244:	fe 4f       	sbci	r31, 0xFE	; 254
+ 246:	80 83       	st	Z, r24
+    
+    time++;
+ 248:	80 91 02 01 	lds	r24, 0x0102
+ 24c:	8f 5f       	subi	r24, 0xFF	; 255
+ 24e:	80 93 02 01 	sts	0x0102, r24
+    if(time == 7)
+ 252:	80 91 02 01 	lds	r24, 0x0102
+ 256:	87 30       	cpi	r24, 0x07	; 7
+ 258:	31 f4       	brne	.+12     	; 0x266 <__vector_18+0x198>
+    {
+      time = 0xFF;
+ 25a:	8f ef       	ldi	r24, 0xFF	; 255
+ 25c:	80 93 02 01 	sts	0x0102, r24
+      ///* * The Entire message has been read
+      message_end = 1;
+ 260:	81 e0       	ldi	r24, 0x01	; 1
+ 262:	80 93 78 01 	sts	0x0178, r24
+    }
+  }
+  
+  ///Check the buffer against message ID's
+  ///Position
+  if(buffer == 0x3F3F04AC)
+ 266:	80 91 7a 01 	lds	r24, 0x017A
+ 26a:	90 91 7b 01 	lds	r25, 0x017B
+ 26e:	a0 91 7c 01 	lds	r26, 0x017C
+ 272:	b0 91 7d 01 	lds	r27, 0x017D
+ 276:	8c 3a       	cpi	r24, 0xAC	; 172
+ 278:	94 40       	sbci	r25, 0x04	; 4
+ 27a:	af 43       	sbci	r26, 0x3F	; 63
+ 27c:	bf 43       	sbci	r27, 0x3F	; 63
+ 27e:	29 f4       	brne	.+10     	; 0x28a <__vector_18+0x1bc>
+  {
+    message_end = 0;
+ 280:	10 92 78 01 	sts	0x0178, r1
+    pos = 0;
+ 284:	10 92 06 01 	sts	0x0106, r1
+ 288:	3f c0       	rjmp	.+126    	; 0x308 <__vector_18+0x23a>
+  }
+  ///Velocity
+  else if(buffer == 0x3F3F05AC)
+ 28a:	80 91 7a 01 	lds	r24, 0x017A
+ 28e:	90 91 7b 01 	lds	r25, 0x017B
+ 292:	a0 91 7c 01 	lds	r26, 0x017C
+ 296:	b0 91 7d 01 	lds	r27, 0x017D
+ 29a:	8c 3a       	cpi	r24, 0xAC	; 172
+ 29c:	95 40       	sbci	r25, 0x05	; 5
+ 29e:	af 43       	sbci	r26, 0x3F	; 63
+ 2a0:	bf 43       	sbci	r27, 0x3F	; 63
+ 2a2:	19 f4       	brne	.+6      	; 0x2aa <__vector_18+0x1dc>
+    vel = 0;
+ 2a4:	10 92 05 01 	sts	0x0105, r1
+ 2a8:	2f c0       	rjmp	.+94     	; 0x308 <__vector_18+0x23a>
+  ///DOP
+  else if(buffer == 0x3F3F0BAC)
+ 2aa:	80 91 7a 01 	lds	r24, 0x017A
+ 2ae:	90 91 7b 01 	lds	r25, 0x017B
+ 2b2:	a0 91 7c 01 	lds	r26, 0x017C
+ 2b6:	b0 91 7d 01 	lds	r27, 0x017D
+ 2ba:	8c 3a       	cpi	r24, 0xAC	; 172
+ 2bc:	9b 40       	sbci	r25, 0x0B	; 11
+ 2be:	af 43       	sbci	r26, 0x3F	; 63
+ 2c0:	bf 43       	sbci	r27, 0x3F	; 63
+ 2c2:	19 f4       	brne	.+6      	; 0x2ca <__vector_18+0x1fc>
+    dop = 0;
+ 2c4:	10 92 04 01 	sts	0x0104, r1
+ 2c8:	1f c0       	rjmp	.+62     	; 0x308 <__vector_18+0x23a>
+  ///Geodetic System
+  else if(buffer == 0x3F3F0EAC)
+ 2ca:	80 91 7a 01 	lds	r24, 0x017A
+ 2ce:	90 91 7b 01 	lds	r25, 0x017B
+ 2d2:	a0 91 7c 01 	lds	r26, 0x017C
+ 2d6:	b0 91 7d 01 	lds	r27, 0x017D
+ 2da:	8c 3a       	cpi	r24, 0xAC	; 172
+ 2dc:	9e 40       	sbci	r25, 0x0E	; 14
+ 2de:	af 43       	sbci	r26, 0x3F	; 63
+ 2e0:	bf 43       	sbci	r27, 0x3F	; 63
+ 2e2:	19 f4       	brne	.+6      	; 0x2ea <__vector_18+0x21c>
+    geo = 0;
+ 2e4:	10 92 03 01 	sts	0x0103, r1
+ 2e8:	0f c0       	rjmp	.+30     	; 0x308 <__vector_18+0x23a>
+  ///Time
+  else if(buffer == 0x3F3F0FAC)
+ 2ea:	80 91 7a 01 	lds	r24, 0x017A
+ 2ee:	90 91 7b 01 	lds	r25, 0x017B
+ 2f2:	a0 91 7c 01 	lds	r26, 0x017C
+ 2f6:	b0 91 7d 01 	lds	r27, 0x017D
+ 2fa:	8c 3a       	cpi	r24, 0xAC	; 172
+ 2fc:	9f 40       	sbci	r25, 0x0F	; 15
+ 2fe:	af 43       	sbci	r26, 0x3F	; 63
+ 300:	bf 43       	sbci	r27, 0x3F	; 63
+ 302:	11 f4       	brne	.+4      	; 0x308 <__vector_18+0x23a>
+    time = 0;
+ 304:	10 92 02 01 	sts	0x0102, r1
+  
+  ///Check if PDOP < 500(factor 100), shut off the interrupt and the GPS device
+  if((pdop < 500) && (pdop!=0) && message_end)
+ 308:	80 91 00 01 	lds	r24, 0x0100
+ 30c:	90 91 01 01 	lds	r25, 0x0101
+ 310:	84 3f       	cpi	r24, 0xF4	; 244
+ 312:	91 40       	sbci	r25, 0x01	; 1
+ 314:	f0 f4       	brcc	.+60     	; 0x352 <__vector_18+0x284>
+ 316:	80 91 00 01 	lds	r24, 0x0100
+ 31a:	90 91 01 01 	lds	r25, 0x0101
+ 31e:	89 2b       	or	r24, r25
+ 320:	c1 f0       	breq	.+48     	; 0x352 <__vector_18+0x284>
+ 322:	80 91 78 01 	lds	r24, 0x0178
+ 326:	88 23       	and	r24, r24
+ 328:	a1 f0       	breq	.+40     	; 0x352 <__vector_18+0x284>
+  {
+    GPS_done = 1;
+ 32a:	81 e0       	ldi	r24, 0x01	; 1
+ 32c:	80 93 00 02 	sts	0x0200, r24
+    
+    ///* Switch off the interrupt
+    UCSR0B &= ~(_BV(RXCIE0));
+ 330:	57 98       	cbi	0x0a, 7	; 10
+    
+    ///* Switch off the GPS device
+    //power_down_peripheral(PGPS);
+    
+    pdop = 0xFFFF;
+ 332:	8f ef       	ldi	r24, 0xFF	; 255
+ 334:	9f ef       	ldi	r25, 0xFF	; 255
+ 336:	90 93 01 01 	sts	0x0101, r25
+ 33a:	80 93 00 01 	sts	0x0100, r24
+    message_end = 0;
+ 33e:	10 92 78 01 	sts	0x0178, r1
+    buffer = 0;
+ 342:	10 92 7a 01 	sts	0x017A, r1
+ 346:	10 92 7b 01 	sts	0x017B, r1
+ 34a:	10 92 7c 01 	sts	0x017C, r1
+ 34e:	10 92 7d 01 	sts	0x017D, r1
+  }
+}
+ 352:	ff 91       	pop	r31
+ 354:	ef 91       	pop	r30
+ 356:	bf 91       	pop	r27
+ 358:	af 91       	pop	r26
+ 35a:	9f 91       	pop	r25
+ 35c:	8f 91       	pop	r24
+ 35e:	2f 91       	pop	r18
+ 360:	0f 90       	pop	r0
+ 362:	0b be       	out	0x3b, r0	; 59
+ 364:	0f 90       	pop	r0
+ 366:	0f be       	out	0x3f, r0	; 63
+ 368:	0f 90       	pop	r0
+ 36a:	1f 90       	pop	r1
+ 36c:	18 95       	reti
+
+0000036e <main>:
+
+/************************************************************/
+/*				Main begins									*/
+/************************************************************/
+int main(void)
+{
+ 36e:	cf 93       	push	r28
+ 370:	df 93       	push	r29
+ 372:	cd b7       	in	r28, 0x3d	; 61
+ 374:	de b7       	in	r29, 0x3e	; 62
+ 376:	c8 57       	subi	r28, 0x78	; 120
+ 378:	d1 09       	sbc	r29, r1
+ 37a:	0f b6       	in	r0, 0x3f	; 63
+ 37c:	f8 94       	cli
+ 37e:	de bf       	out	0x3e, r29	; 62
+ 380:	0f be       	out	0x3f, r0	; 63
+ 382:	cd bf       	out	0x3d, r28	; 61
+	char array[40];
+	char array1[40];
+	char array2[40];
+	
+	DDRA = 0xF0;
+ 384:	80 ef       	ldi	r24, 0xF0	; 240
+ 386:	8a bb       	out	0x1a, r24	; 26
+	PORTA = 0xF0;
+ 388:	8b bb       	out	0x1b, r24	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 38a:	2f ef       	ldi	r18, 0xFF	; 255
+ 38c:	89 e6       	ldi	r24, 0x69	; 105
+ 38e:	98 e1       	ldi	r25, 0x18	; 24
+ 390:	21 50       	subi	r18, 0x01	; 1
+ 392:	80 40       	sbci	r24, 0x00	; 0
+ 394:	90 40       	sbci	r25, 0x00	; 0
+ 396:	e1 f7       	brne	.-8      	; 0x390 <main+0x22>
+ 398:	00 c0       	rjmp	.+0      	; 0x39a <main+0x2c>
+ 39a:	00 00       	nop
+	_delay_ms(1000);
+	PORTA = 0x00;
+ 39c:	1b ba       	out	0x1b, r1	; 27
+ 39e:	2f ef       	ldi	r18, 0xFF	; 255
+ 3a0:	89 e6       	ldi	r24, 0x69	; 105
+ 3a2:	98 e1       	ldi	r25, 0x18	; 24
+ 3a4:	21 50       	subi	r18, 0x01	; 1
+ 3a6:	80 40       	sbci	r24, 0x00	; 0
+ 3a8:	90 40       	sbci	r25, 0x00	; 0
+ 3aa:	e1 f7       	brne	.-8      	; 0x3a4 <main+0x36>
+ 3ac:	00 c0       	rjmp	.+0      	; 0x3ae <main+0x40>
+ 3ae:	00 00       	nop
+	_delay_ms(1000);
+	PORTA = 0xF0;
+ 3b0:	80 ef       	ldi	r24, 0xF0	; 240
+ 3b2:	8b bb       	out	0x1b, r24	; 27
+ 3b4:	2f ef       	ldi	r18, 0xFF	; 255
+ 3b6:	89 e6       	ldi	r24, 0x69	; 105
+ 3b8:	98 e1       	ldi	r25, 0x18	; 24
+ 3ba:	21 50       	subi	r18, 0x01	; 1
+ 3bc:	80 40       	sbci	r24, 0x00	; 0
+ 3be:	90 40       	sbci	r25, 0x00	; 0
+ 3c0:	e1 f7       	brne	.-8      	; 0x3ba <main+0x4c>
+ 3c2:	00 c0       	rjmp	.+0      	; 0x3c4 <main+0x56>
+ 3c4:	00 00       	nop
+	_delay_ms(1000);
+	PORTA = 0x00;
+ 3c6:	1b ba       	out	0x1b, r1	; 27
+ 3c8:	2f ef       	ldi	r18, 0xFF	; 255
+ 3ca:	89 e6       	ldi	r24, 0x69	; 105
+ 3cc:	98 e1       	ldi	r25, 0x18	; 24
+ 3ce:	21 50       	subi	r18, 0x01	; 1
+ 3d0:	80 40       	sbci	r24, 0x00	; 0
+ 3d2:	90 40       	sbci	r25, 0x00	; 0
+ 3d4:	e1 f7       	brne	.-8      	; 0x3ce <main+0x60>
+ 3d6:	00 c0       	rjmp	.+0      	; 0x3d8 <main+0x6a>
+ 3d8:	00 00       	nop
+	_delay_ms(1000);
+	
+	init_UART0();
+ 3da:	0e 94 dc 02 	call	0x5b8	; 0x5b8 <init_UART0>
+  
+	transmit_UART0('\r');
+ 3de:	8d e0       	ldi	r24, 0x0D	; 13
+ 3e0:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('\r');
+ 3e4:	8d e0       	ldi	r24, 0x0D	; 13
+ 3e6:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('H');
+ 3ea:	88 e4       	ldi	r24, 0x48	; 72
+ 3ec:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('e');
+ 3f0:	85 e6       	ldi	r24, 0x65	; 101
+ 3f2:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('l');
+ 3f6:	8c e6       	ldi	r24, 0x6C	; 108
+ 3f8:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('l');
+ 3fc:	8c e6       	ldi	r24, 0x6C	; 108
+ 3fe:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('o');
+ 402:	8f e6       	ldi	r24, 0x6F	; 111
+ 404:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	
+	sprintf(array,"\t..This is IITB's Student Satellite...\r");
+ 408:	88 e2       	ldi	r24, 0x28	; 40
+ 40a:	e0 e5       	ldi	r30, 0x50	; 80
+ 40c:	f1 e0       	ldi	r31, 0x01	; 1
+ 40e:	de 01       	movw	r26, r28
+ 410:	11 96       	adiw	r26, 0x01	; 1
+ 412:	01 90       	ld	r0, Z+
+ 414:	0d 92       	st	X+, r0
+ 416:	8a 95       	dec	r24
+ 418:	e1 f7       	brne	.-8      	; 0x412 <main+0xa4>
+	transmit_string_UART0(array);
+ 41a:	ce 01       	movw	r24, r28
+ 41c:	01 96       	adiw	r24, 0x01	; 1
+ 41e:	0e 94 f1 02 	call	0x5e2	; 0x5e2 <transmit_string_UART0>
+
+	sprintf(array1,"\tThis is HUSSAIN's OBC-Master code...");
+ 422:	86 e2       	ldi	r24, 0x26	; 38
+ 424:	e7 e0       	ldi	r30, 0x07	; 7
+ 426:	f1 e0       	ldi	r31, 0x01	; 1
+ 428:	de 01       	movw	r26, r28
+ 42a:	99 96       	adiw	r26, 0x29	; 41
+ 42c:	01 90       	ld	r0, Z+
+ 42e:	0d 92       	st	X+, r0
+ 430:	8a 95       	dec	r24
+ 432:	e1 f7       	brne	.-8      	; 0x42c <main+0xbe>
+	sprintf(array2,"\rGenerating Torquer Current for =\t");
+ 434:	83 e2       	ldi	r24, 0x23	; 35
+ 436:	ed e2       	ldi	r30, 0x2D	; 45
+ 438:	f1 e0       	ldi	r31, 0x01	; 1
+ 43a:	de 01       	movw	r26, r28
+ 43c:	af 5a       	subi	r26, 0xAF	; 175
+ 43e:	bf 4f       	sbci	r27, 0xFF	; 255
+ 440:	01 90       	ld	r0, Z+
+ 442:	0d 92       	st	X+, r0
+ 444:	8a 95       	dec	r24
+ 446:	e1 f7       	brne	.-8      	; 0x440 <main+0xd2>
+		
+/************************************************************/
+	configure_torquer();
+ 448:	0e 94 88 02 	call	0x510	; 0x510 <configure_torquer>
+	
+/************************************************************/
+	//while(1){                   CH1
+	PORTA = 0xA0;
+ 44c:	80 ea       	ldi	r24, 0xA0	; 160
+ 44e:	8b bb       	out	0x1b, r24	; 27
+ 450:	2f ef       	ldi	r18, 0xFF	; 255
+ 452:	84 e3       	ldi	r24, 0x34	; 52
+ 454:	9c e0       	ldi	r25, 0x0C	; 12
+ 456:	21 50       	subi	r18, 0x01	; 1
+ 458:	80 40       	sbci	r24, 0x00	; 0
+ 45a:	90 40       	sbci	r25, 0x00	; 0
+ 45c:	e1 f7       	brne	.-8      	; 0x456 <main+0xe8>
+ 45e:	00 c0       	rjmp	.+0      	; 0x460 <main+0xf2>
+ 460:	00 00       	nop
+	_delay_ms(500);
+	PORTA = 0x50;
+ 462:	80 e5       	ldi	r24, 0x50	; 80
+ 464:	8b bb       	out	0x1b, r24	; 27
+ 466:	2f ef       	ldi	r18, 0xFF	; 255
+ 468:	84 e3       	ldi	r24, 0x34	; 52
+ 46a:	9c e0       	ldi	r25, 0x0C	; 12
+ 46c:	21 50       	subi	r18, 0x01	; 1
+ 46e:	80 40       	sbci	r24, 0x00	; 0
+ 470:	90 40       	sbci	r25, 0x00	; 0
+ 472:	e1 f7       	brne	.-8      	; 0x46c <main+0xfe>
+ 474:	00 c0       	rjmp	.+0      	; 0x476 <main+0x108>
+ 476:	00 00       	nop
+	_delay_ms(500);
+	
+	transmit_UART0('\r');
+ 478:	8d e0       	ldi	r24, 0x0D	; 13
+ 47a:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('\r');
+ 47e:	8d e0       	ldi	r24, 0x0D	; 13
+ 480:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('H');
+ 484:	88 e4       	ldi	r24, 0x48	; 72
+ 486:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('i');
+ 48a:	89 e6       	ldi	r24, 0x69	; 105
+ 48c:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	
+	transmit_string_UART0(array1);
+ 490:	ce 01       	movw	r24, r28
+ 492:	89 96       	adiw	r24, 0x29	; 41
+ 494:	0e 94 f1 02 	call	0x5e2	; 0x5e2 <transmit_string_UART0>
+	
+/************************************************************/
+	///* * Magnetometer and Torquer test
+
+    ///* * Reading with ALL torquer on at once, in one direction
+    transmit_string_UART0(array2);
+ 498:	ce 01       	movw	r24, r28
+ 49a:	8f 5a       	subi	r24, 0xAF	; 175
+ 49c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 49e:	0e 94 f1 02 	call	0x5e2	; 0x5e2 <transmit_string_UART0>
+	transmit_UART0('+');
+ 4a2:	8b e2       	ldi	r24, 0x2B	; 43
+ 4a4:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('X');
+ 4a8:	88 e5       	ldi	r24, 0x58	; 88
+ 4aa:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0(' ');
+ 4ae:	80 e2       	ldi	r24, 0x20	; 32
+ 4b0:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('Y');
+ 4b4:	89 e5       	ldi	r24, 0x59	; 89
+ 4b6:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0(' ');
+ 4ba:	80 e2       	ldi	r24, 0x20	; 32
+ 4bc:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('Z');
+ 4c0:	8a e5       	ldi	r24, 0x5A	; 90
+ 4c2:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	transmit_UART0('\r');
+ 4c6:	8d e0       	ldi	r24, 0x0D	; 13
+ 4c8:	0e 94 ed 02 	call	0x5da	; 0x5da <transmit_UART0>
+	Current_state.pwm.x_dir =0;             //0;
+ 4cc:	10 92 fd 01 	sts	0x01FD, r1
+    Current_state.pwm.x =58981 ;             //32768; 0.5
+ 4d0:	85 e6       	ldi	r24, 0x65	; 101
+ 4d2:	96 ee       	ldi	r25, 0xE6	; 230
+ 4d4:	90 93 f8 01 	sts	0x01F8, r25
+ 4d8:	80 93 f7 01 	sts	0x01F7, r24
+    Current_state.pwm.y_dir = 0;            //0;
+ 4dc:	10 92 fe 01 	sts	0x01FE, r1
+    Current_state.pwm.y = 58981;            //32768; 0.75
+ 4e0:	90 93 fa 01 	sts	0x01FA, r25
+ 4e4:	80 93 f9 01 	sts	0x01F9, r24
+    Current_state.pwm.z_dir =0;             // 0;
+ 4e8:	10 92 ff 01 	sts	0x01FF, r1
+    Current_state.pwm.z = 58981;                //0.25
+ 4ec:	90 93 fc 01 	sts	0x01FC, r25
+ 4f0:	80 93 fb 01 	sts	0x01FB, r24
+    set_PWM ();
+ 4f4:	0e 94 ae 02 	call	0x55c	; 0x55c <set_PWM>
+	_delay_ms(500);
+	*/
+/************************************************************/
+	//}CH3
+	return 0;
+}
+ 4f8:	80 e0       	ldi	r24, 0x00	; 0
+ 4fa:	90 e0       	ldi	r25, 0x00	; 0
+ 4fc:	c8 58       	subi	r28, 0x88	; 136
+ 4fe:	df 4f       	sbci	r29, 0xFF	; 255
+ 500:	0f b6       	in	r0, 0x3f	; 63
+ 502:	f8 94       	cli
+ 504:	de bf       	out	0x3e, r29	; 62
+ 506:	0f be       	out	0x3f, r0	; 63
+ 508:	cd bf       	out	0x3d, r28	; 61
+ 50a:	df 91       	pop	r29
+ 50c:	cf 91       	pop	r28
+ 50e:	08 95       	ret
+
+00000510 <configure_torquer>:
+}
+
+void configure_torquer(void)
+{
+  ///Configure the current direction pins as output
+  DDRC |= _BV(DDC3) | _BV(DDC4) | _BV(DDC5);
+ 510:	84 b3       	in	r24, 0x14	; 20
+ 512:	88 63       	ori	r24, 0x38	; 56
+ 514:	84 bb       	out	0x14, r24	; 20
+  
+  ///Configure the PWM pins as output
+  DDRE |= _BV(DDE3) | _BV(DDE4) | _BV(DDE5);
+ 516:	82 b1       	in	r24, 0x02	; 2
+ 518:	88 63       	ori	r24, 0x38	; 56
+ 51a:	82 b9       	out	0x02, r24	; 2
+  
+  ///Configure PWM: Phase Correct mode Prescalar = 1 Frequency = 122Hz
+  TCCR3A = 0;
+ 51c:	ab e8       	ldi	r26, 0x8B	; 139
+ 51e:	b0 e0       	ldi	r27, 0x00	; 0
+ 520:	1c 92       	st	X, r1
+  TCCR3B = 0;
+ 522:	ea e8       	ldi	r30, 0x8A	; 138
+ 524:	f0 e0       	ldi	r31, 0x00	; 0
+ 526:	10 82       	st	Z, r1
+  TCCR3C = 0;
+ 528:	10 92 8c 00 	sts	0x008C, r1
+  TCCR3A |= _BV(COM3A1) | _BV(COM3B1) | _BV(COM3C1) | _BV(WGM31);
+ 52c:	8c 91       	ld	r24, X
+ 52e:	8a 6a       	ori	r24, 0xAA	; 170
+ 530:	8c 93       	st	X, r24
+  TCCR3B |= _BV(WGM33) | _BV(CS30);
+ 532:	80 81       	ld	r24, Z
+ 534:	81 61       	ori	r24, 0x11	; 17
+ 536:	80 83       	st	Z, r24
+  
+  ///Set top as MAX 16-bit
+  ICR3 = 0xFFFF;
+ 538:	8f ef       	ldi	r24, 0xFF	; 255
+ 53a:	9f ef       	ldi	r25, 0xFF	; 255
+ 53c:	90 93 81 00 	sts	0x0081, r25
+ 540:	80 93 80 00 	sts	0x0080, r24
+  OCR3B = 0x0000;
+ 544:	e4 e8       	ldi	r30, 0x84	; 132
+ 546:	f0 e0       	ldi	r31, 0x00	; 0
+ 548:	11 82       	std	Z+1, r1	; 0x01
+ 54a:	10 82       	st	Z, r1
+  OCR3B = 0x0000;
+ 54c:	11 82       	std	Z+1, r1	; 0x01
+ 54e:	10 82       	st	Z, r1
+  OCR3B = 0x0000;
+ 550:	11 82       	std	Z+1, r1	; 0x01
+ 552:	10 82       	st	Z, r1
+  PORTC &= ~(_BV(PC3) | _BV(PC4) | _BV(PC5));
+ 554:	85 b3       	in	r24, 0x15	; 21
+ 556:	87 7c       	andi	r24, 0xC7	; 199
+ 558:	85 bb       	out	0x15, r24	; 21
+ 55a:	08 95       	ret
+
+0000055c <set_PWM>:
+
+void set_PWM(void)
+{
+  
+  ///If current direction of axis X/Y/Z opposite of default set pin
+  if(Current_state.pwm.x_dir)
+ 55c:	80 91 fd 01 	lds	r24, 0x01FD
+ 560:	88 23       	and	r24, r24
+ 562:	11 f0       	breq	.+4      	; 0x568 <set_PWM+0xc>
+    PORTC |= _BV(PC5);
+ 564:	ad 9a       	sbi	0x15, 5	; 21
+ 566:	01 c0       	rjmp	.+2      	; 0x56a <set_PWM+0xe>
+  else
+    PORTC &= ~(_BV(PC5));
+ 568:	ad 98       	cbi	0x15, 5	; 21
+    
+  if(Current_state.pwm.y_dir)
+ 56a:	80 91 fe 01 	lds	r24, 0x01FE
+ 56e:	88 23       	and	r24, r24
+ 570:	11 f0       	breq	.+4      	; 0x576 <set_PWM+0x1a>
+    PORTC |= _BV(PC4);
+ 572:	ac 9a       	sbi	0x15, 4	; 21
+ 574:	01 c0       	rjmp	.+2      	; 0x578 <set_PWM+0x1c>
+  else
+    PORTC &= ~(_BV(PC4));
+ 576:	ac 98       	cbi	0x15, 4	; 21
+    
+  if(Current_state.pwm.z_dir)
+ 578:	80 91 ff 01 	lds	r24, 0x01FF
+ 57c:	88 23       	and	r24, r24
+ 57e:	11 f0       	breq	.+4      	; 0x584 <set_PWM+0x28>
+    PORTC |= _BV(PC3);
+ 580:	ab 9a       	sbi	0x15, 3	; 21
+ 582:	01 c0       	rjmp	.+2      	; 0x586 <set_PWM+0x2a>
+  else
+    PORTC &= ~(_BV(PC3));
+ 584:	ab 98       	cbi	0x15, 3	; 21
+    
+  ///Set PWM values
+  OCR3A = Current_state.pwm.x;
+ 586:	80 91 f7 01 	lds	r24, 0x01F7
+ 58a:	90 91 f8 01 	lds	r25, 0x01F8
+ 58e:	90 93 87 00 	sts	0x0087, r25
+ 592:	80 93 86 00 	sts	0x0086, r24
+  OCR3B = Current_state.pwm.y;
+ 596:	80 91 f9 01 	lds	r24, 0x01F9
+ 59a:	90 91 fa 01 	lds	r25, 0x01FA
+ 59e:	90 93 85 00 	sts	0x0085, r25
+ 5a2:	80 93 84 00 	sts	0x0084, r24
+  OCR3C = Current_state.pwm.z;
+ 5a6:	80 91 fb 01 	lds	r24, 0x01FB
+ 5aa:	90 91 fc 01 	lds	r25, 0x01FC
+ 5ae:	90 93 83 00 	sts	0x0083, r25
+ 5b2:	80 93 82 00 	sts	0x0082, r24
+ 5b6:	08 95       	ret
+
+000005b8 <init_UART0>:
+#include "uart.h"
+
+void init_UART0(void )
+{
+
+  UCSR0A = 0;
+ 5b8:	1b b8       	out	0x0b, r1	; 11
+  UCSR0B = 0;
+ 5ba:	1a b8       	out	0x0a, r1	; 10
+  UCSR0C = 0;
+ 5bc:	e5 e9       	ldi	r30, 0x95	; 149
+ 5be:	f0 e0       	ldi	r31, 0x00	; 0
+ 5c0:	10 82       	st	Z, r1
+  
+  ///Double Baud Rate
+  UCSR0A |= _BV(U2X0);
+ 5c2:	59 9a       	sbi	0x0b, 1	; 11
+  ///Enable Reception
+  UCSR0B |= _BV(RXEN0) | _BV(TXEN0);
+ 5c4:	8a b1       	in	r24, 0x0a	; 10
+ 5c6:	88 61       	ori	r24, 0x18	; 24
+ 5c8:	8a b9       	out	0x0a, r24	; 10
+  ///8-bit Data Byte, 2 Stop bits
+  UCSR0C |= _BV(USBS0) | _BV(UCSZ01) | _BV(UCSZ00);
+ 5ca:	80 81       	ld	r24, Z
+ 5cc:	8e 60       	ori	r24, 0x0E	; 14
+ 5ce:	80 83       	st	Z, r24
+  ///Set Baud Rate to 9600
+  UBRR0L = 103;
+ 5d0:	87 e6       	ldi	r24, 0x67	; 103
+ 5d2:	89 b9       	out	0x09, r24	; 9
+  UBRR0H = 0;
+ 5d4:	10 92 90 00 	sts	0x0090, r1
+ 5d8:	08 95       	ret
+
+000005da <transmit_UART0>:
+}
+
+void transmit_UART0(char data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 5da:	5d 9b       	sbis	0x0b, 5	; 11
+ 5dc:	fe cf       	rjmp	.-4      	; 0x5da <transmit_UART0>
+  //* Start transmission
+  UDR0 = data;
+ 5de:	8c b9       	out	0x0c, r24	; 12
+ 5e0:	08 95       	ret
+
+000005e2 <transmit_string_UART0>:
+
+void transmit_string_UART0(char *buffer)
+{
+  	uint16_t i = 0;
+  	///Loop through the data
+  	while(buffer[i] != '\0')
+ 5e2:	fc 01       	movw	r30, r24
+ 5e4:	20 81       	ld	r18, Z
+ 5e6:	22 23       	and	r18, r18
+ 5e8:	39 f0       	breq	.+14     	; 0x5f8 <transmit_string_UART0+0x16>
+ 5ea:	31 96       	adiw	r30, 0x01	; 1
+  	{
+    	///* Wait for empty transmit buffer 
+    	while ( !(UCSR0A & (_BV(UDRE0))) );
+ 5ec:	5d 9b       	sbis	0x0b, 5	; 11
+ 5ee:	fe cf       	rjmp	.-4      	; 0x5ec <transmit_string_UART0+0xa>
+    	///* Start transmission
+    	UDR0 = buffer[i];
+ 5f0:	2c b9       	out	0x0c, r18	; 12
+
+void transmit_string_UART0(char *buffer)
+{
+  	uint16_t i = 0;
+  	///Loop through the data
+  	while(buffer[i] != '\0')
+ 5f2:	21 91       	ld	r18, Z+
+ 5f4:	21 11       	cpse	r18, r1
+ 5f6:	fa cf       	rjmp	.-12     	; 0x5ec <transmit_string_UART0+0xa>
+ 5f8:	08 95       	ret
+
+000005fa <_exit>:
+ 5fa:	f8 94       	cli
+
+000005fc <__stop_program>:
+ 5fc:	ff cf       	rjmp	.-2      	; 0x5fc <__stop_program>

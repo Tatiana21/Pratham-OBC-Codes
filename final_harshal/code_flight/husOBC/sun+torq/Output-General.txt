@@ -1,0 +1,5 @@
+﻿13:50:21: [WARNING] Could not remove the project from recent projects list.
+13:50:21: [WARNING] Failed to remove solution 'C:\Users\ASHTESH\Documents\Atmel Studio\6.2\GccApplication2\GccApplication2\GccApplication2.atsln' to the MRU list. Could not remove the project from recent projects list.System.ArgumentException: , MethodName: RemoveCommandHandler
+13:50:21: [WARNING] Failed to add solution '' to the MRU list. Full path to Solution/Project file cannot be null
+Parameter name: fileNameWithPath
+14:05:13: [WARNING] TCF command: Tool:getAttachedTools timed out

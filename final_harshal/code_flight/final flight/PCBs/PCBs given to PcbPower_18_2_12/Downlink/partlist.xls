@@ -1,0 +1,42 @@
+Partlist
+
+Exported from CommDownlinkv1_18_2_12.brd at 28-02-2012 22:46:57
+
+EAGLE Version 5.10.0 Copyright (c) 1988-2010 CadSoft
+
+Part        Value          Package    Library   Position (inch)       Orientation
+
+C10         0.1uF          C1206      rcl       (1.10848 0.455)       R0
+C14         2.2uF          C1206      rcl       (1.909425 0.572)      R180
+C16         0.1uF          C1206      rcl       (1.569425 0.115)      R0
+C22         0.1uF          C1206      rcl       (0.257 1.073575)      R0
+C23         0.1uF          C1206      rcl       (0.515 0.588575)      R0
+C24         0.1uF          C1206      rcl       (0.906134 0.838858)   R270
+IC6         TPS73633       SOT-223-5  satellite (0.621 1.027575)      R0
+IC7         TPS73633       SOT-223-5  satellite (1.475 0.355)         R270
+TP_DCLK     TPSQTP12R      TP12R      testpad   (2.05 1.4)            R0
+TP_DIO      TPSQTP12R      TP12R      testpad   (2.15 1.4)            R0
+TP_LOCK     TPSQTP12R      TP12R      testpad   (2.25 1.4)            R0
+TP_MISO     TPSQTP12R      TP12R      testpad   (1.02 1.41)           R0
+TP_MOSI     TPSQTP12R      TP12R      testpad   (0.91 1.41)           R0
+TP_SCK      TPSQTP12R      TP12R      testpad   (1.13 1.41)           R0
+TP_SS       TPSQTP12R      TP12R      testpad   (1.23 1.41)           R0
+U$1         MOUNT_SQ       MOUNT_10MM satellite (0.19685 0.19685)     R0
+U$2         MOUNT_SQ       MOUNT_10MM satellite (0.19685 1.771654)    R0
+U$3         MOUNT_SQ       MOUNT_10MM satellite (6.141732 1.771654)   R0
+U$4         MOUNT_SQ       MOUNT_10MM satellite (6.141732 0.19685)    R0
+U$5         MOUNT_SQ       MOUNT_10MM satellite (4.559055 0.984252)   R0
+U$6         MOUNT_SQ       MOUNT_10MM satellite (5.866142 0.984252)   R0
+U$7         MOUNT_SQ       MOUNT_10MM satellite (4.165354 0.984252)   R0
+U$8         MOUNT_SQ       MOUNT_10MM satellite (4.330709 0.19685)    R0
+U$9         MOUNT_SQ       MOUNT_10MM satellite (2.598425 0.19685)    R0
+U$10        MOUNT_SQ       MOUNT_10MM satellite (2.598425 1.771654)   R0
+U$11        MOUNT_SQ       MOUNT_10MM satellite (2.977559 1.771654)   R0
+U$12        MOUNT_SQ       MOUNT_10MM satellite (2.977559 0.19685)    R0
+U$13        MOUNT_SQ       MOUNT_10MM satellite (4.330709 1.771654)   R0
+U$14        MOUNT_SQ       MOUNT_10MM satellite (3.771654 0.984252)   R0
+X1-DOWNLINK Downlink       F15HP      satellite (1.181102 1.661417)   R0
+X2-CC1020   CON-10         70543-10   satellite (2.875984 0.531496)   R0
+X3-CC1020_  CON-10         70543-10   satellite (2.875984 1.437008)   R180
+X4-POWER    CON-4          70543-4    satellite (5.283465 0.204724)   R180
+X5-CONTROL  CON-3          70543-3    satellite (5.334646 1.76378)    R0

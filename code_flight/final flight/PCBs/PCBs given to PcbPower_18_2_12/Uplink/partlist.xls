@@ -1,0 +1,47 @@
+Partlist
+
+Exported from CommUplinkv1_18_2_12.brd at 28-02-2012 23:38:29
+
+EAGLE Version 5.10.0 Copyright (c) 1988-2010 CadSoft
+
+Part     Value          Package    Library   Position (mm)         Orientation
+
+C1       22pF           C1206      rcl       (44.6024 16.7876)     R0
+C2       22pF           C1206      rcl       (49.9364 16.7876)     R180
+C3       0.1uF          C1206      rcl       (97.155 5.08)         R180
+C4       2.2uF          C1206      rcl       (107.315 6.985)       R180
+C5       0.1uF          C1206      rcl       (26.9748 32.5102)     R180
+C6       0.1uF          C1206      rcl       (107.315 12.7)        R180
+C19      0.1uF          C1206      rcl       (10.9474 16.559)      R180
+C20      2.2uF          C1206      rcl       (5.461 31.6085)       R0
+C21      0.1uF          C1206      rcl       (20.1948 31.1531)     R270
+CC1020   CON-10         70543-10   satellite (73.05 13.5)          R0
+CC1020_  CON-10         70543-10   satellite (73.05 36.5)          R180
+IC1      MEGA8-AI       TQFP32-08  atmel     (40.0558 29.5974)     R90
+IC2      TPS73633       SOT-223-5  satellite (12.0904 25.7048)     R0
+IC3      TPS73633       SOT-223-5  satellite (98.171 10.922)       R90
+LNA      CON-4          70543-4    satellite (133.2 9.33)          R180
+Q1       8MHz           HC49/S     crystal   (46.6344 20.4452)     R180
+R1       47K            M1206      rcl       (28.3718 38.6316)     R90
+TP_MISO  TPSQTP12R      TP12R      testpad   (34.036 12.954)       R0
+TP_MOSI  TPSQTP12R      TP12R      testpad   (36.83 12.954)        R0
+TP_RESET TPSQTP12R      TP12R      testpad   (39.624 12.954)       R0
+TP_RXD   TPSQTP12R      TP12R      testpad   (16.51 12.954)        R0
+TP_SCK   TPSQTP12R      TP12R      testpad   (31.242 12.954)       R0
+TP_SS    TPSQTP12R      TP12R      testpad   (28.702 12.954)       R0
+TP_TXD   TPSQTP12R      TP12R      testpad   (19.05 12.954)        R0
+U$1      MOUNT_SQ       MOUNT_10MM satellite (156 45)              R0
+U$2      MOUNT_SQ       MOUNT_10MM satellite (156 5)               R0
+U$3      MOUNT_SQ       MOUNT_10MM satellite (5 45)                R0
+U$4      MOUNT_SQ       MOUNT_10MM satellite (5 5)                 R0
+U$5      MOUNT_SQ       MOUNT_10MM satellite (149 25)              R180
+U$6      MOUNT_SQ       MOUNT_10MM satellite (124.6 25)            R180
+U$8      MOUNT_SQ       MOUNT_10MM satellite (114.6 25)            R0
+U$9      MOUNT_SQ       MOUNT_10MM satellite (66 5)                R0
+U$10     MOUNT_SQ       MOUNT_10MM satellite (66 45)               R0
+U$11     MOUNT_SQ       MOUNT_10MM satellite (75.63 5)             R0
+U$12     MOUNT_SQ       MOUNT_10MM satellite (75.63 45)            R0
+U$13     MOUNT_SQ       MOUNT_10MM satellite (104.6 25)            R0
+U$14     MOUNT_SQ       MOUNT_10MM satellite (118.6 45)            R0
+U$15     MOUNT_SQ       MOUNT_10MM satellite (118.6 5)             R0
+X1-POWER Power          F15HP      satellite (30 7.8)              R180

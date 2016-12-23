@@ -1,0 +1,1130 @@
+
+hMaster_Powertest.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000072  00800100  00000670  00000704  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000670  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000092  00800172  00800172  00000776  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000776  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000200  00000000  00000000  000007a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00002443  00000000  00000000  000009a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000ab1  00000000  00000000  00002de9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000c80  00000000  00000000  0000389a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000003bc  00000000  00000000  0000451c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000056c  00000000  00000000  000048d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000005f6  00000000  00000000  00004e44  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000170  00000000  00000000  0000543a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+#include "peripherals.h"
+#include "uart.h"
+
+
+void init_UART_MM(void )
+{
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+
+  UCSR1A = 0;
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  UCSR1B = 0;
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  UCSR1C = 0;
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  
+  ///Double Baud Rate
+  UCSR1A |= _BV(U2X1);
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  ///Enable Transmission and Reception
+  UCSR1B |= _BV(TXEN1) | _BV(RXEN1);
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  ///8-bit Data Byte
+  UCSR1C |= _BV(UCSZ11) | _BV(UCSZ10);
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  ///Set Baud Rate to 9600
+  UBRR1L = 103;
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  UBRR1H = 0;
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+}
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    SPI_transfer(0b00011000 | (channel >> 1));
+    SPI_transfer(((channel & 0x01) << 7) | 0x40);
+    sbi(PORTB, ADC_S);
+    _delay_us(1);
+    
+    cbi(PORTB, ADC_S);
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    SPI_transfer(0b00011000 | (channel >> 1));
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    SPI_transfer(((channel & 0x01) << 7) | 0x40);
+  48:	0c 94 67 00 	jmp	0xce	; 0xce <__vector_18>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    sbi(PORTB, ADC_S);
+    _delay_us(1);
+    
+    cbi(PORTB, ADC_S);
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    Current_state.ss.reading[channel] = SPI_transfer(0b00011000 | (channel >> 1));;
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    Current_state.ss.reading[channel] = Current_state.ss.reading[channel] << 8;
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+    Current_state.ss.reading[channel] &= 0x0F00;
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+    Current_state.ss.reading[channel] |= SPI_transfer(((channel & 0x01) << 7) | 0x40);
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+    sbi(PORTB, ADC_S);
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e0 e7       	ldi	r30, 0x70	; 112
+  a0:	f6 e0       	ldi	r31, 0x06	; 6
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+///Power Down PD low
+  cbi(PORTB, PB6);
+  return;*/
+  
+  ///Loop for reading the 6 sun sensor values
+  while(channel <= 5)
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a2 37       	cpi	r26, 0x72	; 114
+  ae:	b1 07       	cpc	r27, r17
+    
+    channel++;
+    
+  }
+  ///Power Down PD low
+  cbi(PORTB, PB6);
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+}
+  b2:	22 e0       	ldi	r18, 0x02	; 2
+  b4:	a2 e7       	ldi	r26, 0x72	; 114
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a4 30       	cpi	r26, 0x04	; 4
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 cc 01 	call	0x398	; 0x398 <main>
+  c6:	0c 94 36 03 	jmp	0x66c	; 0x66c <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <__vector_18>:
+}
+
+/** @brief Interrupt on receiving a byte through UART GPS
+ */
+ISR(USART0_RX_vect)
+{
+  ce:	1f 92       	push	r1
+  d0:	0f 92       	push	r0
+  d2:	0f b6       	in	r0, 0x3f	; 63
+  d4:	0f 92       	push	r0
+  d6:	11 24       	eor	r1, r1
+  d8:	0b b6       	in	r0, 0x3b	; 59
+  da:	0f 92       	push	r0
+  dc:	2f 93       	push	r18
+  de:	8f 93       	push	r24
+  e0:	9f 93       	push	r25
+  e2:	af 93       	push	r26
+  e4:	bf 93       	push	r27
+  e6:	ef 93       	push	r30
+  e8:	ff 93       	push	r31
+  
+  ///Buffer the Received Byte
+  last_byte = UDR0;
+  ea:	8c b1       	in	r24, 0x0c	; 12
+  ec:	80 93 73 01 	sts	0x0173, r24
+  
+  ///Put the received byte in the last 4-bytes buffer
+  buffer = buffer << 8;
+  f0:	80 91 74 01 	lds	r24, 0x0174
+  f4:	90 91 75 01 	lds	r25, 0x0175
+  f8:	a0 91 76 01 	lds	r26, 0x0176
+  fc:	b0 91 77 01 	lds	r27, 0x0177
+ 100:	ba 2f       	mov	r27, r26
+ 102:	a9 2f       	mov	r26, r25
+ 104:	98 2f       	mov	r25, r24
+ 106:	88 27       	eor	r24, r24
+ 108:	80 93 74 01 	sts	0x0174, r24
+ 10c:	90 93 75 01 	sts	0x0175, r25
+ 110:	a0 93 76 01 	sts	0x0176, r26
+ 114:	b0 93 77 01 	sts	0x0177, r27
+  buffer &= 0xFFFFFF00;
+ 118:	80 91 74 01 	lds	r24, 0x0174
+ 11c:	90 91 75 01 	lds	r25, 0x0175
+ 120:	a0 91 76 01 	lds	r26, 0x0176
+ 124:	b0 91 77 01 	lds	r27, 0x0177
+ 128:	88 27       	eor	r24, r24
+ 12a:	80 93 74 01 	sts	0x0174, r24
+ 12e:	90 93 75 01 	sts	0x0175, r25
+ 132:	a0 93 76 01 	sts	0x0176, r26
+ 136:	b0 93 77 01 	sts	0x0177, r27
+  buffer |= (uint32_t) last_byte;
+ 13a:	20 91 73 01 	lds	r18, 0x0173
+ 13e:	80 91 74 01 	lds	r24, 0x0174
+ 142:	90 91 75 01 	lds	r25, 0x0175
+ 146:	a0 91 76 01 	lds	r26, 0x0176
+ 14a:	b0 91 77 01 	lds	r27, 0x0177
+ 14e:	82 2b       	or	r24, r18
+ 150:	80 93 74 01 	sts	0x0174, r24
+ 154:	90 93 75 01 	sts	0x0175, r25
+ 158:	a0 93 76 01 	sts	0x0176, r26
+ 15c:	b0 93 77 01 	sts	0x0177, r27
+  
+  ///Check if the last byte was for position
+  if(pos < 12)
+ 160:	80 91 06 01 	lds	r24, 0x0106
+ 164:	8c 30       	cpi	r24, 0x0C	; 12
+ 166:	a0 f4       	brcc	.+40     	; 0x190 <__vector_18+0xc2>
+  {
+    
+    ///* Put the data into the structure
+    *((uint8_t *)&gps.x + pos) = last_byte;
+ 168:	e0 91 06 01 	lds	r30, 0x0106
+ 16c:	80 91 73 01 	lds	r24, 0x0173
+ 170:	f0 e0       	ldi	r31, 0x00	; 0
+ 172:	e8 58       	subi	r30, 0x88	; 136
+ 174:	fe 4f       	sbci	r31, 0xFE	; 254
+ 176:	80 83       	st	Z, r24
+    
+    ///* Increment position and terminate it if full
+    pos++;
+ 178:	80 91 06 01 	lds	r24, 0x0106
+ 17c:	8f 5f       	subi	r24, 0xFF	; 255
+ 17e:	80 93 06 01 	sts	0x0106, r24
+    if(pos == 12)
+ 182:	80 91 06 01 	lds	r24, 0x0106
+ 186:	8c 30       	cpi	r24, 0x0C	; 12
+ 188:	19 f4       	brne	.+6      	; 0x190 <__vector_18+0xc2>
+      pos = 0xFF;
+ 18a:	8f ef       	ldi	r24, 0xFF	; 255
+ 18c:	80 93 06 01 	sts	0x0106, r24
+  }
+  
+  ///Check if the last byte was for velocity
+  if(vel < 12)
+ 190:	80 91 05 01 	lds	r24, 0x0105
+ 194:	8c 30       	cpi	r24, 0x0C	; 12
+ 196:	a0 f4       	brcc	.+40     	; 0x1c0 <__vector_18+0xf2>
+  {
+    *((uint8_t *)&gps.v_x + vel) = last_byte;
+ 198:	e0 91 05 01 	lds	r30, 0x0105
+ 19c:	80 91 73 01 	lds	r24, 0x0173
+ 1a0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a2:	ec 57       	subi	r30, 0x7C	; 124
+ 1a4:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1a6:	80 83       	st	Z, r24
+    
+    vel++;
+ 1a8:	80 91 05 01 	lds	r24, 0x0105
+ 1ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 1ae:	80 93 05 01 	sts	0x0105, r24
+    if(vel == 12)
+ 1b2:	80 91 05 01 	lds	r24, 0x0105
+ 1b6:	8c 30       	cpi	r24, 0x0C	; 12
+ 1b8:	19 f4       	brne	.+6      	; 0x1c0 <__vector_18+0xf2>
+      vel = 0xFF;
+ 1ba:	8f ef       	ldi	r24, 0xFF	; 255
+ 1bc:	80 93 05 01 	sts	0x0105, r24
+  }
+  
+  ///Check if the last byte was for PDOP
+  if(dop < 4)
+ 1c0:	80 91 04 01 	lds	r24, 0x0104
+ 1c4:	84 30       	cpi	r24, 0x04	; 4
+ 1c6:	c0 f4       	brcc	.+48     	; 0x1f8 <__vector_18+0x12a>
+  {
+    if(dop >= 2)
+ 1c8:	80 91 04 01 	lds	r24, 0x0104
+ 1cc:	82 30       	cpi	r24, 0x02	; 2
+ 1ce:	40 f0       	brcs	.+16     	; 0x1e0 <__vector_18+0x112>
+      *((uint8_t *)&pdop + (dop - 2)) = last_byte;
+ 1d0:	e0 91 04 01 	lds	r30, 0x0104
+ 1d4:	80 91 73 01 	lds	r24, 0x0173
+ 1d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1da:	e2 50       	subi	r30, 0x02	; 2
+ 1dc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1de:	80 83       	st	Z, r24
+      
+    dop++;
+ 1e0:	80 91 04 01 	lds	r24, 0x0104
+ 1e4:	8f 5f       	subi	r24, 0xFF	; 255
+ 1e6:	80 93 04 01 	sts	0x0104, r24
+    if(dop == 4)
+ 1ea:	80 91 04 01 	lds	r24, 0x0104
+ 1ee:	84 30       	cpi	r24, 0x04	; 4
+ 1f0:	19 f4       	brne	.+6      	; 0x1f8 <__vector_18+0x12a>
+      dop = 0xFF;
+ 1f2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1f4:	80 93 04 01 	sts	0x0104, r24
+  }
+  
+  ///Check if the last byte was for Geodetic position
+  if(geo < 16)
+ 1f8:	80 91 03 01 	lds	r24, 0x0103
+ 1fc:	80 31       	cpi	r24, 0x10	; 16
+ 1fe:	c0 f4       	brcc	.+48     	; 0x230 <__vector_18+0x162>
+  {
+    if(geo >= 4)
+ 200:	80 91 03 01 	lds	r24, 0x0103
+ 204:	84 30       	cpi	r24, 0x04	; 4
+ 206:	40 f0       	brcs	.+16     	; 0x218 <__vector_18+0x14a>
+    *((uint8_t *)&gps.lat + (geo - 4)) = last_byte;
+ 208:	e0 91 03 01 	lds	r30, 0x0103
+ 20c:	80 91 73 01 	lds	r24, 0x0173
+ 210:	f0 e0       	ldi	r31, 0x00	; 0
+ 212:	e4 57       	subi	r30, 0x74	; 116
+ 214:	fe 4f       	sbci	r31, 0xFE	; 254
+ 216:	80 83       	st	Z, r24
+    
+    geo++;
+ 218:	80 91 03 01 	lds	r24, 0x0103
+ 21c:	8f 5f       	subi	r24, 0xFF	; 255
+ 21e:	80 93 03 01 	sts	0x0103, r24
+    if(geo == 16)
+ 222:	80 91 03 01 	lds	r24, 0x0103
+ 226:	80 31       	cpi	r24, 0x10	; 16
+ 228:	19 f4       	brne	.+6      	; 0x230 <__vector_18+0x162>
+      geo = 0xFF;
+ 22a:	8f ef       	ldi	r24, 0xFF	; 255
+ 22c:	80 93 03 01 	sts	0x0103, r24
+  }
+  
+  ///Check if the last byte was for Time
+  if(time < 7)
+ 230:	80 91 02 01 	lds	r24, 0x0102
+ 234:	87 30       	cpi	r24, 0x07	; 7
+ 236:	b8 f4       	brcc	.+46     	; 0x266 <__vector_18+0x198>
+  {
+    *((uint8_t *)&gps.hours + time) = last_byte;
+ 238:	e0 91 02 01 	lds	r30, 0x0102
+ 23c:	80 91 73 01 	lds	r24, 0x0173
+ 240:	f0 e0       	ldi	r31, 0x00	; 0
+ 242:	e4 56       	subi	r30, 0x64	; 100
+ 244:	fe 4f       	sbci	r31, 0xFE	; 254
+ 246:	80 83       	st	Z, r24
+    
+    time++;
+ 248:	80 91 02 01 	lds	r24, 0x0102
+ 24c:	8f 5f       	subi	r24, 0xFF	; 255
+ 24e:	80 93 02 01 	sts	0x0102, r24
+    if(time == 7)
+ 252:	80 91 02 01 	lds	r24, 0x0102
+ 256:	87 30       	cpi	r24, 0x07	; 7
+ 258:	31 f4       	brne	.+12     	; 0x266 <__vector_18+0x198>
+    {
+      time = 0xFF;
+ 25a:	8f ef       	ldi	r24, 0xFF	; 255
+ 25c:	80 93 02 01 	sts	0x0102, r24
+      ///* * The Entire message has been read
+      message_end = 1;
+ 260:	81 e0       	ldi	r24, 0x01	; 1
+ 262:	80 93 72 01 	sts	0x0172, r24
+    }
+  }
+  
+  ///Check the buffer against message ID's
+  ///Position
+  if(buffer == 0x3F3F04AC)
+ 266:	80 91 74 01 	lds	r24, 0x0174
+ 26a:	90 91 75 01 	lds	r25, 0x0175
+ 26e:	a0 91 76 01 	lds	r26, 0x0176
+ 272:	b0 91 77 01 	lds	r27, 0x0177
+ 276:	8c 3a       	cpi	r24, 0xAC	; 172
+ 278:	94 40       	sbci	r25, 0x04	; 4
+ 27a:	af 43       	sbci	r26, 0x3F	; 63
+ 27c:	bf 43       	sbci	r27, 0x3F	; 63
+ 27e:	29 f4       	brne	.+10     	; 0x28a <__vector_18+0x1bc>
+  {
+    message_end = 0;
+ 280:	10 92 72 01 	sts	0x0172, r1
+    pos = 0;
+ 284:	10 92 06 01 	sts	0x0106, r1
+ 288:	3f c0       	rjmp	.+126    	; 0x308 <__vector_18+0x23a>
+  }
+  ///Velocity
+  else if(buffer == 0x3F3F05AC)
+ 28a:	80 91 74 01 	lds	r24, 0x0174
+ 28e:	90 91 75 01 	lds	r25, 0x0175
+ 292:	a0 91 76 01 	lds	r26, 0x0176
+ 296:	b0 91 77 01 	lds	r27, 0x0177
+ 29a:	8c 3a       	cpi	r24, 0xAC	; 172
+ 29c:	95 40       	sbci	r25, 0x05	; 5
+ 29e:	af 43       	sbci	r26, 0x3F	; 63
+ 2a0:	bf 43       	sbci	r27, 0x3F	; 63
+ 2a2:	19 f4       	brne	.+6      	; 0x2aa <__vector_18+0x1dc>
+    vel = 0;
+ 2a4:	10 92 05 01 	sts	0x0105, r1
+ 2a8:	2f c0       	rjmp	.+94     	; 0x308 <__vector_18+0x23a>
+  ///DOP
+  else if(buffer == 0x3F3F0BAC)
+ 2aa:	80 91 74 01 	lds	r24, 0x0174
+ 2ae:	90 91 75 01 	lds	r25, 0x0175
+ 2b2:	a0 91 76 01 	lds	r26, 0x0176
+ 2b6:	b0 91 77 01 	lds	r27, 0x0177
+ 2ba:	8c 3a       	cpi	r24, 0xAC	; 172
+ 2bc:	9b 40       	sbci	r25, 0x0B	; 11
+ 2be:	af 43       	sbci	r26, 0x3F	; 63
+ 2c0:	bf 43       	sbci	r27, 0x3F	; 63
+ 2c2:	19 f4       	brne	.+6      	; 0x2ca <__vector_18+0x1fc>
+    dop = 0;
+ 2c4:	10 92 04 01 	sts	0x0104, r1
+ 2c8:	1f c0       	rjmp	.+62     	; 0x308 <__vector_18+0x23a>
+  ///Geodetic System
+  else if(buffer == 0x3F3F0EAC)
+ 2ca:	80 91 74 01 	lds	r24, 0x0174
+ 2ce:	90 91 75 01 	lds	r25, 0x0175
+ 2d2:	a0 91 76 01 	lds	r26, 0x0176
+ 2d6:	b0 91 77 01 	lds	r27, 0x0177
+ 2da:	8c 3a       	cpi	r24, 0xAC	; 172
+ 2dc:	9e 40       	sbci	r25, 0x0E	; 14
+ 2de:	af 43       	sbci	r26, 0x3F	; 63
+ 2e0:	bf 43       	sbci	r27, 0x3F	; 63
+ 2e2:	19 f4       	brne	.+6      	; 0x2ea <__vector_18+0x21c>
+    geo = 0;
+ 2e4:	10 92 03 01 	sts	0x0103, r1
+ 2e8:	0f c0       	rjmp	.+30     	; 0x308 <__vector_18+0x23a>
+  ///Time
+  else if(buffer == 0x3F3F0FAC)
+ 2ea:	80 91 74 01 	lds	r24, 0x0174
+ 2ee:	90 91 75 01 	lds	r25, 0x0175
+ 2f2:	a0 91 76 01 	lds	r26, 0x0176
+ 2f6:	b0 91 77 01 	lds	r27, 0x0177
+ 2fa:	8c 3a       	cpi	r24, 0xAC	; 172
+ 2fc:	9f 40       	sbci	r25, 0x0F	; 15
+ 2fe:	af 43       	sbci	r26, 0x3F	; 63
+ 300:	bf 43       	sbci	r27, 0x3F	; 63
+ 302:	11 f4       	brne	.+4      	; 0x308 <__vector_18+0x23a>
+    time = 0;
+ 304:	10 92 02 01 	sts	0x0102, r1
+  
+  ///Check if PDOP < 500(factor 100), shut off the interrupt and the GPS device
+  if((pdop < 500) && (pdop!=0) && message_end)
+ 308:	80 91 00 01 	lds	r24, 0x0100
+ 30c:	90 91 01 01 	lds	r25, 0x0101
+ 310:	84 3f       	cpi	r24, 0xF4	; 244
+ 312:	91 40       	sbci	r25, 0x01	; 1
+ 314:	f0 f4       	brcc	.+60     	; 0x352 <__vector_18+0x284>
+ 316:	80 91 00 01 	lds	r24, 0x0100
+ 31a:	90 91 01 01 	lds	r25, 0x0101
+ 31e:	89 2b       	or	r24, r25
+ 320:	c1 f0       	breq	.+48     	; 0x352 <__vector_18+0x284>
+ 322:	80 91 72 01 	lds	r24, 0x0172
+ 326:	88 23       	and	r24, r24
+ 328:	a1 f0       	breq	.+40     	; 0x352 <__vector_18+0x284>
+  {
+    GPS_done = 1;
+ 32a:	81 e0       	ldi	r24, 0x01	; 1
+ 32c:	80 93 fa 01 	sts	0x01FA, r24
+    
+    ///* Switch off the interrupt
+    UCSR0B &= ~(_BV(RXCIE0));
+ 330:	57 98       	cbi	0x0a, 7	; 10
+    
+    ///* Switch off the GPS device
+    //power_down_peripheral(PGPS);
+    
+    pdop = 0xFFFF;
+ 332:	8f ef       	ldi	r24, 0xFF	; 255
+ 334:	9f ef       	ldi	r25, 0xFF	; 255
+ 336:	90 93 01 01 	sts	0x0101, r25
+ 33a:	80 93 00 01 	sts	0x0100, r24
+    message_end = 0;
+ 33e:	10 92 72 01 	sts	0x0172, r1
+    buffer = 0;
+ 342:	10 92 74 01 	sts	0x0174, r1
+ 346:	10 92 75 01 	sts	0x0175, r1
+ 34a:	10 92 76 01 	sts	0x0176, r1
+ 34e:	10 92 77 01 	sts	0x0177, r1
+  }
+}
+ 352:	ff 91       	pop	r31
+ 354:	ef 91       	pop	r30
+ 356:	bf 91       	pop	r27
+ 358:	af 91       	pop	r26
+ 35a:	9f 91       	pop	r25
+ 35c:	8f 91       	pop	r24
+ 35e:	2f 91       	pop	r18
+ 360:	0f 90       	pop	r0
+ 362:	0b be       	out	0x3b, r0	; 59
+ 364:	0f 90       	pop	r0
+ 366:	0f be       	out	0x3f, r0	; 63
+ 368:	0f 90       	pop	r0
+ 36a:	1f 90       	pop	r1
+ 36c:	18 95       	reti
+
+0000036e <get_HM_data>:
+#include "hm.h"
+#include "twi.h"
+#include "peripherals.h"
+
+void get_HM_data(void)
+{
+ 36e:	0f 93       	push	r16
+ 370:	1f 93       	push	r17
+ 372:	cf 93       	push	r28
+ 374:	df 93       	push	r29
+ 376:	ca ee       	ldi	r28, 0xEA	; 234
+ 378:	d1 e0       	ldi	r29, 0x01	; 1
+ 37a:	00 ef       	ldi	r16, 0xF0	; 240
+ 37c:	11 e0       	ldi	r17, 0x01	; 1
+  uint8_t HMCounter;
+  
+  for(HMCounter = 0; HMCounter < 6; HMCounter++)  ///7 to 6
+    ///* Receive each of the bytes by sending a write request to the power muc.
+    ///* data stored in the hm structure with the same ordering as that in the power muc
+    TWI_rec_byte(ADDR, ((uint8_t *) &Current_state.hm) + HMCounter);
+ 37e:	be 01       	movw	r22, r28
+ 380:	82 e2       	ldi	r24, 0x22	; 34
+ 382:	0e 94 a9 02 	call	0x552	; 0x552 <TWI_rec_byte>
+ 386:	21 96       	adiw	r28, 0x01	; 1
+void get_HM_data(void)
+{
+  ///Counter for the 7 bytes of Health monitoring data
+  uint8_t HMCounter;
+  
+  for(HMCounter = 0; HMCounter < 6; HMCounter++)  ///7 to 6
+ 388:	c0 17       	cp	r28, r16
+ 38a:	d1 07       	cpc	r29, r17
+ 38c:	c1 f7       	brne	.-16     	; 0x37e <get_HM_data+0x10>
+    ///* Receive each of the bytes by sending a write request to the power muc.
+    ///* data stored in the hm structure with the same ordering as that in the power muc
+    TWI_rec_byte(ADDR, ((uint8_t *) &Current_state.hm) + HMCounter);
+}
+ 38e:	df 91       	pop	r29
+ 390:	cf 91       	pop	r28
+ 392:	1f 91       	pop	r17
+ 394:	0f 91       	pop	r16
+ 396:	08 95       	ret
+
+00000398 <main>:
+
+/************************************************************/
+/*				Main begins									*/
+/************************************************************/
+int main(void)
+{
+ 398:	cf 93       	push	r28
+ 39a:	df 93       	push	r29
+ 39c:	cd b7       	in	r28, 0x3d	; 61
+ 39e:	de b7       	in	r29, 0x3e	; 62
+ 3a0:	c8 57       	subi	r28, 0x78	; 120
+ 3a2:	d1 09       	sbc	r29, r1
+ 3a4:	0f b6       	in	r0, 0x3f	; 63
+ 3a6:	f8 94       	cli
+ 3a8:	de bf       	out	0x3e, r29	; 62
+ 3aa:	0f be       	out	0x3f, r0	; 63
+ 3ac:	cd bf       	out	0x3d, r28	; 61
+	char array[40];
+	char array1[40];
+	char array2[40];
+	
+	DDRA = 0xF0;
+ 3ae:	80 ef       	ldi	r24, 0xF0	; 240
+ 3b0:	8a bb       	out	0x1a, r24	; 26
+	PORTA = 0xF0;
+ 3b2:	8b bb       	out	0x1b, r24	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3b4:	2f ef       	ldi	r18, 0xFF	; 255
+ 3b6:	89 e6       	ldi	r24, 0x69	; 105
+ 3b8:	98 e1       	ldi	r25, 0x18	; 24
+ 3ba:	21 50       	subi	r18, 0x01	; 1
+ 3bc:	80 40       	sbci	r24, 0x00	; 0
+ 3be:	90 40       	sbci	r25, 0x00	; 0
+ 3c0:	e1 f7       	brne	.-8      	; 0x3ba <main+0x22>
+ 3c2:	00 c0       	rjmp	.+0      	; 0x3c4 <main+0x2c>
+ 3c4:	00 00       	nop
+	_delay_ms(1000);
+	PORTA = 0x00;
+ 3c6:	1b ba       	out	0x1b, r1	; 27
+ 3c8:	2f ef       	ldi	r18, 0xFF	; 255
+ 3ca:	89 e6       	ldi	r24, 0x69	; 105
+ 3cc:	98 e1       	ldi	r25, 0x18	; 24
+ 3ce:	21 50       	subi	r18, 0x01	; 1
+ 3d0:	80 40       	sbci	r24, 0x00	; 0
+ 3d2:	90 40       	sbci	r25, 0x00	; 0
+ 3d4:	e1 f7       	brne	.-8      	; 0x3ce <main+0x36>
+ 3d6:	00 c0       	rjmp	.+0      	; 0x3d8 <main+0x40>
+ 3d8:	00 00       	nop
+	_delay_ms(1000);
+	PORTA = 0xF0;
+ 3da:	80 ef       	ldi	r24, 0xF0	; 240
+ 3dc:	8b bb       	out	0x1b, r24	; 27
+ 3de:	2f ef       	ldi	r18, 0xFF	; 255
+ 3e0:	89 e6       	ldi	r24, 0x69	; 105
+ 3e2:	98 e1       	ldi	r25, 0x18	; 24
+ 3e4:	21 50       	subi	r18, 0x01	; 1
+ 3e6:	80 40       	sbci	r24, 0x00	; 0
+ 3e8:	90 40       	sbci	r25, 0x00	; 0
+ 3ea:	e1 f7       	brne	.-8      	; 0x3e4 <main+0x4c>
+ 3ec:	00 c0       	rjmp	.+0      	; 0x3ee <main+0x56>
+ 3ee:	00 00       	nop
+	_delay_ms(1000);
+	PORTA = 0x00;
+ 3f0:	1b ba       	out	0x1b, r1	; 27
+ 3f2:	2f ef       	ldi	r18, 0xFF	; 255
+ 3f4:	89 e6       	ldi	r24, 0x69	; 105
+ 3f6:	98 e1       	ldi	r25, 0x18	; 24
+ 3f8:	21 50       	subi	r18, 0x01	; 1
+ 3fa:	80 40       	sbci	r24, 0x00	; 0
+ 3fc:	90 40       	sbci	r25, 0x00	; 0
+ 3fe:	e1 f7       	brne	.-8      	; 0x3f8 <main+0x60>
+ 400:	00 c0       	rjmp	.+0      	; 0x402 <main+0x6a>
+ 402:	00 00       	nop
+	_delay_ms(1000);
+	
+	init_UART0();
+ 404:	0e 94 11 03 	call	0x622	; 0x622 <init_UART0>
+  
+	transmit_UART0('\r');
+ 408:	8d e0       	ldi	r24, 0x0D	; 13
+ 40a:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('\r');
+ 40e:	8d e0       	ldi	r24, 0x0D	; 13
+ 410:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('H');
+ 414:	88 e4       	ldi	r24, 0x48	; 72
+ 416:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('e');
+ 41a:	85 e6       	ldi	r24, 0x65	; 101
+ 41c:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('l');
+ 420:	8c e6       	ldi	r24, 0x6C	; 108
+ 422:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('l');
+ 426:	8c e6       	ldi	r24, 0x6C	; 108
+ 428:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('o');
+ 42c:	8f e6       	ldi	r24, 0x6F	; 111
+ 42e:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	
+	sprintf(array,"\t..This is IITB's Student Satellite...\r");
+ 432:	88 e2       	ldi	r24, 0x28	; 40
+ 434:	ea e4       	ldi	r30, 0x4A	; 74
+ 436:	f1 e0       	ldi	r31, 0x01	; 1
+ 438:	de 01       	movw	r26, r28
+ 43a:	11 96       	adiw	r26, 0x01	; 1
+ 43c:	01 90       	ld	r0, Z+
+ 43e:	0d 92       	st	X+, r0
+ 440:	8a 95       	dec	r24
+ 442:	e1 f7       	brne	.-8      	; 0x43c <main+0xa4>
+	transmit_string_UART0(array);
+ 444:	ce 01       	movw	r24, r28
+ 446:	01 96       	adiw	r24, 0x01	; 1
+ 448:	0e 94 2a 03 	call	0x654	; 0x654 <transmit_string_UART0>
+
+	sprintf(array1,"\tThis is HUSSAIN's OBC-Master code...");
+ 44c:	86 e2       	ldi	r24, 0x26	; 38
+ 44e:	e7 e0       	ldi	r30, 0x07	; 7
+ 450:	f1 e0       	ldi	r31, 0x01	; 1
+ 452:	de 01       	movw	r26, r28
+ 454:	99 96       	adiw	r26, 0x29	; 41
+ 456:	01 90       	ld	r0, Z+
+ 458:	0d 92       	st	X+, r0
+ 45a:	8a 95       	dec	r24
+ 45c:	e1 f7       	brne	.-8      	; 0x456 <main+0xbe>
+	sprintf(array2,"\rData received from Power :\t");
+ 45e:	8d e1       	ldi	r24, 0x1D	; 29
+ 460:	ed e2       	ldi	r30, 0x2D	; 45
+ 462:	f1 e0       	ldi	r31, 0x01	; 1
+ 464:	de 01       	movw	r26, r28
+ 466:	af 5a       	subi	r26, 0xAF	; 175
+ 468:	bf 4f       	sbci	r27, 0xFF	; 255
+ 46a:	01 90       	ld	r0, Z+
+ 46c:	0d 92       	st	X+, r0
+ 46e:	8a 95       	dec	r24
+ 470:	e1 f7       	brne	.-8      	; 0x46a <main+0xd2>
+		
+/************************************************************/
+	
+	init_TWI();
+ 472:	0e 94 a0 02 	call	0x540	; 0x540 <init_TWI>
+    sei();
+ 476:	78 94       	sei
+/************************************************************/
+	while(1){
+	PORTA = 0xA0;
+ 478:	00 ea       	ldi	r16, 0xA0	; 160
+	_delay_ms(500);
+	PORTA = 0x50;
+ 47a:	10 e5       	ldi	r17, 0x50	; 80
+	
+	init_TWI();
+    sei();
+/************************************************************/
+	while(1){
+	PORTA = 0xA0;
+ 47c:	0b bb       	out	0x1b, r16	; 27
+ 47e:	2f ef       	ldi	r18, 0xFF	; 255
+ 480:	84 e3       	ldi	r24, 0x34	; 52
+ 482:	9c e0       	ldi	r25, 0x0C	; 12
+ 484:	21 50       	subi	r18, 0x01	; 1
+ 486:	80 40       	sbci	r24, 0x00	; 0
+ 488:	90 40       	sbci	r25, 0x00	; 0
+ 48a:	e1 f7       	brne	.-8      	; 0x484 <main+0xec>
+ 48c:	00 c0       	rjmp	.+0      	; 0x48e <main+0xf6>
+ 48e:	00 00       	nop
+	_delay_ms(500);
+	PORTA = 0x50;
+ 490:	1b bb       	out	0x1b, r17	; 27
+ 492:	2f ef       	ldi	r18, 0xFF	; 255
+ 494:	84 e3       	ldi	r24, 0x34	; 52
+ 496:	9c e0       	ldi	r25, 0x0C	; 12
+ 498:	21 50       	subi	r18, 0x01	; 1
+ 49a:	80 40       	sbci	r24, 0x00	; 0
+ 49c:	90 40       	sbci	r25, 0x00	; 0
+ 49e:	e1 f7       	brne	.-8      	; 0x498 <main+0x100>
+ 4a0:	00 c0       	rjmp	.+0      	; 0x4a2 <main+0x10a>
+ 4a2:	00 00       	nop
+	_delay_ms(500);
+	
+	transmit_UART0('\r');
+ 4a4:	8d e0       	ldi	r24, 0x0D	; 13
+ 4a6:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('\r');
+ 4aa:	8d e0       	ldi	r24, 0x0D	; 13
+ 4ac:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('H');
+ 4b0:	88 e4       	ldi	r24, 0x48	; 72
+ 4b2:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	transmit_UART0('i');
+ 4b6:	89 e6       	ldi	r24, 0x69	; 105
+ 4b8:	0e 94 22 03 	call	0x644	; 0x644 <transmit_UART0>
+	
+	transmit_string_UART0(array1);
+ 4bc:	ce 01       	movw	r24, r28
+ 4be:	89 96       	adiw	r24, 0x29	; 41
+ 4c0:	0e 94 2a 03 	call	0x654	; 0x654 <transmit_string_UART0>
+	transmit_string_UART0(array2);
+ 4c4:	ce 01       	movw	r24, r28
+ 4c6:	8f 5a       	subi	r24, 0xAF	; 175
+ 4c8:	9f 4f       	sbci	r25, 0xFF	; 255
+ 4ca:	0e 94 2a 03 	call	0x654	; 0x654 <transmit_string_UART0>
+	
+/************************************************************/
+	PORTA = 0xA0;
+ 4ce:	0b bb       	out	0x1b, r16	; 27
+ 4d0:	2f ef       	ldi	r18, 0xFF	; 255
+ 4d2:	84 e3       	ldi	r24, 0x34	; 52
+ 4d4:	9c e0       	ldi	r25, 0x0C	; 12
+ 4d6:	21 50       	subi	r18, 0x01	; 1
+ 4d8:	80 40       	sbci	r24, 0x00	; 0
+ 4da:	90 40       	sbci	r25, 0x00	; 0
+ 4dc:	e1 f7       	brne	.-8      	; 0x4d6 <main+0x13e>
+ 4de:	00 c0       	rjmp	.+0      	; 0x4e0 <main+0x148>
+ 4e0:	00 00       	nop
+	_delay_ms(500);
+	PORTA = 0x50;
+ 4e2:	1b bb       	out	0x1b, r17	; 27
+ 4e4:	2f ef       	ldi	r18, 0xFF	; 255
+ 4e6:	84 e3       	ldi	r24, 0x34	; 52
+ 4e8:	9c e0       	ldi	r25, 0x0C	; 12
+ 4ea:	21 50       	subi	r18, 0x01	; 1
+ 4ec:	80 40       	sbci	r24, 0x00	; 0
+ 4ee:	90 40       	sbci	r25, 0x00	; 0
+ 4f0:	e1 f7       	brne	.-8      	; 0x4ea <main+0x152>
+ 4f2:	00 c0       	rjmp	.+0      	; 0x4f4 <main+0x15c>
+ 4f4:	00 00       	nop
+	_delay_ms(500);
+	transmit_string_UART0(array1);
+ 4f6:	ce 01       	movw	r24, r28
+ 4f8:	89 96       	adiw	r24, 0x29	; 41
+ 4fa:	0e 94 2a 03 	call	0x654	; 0x654 <transmit_string_UART0>
+	transmit_UART0int();
+ 4fe:	0e 94 26 03 	call	0x64c	; 0x64c <transmit_UART0int>
+	//transmit_string_UART0(array1)
+	///* * Sending Slave
+    get_HM_data();
+ 502:	0e 94 b7 01 	call	0x36e	; 0x36e <get_HM_data>
+	 transmit_string_UART0(array1);
+ 506:	ce 01       	movw	r24, r28
+ 508:	89 96       	adiw	r24, 0x29	; 41
+ 50a:	0e 94 2a 03 	call	0x654	; 0x654 <transmit_string_UART0>
+  transmit_UART0int(sizeof(Current_state.hm ));
+ 50e:	87 e0       	ldi	r24, 0x07	; 7
+ 510:	90 e0       	ldi	r25, 0x00	; 0
+ 512:	0e 94 26 03 	call	0x64c	; 0x64c <transmit_UART0int>
+	send_preflight((char *)&Current_state.hm, sizeof(Current_state.hm ));
+ 516:	67 e0       	ldi	r22, 0x07	; 7
+ 518:	70 e0       	ldi	r23, 0x00	; 0
+ 51a:	8a ee       	ldi	r24, 0xEA	; 234
+ 51c:	91 e0       	ldi	r25, 0x01	; 1
+ 51e:	0e 94 92 02 	call	0x524	; 0x524 <send_preflight>
+ 522:	ac cf       	rjmp	.-168    	; 0x47c <main+0xe4>
+
+00000524 <send_preflight>:
+void send_preflight(char *data, uint16_t size)
+{
+  uint16_t i = 0;
+  
+  ///Loop through the data
+  while(i < size)
+ 524:	61 15       	cp	r22, r1
+ 526:	71 05       	cpc	r23, r1
+ 528:	51 f0       	breq	.+20     	; 0x53e <send_preflight+0x1a>
+ 52a:	fc 01       	movw	r30, r24
+ 52c:	86 0f       	add	r24, r22
+ 52e:	97 1f       	adc	r25, r23
+  {
+    ///* Wait for empty transmit buffer 
+    while ( !(UCSR0A & (_BV(UDRE0))) );
+ 530:	5d 9b       	sbis	0x0b, 5	; 11
+ 532:	fe cf       	rjmp	.-4      	; 0x530 <send_preflight+0xc>
+    ///* Start transmission
+    UDR0 = data[i];
+ 534:	21 91       	ld	r18, Z+
+ 536:	2c b9       	out	0x0c, r18	; 12
+void send_preflight(char *data, uint16_t size)
+{
+  uint16_t i = 0;
+  
+  ///Loop through the data
+  while(i < size)
+ 538:	e8 17       	cp	r30, r24
+ 53a:	f9 07       	cpc	r31, r25
+ 53c:	c9 f7       	brne	.-14     	; 0x530 <send_preflight+0xc>
+ 53e:	08 95       	ret
+
+00000540 <init_TWI>:
+
+void init_TWI(void) {
+  /// <b>Execution</b> <br><br>
+  ///Initialize TWI clock: 50 kHz clock, TWPS = 0 => prescaler = 1 
+  //TWPS = 1;//ch
+  TWSR = 0x01;
+ 540:	81 e0       	ldi	r24, 0x01	; 1
+ 542:	80 93 71 00 	sts	0x0071, r24
+  TWCR = 0;
+ 546:	10 92 74 00 	sts	0x0074, r1
+  TWBR = 98;//ch
+ 54a:	82 e6       	ldi	r24, 0x62	; 98
+ 54c:	80 93 70 00 	sts	0x0070, r24
+ 550:	08 95       	ret
+
+00000552 <TWI_rec_byte>:
+int TWI_rec_byte(uint8_t addr, uint8_t *buf){
+
+  ///Transmit Address
+  do{						
+    ///* send start cond.
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+ 552:	e4 e7       	ldi	r30, 0x74	; 116
+ 554:	f0 e0       	ldi	r31, 0x00	; 0
+ 556:	24 ea       	ldi	r18, 0xA4	; 164
+    while (!(TWCR & (1 << TWINT)));
+  }while(TW_STATUS == TW_MT_ARB_LOST);
+ 558:	a1 e7       	ldi	r26, 0x71	; 113
+ 55a:	b0 e0       	ldi	r27, 0x00	; 0
+int TWI_rec_byte(uint8_t addr, uint8_t *buf){
+
+  ///Transmit Address
+  do{						
+    ///* send start cond.
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+ 55c:	20 83       	st	Z, r18
+    while (!(TWCR & (1 << TWINT)));
+ 55e:	90 81       	ld	r25, Z
+ 560:	99 23       	and	r25, r25
+ 562:	ec f7       	brge	.-6      	; 0x55e <TWI_rec_byte+0xc>
+  }while(TW_STATUS == TW_MT_ARB_LOST);
+ 564:	9c 91       	ld	r25, X
+ 566:	98 7f       	andi	r25, 0xF8	; 248
+ 568:	98 33       	cpi	r25, 0x38	; 56
+ 56a:	c1 f3       	breq	.-16     	; 0x55c <TWI_rec_byte+0xa>
+
+  if ( (TW_STATUS != TW_REP_START) && (TW_STATUS != TW_START)) return -1;
+ 56c:	90 91 71 00 	lds	r25, 0x0071
+ 570:	98 7f       	andi	r25, 0xF8	; 248
+ 572:	90 31       	cpi	r25, 0x10	; 16
+ 574:	31 f0       	breq	.+12     	; 0x582 <TWI_rec_byte+0x30>
+ 576:	90 91 71 00 	lds	r25, 0x0071
+ 57a:	98 7f       	andi	r25, 0xF8	; 248
+ 57c:	98 30       	cpi	r25, 0x08	; 8
+ 57e:	09 f0       	breq	.+2      	; 0x582 <TWI_rec_byte+0x30>
+ 580:	4a c0       	rjmp	.+148    	; 0x616 <TWI_rec_byte+0xc4>
+
+  TWDR = (addr << 1) + TW_READ;
+ 582:	88 0f       	add	r24, r24
+ 584:	8f 5f       	subi	r24, 0xFF	; 255
+ 586:	80 93 73 00 	sts	0x0073, r24
+  TWCR = (1 << TWINT) | (1 << TWEN);
+ 58a:	84 e8       	ldi	r24, 0x84	; 132
+ 58c:	80 93 74 00 	sts	0x0074, r24
+
+  while (!(TWCR & (1 << TWINT)));
+ 590:	e4 e7       	ldi	r30, 0x74	; 116
+ 592:	f0 e0       	ldi	r31, 0x00	; 0
+ 594:	80 81       	ld	r24, Z
+ 596:	88 23       	and	r24, r24
+ 598:	ec f7       	brge	.-6      	; 0x594 <TWI_rec_byte+0x42>
+  if (TW_STATUS == TW_MR_SLA_NACK) {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return 1;}
+ 59a:	80 91 71 00 	lds	r24, 0x0071
+ 59e:	88 7f       	andi	r24, 0xF8	; 248
+ 5a0:	88 34       	cpi	r24, 0x48	; 72
+ 5a2:	31 f4       	brne	.+12     	; 0x5b0 <TWI_rec_byte+0x5e>
+ 5a4:	84 e9       	ldi	r24, 0x94	; 148
+ 5a6:	80 93 74 00 	sts	0x0074, r24
+ 5aa:	81 e0       	ldi	r24, 0x01	; 1
+ 5ac:	90 e0       	ldi	r25, 0x00	; 0
+ 5ae:	08 95       	ret
+  if (TW_STATUS == TW_MR_ARB_LOST) return -2;
+ 5b0:	80 91 71 00 	lds	r24, 0x0071
+ 5b4:	88 7f       	andi	r24, 0xF8	; 248
+ 5b6:	88 33       	cpi	r24, 0x38	; 56
+ 5b8:	89 f1       	breq	.+98     	; 0x61c <TWI_rec_byte+0xca>
+  if (TW_STATUS != TW_MR_SLA_ACK) {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return -1;}
+ 5ba:	80 91 71 00 	lds	r24, 0x0071
+ 5be:	88 7f       	andi	r24, 0xF8	; 248
+ 5c0:	80 34       	cpi	r24, 0x40	; 64
+ 5c2:	31 f0       	breq	.+12     	; 0x5d0 <TWI_rec_byte+0x7e>
+ 5c4:	84 e9       	ldi	r24, 0x94	; 148
+ 5c6:	80 93 74 00 	sts	0x0074, r24
+ 5ca:	8f ef       	ldi	r24, 0xFF	; 255
+ 5cc:	9f ef       	ldi	r25, 0xFF	; 255
+ 5ce:	08 95       	ret
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 5d0:	85 e8       	ldi	r24, 0x85	; 133
+ 5d2:	8a 95       	dec	r24
+ 5d4:	f1 f7       	brne	.-4      	; 0x5d2 <TWI_rec_byte+0x80>
+ 5d6:	00 00       	nop
+
+  _delay_us(50);
+
+  ///Receive Data
+  TWCR = (1 << TWINT) | (1 << TWEN);
+ 5d8:	84 e8       	ldi	r24, 0x84	; 132
+ 5da:	80 93 74 00 	sts	0x0074, r24
+  while (!(TWCR & (1 << TWINT)));
+ 5de:	e4 e7       	ldi	r30, 0x74	; 116
+ 5e0:	f0 e0       	ldi	r31, 0x00	; 0
+ 5e2:	80 81       	ld	r24, Z
+ 5e4:	88 23       	and	r24, r24
+ 5e6:	ec f7       	brge	.-6      	; 0x5e2 <TWI_rec_byte+0x90>
+  switch (TW_STATUS) {
+ 5e8:	80 91 71 00 	lds	r24, 0x0071
+ 5ec:	88 7f       	andi	r24, 0xF8	; 248
+ 5ee:	80 35       	cpi	r24, 0x50	; 80
+ 5f0:	11 f0       	breq	.+4      	; 0x5f6 <TWI_rec_byte+0xa4>
+ 5f2:	88 35       	cpi	r24, 0x58	; 88
+ 5f4:	51 f4       	brne	.+20     	; 0x60a <TWI_rec_byte+0xb8>
+  case TW_MR_DATA_NACK: // FALLTHROUGH
+  case TW_MR_DATA_ACK:
+    *buf = TWDR;
+ 5f6:	80 91 73 00 	lds	r24, 0x0073
+ 5fa:	fb 01       	movw	r30, r22
+ 5fc:	80 83       	st	Z, r24
+    break;
+  default:
+    {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return -1;}
+  }
+
+  TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return 1;
+ 5fe:	84 e9       	ldi	r24, 0x94	; 148
+ 600:	80 93 74 00 	sts	0x0074, r24
+ 604:	81 e0       	ldi	r24, 0x01	; 1
+ 606:	90 e0       	ldi	r25, 0x00	; 0
+ 608:	08 95       	ret
+  case TW_MR_DATA_NACK: // FALLTHROUGH
+  case TW_MR_DATA_ACK:
+    *buf = TWDR;
+    break;
+  default:
+    {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return -1;}
+ 60a:	84 e9       	ldi	r24, 0x94	; 148
+ 60c:	80 93 74 00 	sts	0x0074, r24
+ 610:	8f ef       	ldi	r24, 0xFF	; 255
+ 612:	9f ef       	ldi	r25, 0xFF	; 255
+ 614:	08 95       	ret
+    ///* send start cond.
+    TWCR = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
+    while (!(TWCR & (1 << TWINT)));
+  }while(TW_STATUS == TW_MT_ARB_LOST);
+
+  if ( (TW_STATUS != TW_REP_START) && (TW_STATUS != TW_START)) return -1;
+ 616:	8f ef       	ldi	r24, 0xFF	; 255
+ 618:	9f ef       	ldi	r25, 0xFF	; 255
+ 61a:	08 95       	ret
+  TWDR = (addr << 1) + TW_READ;
+  TWCR = (1 << TWINT) | (1 << TWEN);
+
+  while (!(TWCR & (1 << TWINT)));
+  if (TW_STATUS == TW_MR_SLA_NACK) {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return 1;}
+  if (TW_STATUS == TW_MR_ARB_LOST) return -2;
+ 61c:	8e ef       	ldi	r24, 0xFE	; 254
+ 61e:	9f ef       	ldi	r25, 0xFF	; 255
+  default:
+    {TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return -1;}
+  }
+
+  TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO); return 1;
+}
+ 620:	08 95       	ret
+
+00000622 <init_UART0>:
+#include "uart.h"
+
+void init_UART0(void )
+{
+
+  UCSR0A = 0;
+ 622:	1b b8       	out	0x0b, r1	; 11
+  UCSR0B = 0;
+ 624:	1a b8       	out	0x0a, r1	; 10
+  UCSR0C = 0;
+ 626:	e5 e9       	ldi	r30, 0x95	; 149
+ 628:	f0 e0       	ldi	r31, 0x00	; 0
+ 62a:	10 82       	st	Z, r1
+  
+  ///Double Baud Rate
+  UCSR0A |= _BV(U2X0);
+ 62c:	59 9a       	sbi	0x0b, 1	; 11
+  ///Enable Reception
+  UCSR0B |= _BV(RXEN0) | _BV(TXEN0);
+ 62e:	8a b1       	in	r24, 0x0a	; 10
+ 630:	88 61       	ori	r24, 0x18	; 24
+ 632:	8a b9       	out	0x0a, r24	; 10
+  ///8-bit Data Byte, 2 Stop bits
+  UCSR0C |= _BV(USBS0) | _BV(UCSZ01) | _BV(UCSZ00);
+ 634:	80 81       	ld	r24, Z
+ 636:	8e 60       	ori	r24, 0x0E	; 14
+ 638:	80 83       	st	Z, r24
+  ///Set Baud Rate to 9600
+  UBRR0L = 103;
+ 63a:	87 e6       	ldi	r24, 0x67	; 103
+ 63c:	89 b9       	out	0x09, r24	; 9
+  UBRR0H = 0;
+ 63e:	10 92 90 00 	sts	0x0090, r1
+ 642:	08 95       	ret
+
+00000644 <transmit_UART0>:
+}
+
+void transmit_UART0(char data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 644:	5d 9b       	sbis	0x0b, 5	; 11
+ 646:	fe cf       	rjmp	.-4      	; 0x644 <transmit_UART0>
+  //* Start transmission
+  UDR0 = data;
+ 648:	8c b9       	out	0x0c, r24	; 12
+ 64a:	08 95       	ret
+
+0000064c <transmit_UART0int>:
+  //* Wait for empty transmit buffer
+  //for (int i=0;i<2;i++)
+ // {
+  
+   
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 64c:	5d 9b       	sbis	0x0b, 5	; 11
+ 64e:	fe cf       	rjmp	.-4      	; 0x64c <transmit_UART0int>
+  //* Start transmission
+  UDR0 = data;
+ 650:	8c b9       	out	0x0c, r24	; 12
+ 652:	08 95       	ret
+
+00000654 <transmit_string_UART0>:
+
+void transmit_string_UART0(char *buffer)
+{
+  	uint16_t i = 0;
+  	///Loop through the data
+  	while(buffer[i] != '\0')
+ 654:	fc 01       	movw	r30, r24
+ 656:	20 81       	ld	r18, Z
+ 658:	22 23       	and	r18, r18
+ 65a:	39 f0       	breq	.+14     	; 0x66a <transmit_string_UART0+0x16>
+ 65c:	31 96       	adiw	r30, 0x01	; 1
+  	{
+    	///* Wait for empty transmit buffer 
+    	while ( !(UCSR0A & (_BV(UDRE0))) );
+ 65e:	5d 9b       	sbis	0x0b, 5	; 11
+ 660:	fe cf       	rjmp	.-4      	; 0x65e <transmit_string_UART0+0xa>
+    	///* Start transmission
+    	UDR0 = buffer[i];
+ 662:	2c b9       	out	0x0c, r18	; 12
+
+void transmit_string_UART0(char *buffer)
+{
+  	uint16_t i = 0;
+  	///Loop through the data
+  	while(buffer[i] != '\0')
+ 664:	21 91       	ld	r18, Z+
+ 666:	21 11       	cpse	r18, r1
+ 668:	fa cf       	rjmp	.-12     	; 0x65e <transmit_string_UART0+0xa>
+ 66a:	08 95       	ret
+
+0000066c <_exit>:
+ 66c:	f8 94       	cli
+
+0000066e <__stop_program>:
+ 66e:	ff cf       	rjmp	.-2      	; 0x66e <__stop_program>

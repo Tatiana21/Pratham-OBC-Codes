@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "slave_downlink_v1", "slave_downlink_v1\slave_downlink_v1_6_2.cppproj", "{DFA42926-0B91-4204-A16F-915783C3C267}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFA42926-0B91-4204-A16F-915783C3C267}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DFA42926-0B91-4204-A16F-915783C3C267}.Debug|AVR.Build.0 = Debug|AVR
+		{DFA42926-0B91-4204-A16F-915783C3C267}.Release|AVR.ActiveCfg = Release|AVR
+		{DFA42926-0B91-4204-A16F-915783C3C267}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,748 @@
+
+GccApplication4.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000362  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         000000c2  00800060  00000362  000003f6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000078  00800122  00800122  000004b8  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000004b8  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000b0  00000000  00000000  000004e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001459  00000000  00000000  00000598  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000382  00000000  00000000  000019f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000004a0  00000000  00000000  00001d73  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000144  00000000  00000000  00002214  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000408  00000000  00000000  00002358  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000432  00000000  00000000  00002760  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000090  00000000  00000000  00002b92  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	11 e0       	ldi	r17, 0x01	; 1
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e2 e6       	ldi	r30, 0x62	; 98
+  3a:	f3 e0       	ldi	r31, 0x03	; 3
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a2 32       	cpi	r26, 0x22	; 34
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	21 e0       	ldi	r18, 0x01	; 1
+  4a:	a2 e2       	ldi	r26, 0x22	; 34
+  4c:	b1 e0       	ldi	r27, 0x01	; 1
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	aa 39       	cpi	r26, 0x9A	; 154
+  54:	b2 07       	cpc	r27, r18
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	43 d1       	rcall	.+646    	; 0x2e0 <main>
+  5a:	81 c1       	rjmp	.+770    	; 0x35e <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <ATMEGA_Init>:
+		char bytes_RXFIFO = ccxxx0_Read(CCxxx0_RXBYTES);
+		//transmit_UART0(bytes_RXFIFO);
+		if(transmit_enable==1)
+		{
+			transmit_string_UART0("transmitting\r\n");
+			CC_Transmit(pkt_length);	
+  5e:	81 e0       	ldi	r24, 0x01	; 1
+  60:	84 bb       	out	0x14, r24	; 20
+	//		transmit_enable=0;
+			transmit_check=1;
+  62:	85 bb       	out	0x15, r24	; 21
+  64:	57 d1       	rcall	.+686    	; 0x314 <init_UART0>
+			//Receive Enable
+			ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+  66:	bc 98       	cbi	0x17, 4	; 23
+  68:	bd 9a       	sbi	0x17, 5	; 23
+			ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+  6a:	bb 9a       	sbi	0x17, 3	; 23
+  6c:	ba 9a       	sbi	0x17, 2	; 23
+  6e:	be 98       	cbi	0x17, 6	; 23
+  70:	83 e5       	ldi	r24, 0x53	; 83
+  72:	8d b9       	out	0x0d, r24	; 13
+  74:	1e b8       	out	0x0e, r1	; 14
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  76:	c2 9a       	sbi	0x18, 2	; 24
+  78:	c3 98       	cbi	0x18, 3	; 24
+  7a:	c5 9a       	sbi	0x18, 5	; 24
+  7c:	08 95       	ret
+
+0000007e <ccxxx0_Read>:
+  7e:	c2 98       	cbi	0x18, 2	; 24
+  80:	b4 99       	sbic	0x16, 4	; 22
+			_delay_ms(1);
+			ccxxx0_Strobe(CCxxx0_SFRX); // flush rx buf
+  82:	fe cf       	rjmp	.-4      	; 0x80 <ccxxx0_Read+0x2>
+  84:	80 68       	ori	r24, 0x80	; 128
+			ccxxx0_Strobe(CCxxx0_SRX); // goto rx mode
+  86:	8f b9       	out	0x0f, r24	; 15
+  88:	77 9b       	sbis	0x0e, 7	; 14
+			transmit_string_UART0("transmitted\r\n");
+  8a:	fe cf       	rjmp	.-4      	; 0x88 <ccxxx0_Read+0xa>
+  8c:	8f b1       	in	r24, 0x0f	; 15
+  8e:	1f b8       	out	0x0f, r1	; 15
+  90:	77 9b       	sbis	0x0e, 7	; 14
+		}
+			
+		
+		// If you have a package for us
+		
+		else if( PINB&(1 << CC_GDO0) )
+  92:	fe cf       	rjmp	.-4      	; 0x90 <ccxxx0_Read+0x12>
+  94:	8f b1       	in	r24, 0x0f	; 15
+		{
+			transmit_string_UART0("package available \n");
+  96:	c2 9a       	sbi	0x18, 2	; 24
+  98:	08 95       	ret
+
+0000009a <ccxxx0_Write>:
+  9a:	c2 98       	cbi	0x18, 2	; 24
+			while(PINB&(1 << CC_GDO0));
+  9c:	b4 99       	sbic	0x16, 4	; 22
+  9e:	fe cf       	rjmp	.-4      	; 0x9c <ccxxx0_Write+0x2>
+			//transmit_UART0(z);
+			//transmit_UART0((i+48));
+			//transmit_UART0((i));
+			//transmit_string_UART0("\r\n");
+
+			ccxxx0_ReadBurst(CCxxx0_RXFIFO, temp, 8);
+  a0:	8f b9       	out	0x0f, r24	; 15
+  a2:	77 9b       	sbis	0x0e, 7	; 14
+  a4:	fe cf       	rjmp	.-4      	; 0xa2 <ccxxx0_Write+0x8>
+  a6:	8f b1       	in	r24, 0x0f	; 15
+  a8:	6f b9       	out	0x0f, r22	; 15
+  aa:	77 9b       	sbis	0x0e, 7	; 14
+  ac:	fe cf       	rjmp	.-4      	; 0xaa <ccxxx0_Write+0x10>
+			transmit_string_UART0("RXed data: ");
+  ae:	8f b1       	in	r24, 0x0f	; 15
+  b0:	c2 9a       	sbi	0x18, 2	; 24
+  b2:	08 95       	ret
+
+000000b4 <ccxxx0_Strobe>:
+			transmit_string_UART0((char *)temp);
+  b4:	c2 98       	cbi	0x18, 2	; 24
+  b6:	b4 99       	sbic	0x16, 4	; 22
+  b8:	fe cf       	rjmp	.-4      	; 0xb6 <ccxxx0_Strobe+0x2>
+			//transmit_string_UART0n(address, 6);
+			transmit_string_UART0("\r\n");
+  ba:	8f b9       	out	0x0f, r24	; 15
+  bc:	77 9b       	sbis	0x0e, 7	; 14
+  be:	fe cf       	rjmp	.-4      	; 0xbc <ccxxx0_Strobe+0x8>
+  c0:	8f b1       	in	r24, 0x0f	; 15
+  c2:	c2 9a       	sbi	0x18, 2	; 24
+  c4:	08 95       	ret
+
+000000c6 <ccxxx0_WriteBurst>:
+  c6:	c2 98       	cbi	0x18, 2	; 24
+  c8:	b4 99       	sbic	0x16, 4	; 22
+  ca:	fe cf       	rjmp	.-4      	; 0xc8 <ccxxx0_WriteBurst+0x2>
+			_delay_ms(1);
+			if (strncmp ((const char *)temp,(const char *)address,6) == 0)
+  cc:	80 64       	ori	r24, 0x40	; 64
+  ce:	8f b9       	out	0x0f, r24	; 15
+  d0:	77 9b       	sbis	0x0e, 7	; 14
+  d2:	fe cf       	rjmp	.-4      	; 0xd0 <ccxxx0_WriteBurst+0xa>
+  d4:	8f b1       	in	r24, 0x0f	; 15
+  d6:	41 15       	cp	r20, r1
+  d8:	51 05       	cpc	r21, r1
+  da:	51 f0       	breq	.+20     	; 0xf0 <ccxxx0_WriteBurst+0x2a>
+  dc:	fb 01       	movw	r30, r22
+			{
+				transmit_string_UART0("address matched...\n");
+  de:	46 0f       	add	r20, r22
+  e0:	57 1f       	adc	r21, r23
+  e2:	81 91       	ld	r24, Z+
+				if(temp[7]==',')
+  e4:	8f b9       	out	0x0f, r24	; 15
+  e6:	77 9b       	sbis	0x0e, 7	; 14
+  e8:	fe cf       	rjmp	.-4      	; 0xe6 <ccxxx0_WriteBurst+0x20>
+				{
+					transmit_string_UART0((char *)address);
+  ea:	e4 17       	cp	r30, r20
+  ec:	f5 07       	cpc	r31, r21
+  ee:	c9 f7       	brne	.-14     	; 0xe2 <ccxxx0_WriteBurst+0x1c>
+					transmit_UART0(temp[6]);
+  f0:	c2 9a       	sbi	0x18, 2	; 24
+  f2:	08 95       	ret
+
+000000f4 <ccxxx0_PowerOnReset>:
+					transmit_UART0(temp[7]);
+  f4:	c2 9a       	sbi	0x18, 2	; 24
+  f6:	82 e0       	ldi	r24, 0x02	; 2
+					ccxxx0_ReadBurst(CCxxx0_RXFIFO, temp,4);
+  f8:	8a 95       	dec	r24
+  fa:	f1 f7       	brne	.-4      	; 0xf8 <ccxxx0_PowerOnReset+0x4>
+  fc:	00 c0       	rjmp	.+0      	; 0xfe <ccxxx0_PowerOnReset+0xa>
+  fe:	c2 98       	cbi	0x18, 2	; 24
+ 100:	82 e0       	ldi	r24, 0x02	; 2
+ 102:	8a 95       	dec	r24
+ 104:	f1 f7       	brne	.-4      	; 0x102 <ccxxx0_PowerOnReset+0xe>
+					transmit_string_UART0((char *)temp);
+ 106:	00 c0       	rjmp	.+0      	; 0x108 <ccxxx0_PowerOnReset+0x14>
+ 108:	c2 9a       	sbi	0x18, 2	; 24
+ 10a:	8d e6       	ldi	r24, 0x6D	; 109
+ 10c:	8a 95       	dec	r24
+				}	
+				
+				else
+				{
+					transmit_string_UART0((char *)address);
+ 10e:	f1 f7       	brne	.-4      	; 0x10c <ccxxx0_PowerOnReset+0x18>
+ 110:	00 00       	nop
+ 112:	81 e7       	ldi	r24, 0x71	; 113
+					transmit_UART0(temp[6]);
+ 114:	0d d1       	rcall	.+538    	; 0x330 <transmit_UART0>
+ 116:	c2 98       	cbi	0x18, 2	; 24
+					transmit_UART0(temp[7]);
+ 118:	81 e7       	ldi	r24, 0x71	; 113
+ 11a:	0a d1       	rcall	.+532    	; 0x330 <transmit_UART0>
+					ccxxx0_ReadBurst(CCxxx0_RXFIFO, temp, pkt_length-8);
+ 11c:	b4 9b       	sbis	0x16, 4	; 22
+ 11e:	04 c0       	rjmp	.+8      	; 0x128 <ccxxx0_PowerOnReset+0x34>
+ 120:	81 e6       	ldi	r24, 0x61	; 97
+ 122:	06 d1       	rcall	.+524    	; 0x330 <transmit_UART0>
+ 124:	b4 99       	sbic	0x16, 4	; 22
+ 126:	fc cf       	rjmp	.-8      	; 0x120 <ccxxx0_PowerOnReset+0x2c>
+ 128:	85 e8       	ldi	r24, 0x85	; 133
+ 12a:	8a 95       	dec	r24
+ 12c:	f1 f7       	brne	.-4      	; 0x12a <ccxxx0_PowerOnReset+0x36>
+ 12e:	00 00       	nop
+ 130:	81 e7       	ldi	r24, 0x71	; 113
+					transmit_string_UART0((char *)temp);
+ 132:	fe d0       	rcall	.+508    	; 0x330 <transmit_UART0>
+ 134:	80 e3       	ldi	r24, 0x30	; 48
+ 136:	8f b9       	out	0x0f, r24	; 15
+				}
+			}
+			//else if(transmit_check==1)
+				//CC_Transmit();
+				
+			ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+ 138:	77 9b       	sbis	0x0e, 7	; 14
+ 13a:	fe cf       	rjmp	.-4      	; 0x138 <ccxxx0_PowerOnReset+0x44>
+			ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+ 13c:	8f b1       	in	r24, 0x0f	; 15
+ 13e:	81 e7       	ldi	r24, 0x71	; 113
+ 140:	f7 d0       	rcall	.+494    	; 0x330 <transmit_UART0>
+ 142:	b4 99       	sbic	0x16, 4	; 22
+ 144:	fe cf       	rjmp	.-4      	; 0x142 <ccxxx0_PowerOnReset+0x4e>
+ 146:	85 e8       	ldi	r24, 0x85	; 133
+ 148:	8a 95       	dec	r24
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <ccxxx0_PowerOnReset+0x54>
+ 14c:	00 00       	nop
+ 14e:	81 e7       	ldi	r24, 0x71	; 113
+ 150:	ef d0       	rcall	.+478    	; 0x330 <transmit_UART0>
+ 152:	c2 9a       	sbi	0x18, 2	; 24
+			_delay_ms(1);
+			ccxxx0_Strobe(CCxxx0_SFRX); // flush rx buf
+ 154:	8e e7       	ldi	r24, 0x7E	; 126
+ 156:	90 e0       	ldi	r25, 0x00	; 0
+			ccxxx0_Strobe(CCxxx0_SRX); // goto rx mode
+ 158:	ef d0       	rcall	.+478    	; 0x338 <transmit_string_UART0>
+ 15a:	08 95       	ret
+
+0000015c <ccxxx0_Setup>:
+ 15c:	cf 93       	push	r28
+	
+	transmit_string_UART0("Reset done...!!");
+}
+
+void ccxxx0_Setup(const RF_SETTINGS* settings)
+{
+ 15e:	df 93       	push	r29
+ 160:	ec 01       	movw	r28, r24
+	unsigned char read;
+    // Write register settings
+    ccxxx0_Write(CCxxx0_IOCFG0,   settings->IOCFG0);
+ 162:	68 81       	ld	r22, Y
+ 164:	82 e0       	ldi	r24, 0x02	; 2
+ 166:	99 df       	rcall	.-206    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_IOCFG0);
+ 168:	82 e0       	ldi	r24, 0x02	; 2
+ 16a:	89 df       	rcall	.-238    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);    
+ 16c:	e1 d0       	rcall	.+450    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FIFOTHR,  settings->FIFOTHR);
+ 16e:	69 81       	ldd	r22, Y+1	; 0x01
+ 170:	83 e0       	ldi	r24, 0x03	; 3
+ 172:	93 df       	rcall	.-218    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FIFOTHR);
+ 174:	83 e0       	ldi	r24, 0x03	; 3
+ 176:	83 df       	rcall	.-250    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 178:	db d0       	rcall	.+438    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_PKTCTRL0, settings->PKTCTRL0);
+ 17a:	6a 81       	ldd	r22, Y+2	; 0x02
+ 17c:	88 e0       	ldi	r24, 0x08	; 8
+ 17e:	8d df       	rcall	.-230    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_PKTCTRL0);
+ 180:	88 e0       	ldi	r24, 0x08	; 8
+ 182:	7d df       	rcall	.-262    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 184:	d5 d0       	rcall	.+426    	; 0x330 <transmit_UART0>
+	ccxxx0_Write(CCxxx0_FSCTRL1,  settings->FSCTRL1);
+ 186:	6b 81       	ldd	r22, Y+3	; 0x03
+ 188:	8b e0       	ldi	r24, 0x0B	; 11
+ 18a:	87 df       	rcall	.-242    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FSCTRL1);
+ 18c:	8b e0       	ldi	r24, 0x0B	; 11
+ 18e:	77 df       	rcall	.-274    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 190:	cf d0       	rcall	.+414    	; 0x330 <transmit_UART0>
+//    ccxxx0_Write(CCxxx0_FSCTRL0,  settings->FSCTRL0);
+    ccxxx0_Write(CCxxx0_FREQ2,    settings->FREQ2);
+ 192:	6c 81       	ldd	r22, Y+4	; 0x04
+ 194:	8d e0       	ldi	r24, 0x0D	; 13
+ 196:	81 df       	rcall	.-254    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FREQ2);
+ 198:	8d e0       	ldi	r24, 0x0D	; 13
+ 19a:	71 df       	rcall	.-286    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 19c:	c9 d0       	rcall	.+402    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FREQ1,    settings->FREQ1);
+ 19e:	6d 81       	ldd	r22, Y+5	; 0x05
+ 1a0:	8e e0       	ldi	r24, 0x0E	; 14
+ 1a2:	7b df       	rcall	.-266    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FREQ1);
+ 1a4:	8e e0       	ldi	r24, 0x0E	; 14
+ 1a6:	6b df       	rcall	.-298    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1a8:	c3 d0       	rcall	.+390    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FREQ0,    settings->FREQ0);
+ 1aa:	6e 81       	ldd	r22, Y+6	; 0x06
+ 1ac:	8f e0       	ldi	r24, 0x0F	; 15
+ 1ae:	75 df       	rcall	.-278    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FREQ0);
+ 1b0:	8f e0       	ldi	r24, 0x0F	; 15
+ 1b2:	65 df       	rcall	.-310    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1b4:	bd d0       	rcall	.+378    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_MDMCFG4,  settings->MDMCFG4);
+ 1b6:	6f 81       	ldd	r22, Y+7	; 0x07
+ 1b8:	80 e1       	ldi	r24, 0x10	; 16
+ 1ba:	6f df       	rcall	.-290    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_MDMCFG4);
+ 1bc:	80 e1       	ldi	r24, 0x10	; 16
+ 1be:	5f df       	rcall	.-322    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1c0:	b7 d0       	rcall	.+366    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_MDMCFG3,  settings->MDMCFG3);
+ 1c2:	68 85       	ldd	r22, Y+8	; 0x08
+ 1c4:	81 e1       	ldi	r24, 0x11	; 17
+ 1c6:	69 df       	rcall	.-302    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_MDMCFG3);
+ 1c8:	81 e1       	ldi	r24, 0x11	; 17
+ 1ca:	59 df       	rcall	.-334    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1cc:	b1 d0       	rcall	.+354    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_MDMCFG2,  settings->MDMCFG2);
+ 1ce:	69 85       	ldd	r22, Y+9	; 0x09
+ 1d0:	82 e1       	ldi	r24, 0x12	; 18
+ 1d2:	63 df       	rcall	.-314    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_MDMCFG2);
+ 1d4:	82 e1       	ldi	r24, 0x12	; 18
+ 1d6:	53 df       	rcall	.-346    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1d8:	ab d0       	rcall	.+342    	; 0x330 <transmit_UART0>
+//    ccxxx0_Write(CCxxx0_MDMCFG1,  settings->MDMCFG1);
+//    ccxxx0_Write(CCxxx0_MDMCFG0,  settings->MDMCFG0);
+    ccxxx0_Write(CCxxx0_DEVIATN,  settings->DEVIATN);
+ 1da:	6a 85       	ldd	r22, Y+10	; 0x0a
+ 1dc:	85 e1       	ldi	r24, 0x15	; 21
+ 1de:	5d df       	rcall	.-326    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_DEVIATN);
+ 1e0:	85 e1       	ldi	r24, 0x15	; 21
+ 1e2:	4d df       	rcall	.-358    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1e4:	a5 d0       	rcall	.+330    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_MCSM0 ,   settings->MCSM0 );
+ 1e6:	6b 85       	ldd	r22, Y+11	; 0x0b
+ 1e8:	88 e1       	ldi	r24, 0x18	; 24
+ 1ea:	57 df       	rcall	.-338    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_MCSM0);
+ 1ec:	88 e1       	ldi	r24, 0x18	; 24
+ 1ee:	47 df       	rcall	.-370    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1f0:	9f d0       	rcall	.+318    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FOCCFG,   settings->FOCCFG);
+ 1f2:	6c 85       	ldd	r22, Y+12	; 0x0c
+ 1f4:	89 e1       	ldi	r24, 0x19	; 25
+ 1f6:	51 df       	rcall	.-350    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FOCCFG);
+ 1f8:	89 e1       	ldi	r24, 0x19	; 25
+ 1fa:	41 df       	rcall	.-382    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 1fc:	99 d0       	rcall	.+306    	; 0x330 <transmit_UART0>
+//    ccxxx0_Write(CCxxx0_BSCFG,    settings->BSCFG);
+    ccxxx0_Write(CCxxx0_WORCTRL,  settings->WORCTRL);
+ 1fe:	6d 85       	ldd	r22, Y+13	; 0x0d
+ 200:	80 e2       	ldi	r24, 0x20	; 32
+ 202:	4b df       	rcall	.-362    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_WORCTRL);
+ 204:	80 e2       	ldi	r24, 0x20	; 32
+ 206:	3b df       	rcall	.-394    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 208:	93 d0       	rcall	.+294    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FSCAL3,   settings->FSCAL3);
+ 20a:	6e 85       	ldd	r22, Y+14	; 0x0e
+ 20c:	83 e2       	ldi	r24, 0x23	; 35
+ 20e:	45 df       	rcall	.-374    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FSCAL3);
+ 210:	83 e2       	ldi	r24, 0x23	; 35
+ 212:	35 df       	rcall	.-406    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 214:	8d d0       	rcall	.+282    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FSCAL2,   settings->FSCAL2);
+ 216:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 218:	84 e2       	ldi	r24, 0x24	; 36
+ 21a:	3f df       	rcall	.-386    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FSCAL2);
+ 21c:	84 e2       	ldi	r24, 0x24	; 36
+ 21e:	2f df       	rcall	.-418    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 220:	87 d0       	rcall	.+270    	; 0x330 <transmit_UART0>
+	ccxxx0_Write(CCxxx0_FSCAL1,   settings->FSCAL1);
+ 222:	68 89       	ldd	r22, Y+16	; 0x10
+ 224:	85 e2       	ldi	r24, 0x25	; 37
+ 226:	39 df       	rcall	.-398    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FSCAL1);
+ 228:	85 e2       	ldi	r24, 0x25	; 37
+ 22a:	29 df       	rcall	.-430    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 22c:	81 d0       	rcall	.+258    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_FSCAL0,   settings->FSCAL0);
+ 22e:	69 89       	ldd	r22, Y+17	; 0x11
+ 230:	86 e2       	ldi	r24, 0x26	; 38
+ 232:	33 df       	rcall	.-410    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_FSCAL0);
+ 234:	86 e2       	ldi	r24, 0x26	; 38
+ 236:	23 df       	rcall	.-442    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 238:	7b d0       	rcall	.+246    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_TEST2,    settings->TEST2);
+ 23a:	6a 89       	ldd	r22, Y+18	; 0x12
+ 23c:	8c e2       	ldi	r24, 0x2C	; 44
+ 23e:	2d df       	rcall	.-422    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_TEST2);
+ 240:	8c e2       	ldi	r24, 0x2C	; 44
+ 242:	1d df       	rcall	.-454    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 244:	75 d0       	rcall	.+234    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_TEST1,    settings->TEST1);
+ 246:	6b 89       	ldd	r22, Y+19	; 0x13
+ 248:	8d e2       	ldi	r24, 0x2D	; 45
+ 24a:	27 df       	rcall	.-434    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_TEST1);
+ 24c:	8d e2       	ldi	r24, 0x2D	; 45
+ 24e:	17 df       	rcall	.-466    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 250:	6f d0       	rcall	.+222    	; 0x330 <transmit_UART0>
+    ccxxx0_Write(CCxxx0_TEST0,    settings->TEST0);
+ 252:	6c 89       	ldd	r22, Y+20	; 0x14
+ 254:	8e e2       	ldi	r24, 0x2E	; 46
+ 256:	21 df       	rcall	.-446    	; 0x9a <ccxxx0_Write>
+	read = ccxxx0_Read(CCxxx0_TEST0);
+ 258:	8e e2       	ldi	r24, 0x2E	; 46
+ 25a:	11 df       	rcall	.-478    	; 0x7e <ccxxx0_Read>
+	transmit_UART0(read);
+ 25c:	69 d0       	rcall	.+210    	; 0x330 <transmit_UART0>
+	
+}
+ 25e:	df 91       	pop	r29
+ 260:	cf 91       	pop	r28
+ 262:	08 95       	ret
+
+00000264 <CC_Transmit>:
+void CC_Transmit(unsigned int pkt_length)
+{
+	char temp[7];
+	
+	//temp = address;
+	strcpy((char*)data_transmit, (const char*)address);
+ 264:	66 e7       	ldi	r22, 0x76	; 118
+ 266:	70 e0       	ldi	r23, 0x00	; 0
+ 268:	8e e5       	ldi	r24, 0x5E	; 94
+ 26a:	91 e0       	ldi	r25, 0x01	; 1
+ 26c:	71 d0       	rcall	.+226    	; 0x350 <strcpy>
+	data_transmit[7]='2';
+ 26e:	82 e3       	ldi	r24, 0x32	; 50
+ 270:	80 93 65 01 	sts	0x0165, r24
+	
+	//transmit_string_UART0("transmitting\r\n");
+	
+	ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+ 274:	86 e3       	ldi	r24, 0x36	; 54
+ 276:	1e df       	rcall	.-452    	; 0xb4 <ccxxx0_Strobe>
+	ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+ 278:	41 e0       	ldi	r20, 0x01	; 1
+ 27a:	50 e0       	ldi	r21, 0x00	; 0
+ 27c:	60 e6       	ldi	r22, 0x60	; 96
+ 27e:	70 e0       	ldi	r23, 0x00	; 0
+ 280:	8e e3       	ldi	r24, 0x3E	; 62
+ 282:	21 df       	rcall	.-446    	; 0xc6 <ccxxx0_WriteBurst>
+	ccxxx0_Strobe(CCxxx0_SFTX); // flush tx buff
+ 284:	8b e3       	ldi	r24, 0x3B	; 59
+ 286:	16 df       	rcall	.-468    	; 0xb4 <ccxxx0_Strobe>
+	
+	ccxxx0_WriteBurst(CCxxx0_TXFIFO, (unsigned char*)data_transmit,8); // addr=M, payload=4 bytes, Total PKTLEN=5//see cc1101 datasheet pg no.-40
+ 288:	48 e0       	ldi	r20, 0x08	; 8
+ 28a:	50 e0       	ldi	r21, 0x00	; 0
+ 28c:	6e e5       	ldi	r22, 0x5E	; 94
+ 28e:	71 e0       	ldi	r23, 0x01	; 1
+ 290:	8f e3       	ldi	r24, 0x3F	; 63
+ 292:	19 df       	rcall	.-462    	; 0xc6 <ccxxx0_WriteBurst>
+ 294:	8f e0       	ldi	r24, 0x0F	; 15
+ 296:	97 e2       	ldi	r25, 0x27	; 39
+ 298:	01 97       	sbiw	r24, 0x01	; 1
+ 29a:	f1 f7       	brne	.-4      	; 0x298 <CC_Transmit+0x34>
+ 29c:	00 c0       	rjmp	.+0      	; 0x29e <CC_Transmit+0x3a>
+ 29e:	00 00       	nop
+	_delay_ms(5);
+	ccxxx0_Strobe(CCxxx0_STX); // goto tx mode
+ 2a0:	85 e3       	ldi	r24, 0x35	; 53
+ 2a2:	08 df       	rcall	.-496    	; 0xb4 <ccxxx0_Strobe>
+ 2a4:	9f ef       	ldi	r25, 0xFF	; 255
+ 2a6:	2d ee       	ldi	r18, 0xED	; 237
+ 2a8:	82 e0       	ldi	r24, 0x02	; 2
+ 2aa:	91 50       	subi	r25, 0x01	; 1
+ 2ac:	20 40       	sbci	r18, 0x00	; 0
+ 2ae:	80 40       	sbci	r24, 0x00	; 0
+ 2b0:	e1 f7       	brne	.-8      	; 0x2aa <CC_Transmit+0x46>
+ 2b2:	00 c0       	rjmp	.+0      	; 0x2b4 <CC_Transmit+0x50>
+ 2b4:	00 00       	nop
+	_delay_ms(120);
+	//PORTC=0x00;
+	
+	ccxxx0_Strobe(CCxxx0_SIDLE);
+ 2b6:	86 e3       	ldi	r24, 0x36	; 54
+ 2b8:	fd de       	rcall	.-518    	; 0xb4 <ccxxx0_Strobe>
+ 2ba:	9f e7       	ldi	r25, 0x7F	; 127
+ 2bc:	28 e3       	ldi	r18, 0x38	; 56
+ 2be:	81 e0       	ldi	r24, 0x01	; 1
+ 2c0:	91 50       	subi	r25, 0x01	; 1
+ 2c2:	20 40       	sbci	r18, 0x00	; 0
+ 2c4:	80 40       	sbci	r24, 0x00	; 0
+ 2c6:	e1 f7       	brne	.-8      	; 0x2c0 <CC_Transmit+0x5c>
+ 2c8:	00 c0       	rjmp	.+0      	; 0x2ca <CC_Transmit+0x66>
+ 2ca:	00 00       	nop
+	//unsigned char byteintx = ccxxx0_Read(CCxxx0_TXBYTES);
+	//transmit_UART0(byteintx);*/
+	
+	
+	
+	transmit_string_UART0("transmitted Data: ");
+ 2cc:	8e e8       	ldi	r24, 0x8E	; 142
+ 2ce:	90 e0       	ldi	r25, 0x00	; 0
+ 2d0:	33 d0       	rcall	.+102    	; 0x338 <transmit_string_UART0>
+	transmit_string_UART0((unsigned char *)data_transmit);
+ 2d2:	8e e5       	ldi	r24, 0x5E	; 94
+ 2d4:	91 e0       	ldi	r25, 0x01	; 1
+ 2d6:	30 d0       	rcall	.+96     	; 0x338 <transmit_string_UART0>
+	transmit_string_UART0("\r\n");
+ 2d8:	88 ea       	ldi	r24, 0xA8	; 168
+ 2da:	90 e0       	ldi	r25, 0x00	; 0
+ 2dc:	2d d0       	rcall	.+90     	; 0x338 <transmit_string_UART0>
+ 2de:	08 95       	ret
+
+000002e0 <main>:
+
+	/*uint8_t rssi_dec;
+	int16_t rssi_dBm;
+	uint8_t rssi_offset = 74; // CC1101 at 433 MHz*/
+	
+	cli(); 							//Clears the global interrupts			
+ 2e0:	f8 94       	cli
+	ATMEGA_Init();
+ 2e2:	bd de       	rcall	.-646    	; 0x5e <ATMEGA_Init>
+	sei(); 
+ 2e4:	78 94       	sei
+
+	transmit_string_UART0("cc1101_PowerOnReset\r\n");
+ 2e6:	8c ef       	ldi	r24, 0xFC	; 252
+ 2e8:	90 e0       	ldi	r25, 0x00	; 0
+ 2ea:	26 d0       	rcall	.+76     	; 0x338 <transmit_string_UART0>
+ 2ec:	2f ef       	ldi	r18, 0xFF	; 255
+ 2ee:	83 ed       	ldi	r24, 0xD3	; 211
+ 2f0:	90 e3       	ldi	r25, 0x30	; 48
+ 2f2:	21 50       	subi	r18, 0x01	; 1
+ 2f4:	80 40       	sbci	r24, 0x00	; 0
+ 2f6:	90 40       	sbci	r25, 0x00	; 0
+ 2f8:	e1 f7       	brne	.-8      	; 0x2f2 <main+0x12>
+ 2fa:	00 c0       	rjmp	.+0      	; 0x2fc <main+0x1c>
+ 2fc:	00 00       	nop
+	_delay_ms(2000);
+	ccxxx0_PowerOnReset();
+ 2fe:	fa de       	rcall	.-524    	; 0xf4 <ccxxx0_PowerOnReset>
+//	PORTC=0x01;
+//	_delay_ms(1000);
+	transmit_string_UART0("cc1101_Setup\r\n");
+ 300:	82 e1       	ldi	r24, 0x12	; 18
+ 302:	91 e0       	ldi	r25, 0x01	; 1
+ 304:	19 d0       	rcall	.+50     	; 0x338 <transmit_string_UART0>
+	ccxxx0_Setup(&rfSettings);
+ 306:	81 e6       	ldi	r24, 0x61	; 97
+ 308:	90 e0       	ldi	r25, 0x00	; 0
+ 30a:	28 df       	rcall	.-432    	; 0x15c <ccxxx0_Setup>
+		//ccxxx0_Write(CCxxx0_IOCFG0, 0x2F);
+
+		while(1)
+		{
+			//CC_Receive();
+			CC_Transmit(8);
+ 30c:	88 e0       	ldi	r24, 0x08	; 8
+ 30e:	90 e0       	ldi	r25, 0x00	; 0
+ 310:	a9 df       	rcall	.-174    	; 0x264 <CC_Transmit>
+ 312:	fc cf       	rjmp	.-8      	; 0x30c <main+0x2c>
+
+00000314 <init_UART0>:
+	
+}
+*/
+void init_UART0(void)
+{
+  UCSRA = 0;
+ 314:	1b b8       	out	0x0b, r1	; 11
+  UCSRB = 0;
+ 316:	1a b8       	out	0x0a, r1	; 10
+  UCSRC = 0;
+ 318:	10 bc       	out	0x20, r1	; 32
+    
+  ///Double Baud Rate
+  UCSRA |= (1<<U2X);
+ 31a:	59 9a       	sbi	0x0b, 1	; 11
+  ///Enable Reception
+  UCSRB |=(1<<RXEN)|(1<<TXEN);
+ 31c:	8a b1       	in	r24, 0x0a	; 10
+ 31e:	88 61       	ori	r24, 0x18	; 24
+ 320:	8a b9       	out	0x0a, r24	; 10
+  ///8-bit Data Byte, 2 Stop bits
+  UCSRC |=(1<<URSEL)|(1<<UCSZ0)|(1<<UCSZ1);
+ 322:	80 b5       	in	r24, 0x20	; 32
+ 324:	86 68       	ori	r24, 0x86	; 134
+ 326:	80 bd       	out	0x20, r24	; 32
+  ///Set Baud Rate to 9600
+  UBRRL = 103;
+ 328:	87 e6       	ldi	r24, 0x67	; 103
+ 32a:	89 b9       	out	0x09, r24	; 9
+  UBRRH = 0;
+ 32c:	10 bc       	out	0x20, r1	; 32
+ 32e:	08 95       	ret
+
+00000330 <transmit_UART0>:
+}
+
+void transmit_UART0(char data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSRA & (_BV(UDRE))) );
+ 330:	5d 9b       	sbis	0x0b, 5	; 11
+ 332:	fe cf       	rjmp	.-4      	; 0x330 <transmit_UART0>
+  //* Start transmission
+  UDR = data;
+ 334:	8c b9       	out	0x0c, r24	; 12
+ 336:	08 95       	ret
+
+00000338 <transmit_string_UART0>:
+
+void transmit_string_UART0(char *buffer)
+{
+  	uint16_t i = 0;
+  	///Loop through the data
+  	while(buffer[i] != '\0')
+ 338:	fc 01       	movw	r30, r24
+ 33a:	20 81       	ld	r18, Z
+ 33c:	22 23       	and	r18, r18
+ 33e:	39 f0       	breq	.+14     	; 0x34e <transmit_string_UART0+0x16>
+ 340:	31 96       	adiw	r30, 0x01	; 1
+  	{
+    	///* Wait for empty transmit buffer 
+    	while ( !(UCSRA & (_BV(UDRE))) );
+ 342:	5d 9b       	sbis	0x0b, 5	; 11
+ 344:	fe cf       	rjmp	.-4      	; 0x342 <transmit_string_UART0+0xa>
+    	///* Start transmission
+    	UDR = buffer[i];
+ 346:	2c b9       	out	0x0c, r18	; 12
+
+void transmit_string_UART0(char *buffer)
+{
+  	uint16_t i = 0;
+  	///Loop through the data
+  	while(buffer[i] != '\0')
+ 348:	21 91       	ld	r18, Z+
+ 34a:	21 11       	cpse	r18, r1
+ 34c:	fa cf       	rjmp	.-12     	; 0x342 <transmit_string_UART0+0xa>
+ 34e:	08 95       	ret
+
+00000350 <strcpy>:
+ 350:	fb 01       	movw	r30, r22
+ 352:	dc 01       	movw	r26, r24
+ 354:	01 90       	ld	r0, Z+
+ 356:	0d 92       	st	X+, r0
+ 358:	00 20       	and	r0, r0
+ 35a:	e1 f7       	brne	.-8      	; 0x354 <strcpy+0x4>
+ 35c:	08 95       	ret
+
+0000035e <_exit>:
+ 35e:	f8 94       	cli
+
+00000360 <__stop_program>:
+ 360:	ff cf       	rjmp	.-2      	; 0x360 <__stop_program>

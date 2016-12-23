@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "hBeacon_OOKtest", "hBeacon_OOKtest.cproj", "{63BFA4B8-C1AC-4483-8DB9-574F20716A3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63BFA4B8-C1AC-4483-8DB9-574F20716A3F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{63BFA4B8-C1AC-4483-8DB9-574F20716A3F}.Debug|AVR.Build.0 = Debug|AVR
+		{63BFA4B8-C1AC-4483-8DB9-574F20716A3F}.Release|AVR.ActiveCfg = Release|AVR
+		{63BFA4B8-C1AC-4483-8DB9-574F20716A3F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

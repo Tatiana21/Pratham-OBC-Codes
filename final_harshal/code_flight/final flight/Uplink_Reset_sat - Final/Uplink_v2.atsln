@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Uplink_v2", "Uplink_v2\Uplink_v2.cproj", "{08764B51-3F08-488E-934E-5FC65FE14904}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08764B51-3F08-488E-934E-5FC65FE14904}.Debug|AVR.ActiveCfg = Debug|AVR
+		{08764B51-3F08-488E-934E-5FC65FE14904}.Debug|AVR.Build.0 = Debug|AVR
+		{08764B51-3F08-488E-934E-5FC65FE14904}.Release|AVR.ActiveCfg = Release|AVR
+		{08764B51-3F08-488E-934E-5FC65FE14904}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,594 @@
+Archive member included because of file (symbol)
+
+e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+                              e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o (exit)
+e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+                              ax25.o (__do_copy_data)
+e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+                              gps.o (__do_clear_bss)
+e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a(strcpy.o)
+                              hMaster_SlaveSPItest.o (strcpy)
+
+Allocating common symbols
+Common symbol       size              file
+
+gps                 0x2d              gps.o
+Current_state       0x55              gps.o
+GPS_done            0x1               gps.o
+Mode                0x1               gps.o
+Time                0x8               gps.o
+
+Discarded input sections
+
+ .bss           0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+ .text          0x00000000        0x0 ax25.o
+ .bss           0x00000000        0x0 ax25.o
+ .text.calculate_crc_16
+                0x00000000       0x36 ax25.o
+ .rodata.str1.1
+                0x00000000       0x15 ax25.o
+ .text.make_ax25_frame_from_data
+                0x00000000      0x102 ax25.o
+ .text          0x00000000        0x0 gps.o
+ .bss           0x00000000        0x0 gps.o
+ .text.init_UART_GPS
+                0x00000000       0x22 gps.o
+ .text          0x00000000        0x0 hm.o
+ .bss           0x00000000        0x0 hm.o
+ .text.get_HM_data
+                0x00000000       0x20 hm.o
+ .text.send_loads
+                0x00000000        0xa hm.o
+ .text          0x00000000        0x0 hMaster_SlaveSPItest.o
+ .bss           0x00000000        0x0 hMaster_SlaveSPItest.o
+ .text          0x00000000        0x0 mag.o
+ .bss           0x00000000        0x0 mag.o
+ .text.init_UART_MM
+                0x00000000       0x38 mag.o
+ .text.receive_MM
+                0x00000000        0xe mag.o
+ .text.send_MM_cmd
+                0x00000000       0x18 mag.o
+ .rodata.str1.1
+                0x00000000        0x6 mag.o
+ .text.poll_MM  0x00000000       0x26 mag.o
+ .bss.t         0x00000000        0x1 mag.o
+ .text          0x00000000        0x0 peripherals.o
+ .bss           0x00000000        0x0 peripherals.o
+ .text.power_up_peripheral
+                0x00000000       0x1a peripherals.o
+ .text.power_down_peripheral
+                0x00000000       0x1c peripherals.o
+ .text.read_GPS
+                0x00000000        0x4 peripherals.o
+ .text.read_SS  0x00000000        0x8 peripherals.o
+ .text.read_MM  0x00000000        0x4 peripherals.o
+ .text.send_preflight
+                0x00000000       0x18 peripherals.o
+ .text.configure_torquer
+                0x00000000       0x4c peripherals.o
+ .text.set_PWM  0x00000000       0x5c peripherals.o
+ .text.reset_PWM
+                0x00000000       0x28 peripherals.o
+ .bss.PWM_init  0x00000000        0x1 peripherals.o
+ .text          0x00000000        0x0 slave_comm.o
+ .bss           0x00000000        0x0 slave_comm.o
+ .text          0x00000000        0x0 spi.o
+ .bss           0x00000000        0x0 spi.o
+ .text.init_SPI_slave
+                0x00000000       0x10 spi.o
+ .text.SPI_transfer
+                0x00000000        0xa spi.o
+ .text          0x00000000        0x0 sun.o
+ .bss           0x00000000        0x0 sun.o
+ .text.configure_SS
+                0x00000000        0x6 sun.o
+ .text.poll_SS  0x00000000       0xc4 sun.o
+ .text          0x00000000        0x0 twi.o
+ .bss           0x00000000        0x0 twi.o
+ .text.init_TWI
+                0x00000000       0x10 twi.o
+ .text.TWI_rec_byte
+                0x00000000       0xb0 twi.o
+ .text.TWI_send_byte
+                0x00000000       0xa8 twi.o
+ .text          0x00000000        0x0 uart.o
+ .bss           0x00000000        0x0 uart.o
+ .text.init_UART1
+                0x00000000       0x38 uart.o
+ .text.transmit_UART1
+                0x00000000        0xe uart.o
+ .text.receive_UART1
+                0x00000000        0xe uart.o
+ .text.receive_UART0
+                0x00000000        0x8 uart.o
+ .text.transmit_string_UART1
+                0x00000000       0x18 uart.o
+ .text          0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a(strcpy.o)
+ .bss           0x00000000        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a(strcpy.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800100         0x0000ff00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+LOAD ax25.o
+LOAD gps.o
+LOAD hm.o
+LOAD hMaster_SlaveSPItest.o
+LOAD mag.o
+LOAD peripherals.o
+LOAD slave_comm.o
+LOAD spi.o
+LOAD sun.o
+LOAD twi.o
+LOAD uart.o
+START GROUP
+LOAD e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libm.a
+END GROUP
+LOAD e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a
+LOAD e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a
+LOAD e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x774
+ *(.vectors)
+ .vectors       0x00000000       0x8c e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000008c                . = ALIGN (0x2)
+                0x0000008c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000008c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000008c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000008c                __ctors_start = .
+ *(.ctors)
+                0x0000008c                __ctors_end = .
+                0x0000008c                __dtors_start = .
+ *(.dtors)
+                0x0000008c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000008c        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+                0x0000008c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000008c        0xc e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000098       0x1a e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+                0x00000098                __do_copy_data
+ .init4         0x000000b2       0x10 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+                0x000000b2                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000c2        0x8 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+ *(.init9)
+ *(.text)
+ .text          0x000000ca        0x4 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+                0x000000ca                __vector_22
+                0x000000ca                __vector_28
+                0x000000ca                __vector_1
+                0x000000ca                __vector_32
+                0x000000ca                __vector_34
+                0x000000ca                __vector_24
+                0x000000ca                __vector_12
+                0x000000ca                __bad_interrupt
+                0x000000ca                __vector_6
+                0x000000ca                __vector_31
+                0x000000ca                __vector_3
+                0x000000ca                __vector_23
+                0x000000ca                __vector_30
+                0x000000ca                __vector_25
+                0x000000ca                __vector_11
+                0x000000ca                __vector_13
+                0x000000ca                __vector_17
+                0x000000ca                __vector_19
+                0x000000ca                __vector_7
+                0x000000ca                __vector_27
+                0x000000ca                __vector_5
+                0x000000ca                __vector_33
+                0x000000ca                __vector_4
+                0x000000ca                __vector_9
+                0x000000ca                __vector_2
+                0x000000ca                __vector_21
+                0x000000ca                __vector_15
+                0x000000ca                __vector_29
+                0x000000ca                __vector_8
+                0x000000ca                __vector_26
+                0x000000ca                __vector_14
+                0x000000ca                __vector_10
+                0x000000ca                __vector_16
+                0x000000ca                __vector_20
+                0x000000ce                . = ALIGN (0x2)
+ *(.text.*)
+ .text.update_crc_16
+                0x000000ce       0x24 ax25.o
+                0x000000ce                update_crc_16
+ .text.__vector_18
+                0x000000f2      0x2a0 gps.o
+                0x000000f2                __vector_18
+ .text.startup.main
+                0x00000392      0x1cc hMaster_SlaveSPItest.o
+                0x00000392                main
+ .text.slave_send
+                0x0000055e      0x176 slave_comm.o
+                0x0000055e                slave_send
+ .text.init_SPI
+                0x000006d4       0x1c spi.o
+                0x000006d4                init_SPI
+ .text.init_SPI_trans
+                0x000006f0       0x1e spi.o
+                0x000006f0                init_SPI_trans
+ .text.SPI_send
+                0x0000070e       0x18 spi.o
+                0x0000070e                SPI_send
+ .text.init_UART0
+                0x00000726       0x22 uart.o
+                0x00000726                init_UART0
+ .text.transmit_UART0
+                0x00000748        0x8 uart.o
+                0x00000748                transmit_UART0
+ .text.transmit_string_UART0
+                0x00000750       0x12 uart.o
+                0x00000750                transmit_string_UART0
+ .text.avr-libc
+                0x00000762        0xe e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a(strcpy.o)
+                0x00000762                strcpy
+                0x00000770                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000770        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+                0x00000770                _exit
+                0x00000770                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000770        0x4 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000774                _etext = .
+
+.data           0x00800100       0x80 load address 0x00000774
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+ .data          0x00800100        0x0 ax25.o
+ .data          0x00800100        0x0 gps.o
+ .data          0x00800100        0x0 hm.o
+ .data          0x00800100        0x0 hMaster_SlaveSPItest.o
+ .data          0x00800100        0x0 mag.o
+ .data          0x00800100        0x0 peripherals.o
+ .data          0x00800100        0x0 slave_comm.o
+ .data          0x00800100        0x0 spi.o
+ .data          0x00800100        0x0 sun.o
+ .data          0x00800100        0x0 twi.o
+ .data          0x00800100        0x0 uart.o
+ .data          0x00800100        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_exit.o)
+ .data          0x00800100        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_copy_data.o)
+ .data          0x00800100        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr51\libgcc.a(_clear_bss.o)
+ .data          0x00800100        0x0 e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a(strcpy.o)
+ *(.data*)
+ .data.pdop     0x00800100        0x2 gps.o
+ .data.time     0x00800102        0x1 gps.o
+ .data.geo      0x00800103        0x1 gps.o
+ .data.dop      0x00800104        0x1 gps.o
+ .data.vel      0x00800105        0x1 gps.o
+ .data.pos      0x00800106        0x1 gps.o
+ *(.rodata)
+ *(.rodata*)
+ .rodata.str1.1
+                0x00800107       0x78 hMaster_SlaveSPItest.o
+ *(.gnu.linkonce.d*)
+                0x00800180                . = ALIGN (0x2)
+ *fill*         0x0080017f        0x1 
+                0x00800180                _edata = .
+                0x00800180                PROVIDE (__data_end, .)
+
+.bss            0x00800180       0x96
+                0x00800180                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.message_end
+                0x00800180        0x1 gps.o
+ .bss.last_byte
+                0x00800181        0x1 gps.o
+ .bss.buffer    0x00800182        0x4 gps.o
+ .bss.seq.1897  0x00800186        0x4 slave_comm.o
+ *(COMMON)
+ COMMON         0x0080018a       0x8c gps.o
+                0x0080018a                gps
+                0x008001b7                Current_state
+                0x0080020c                GPS_done
+                0x0080020d                Mode
+                0x0080020e                Time
+                0x00800216                PROVIDE (__bss_end, .)
+                0x00000774                __data_load_start = LOADADDR (.data)
+                0x000007f4                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800216        0x0
+                0x00800216                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800216                PROVIDE (__noinit_end, .)
+                0x00800216                _end = .
+                0x00800216                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x00000000      0x738
+ *(.stab)
+ .stab          0x00000000      0x6cc e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+ .stab          0x000006cc       0x6c e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51\libc.a(strcpy.o)
+                                 0x78 (size before relaxing)
+
+.stabstr        0x00000000      0x10b
+ *(.stabstr)
+ .stabstr       0x00000000      0x10b e:/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr51/crtm128.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x2f
+ *(.comment)
+ .comment       0x00000000       0x2f ax25.o
+                                 0x30 (size before relaxing)
+ .comment       0x00000000       0x30 gps.o
+ .comment       0x00000000       0x30 hm.o
+ .comment       0x00000000       0x30 hMaster_SlaveSPItest.o
+ .comment       0x00000000       0x30 mag.o
+ .comment       0x00000000       0x30 peripherals.o
+ .comment       0x00000000       0x30 slave_comm.o
+ .comment       0x00000000       0x30 spi.o
+ .comment       0x00000000       0x30 sun.o
+ .comment       0x00000000       0x30 twi.o
+ .comment       0x00000000       0x30 uart.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(hMaster_SlaveSPItest.elf elf32-avr)
+LOAD linker stubs

@@ -1,0 +1,45 @@
+Partlist
+
+Exported from ADCv1_18_2_12.brd at 28-02-2012 23:57:54
+
+EAGLE Version 5.10.0 Copyright (c) 1988-2010 CadSoft
+
+Part     Value          Package    Library   Position (inch)       Orientation
+
+IC1      ADS7951_       TSSOP30_   satellite (1.8025 1.98)         R270
+IC2      OPA2376        SO-8       satellite (3.294 2.173)         R90
+IC3      OPA2376        SO-8       satellite (3.128 1.274)         R270
+IC4      OPA2376        SO-8       satellite (0.952 1.629)         R270
+L1       0.1nH          L2012C     rcl       (4.24 1.07)           R90
+R1       10K            M1206      rcl       (0.938 1.146)         R0
+R2       10K            M1206      rcl       (0.812 1.35)          R0
+R3       220            M1206      satellite (2.829 2.173)         R90
+R4       220            M1206      satellite (3.696 2.123)         R270
+R5       220            M1206      satellite (3.518 1.274)         R270
+R6       220            M1206      satellite (2.7645 1.324)        R90
+R7       220            M1206      satellite (1.377953 1.62)       R270
+R8       220            M1206      satellite (0.604 1.683)         R90
+R9       10K            M1206      satellite (2.067 2.294)         R90
+R10      10K            M1206      satellite (2.2095 2.2965)       R90
+R11      10K            M1206      satellite (2.002 1.622)         R270
+R12      10K            M1206      satellite (1.602 1.622)         R90
+R13      10K            M1206      satellite (1.117 2.11)          R270
+R14      10K            M1206      satellite (1.237 2.108)         R270
+TP_CS    TPSQTP12R      TP12R      testpad   (4.15 1.45)           R0
+TP_MISO  TPSQTP12R      TP12R      testpad   (4.15 1.65)           R0
+TP_MOSI  TPSQTP12R      TP12R      testpad   (4.15 1.75)           R0
+TP_PD    TPSQTP12R      TP12R      testpad   (4.15 2.3)            R0
+TP_RANGE TPSQTP12R      TP12R      testpad   (4.15 2.4)            R0
+TP_SCK   TPSQTP12R      TP12R      testpad   (4.15 1.55)           R0
+U$1      MOUNT_SQ       MOUNT_10MM satellite (0.19685 0.19685)     R0
+U$6      MOUNT_SQ       MOUNT_10MM satellite (0.19685 2.795276)    R0
+U$7      MOUNT_SQ       MOUNT_10MM satellite (4.527559 0.19685)    R0
+U$8      MOUNT_SQ       MOUNT_10MM satellite (4.527559 2.795276)   R0
+U$9      MOUNT_SQ       MOUNT_10MM satellite (2.362205 1.496063)   R0
+X1-SS1   SS1            F09HP      satellite (1.377953 2.598425)   R0
+X2-SS2   SS2            F09HP      satellite (3.346457 2.598425)   R0
+X3-OBC   OBC            F15HP      satellite (4.417323 1.496063)   R270
+X4-SS3   SS3            F09HP      satellite (3.700787 0.307087)   R180
+X5-SS4   SS4            F09HP      satellite (2.362205 0.307087)   R180
+X6-SS5   SS5            F09HP      satellite (1.023622 0.307087)   R180
+X7-SS6   SS6            F09HP      satellite (0.393701 1.496063)   R90
