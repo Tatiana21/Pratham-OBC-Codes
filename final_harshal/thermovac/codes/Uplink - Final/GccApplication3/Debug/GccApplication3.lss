@@ -1,0 +1,1475 @@
+
+GccApplication3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000074c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         000000b4  00800060  0000074c  000007e0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          000000bb  00800114  00800114  00000894  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000894  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000b0  00000000  00000000  000008c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001258  00000000  00000000  00000974  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000306  00000000  00000000  00001bcc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000417  00000000  00000000  00001ed2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000178  00000000  00000000  000022ec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000005fc  00000000  00000000  00002464  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000071d  00000000  00000000  00002a60  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000c0  00000000  00000000  0000317d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	11 e0       	ldi	r17, 0x01	; 1
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ec e4       	ldi	r30, 0x4C	; 76
+  68:	f7 e0       	ldi	r31, 0x07	; 7
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a4 31       	cpi	r26, 0x14	; 20
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	21 e0       	ldi	r18, 0x01	; 1
+  78:	a4 e1       	ldi	r26, 0x14	; 20
+  7a:	b1 e0       	ldi	r27, 0x01	; 1
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	af 3c       	cpi	r26, 0xCF	; 207
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 5b 03 	call	0x6b6	; 0x6b6 <main>
+  8a:	0c 94 a4 03 	jmp	0x748	; 0x748 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <_Z9uart_putch>:
+void pwm_set_G(unsigned char,unsigned char);
+void pwm_set_B(unsigned char,unsigned char);
+
+void uart_putc(unsigned char c) {
+	// wait until UDR ready
+	while(!(UCSRA & (1 << UDRE)));
+  92:	5d 9b       	sbis	0x0b, 5	; 11
+  94:	fe cf       	rjmp	.-4      	; 0x92 <_Z9uart_putch>
+	UDR = c; // send character
+  96:	8c b9       	out	0x0c, r24	; 12
+  98:	08 95       	ret
+
+0000009a <_Z9uart_putsPh>:
+}
+
+/*****
+	Sends the string (null-terminated string).
+*****/
+void uart_puts(unsigned char *s) {
+  9a:	cf 93       	push	r28
+  9c:	df 93       	push	r29
+  9e:	ec 01       	movw	r28, r24
+	//  loop until *s != NULL
+	while (*s) {
+  a0:	88 81       	ld	r24, Y
+  a2:	88 23       	and	r24, r24
+  a4:	31 f0       	breq	.+12     	; 0xb2 <_Z9uart_putsPh+0x18>
+  a6:	21 96       	adiw	r28, 0x01	; 1
+		uart_putc(*s);
+  a8:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+/*****
+	Sends the string (null-terminated string).
+*****/
+void uart_puts(unsigned char *s) {
+	//  loop until *s != NULL
+	while (*s) {
+  ac:	89 91       	ld	r24, Y+
+  ae:	81 11       	cpse	r24, r1
+  b0:	fb cf       	rjmp	.-10     	; 0xa8 <_Z9uart_putsPh+0xe>
+		uart_putc(*s);
+		s++;
+	}
+}
+  b2:	df 91       	pop	r29
+  b4:	cf 91       	pop	r28
+  b6:	08 95       	ret
+
+000000b8 <_Z10uart_putsnPhh>:
+
+/*****
+	Sends the string , n characters
+*****/
+void uart_putsn(unsigned char *s, unsigned char n) {
+  b8:	1f 93       	push	r17
+  ba:	cf 93       	push	r28
+  bc:	df 93       	push	r29
+  be:	ec 01       	movw	r28, r24
+  c0:	16 2f       	mov	r17, r22
+	while (n>0) {
+  c2:	66 23       	and	r22, r22
+  c4:	29 f0       	breq	.+10     	; 0xd0 <_Z10uart_putsnPhh+0x18>
+		uart_putc(*s);
+  c6:	89 91       	ld	r24, Y+
+  c8:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+		s++;
+		n--;
+  cc:	11 50       	subi	r17, 0x01	; 1
+
+/*****
+	Sends the string , n characters
+*****/
+void uart_putsn(unsigned char *s, unsigned char n) {
+	while (n>0) {
+  ce:	d9 f7       	brne	.-10     	; 0xc6 <_Z10uart_putsnPhh+0xe>
+		uart_putc(*s);
+		s++;
+		n--;
+	}
+}
+  d0:	df 91       	pop	r29
+  d2:	cf 91       	pop	r28
+  d4:	1f 91       	pop	r17
+  d6:	08 95       	ret
+
+000000d8 <_Z11ATMEGA_Initv>:
+}
+
+
+void ATMEGA_Init(void) {
+	
+	DDRC =0x00;
+  d8:	14 ba       	out	0x14, r1	; 20
+	DDRA =0xFF;
+  da:	8f ef       	ldi	r24, 0xFF	; 255
+  dc:	8a bb       	out	0x1a, r24	; 26
+	//PORTC=0x00;
+	
+//UART register config
+ 	UCSRB=0x00;  //disable while setting baud rate
+  de:	1a b8       	out	0x0a, r1	; 10
+	UCSRA=0x00;  //disable while setting baud rate
+  e0:	1b b8       	out	0x0b, r1	; 11
+	UCSRC=0x06;  //Setting 8 bit serial communication
+  e2:	86 e0       	ldi	r24, 0x06	; 6
+  e4:	80 bd       	out	0x20, r24	; 32
+	UBRRH=0x00;
+  e6:	10 bc       	out	0x20, r1	; 32
+	UBRRL=0x5F; //Baud Rate of 9600
+  e8:	8f e5       	ldi	r24, 0x5F	; 95
+  ea:	89 b9       	out	0x09, r24	; 9
+	UCSRA=0x00;
+  ec:	1b b8       	out	0x0b, r1	; 11
+	UCSRB=0x08; //Enabling  TX 
+  ee:	88 e0       	ldi	r24, 0x08	; 8
+  f0:	8a b9       	out	0x0a, r24	; 10
+
+
+// SPI register config
+	DDRB &= ~(1 << SPIDI);	// set port B SPI data input to input
+  f2:	be 98       	cbi	0x17, 6	; 23
+	DDRB |= (1 << SPICLK) ;	// set port B SPI clock to output
+  f4:	bf 9a       	sbi	0x17, 7	; 23
+	DDRB |= (1 << SPIDO);	// set port B SPI data out to output 
+  f6:	bd 9a       	sbi	0x17, 5	; 23
+	DDRB |= (1 << SPICS);	// set port B SPI chip select to output
+  f8:	bc 9a       	sbi	0x17, 4	; 23
+	DDRB &= ~(1 << CC_GDO0);	// set port B packet received pin to input
+  fa:	b8 98       	cbi	0x17, 0	; 23
+	
+	SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR1) | (1 << SPR0) ;//| (1 << SPI2X) ;// | (1 << SPR1) ;// | (1 << SPR0);
+  fc:	83 e5       	ldi	r24, 0x53	; 83
+  fe:	8d b9       	out	0x0d, r24	; 13
+	SPSR = 0x00;	
+ 100:	1e b8       	out	0x0e, r1	; 14
+
+	PORTB |= (1 << SPICS);	// set chip select to high (CC is NOT selected)
+ 102:	c4 9a       	sbi	0x18, 4	; 24
+	PORTB &= ~(1 << SPIDO);	// data out =0
+ 104:	c5 98       	cbi	0x18, 5	; 24
+	PORTB |= (1 << SPICLK); // clock out =1
+ 106:	c7 9a       	sbi	0x18, 7	; 24
+	
+	
+//PWM Initialisation
+	TCCR0|=(1<<WGM00)|(1<<WGM01)|(1<<COM01)|(1<<CS00);
+ 108:	83 b7       	in	r24, 0x33	; 51
+ 10a:	89 66       	ori	r24, 0x69	; 105
+ 10c:	83 bf       	out	0x33, r24	; 51
+	TCCR1A = (1<<WGM10)|(1<<COM01)|(1<<COM1A1)|(1<<COM1B1);
+ 10e:	81 ea       	ldi	r24, 0xA1	; 161
+ 110:	8f bd       	out	0x2f, r24	; 47
+    TCCR1B = (1<<WGM12) | (1 << CS10);
+ 112:	89 e0       	ldi	r24, 0x09	; 9
+ 114:	8e bd       	out	0x2e, r24	; 46
+	TCCR2|=(1<<WGM20)|(1<<WGM21)|(1<<COM21)|(1<<CS20);
+ 116:	85 b5       	in	r24, 0x25	; 37
+ 118:	89 66       	ori	r24, 0x69	; 105
+ 11a:	85 bd       	out	0x25, r24	; 37
+		
+		
+	//Set OC0 PIN as output. It is  PB3 on ATmega16 ATmega32
+	DDRB|=(1<<PB3);
+ 11c:	bb 9a       	sbi	0x17, 3	; 23
+	DDRD|=(1<<PD5);
+ 11e:	8d 9a       	sbi	0x11, 5	; 17
+	DDRD|=(1<<PD4);
+ 120:	8c 9a       	sbi	0x11, 4	; 17
+	DDRD|=(1<<PD7);
+ 122:	8f 9a       	sbi	0x11, 7	; 17
+ 124:	08 95       	ret
+
+00000126 <_Z11ccxxx0_Readh>:
+
+
+unsigned char ccxxx0_Read(unsigned char addr)
+{
+    unsigned char x;
+	PORTB &= ~(1 << CC_CSN);
+ 126:	c4 98       	cbi	0x18, 4	; 24
+
+	while(PINB & (1 << CC_SO));
+ 128:	b6 99       	sbic	0x16, 6	; 22
+ 12a:	fe cf       	rjmp	.-4      	; 0x128 <_Z11ccxxx0_Readh+0x2>
+
+    SPDR = (addr | 0x80);
+ 12c:	80 68       	ori	r24, 0x80	; 128
+ 12e:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 130:	77 9b       	sbis	0x0e, 7	; 14
+ 132:	fe cf       	rjmp	.-4      	; 0x130 <_Z11ccxxx0_Readh+0xa>
+    x = SPDR; // flush SPDR
+ 134:	8f b1       	in	r24, 0x0f	; 15
+
+    SPDR = 0;
+ 136:	1f b8       	out	0x0f, r1	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 138:	77 9b       	sbis	0x0e, 7	; 14
+ 13a:	fe cf       	rjmp	.-4      	; 0x138 <_Z11ccxxx0_Readh+0x12>
+    x = SPDR; //// flush SPDR
+ 13c:	8f b1       	in	r24, 0x0f	; 15
+
+    PORTB |= (1 << CC_CSN);
+ 13e:	c4 9a       	sbi	0x18, 4	; 24
+
+    return x;
+}
+ 140:	08 95       	ret
+
+00000142 <_Z12ccxxx0_Writehh>:
+
+unsigned char ccxxx0_Write(unsigned char addr, unsigned char dat)
+{
+    unsigned char x;
+	PORTB &= ~(1 << CC_CSN);
+ 142:	c4 98       	cbi	0x18, 4	; 24
+
+	while(PINB & (1 << CC_SO));
+ 144:	b6 99       	sbic	0x16, 6	; 22
+ 146:	fe cf       	rjmp	.-4      	; 0x144 <_Z12ccxxx0_Writehh+0x2>
+
+    SPDR = addr;
+ 148:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 14a:	77 9b       	sbis	0x0e, 7	; 14
+ 14c:	fe cf       	rjmp	.-4      	; 0x14a <_Z12ccxxx0_Writehh+0x8>
+	x = SPDR;// flush SPDR
+ 14e:	8f b1       	in	r24, 0x0f	; 15
+	
+	SPDR = dat;
+ 150:	6f b9       	out	0x0f, r22	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 152:	77 9b       	sbis	0x0e, 7	; 14
+ 154:	fe cf       	rjmp	.-4      	; 0x152 <_Z12ccxxx0_Writehh+0x10>
+    x = SPDR; // get data from SPDR
+ 156:	8f b1       	in	r24, 0x0f	; 15
+
+    PORTB |= (1 << CC_CSN);
+ 158:	c4 9a       	sbi	0x18, 4	; 24
+
+    return x;
+}
+ 15a:	08 95       	ret
+
+0000015c <_Z13ccxxx0_Strobeh>:
+
+unsigned char ccxxx0_Strobe(unsigned char addr)
+{
+    unsigned char x;
+	PORTB &= ~(1 << CC_CSN);
+ 15c:	c4 98       	cbi	0x18, 4	; 24
+
+	while(PINB & (1 << CC_SO));
+ 15e:	b6 99       	sbic	0x16, 6	; 22
+ 160:	fe cf       	rjmp	.-4      	; 0x15e <_Z13ccxxx0_Strobeh+0x2>
+
+    SPDR = addr;
+ 162:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 164:	77 9b       	sbis	0x0e, 7	; 14
+ 166:	fe cf       	rjmp	.-4      	; 0x164 <_Z13ccxxx0_Strobeh+0x8>
+    x = SPDR; // flush SPDR
+ 168:	8f b1       	in	r24, 0x0f	; 15
+
+    PORTB |= (1 << CC_CSN);
+ 16a:	c4 9a       	sbi	0x18, 4	; 24
+
+    return x;
+}
+ 16c:	08 95       	ret
+
+0000016e <_Z16ccxxx0_ReadBursthPhj>:
+
+void ccxxx0_ReadBurst(unsigned char addr, unsigned char* dataPtr, unsigned int dataCount)
+{
+	unsigned char x;
+
+	PORTB &= ~(1 << CC_CSN);
+ 16e:	c4 98       	cbi	0x18, 4	; 24
+
+	while(PINB & (1 << CC_SO));
+ 170:	b6 99       	sbic	0x16, 6	; 22
+ 172:	fe cf       	rjmp	.-4      	; 0x170 <_Z16ccxxx0_ReadBursthPhj+0x2>
+
+    SPDR = (addr | 0xc0);
+ 174:	80 6c       	ori	r24, 0xC0	; 192
+ 176:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 178:	77 9b       	sbis	0x0e, 7	; 14
+ 17a:	fe cf       	rjmp	.-4      	; 0x178 <_Z16ccxxx0_ReadBursthPhj+0xa>
+	x = SPDR;// flush SPDR
+ 17c:	8f b1       	in	r24, 0x0f	; 15
+
+	while(dataCount) {
+ 17e:	41 15       	cp	r20, r1
+ 180:	51 05       	cpc	r21, r1
+ 182:	59 f0       	breq	.+22     	; 0x19a <_Z16ccxxx0_ReadBursthPhj+0x2c>
+ 184:	fb 01       	movw	r30, r22
+ 186:	46 0f       	add	r20, r22
+ 188:	57 1f       	adc	r21, r23
+	    SPDR = 0;
+ 18a:	1f b8       	out	0x0f, r1	; 15
+		while(!(SPSR & (1<<SPIF)));
+ 18c:	77 9b       	sbis	0x0e, 7	; 14
+ 18e:	fe cf       	rjmp	.-4      	; 0x18c <_Z16ccxxx0_ReadBursthPhj+0x1e>
+
+	    *dataPtr++ = SPDR; // get data from SPDR
+ 190:	8f b1       	in	r24, 0x0f	; 15
+ 192:	81 93       	st	Z+, r24
+
+    SPDR = (addr | 0xc0);
+	while(!(SPSR & (1<<SPIF)));
+	x = SPDR;// flush SPDR
+
+	while(dataCount) {
+ 194:	e4 17       	cp	r30, r20
+ 196:	f5 07       	cpc	r31, r21
+ 198:	c1 f7       	brne	.-16     	; 0x18a <_Z16ccxxx0_ReadBursthPhj+0x1c>
+
+	    *dataPtr++ = SPDR; // get data from SPDR
+		dataCount--;
+	}
+
+    PORTB |= (1 << CC_CSN);
+ 19a:	c4 9a       	sbi	0x18, 4	; 24
+ 19c:	08 95       	ret
+
+0000019e <_Z17ccxxx0_WriteBursthPhj>:
+
+void ccxxx0_WriteBurst(unsigned char addr, unsigned char* dataPtr, unsigned int dataCount)
+{
+	unsigned char x;
+
+	PORTB &= ~(1 << CC_CSN);
+ 19e:	c4 98       	cbi	0x18, 4	; 24
+
+	while(PINB & (1 << CC_SO));
+ 1a0:	b6 99       	sbic	0x16, 6	; 22
+ 1a2:	fe cf       	rjmp	.-4      	; 0x1a0 <_Z17ccxxx0_WriteBursthPhj+0x2>
+
+    SPDR = addr | 0x40;
+ 1a4:	80 64       	ori	r24, 0x40	; 64
+ 1a6:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 1a8:	77 9b       	sbis	0x0e, 7	; 14
+ 1aa:	fe cf       	rjmp	.-4      	; 0x1a8 <_Z17ccxxx0_WriteBursthPhj+0xa>
+	x = SPDR; // flush SPDR
+ 1ac:	8f b1       	in	r24, 0x0f	; 15
+
+	while(dataCount) {
+ 1ae:	41 15       	cp	r20, r1
+ 1b0:	51 05       	cpc	r21, r1
+ 1b2:	51 f0       	breq	.+20     	; 0x1c8 <_Z17ccxxx0_WriteBursthPhj+0x2a>
+ 1b4:	fb 01       	movw	r30, r22
+ 1b6:	46 0f       	add	r20, r22
+ 1b8:	57 1f       	adc	r21, r23
+	    SPDR = *dataPtr++;
+ 1ba:	81 91       	ld	r24, Z+
+ 1bc:	8f b9       	out	0x0f, r24	; 15
+		while(!(SPSR & (1<<SPIF)));
+ 1be:	77 9b       	sbis	0x0e, 7	; 14
+ 1c0:	fe cf       	rjmp	.-4      	; 0x1be <_Z17ccxxx0_WriteBursthPhj+0x20>
+
+    SPDR = addr | 0x40;
+	while(!(SPSR & (1<<SPIF)));
+	x = SPDR; // flush SPDR
+
+	while(dataCount) {
+ 1c2:	e4 17       	cp	r30, r20
+ 1c4:	f5 07       	cpc	r31, r21
+ 1c6:	c9 f7       	brne	.-14     	; 0x1ba <_Z17ccxxx0_WriteBursthPhj+0x1c>
+		while(!(SPSR & (1<<SPIF)));
+
+		dataCount--;
+	}
+
+    PORTB |= (1 << CC_CSN);
+ 1c8:	c4 9a       	sbi	0x18, 4	; 24
+ 1ca:	08 95       	ret
+
+000001cc <_Z19ccxxx0_PowerOnResetv>:
+
+void ccxxx0_PowerOnReset(void)
+{
+	unsigned char x;
+	//datasheet cc1101 pg on.51
+    PORTB |= (1 << CC_CSN);
+ 1cc:	c4 9a       	sbi	0x18, 4	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <_Z19ccxxx0_PowerOnResetv+0x4>
+ 1d0:	00 c0       	rjmp	.+0      	; 0x1d2 <_Z19ccxxx0_PowerOnResetv+0x6>
+ 1d2:	00 00       	nop
+	_delay_us(5);
+	PORTB &= ~(1 << CC_CSN);
+ 1d4:	c4 98       	cbi	0x18, 4	; 24
+ 1d6:	83 e0       	ldi	r24, 0x03	; 3
+ 1d8:	8a 95       	dec	r24
+ 1da:	f1 f7       	brne	.-4      	; 0x1d8 <_Z19ccxxx0_PowerOnResetv+0xc>
+ 1dc:	00 00       	nop
+	_delay_us(10);
+    PORTB |= (1 << CC_CSN);
+ 1de:	c4 9a       	sbi	0x18, 4	; 24
+ 1e0:	8d e0       	ldi	r24, 0x0D	; 13
+ 1e2:	8a 95       	dec	r24
+ 1e4:	f1 f7       	brne	.-4      	; 0x1e2 <_Z19ccxxx0_PowerOnResetv+0x16>
+ 1e6:	00 c0       	rjmp	.+0      	; 0x1e8 <_Z19ccxxx0_PowerOnResetv+0x1c>
+	_delay_us(41);
+
+	PORTB &= ~(1 << CC_CSN);
+ 1e8:	c4 98       	cbi	0x18, 4	; 24
+
+	while(PINB & (1 << CC_SO));
+ 1ea:	b6 99       	sbic	0x16, 6	; 22
+ 1ec:	fe cf       	rjmp	.-4      	; 0x1ea <_Z19ccxxx0_PowerOnResetv+0x1e>
+
+	//_delay_us(50); 
+
+    SPDR = CCxxx0_SRES;
+ 1ee:	80 e3       	ldi	r24, 0x30	; 48
+ 1f0:	8f b9       	out	0x0f, r24	; 15
+	while(!(SPSR & (1<<SPIF)));
+ 1f2:	77 9b       	sbis	0x0e, 7	; 14
+ 1f4:	fe cf       	rjmp	.-4      	; 0x1f2 <_Z19ccxxx0_PowerOnResetv+0x26>
+	x = SPDR; // flush SPDR
+ 1f6:	8f b1       	in	r24, 0x0f	; 15
+
+	while(PINB & (1 << CC_SO));
+ 1f8:	b6 99       	sbic	0x16, 6	; 22
+ 1fa:	fe cf       	rjmp	.-4      	; 0x1f8 <_Z19ccxxx0_PowerOnResetv+0x2c>
+
+	//_delay_us(50); 
+
+    PORTB |= (1 << CC_CSN);
+ 1fc:	c4 9a       	sbi	0x18, 4	; 24
+	uart_puts((unsigned char *)"exiting power function\r\n");
+ 1fe:	81 e8       	ldi	r24, 0x81	; 129
+ 200:	90 e0       	ldi	r25, 0x00	; 0
+ 202:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+ 206:	08 95       	ret
+
+00000208 <_Z12ccxxx0_SetupPK11RF_SETTINGS>:
+}
+
+void ccxxx0_Setup(const RF_SETTINGS* settings)
+{
+ 208:	cf 93       	push	r28
+ 20a:	df 93       	push	r29
+ 20c:	ec 01       	movw	r28, r24
+    unsigned char read;
+    // Write register settings
+    ccxxx0_Write(CCxxx0_IOCFG0,   settings->IOCFG0);
+ 20e:	68 81       	ld	r22, Y
+ 210:	82 e0       	ldi	r24, 0x02	; 2
+ 212:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    read = ccxxx0_Read(CCxxx0_IOCFG0);
+ 216:	82 e0       	ldi	r24, 0x02	; 2
+ 218:	0e 94 93 00 	call	0x126	; 0x126 <_Z11ccxxx0_Readh>
+    uart_putc(read);
+ 21c:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+    ccxxx0_Write(CCxxx0_FIFOTHR,  settings->FIFOTHR);
+ 220:	69 81       	ldd	r22, Y+1	; 0x01
+ 222:	83 e0       	ldi	r24, 0x03	; 3
+ 224:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    read = ccxxx0_Read(CCxxx0_FIFOTHR);
+ 228:	83 e0       	ldi	r24, 0x03	; 3
+ 22a:	0e 94 93 00 	call	0x126	; 0x126 <_Z11ccxxx0_Readh>
+    uart_putc(read);
+ 22e:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+    ccxxx0_Write(CCxxx0_PKTCTRL0, settings->PKTCTRL0);
+ 232:	6a 81       	ldd	r22, Y+2	; 0x02
+ 234:	88 e0       	ldi	r24, 0x08	; 8
+ 236:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    read = ccxxx0_Read(CCxxx0_PKTCTRL0);
+ 23a:	88 e0       	ldi	r24, 0x08	; 8
+ 23c:	0e 94 93 00 	call	0x126	; 0x126 <_Z11ccxxx0_Readh>
+    uart_putc(read);
+ 240:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+    ccxxx0_Write(CCxxx0_FSCTRL1,  settings->FSCTRL1);
+ 244:	6b 81       	ldd	r22, Y+3	; 0x03
+ 246:	8b e0       	ldi	r24, 0x0B	; 11
+ 248:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    read = ccxxx0_Read(CCxxx0_FSCTRL1);
+ 24c:	8b e0       	ldi	r24, 0x0B	; 11
+ 24e:	0e 94 93 00 	call	0x126	; 0x126 <_Z11ccxxx0_Readh>
+    uart_putc(read);
+ 252:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+	//uart_puts((unsigned char *)"1st \r\n");
+//    ccxxx0_Write(CCxxx0_FSCTRL0,  settings->FSCTRL0);
+    ccxxx0_Write(CCxxx0_FREQ2,    settings->FREQ2);
+ 256:	6c 81       	ldd	r22, Y+4	; 0x04
+ 258:	8d e0       	ldi	r24, 0x0D	; 13
+ 25a:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_FREQ1,    settings->FREQ1);
+ 25e:	6d 81       	ldd	r22, Y+5	; 0x05
+ 260:	8e e0       	ldi	r24, 0x0E	; 14
+ 262:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_FREQ0,    settings->FREQ0);
+ 266:	6e 81       	ldd	r22, Y+6	; 0x06
+ 268:	8f e0       	ldi	r24, 0x0F	; 15
+ 26a:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_MDMCFG4,  settings->MDMCFG4);
+ 26e:	6f 81       	ldd	r22, Y+7	; 0x07
+ 270:	80 e1       	ldi	r24, 0x10	; 16
+ 272:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_MDMCFG3,  settings->MDMCFG3);
+ 276:	68 85       	ldd	r22, Y+8	; 0x08
+ 278:	81 e1       	ldi	r24, 0x11	; 17
+ 27a:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_MDMCFG2,  settings->MDMCFG2);
+ 27e:	69 85       	ldd	r22, Y+9	; 0x09
+ 280:	82 e1       	ldi	r24, 0x12	; 18
+ 282:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+	//uart_puts((unsigned char *)"2nd\r\n");
+//    ccxxx0_Write(CCxxx0_MDMCFG1,  settings->MDMCFG1);
+//    ccxxx0_Write(CCxxx0_MDMCFG0,  settings->MDMCFG0);
+    ccxxx0_Write(CCxxx0_DEVIATN,  settings->DEVIATN);
+ 286:	6a 85       	ldd	r22, Y+10	; 0x0a
+ 288:	85 e1       	ldi	r24, 0x15	; 21
+ 28a:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_MCSM0 ,   settings->MCSM0 );
+ 28e:	6b 85       	ldd	r22, Y+11	; 0x0b
+ 290:	88 e1       	ldi	r24, 0x18	; 24
+ 292:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_FOCCFG,   settings->FOCCFG);
+ 296:	6c 85       	ldd	r22, Y+12	; 0x0c
+ 298:	89 e1       	ldi	r24, 0x19	; 25
+ 29a:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+//    ccxxx0_Write(CCxxx0_BSCFG,    settings->BSCFG);
+    ccxxx0_Write(CCxxx0_WORCTRL,  settings->WORCTRL);
+ 29e:	6d 85       	ldd	r22, Y+13	; 0x0d
+ 2a0:	80 e2       	ldi	r24, 0x20	; 32
+ 2a2:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_FSCAL3,   settings->FSCAL3);
+ 2a6:	6e 85       	ldd	r22, Y+14	; 0x0e
+ 2a8:	83 e2       	ldi	r24, 0x23	; 35
+ 2aa:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+    ccxxx0_Write(CCxxx0_FSCAL2,   settings->FSCAL2);
+ 2ae:	6f 85       	ldd	r22, Y+15	; 0x0f
+ 2b0:	84 e2       	ldi	r24, 0x24	; 36
+ 2b2:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+	ccxxx0_Write(CCxxx0_FSCAL1,   settings->FSCAL1);
+ 2b6:	68 89       	ldd	r22, Y+16	; 0x10
+ 2b8:	85 e2       	ldi	r24, 0x25	; 37
+ 2ba:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+	//uart_puts((unsigned char *)"3rd\r\n");
+    ccxxx0_Write(CCxxx0_FSCAL0,   settings->FSCAL0);
+ 2be:	69 89       	ldd	r22, Y+17	; 0x11
+ 2c0:	86 e2       	ldi	r24, 0x26	; 38
+ 2c2:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+	//uart_puts((unsigned char *)"4th\r\n");
+    ccxxx0_Write(CCxxx0_TEST2,    settings->TEST2);
+ 2c6:	6a 89       	ldd	r22, Y+18	; 0x12
+ 2c8:	8c e2       	ldi	r24, 0x2C	; 44
+ 2ca:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+	//uart_puts((unsigned char *)"5th\r\n");
+    //ccxxx0_Write(CCxxx0_TEST1,    settings->TEST1);
+	//uart_puts((unsigned char *)"6th\r\n");
+    ccxxx0_Write(CCxxx0_TEST0,    settings->TEST0);
+ 2ce:	6c 89       	ldd	r22, Y+20	; 0x14
+ 2d0:	8e e2       	ldi	r24, 0x2E	; 46
+ 2d2:	0e 94 a1 00 	call	0x142	; 0x142 <_Z12ccxxx0_Writehh>
+	uart_puts((unsigned char *)"exiting setup\r\n");
+ 2d6:	8a e9       	ldi	r24, 0x9A	; 154
+ 2d8:	90 e0       	ldi	r25, 0x00	; 0
+ 2da:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+}
+ 2de:	df 91       	pop	r29
+ 2e0:	cf 91       	pop	r28
+ 2e2:	08 95       	ret
+
+000002e4 <_Z9pwm_set_Ih>:
+
+//PWM
+void pwm_set_I(unsigned char pwm1)
+{
+	//uart_puts((unsigned char *)"OCR0: ");
+	OCR0=(pwm1-48)*28;
+ 2e4:	80 53       	subi	r24, 0x30	; 48
+ 2e6:	9c e1       	ldi	r25, 0x1C	; 28
+ 2e8:	89 9f       	mul	r24, r25
+ 2ea:	80 2d       	mov	r24, r0
+ 2ec:	11 24       	eor	r1, r1
+ 2ee:	8c bf       	out	0x3c, r24	; 60
+ 2f0:	08 95       	ret
+
+000002f2 <_Z9pwm_set_Rhh>:
+	//uart_putc(OCR0);
+}
+void pwm_set_R(unsigned char pwm2,unsigned char intensity)
+{
+	//OCR1A=pwm2*(intensity-48)/9;
+	OCR1A=(pwm2-33)*(intensity-48)/8;
+ 2f2:	90 e0       	ldi	r25, 0x00	; 0
+ 2f4:	81 97       	sbiw	r24, 0x21	; 33
+ 2f6:	70 e0       	ldi	r23, 0x00	; 0
+ 2f8:	60 53       	subi	r22, 0x30	; 48
+ 2fa:	71 09       	sbc	r23, r1
+ 2fc:	86 9f       	mul	r24, r22
+ 2fe:	90 01       	movw	r18, r0
+ 300:	87 9f       	mul	r24, r23
+ 302:	30 0d       	add	r19, r0
+ 304:	96 9f       	mul	r25, r22
+ 306:	30 0d       	add	r19, r0
+ 308:	11 24       	eor	r1, r1
+ 30a:	33 23       	and	r19, r19
+ 30c:	14 f4       	brge	.+4      	; 0x312 <_Z9pwm_set_Rhh+0x20>
+ 30e:	29 5f       	subi	r18, 0xF9	; 249
+ 310:	3f 4f       	sbci	r19, 0xFF	; 255
+ 312:	35 95       	asr	r19
+ 314:	27 95       	ror	r18
+ 316:	35 95       	asr	r19
+ 318:	27 95       	ror	r18
+ 31a:	35 95       	asr	r19
+ 31c:	27 95       	ror	r18
+ 31e:	3b bd       	out	0x2b, r19	; 43
+ 320:	2a bd       	out	0x2a, r18	; 42
+ 322:	08 95       	ret
+
+00000324 <_Z9pwm_set_Ghh>:
+}
+void pwm_set_G(unsigned char pwm3,unsigned char intensity)
+{
+	//OCR1B=pwm3*(intensity-48)/9;
+	OCR1B=(pwm3-33)*(intensity-48)/8;
+ 324:	90 e0       	ldi	r25, 0x00	; 0
+ 326:	81 97       	sbiw	r24, 0x21	; 33
+ 328:	70 e0       	ldi	r23, 0x00	; 0
+ 32a:	60 53       	subi	r22, 0x30	; 48
+ 32c:	71 09       	sbc	r23, r1
+ 32e:	86 9f       	mul	r24, r22
+ 330:	90 01       	movw	r18, r0
+ 332:	87 9f       	mul	r24, r23
+ 334:	30 0d       	add	r19, r0
+ 336:	96 9f       	mul	r25, r22
+ 338:	30 0d       	add	r19, r0
+ 33a:	11 24       	eor	r1, r1
+ 33c:	33 23       	and	r19, r19
+ 33e:	14 f4       	brge	.+4      	; 0x344 <_Z9pwm_set_Ghh+0x20>
+ 340:	29 5f       	subi	r18, 0xF9	; 249
+ 342:	3f 4f       	sbci	r19, 0xFF	; 255
+ 344:	35 95       	asr	r19
+ 346:	27 95       	ror	r18
+ 348:	35 95       	asr	r19
+ 34a:	27 95       	ror	r18
+ 34c:	35 95       	asr	r19
+ 34e:	27 95       	ror	r18
+ 350:	39 bd       	out	0x29, r19	; 41
+ 352:	28 bd       	out	0x28, r18	; 40
+ 354:	08 95       	ret
+
+00000356 <_Z9pwm_set_Bhh>:
+}
+void pwm_set_B(unsigned char pwm4,unsigned char intensity)
+{
+	//OCR2=pwm4*(intensity-48)/9;
+	OCR2=(pwm4-33)*(intensity-48)/8;
+ 356:	90 e0       	ldi	r25, 0x00	; 0
+ 358:	81 97       	sbiw	r24, 0x21	; 33
+ 35a:	70 e0       	ldi	r23, 0x00	; 0
+ 35c:	60 53       	subi	r22, 0x30	; 48
+ 35e:	71 09       	sbc	r23, r1
+ 360:	86 9f       	mul	r24, r22
+ 362:	90 01       	movw	r18, r0
+ 364:	87 9f       	mul	r24, r23
+ 366:	30 0d       	add	r19, r0
+ 368:	96 9f       	mul	r25, r22
+ 36a:	30 0d       	add	r19, r0
+ 36c:	11 24       	eor	r1, r1
+ 36e:	33 23       	and	r19, r19
+ 370:	14 f4       	brge	.+4      	; 0x376 <_Z9pwm_set_Bhh+0x20>
+ 372:	29 5f       	subi	r18, 0xF9	; 249
+ 374:	3f 4f       	sbci	r19, 0xFF	; 255
+ 376:	35 95       	asr	r19
+ 378:	27 95       	ror	r18
+ 37a:	35 95       	asr	r19
+ 37c:	27 95       	ror	r18
+ 37e:	35 95       	asr	r19
+ 380:	27 95       	ror	r18
+ 382:	23 bd       	out	0x23, r18	; 35
+ 384:	08 95       	ret
+
+00000386 <_Z11CC_Transmitj>:
+}
+void CC_Transmit(unsigned int num_TX_Bytes)
+{
+ 386:	cf 93       	push	r28
+ 388:	df 93       	push	r29
+ 38a:	ec 01       	movw	r28, r24
+	strcpy((char*)data_transmit, "$MANGO:P");
+ 38c:	89 e0       	ldi	r24, 0x09	; 9
+ 38e:	ea ea       	ldi	r30, 0xAA	; 170
+ 390:	f0 e0       	ldi	r31, 0x00	; 0
+ 392:	a3 e9       	ldi	r26, 0x93	; 147
+ 394:	b1 e0       	ldi	r27, 0x01	; 1
+ 396:	01 90       	ld	r0, Z+
+ 398:	0d 92       	st	X+, r0
+ 39a:	8a 95       	dec	r24
+ 39c:	e1 f7       	brne	.-8      	; 0x396 <_Z11CC_Transmitj+0x10>
+	//char* data ;
+	//strcpy(data, "$MANGO:P");
+
+	ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+ 39e:	86 e3       	ldi	r24, 0x36	; 54
+ 3a0:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+	ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+ 3a4:	41 e0       	ldi	r20, 0x01	; 1
+ 3a6:	50 e0       	ldi	r21, 0x00	; 0
+ 3a8:	60 e6       	ldi	r22, 0x60	; 96
+ 3aa:	70 e0       	ldi	r23, 0x00	; 0
+ 3ac:	8e e3       	ldi	r24, 0x3E	; 62
+ 3ae:	0e 94 cf 00 	call	0x19e	; 0x19e <_Z17ccxxx0_WriteBursthPhj>
+	ccxxx0_Strobe(CCxxx0_SFTX); // flush tx buff
+ 3b2:	8b e3       	ldi	r24, 0x3B	; 59
+ 3b4:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+	ccxxx0_WriteBurst(CCxxx0_TXFIFO,data_transmit,num_TX_Bytes); // addr=M, payload=4 bytes, Total PKTLEN=5//see cc1101 datasheet pg no.-40
+ 3b8:	ae 01       	movw	r20, r28
+ 3ba:	63 e9       	ldi	r22, 0x93	; 147
+ 3bc:	71 e0       	ldi	r23, 0x01	; 1
+ 3be:	8f e3       	ldi	r24, 0x3F	; 63
+ 3c0:	0e 94 cf 00 	call	0x19e	; 0x19e <_Z17ccxxx0_WriteBursthPhj>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3c4:	81 ee       	ldi	r24, 0xE1	; 225
+ 3c6:	94 e0       	ldi	r25, 0x04	; 4
+ 3c8:	01 97       	sbiw	r24, 0x01	; 1
+ 3ca:	f1 f7       	brne	.-4      	; 0x3c8 <_Z11CC_Transmitj+0x42>
+ 3cc:	00 c0       	rjmp	.+0      	; 0x3ce <_Z11CC_Transmitj+0x48>
+ 3ce:	00 00       	nop
+	_delay_ms(5);
+	
+	//y = ccxxx0_Read(CCxxx0_TXBYTES);
+	//uart_putc(y+48);
+	
+	ccxxx0_Strobe(CCxxx0_STX); // goto tx mode
+ 3d0:	85 e3       	ldi	r24, 0x35	; 53
+ 3d2:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+ 3d6:	8f e2       	ldi	r24, 0x2F	; 47
+ 3d8:	95 e7       	ldi	r25, 0x75	; 117
+ 3da:	01 97       	sbiw	r24, 0x01	; 1
+ 3dc:	f1 f7       	brne	.-4      	; 0x3da <_Z11CC_Transmitj+0x54>
+ 3de:	00 c0       	rjmp	.+0      	; 0x3e0 <_Z11CC_Transmitj+0x5a>
+ 3e0:	00 00       	nop
+	
+	_delay_ms(120);
+	uart_puts((unsigned char *)"\r\ntransmitted...\r\n");
+ 3e2:	83 eb       	ldi	r24, 0xB3	; 179
+ 3e4:	90 e0       	ldi	r25, 0x00	; 0
+ 3e6:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+	PORTC = ~PORTC;
+ 3ea:	85 b3       	in	r24, 0x15	; 21
+ 3ec:	80 95       	com	r24
+ 3ee:	85 bb       	out	0x15, r24	; 21
+	//uart_puts((unsigned char *)data_transmit);
+	//PORTC=0x00;
+	ccxxx0_Strobe(CCxxx0_SIDLE);
+ 3f0:	86 e3       	ldi	r24, 0x36	; 54
+ 3f2:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+ 3f6:	87 ea       	ldi	r24, 0xA7	; 167
+ 3f8:	91 e6       	ldi	r25, 0x61	; 97
+ 3fa:	01 97       	sbiw	r24, 0x01	; 1
+ 3fc:	f1 f7       	brne	.-4      	; 0x3fa <_Z11CC_Transmitj+0x74>
+ 3fe:	00 c0       	rjmp	.+0      	; 0x400 <_Z11CC_Transmitj+0x7a>
+ 400:	00 00       	nop
+	_delay_ms(100);
+	
+}
+ 402:	df 91       	pop	r29
+ 404:	cf 91       	pop	r28
+ 406:	08 95       	ret
+
+00000408 <_Z10CC_Receivev>:
+
+void CC_Receive(void)
+{
+	transmit_enable = 0;
+ 408:	10 92 80 00 	sts	0x0080, r1
+	unsigned char present_state;
+	uart_puts((unsigned char *)"Started\r\n");
+ 40c:	86 ec       	ldi	r24, 0xC6	; 198
+ 40e:	90 e0       	ldi	r25, 0x00	; 0
+ 410:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+	ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+ 414:	86 e3       	ldi	r24, 0x36	; 54
+ 416:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+	//uart_puts((unsigned char *)"he\r\n");
+	ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+ 41a:	41 e0       	ldi	r20, 0x01	; 1
+ 41c:	50 e0       	ldi	r21, 0x00	; 0
+ 41e:	60 e6       	ldi	r22, 0x60	; 96
+ 420:	70 e0       	ldi	r23, 0x00	; 0
+ 422:	8e e3       	ldi	r24, 0x3E	; 62
+ 424:	0e 94 cf 00 	call	0x19e	; 0x19e <_Z17ccxxx0_WriteBursthPhj>
+ 428:	89 ef       	ldi	r24, 0xF9	; 249
+ 42a:	90 e0       	ldi	r25, 0x00	; 0
+ 42c:	01 97       	sbiw	r24, 0x01	; 1
+ 42e:	f1 f7       	brne	.-4      	; 0x42c <_Z10CC_Receivev+0x24>
+ 430:	00 c0       	rjmp	.+0      	; 0x432 <_Z10CC_Receivev+0x2a>
+ 432:	00 00       	nop
+	//uart_puts((unsigned char *)"hehe\r\n");
+	_delay_ms(1);
+	ccxxx0_Strobe(CCxxx0_SFRX); // flush rx buff
+ 434:	8a e3       	ldi	r24, 0x3A	; 58
+ 436:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+	//uart_puts((unsigned char *)"hehehe\r\n");
+	ccxxx0_Strobe(CCxxx0_SRX);// goto rx mode
+ 43a:	84 e3       	ldi	r24, 0x34	; 52
+ 43c:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+	uart_puts((unsigned char *)"boo\r\n");
+ 440:	80 ed       	ldi	r24, 0xD0	; 208
+ 442:	90 e0       	ldi	r25, 0x00	; 0
+ 444:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+				strcpy((char *) data_transmit,(const char *) current_status);
+				toggle_ind=present_state;
+				//uart_putc('X');
+				//uart_putc((toggle_ind/64)+0x30);
+				//uart_putc('X');
+				transmit_enable=1; 
+ 448:	88 24       	eor	r8, r8
+ 44a:	83 94       	inc	r8
+			//uart_puts((unsigned char *)"\r\nENTER1\r\n");
+			_delay_ms(80);
+			if(present_state!=toggle_ind)
+			{
+				//uart_puts((unsigned char *)"ENTER2\r\n");
+				unsigned int toggle_count=0;
+ 44c:	61 2c       	mov	r6, r1
+ 44e:	71 2c       	mov	r7, r1
+						else if(toggle_count<=s_number+f_number+c_number)
+						{
+							toggle_count=toggle_count+3;
+							if(current_status[10+toggle_count]>'0')
+								current_status[10+toggle_count]='0';
+							else current_status[10+toggle_count]='9';
+ 450:	0f 2e       	mov	r0, r31
+ 452:	f9 e3       	ldi	r31, 0x39	; 57
+ 454:	9f 2e       	mov	r9, r31
+ 456:	f0 2d       	mov	r31, r0
+						
+						else if(toggle_count<=s_number+f_number+c_number)
+						{
+							toggle_count=toggle_count+3;
+							if(current_status[10+toggle_count]>'0')
+								current_status[10+toggle_count]='0';
+ 458:	0f 2e       	mov	r0, r31
+ 45a:	f0 e3       	ldi	r31, 0x30	; 48
+ 45c:	af 2e       	mov	r10, r31
+ 45e:	f0 2d       	mov	r31, r0
+					
+						if(toggle_count<=s_number)
+						{
+							if(current_status[8+toggle_count]=='1')
+								current_status[8+toggle_count]='0';
+							else current_status[8+toggle_count]='1';
+ 460:	0f 2e       	mov	r0, r31
+ 462:	f1 e3       	ldi	r31, 0x31	; 49
+ 464:	bf 2e       	mov	r11, r31
+ 466:	f0 2d       	mov	r31, r0
+	uart_puts((unsigned char *)"boo\r\n");
+	//toggle_indi=PIND;
+	while(1)
+	{
+		
+		present_state = PINC;
+ 468:	c3 b2       	in	r12, 0x13	; 19
+		//uart_putc((present_state/64)+0x30);
+		//uart_putc('Z');
+		//_delay_ms(500);
+		
+		
+		if(present_state!=toggle_ind)
+ 46a:	80 91 92 01 	lds	r24, 0x0192
+ 46e:	c8 16       	cp	r12, r24
+ 470:	09 f4       	brne	.+2      	; 0x474 <_Z10CC_Receivev+0x6c>
+ 472:	c2 c0       	rjmp	.+388    	; 0x5f8 <_Z10CC_Receivev+0x1f0>
+ 474:	ef e1       	ldi	r30, 0x1F	; 31
+ 476:	fe e4       	ldi	r31, 0x4E	; 78
+ 478:	31 97       	sbiw	r30, 0x01	; 1
+ 47a:	f1 f7       	brne	.-4      	; 0x478 <_Z10CC_Receivev+0x70>
+ 47c:	00 c0       	rjmp	.+0      	; 0x47e <_Z10CC_Receivev+0x76>
+ 47e:	00 00       	nop
+		{
+			//uart_puts((unsigned char *)"\r\nENTER1\r\n");
+			_delay_ms(80);
+			if(present_state!=toggle_ind)
+ 480:	80 91 92 01 	lds	r24, 0x0192
+ 484:	c8 16       	cp	r12, r24
+ 486:	09 f4       	brne	.+2      	; 0x48a <_Z10CC_Receivev+0x82>
+ 488:	b7 c0       	rjmp	.+366    	; 0x5f8 <_Z10CC_Receivev+0x1f0>
+			{
+				//uart_puts((unsigned char *)"ENTER2\r\n");
+				unsigned int toggle_count=0;
+				unsigned char temp_toggle=0x01;
+				toggle_ind^=present_state;
+ 48a:	8c 25       	eor	r24, r12
+ 48c:	80 93 92 01 	sts	0x0192, r24
+				while(toggle_ind)
+ 490:	88 23       	and	r24, r24
+ 492:	09 f4       	brne	.+2      	; 0x496 <_Z10CC_Receivev+0x8e>
+ 494:	a6 c0       	rjmp	.+332    	; 0x5e2 <_Z10CC_Receivev+0x1da>
+			_delay_ms(80);
+			if(present_state!=toggle_ind)
+			{
+				//uart_puts((unsigned char *)"ENTER2\r\n");
+				unsigned int toggle_count=0;
+				unsigned char temp_toggle=0x01;
+ 496:	d8 2c       	mov	r13, r8
+			//uart_puts((unsigned char *)"\r\nENTER1\r\n");
+			_delay_ms(80);
+			if(present_state!=toggle_ind)
+			{
+				//uart_puts((unsigned char *)"ENTER2\r\n");
+				unsigned int toggle_count=0;
+ 498:	26 2d       	mov	r18, r6
+ 49a:	37 2d       	mov	r19, r7
+				unsigned char temp_toggle=0x01;
+				toggle_ind^=present_state;
+				while(toggle_ind)
+				{
+					toggle_count++;
+ 49c:	e9 01       	movw	r28, r18
+ 49e:	21 96       	adiw	r28, 0x01	; 1
+					if(toggle_ind & 0x01)
+ 4a0:	80 ff       	sbrs	r24, 0
+ 4a2:	76 c0       	rjmp	.+236    	; 0x590 <_Z10CC_Receivev+0x188>
+					{
+					
+						if(toggle_count<=s_number)
+ 4a4:	80 91 18 01 	lds	r24, 0x0118
+ 4a8:	90 91 19 01 	lds	r25, 0x0119
+ 4ac:	8c 17       	cp	r24, r28
+ 4ae:	9d 07       	cpc	r25, r29
+ 4b0:	a8 f0       	brcs	.+42     	; 0x4dc <_Z10CC_Receivev+0xd4>
+						{
+							if(current_status[8+toggle_count]=='1')
+ 4b2:	27 5f       	subi	r18, 0xF7	; 247
+ 4b4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4b6:	f9 01       	movw	r30, r18
+ 4b8:	e6 5e       	subi	r30, 0xE6	; 230
+ 4ba:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4bc:	80 81       	ld	r24, Z
+ 4be:	81 33       	cpi	r24, 0x31	; 49
+ 4c0:	29 f4       	brne	.+10     	; 0x4cc <_Z10CC_Receivev+0xc4>
+								current_status[8+toggle_count]='0';
+ 4c2:	f9 01       	movw	r30, r18
+ 4c4:	e6 5e       	subi	r30, 0xE6	; 230
+ 4c6:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4c8:	a0 82       	st	Z, r10
+ 4ca:	04 c0       	rjmp	.+8      	; 0x4d4 <_Z10CC_Receivev+0xcc>
+							else current_status[8+toggle_count]='1';
+ 4cc:	f9 01       	movw	r30, r18
+ 4ce:	e6 5e       	subi	r30, 0xE6	; 230
+ 4d0:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4d2:	b0 82       	st	Z, r11
+							PORTA ^=temp_toggle;	
+ 4d4:	8b b3       	in	r24, 0x1b	; 27
+ 4d6:	8d 25       	eor	r24, r13
+ 4d8:	8b bb       	out	0x1b, r24	; 27
+ 4da:	5a c0       	rjmp	.+180    	; 0x590 <_Z10CC_Receivev+0x188>
+						}
+						
+						else if(toggle_count<=s_number+f_number)
+ 4dc:	40 91 16 01 	lds	r20, 0x0116
+ 4e0:	50 91 17 01 	lds	r21, 0x0117
+ 4e4:	48 0f       	add	r20, r24
+ 4e6:	59 1f       	adc	r21, r25
+ 4e8:	4c 17       	cp	r20, r28
+ 4ea:	5d 07       	cpc	r21, r29
+ 4ec:	c0 f0       	brcs	.+48     	; 0x51e <_Z10CC_Receivev+0x116>
+						{
+							if(current_status[9+toggle_count]>'0')
+ 4ee:	26 5f       	subi	r18, 0xF6	; 246
+ 4f0:	3f 4f       	sbci	r19, 0xFF	; 255
+ 4f2:	f9 01       	movw	r30, r18
+ 4f4:	e6 5e       	subi	r30, 0xE6	; 230
+ 4f6:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4f8:	80 81       	ld	r24, Z
+ 4fa:	81 33       	cpi	r24, 0x31	; 49
+ 4fc:	28 f0       	brcs	.+10     	; 0x508 <_Z10CC_Receivev+0x100>
+								current_status[9+toggle_count]='0';
+ 4fe:	f9 01       	movw	r30, r18
+ 500:	e6 5e       	subi	r30, 0xE6	; 230
+ 502:	fe 4f       	sbci	r31, 0xFE	; 254
+ 504:	a0 82       	st	Z, r10
+ 506:	04 c0       	rjmp	.+8      	; 0x510 <_Z10CC_Receivev+0x108>
+							else current_status[9+toggle_count]='9';
+ 508:	f9 01       	movw	r30, r18
+ 50a:	e6 5e       	subi	r30, 0xE6	; 230
+ 50c:	fe 4f       	sbci	r31, 0xFE	; 254
+ 50e:	90 82       	st	Z, r9
+							pwm_set_I(current_status[9+toggle_count]);
+ 510:	f9 01       	movw	r30, r18
+ 512:	e6 5e       	subi	r30, 0xE6	; 230
+ 514:	fe 4f       	sbci	r31, 0xFE	; 254
+ 516:	80 81       	ld	r24, Z
+ 518:	0e 94 72 01 	call	0x2e4	; 0x2e4 <_Z9pwm_set_Ih>
+ 51c:	39 c0       	rjmp	.+114    	; 0x590 <_Z10CC_Receivev+0x188>
+						}
+						
+						else if(toggle_count<=s_number+f_number+c_number)
+ 51e:	60 91 14 01 	lds	r22, 0x0114
+ 522:	70 91 15 01 	lds	r23, 0x0115
+ 526:	46 0f       	add	r20, r22
+ 528:	57 1f       	adc	r21, r23
+ 52a:	4c 17       	cp	r20, r28
+ 52c:	5d 07       	cpc	r21, r29
+ 52e:	08 f4       	brcc	.+2      	; 0x532 <_Z10CC_Receivev+0x12a>
+ 530:	bb c0       	rjmp	.+374    	; 0x6a8 <_Z10CC_Receivev+0x2a0>
+						{
+							toggle_count=toggle_count+3;
+ 532:	e9 01       	movw	r28, r18
+ 534:	24 96       	adiw	r28, 0x04	; 4
+							if(current_status[10+toggle_count]>'0')
+ 536:	c9 01       	movw	r24, r18
+ 538:	0e 96       	adiw	r24, 0x0e	; 14
+ 53a:	fc 01       	movw	r30, r24
+ 53c:	e6 5e       	subi	r30, 0xE6	; 230
+ 53e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 540:	40 81       	ld	r20, Z
+ 542:	41 33       	cpi	r20, 0x31	; 49
+ 544:	28 f0       	brcs	.+10     	; 0x550 <_Z10CC_Receivev+0x148>
+								current_status[10+toggle_count]='0';
+ 546:	fc 01       	movw	r30, r24
+ 548:	e6 5e       	subi	r30, 0xE6	; 230
+ 54a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 54c:	a0 82       	st	Z, r10
+ 54e:	04 c0       	rjmp	.+8      	; 0x558 <_Z10CC_Receivev+0x150>
+							else current_status[10+toggle_count]='9';
+ 550:	fc 01       	movw	r30, r24
+ 552:	e6 5e       	subi	r30, 0xE6	; 230
+ 554:	fe 4f       	sbci	r31, 0xFE	; 254
+ 556:	90 82       	st	Z, r9
+							pwm_set_R(current_status[7+toggle_count],current_status[10+toggle_count]);
+ 558:	ac 01       	movw	r20, r24
+ 55a:	46 5e       	subi	r20, 0xE6	; 230
+ 55c:	5e 4f       	sbci	r21, 0xFE	; 254
+ 55e:	7a 01       	movw	r14, r20
+ 560:	89 01       	movw	r16, r18
+ 562:	06 5e       	subi	r16, 0xE6	; 230
+ 564:	1e 4f       	sbci	r17, 0xFE	; 254
+ 566:	fa 01       	movw	r30, r20
+ 568:	60 81       	ld	r22, Z
+ 56a:	f8 01       	movw	r30, r16
+ 56c:	83 85       	ldd	r24, Z+11	; 0x0b
+ 56e:	0e 94 79 01 	call	0x2f2	; 0x2f2 <_Z9pwm_set_Rhh>
+							pwm_set_G(current_status[8+toggle_count],current_status[10+toggle_count]);
+ 572:	f7 01       	movw	r30, r14
+ 574:	60 81       	ld	r22, Z
+ 576:	f8 01       	movw	r30, r16
+ 578:	84 85       	ldd	r24, Z+12	; 0x0c
+ 57a:	0e 94 92 01 	call	0x324	; 0x324 <_Z9pwm_set_Ghh>
+							pwm_set_B(current_status[9+toggle_count],current_status[10+toggle_count]);
+ 57e:	f7 01       	movw	r30, r14
+ 580:	60 81       	ld	r22, Z
+ 582:	f8 01       	movw	r30, r16
+ 584:	85 85       	ldd	r24, Z+13	; 0x0d
+ 586:	0e 94 ab 01 	call	0x356	; 0x356 <_Z9pwm_set_Bhh>
+							PORTA ^=temp_toggle;
+ 58a:	8b b3       	in	r24, 0x1b	; 27
+ 58c:	8d 25       	eor	r24, r13
+ 58e:	8b bb       	out	0x1b, r24	; 27
+						}
+						
+					}
+					if((toggle_count<=s_number) || (s_number+f_number<toggle_count && toggle_count<=s_number+f_number+c_number))
+ 590:	80 91 18 01 	lds	r24, 0x0118
+ 594:	90 91 19 01 	lds	r25, 0x0119
+ 598:	8c 17       	cp	r24, r28
+ 59a:	9d 07       	cpc	r25, r29
+ 59c:	90 f4       	brcc	.+36     	; 0x5c2 <_Z10CC_Receivev+0x1ba>
+ 59e:	20 91 16 01 	lds	r18, 0x0116
+ 5a2:	30 91 17 01 	lds	r19, 0x0117
+ 5a6:	82 0f       	add	r24, r18
+ 5a8:	93 1f       	adc	r25, r19
+ 5aa:	8c 17       	cp	r24, r28
+ 5ac:	9d 07       	cpc	r25, r29
+ 5ae:	60 f4       	brcc	.+24     	; 0x5c8 <_Z10CC_Receivev+0x1c0>
+ 5b0:	20 91 14 01 	lds	r18, 0x0114
+ 5b4:	30 91 15 01 	lds	r19, 0x0115
+ 5b8:	82 0f       	add	r24, r18
+ 5ba:	93 1f       	adc	r25, r19
+ 5bc:	8c 17       	cp	r24, r28
+ 5be:	9d 07       	cpc	r25, r29
+ 5c0:	28 f0       	brcs	.+10     	; 0x5cc <_Z10CC_Receivev+0x1c4>
+						temp_toggle=temp_toggle<<1;
+ 5c2:	dd 0c       	add	r13, r13
+ 5c4:	9e 01       	movw	r18, r28
+ 5c6:	03 c0       	rjmp	.+6      	; 0x5ce <_Z10CC_Receivev+0x1c6>
+ 5c8:	9e 01       	movw	r18, r28
+ 5ca:	01 c0       	rjmp	.+2      	; 0x5ce <_Z10CC_Receivev+0x1c6>
+ 5cc:	9e 01       	movw	r18, r28
+					toggle_ind=toggle_ind>>1;
+ 5ce:	80 91 92 01 	lds	r24, 0x0192
+ 5d2:	90 e0       	ldi	r25, 0x00	; 0
+ 5d4:	95 95       	asr	r25
+ 5d6:	87 95       	ror	r24
+ 5d8:	80 93 92 01 	sts	0x0192, r24
+			{
+				//uart_puts((unsigned char *)"ENTER2\r\n");
+				unsigned int toggle_count=0;
+				unsigned char temp_toggle=0x01;
+				toggle_ind^=present_state;
+				while(toggle_ind)
+ 5dc:	00 97       	sbiw	r24, 0x00	; 0
+ 5de:	09 f0       	breq	.+2      	; 0x5e2 <_Z10CC_Receivev+0x1da>
+ 5e0:	5d cf       	rjmp	.-326    	; 0x49c <_Z10CC_Receivev+0x94>
+					}
+					if((toggle_count<=s_number) || (s_number+f_number<toggle_count && toggle_count<=s_number+f_number+c_number))
+						temp_toggle=temp_toggle<<1;
+					toggle_ind=toggle_ind>>1;
+				}
+				strcpy((char *) data_transmit,(const char *) current_status);
+ 5e2:	6a e1       	ldi	r22, 0x1A	; 26
+ 5e4:	71 e0       	ldi	r23, 0x01	; 1
+ 5e6:	83 e9       	ldi	r24, 0x93	; 147
+ 5e8:	91 e0       	ldi	r25, 0x01	; 1
+ 5ea:	0e 94 9d 03 	call	0x73a	; 0x73a <strcpy>
+				toggle_ind=present_state;
+ 5ee:	c0 92 92 01 	sts	0x0192, r12
+				//uart_putc('X');
+				//uart_putc((toggle_ind/64)+0x30);
+				//uart_putc('X');
+				transmit_enable=1; 
+ 5f2:	80 92 80 00 	sts	0x0080, r8
+ 5f6:	04 c0       	rjmp	.+8      	; 0x600 <_Z10CC_Receivev+0x1f8>
+			}
+		}
+	
+		if(transmit_enable==1)
+ 5f8:	80 91 80 00 	lds	r24, 0x0080
+ 5fc:	81 30       	cpi	r24, 0x01	; 1
+ 5fe:	e9 f4       	brne	.+58     	; 0x63a <_Z10CC_Receivev+0x232>
+		{
+			//uart_puts((unsigned char *)"ABF");
+			CC_Transmit(pkt_length);	
+ 600:	80 91 76 00 	lds	r24, 0x0076
+ 604:	90 91 77 00 	lds	r25, 0x0077
+ 608:	0e 94 c3 01 	call	0x386	; 0x386 <_Z11CC_Transmitj>
+			//transmit_enable=0;
+			//transmit_check=1;
+			//Receive Enable
+			ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+ 60c:	86 e3       	ldi	r24, 0x36	; 54
+ 60e:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+			ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+ 612:	41 e0       	ldi	r20, 0x01	; 1
+ 614:	50 e0       	ldi	r21, 0x00	; 0
+ 616:	60 e6       	ldi	r22, 0x60	; 96
+ 618:	70 e0       	ldi	r23, 0x00	; 0
+ 61a:	8e e3       	ldi	r24, 0x3E	; 62
+ 61c:	0e 94 cf 00 	call	0x19e	; 0x19e <_Z17ccxxx0_WriteBursthPhj>
+ 620:	89 ef       	ldi	r24, 0xF9	; 249
+ 622:	90 e0       	ldi	r25, 0x00	; 0
+ 624:	01 97       	sbiw	r24, 0x01	; 1
+ 626:	f1 f7       	brne	.-4      	; 0x624 <_Z10CC_Receivev+0x21c>
+ 628:	00 c0       	rjmp	.+0      	; 0x62a <_Z10CC_Receivev+0x222>
+ 62a:	00 00       	nop
+			_delay_ms(1);
+			ccxxx0_Strobe(CCxxx0_SFRX); // flush rx buf
+ 62c:	8a e3       	ldi	r24, 0x3A	; 58
+ 62e:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+			ccxxx0_Strobe(CCxxx0_SRX); // goto rx mode
+ 632:	84 e3       	ldi	r24, 0x34	; 52
+ 634:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+ 638:	17 cf       	rjmp	.-466    	; 0x468 <_Z10CC_Receivev+0x60>
+		}
+			
+		// If you have a package for us
+		else if( PINB&(1 << CC_GDO0) )
+ 63a:	b0 9b       	sbis	0x16, 0	; 22
+ 63c:	15 cf       	rjmp	.-470    	; 0x468 <_Z10CC_Receivev+0x60>
+		{
+			while(PINB&(1 << CC_GDO0))
+ 63e:	b0 99       	sbic	0x16, 0	; 22
+ 640:	fe cf       	rjmp	.-4      	; 0x63e <_Z10CC_Receivev+0x236>
+				//uart_puts((unsigned char*)"GDO0 HIGH \n");
+			}
+			
+			//_delay_us(10);
+			
+			unsigned char i = ccxxx0_Read(CCxxx0_RXBYTES);
+ 642:	8b ef       	ldi	r24, 0xFB	; 251
+ 644:	0e 94 93 00 	call	0x126	; 0x126 <_Z11ccxxx0_Readh>
+ 648:	9f e9       	ldi	r25, 0x9F	; 159
+ 64a:	e6 e8       	ldi	r30, 0x86	; 134
+ 64c:	f1 e0       	ldi	r31, 0x01	; 1
+ 64e:	91 50       	subi	r25, 0x01	; 1
+ 650:	e0 40       	sbci	r30, 0x00	; 0
+ 652:	f0 40       	sbci	r31, 0x00	; 0
+ 654:	e1 f7       	brne	.-8      	; 0x64e <_Z10CC_Receivev+0x246>
+ 656:	00 c0       	rjmp	.+0      	; 0x658 <_Z10CC_Receivev+0x250>
+ 658:	00 00       	nop
+		    //uart_putc((i+48));
+			//uart_putc((i));
+			//uart_puts((unsigned char *)"\r\n");
+
+            _delay_ms(500);
+			ccxxx0_ReadBurst(CCxxx0_RXFIFO, temp, 8);
+ 65a:	48 e0       	ldi	r20, 0x08	; 8
+ 65c:	50 e0       	ldi	r21, 0x00	; 0
+ 65e:	66 e5       	ldi	r22, 0x56	; 86
+ 660:	71 e0       	ldi	r23, 0x01	; 1
+ 662:	8f e3       	ldi	r24, 0x3F	; 63
+ 664:	0e 94 b7 00 	call	0x16e	; 0x16e <_Z16ccxxx0_ReadBursthPhj>
+			//uart_puts((unsigned char *)"RXed bytes: ");
+			uart_putsn((unsigned char *)temp,8);
+ 668:	68 e0       	ldi	r22, 0x08	; 8
+ 66a:	86 e5       	ldi	r24, 0x56	; 86
+ 66c:	91 e0       	ldi	r25, 0x01	; 1
+ 66e:	0e 94 5c 00 	call	0xb8	; 0xb8 <_Z10uart_putsnPhh>
+			uart_puts((unsigned char *)"\r\n");
+ 672:	83 ec       	ldi	r24, 0xC3	; 195
+ 674:	90 e0       	ldi	r25, 0x00	; 0
+ 676:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+			strcat((char *) data_transmit,(const char *) ",OK\r\n");
+			_delay_ms(200);
+			CC_Transmit(12);
+			}*/
+				
+			ccxxx0_Strobe(CCxxx0_SIDLE);//Exit RX / TX, turn off frequency synthesizer and exit Wake-On-Radio mode if applicable
+ 67a:	86 e3       	ldi	r24, 0x36	; 54
+ 67c:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+			ccxxx0_WriteBurst(CCxxx0_PATABLE, &paTable[0], 1); // max power
+ 680:	41 e0       	ldi	r20, 0x01	; 1
+ 682:	50 e0       	ldi	r21, 0x00	; 0
+ 684:	60 e6       	ldi	r22, 0x60	; 96
+ 686:	70 e0       	ldi	r23, 0x00	; 0
+ 688:	8e e3       	ldi	r24, 0x3E	; 62
+ 68a:	0e 94 cf 00 	call	0x19e	; 0x19e <_Z17ccxxx0_WriteBursthPhj>
+ 68e:	89 ef       	ldi	r24, 0xF9	; 249
+ 690:	90 e0       	ldi	r25, 0x00	; 0
+ 692:	01 97       	sbiw	r24, 0x01	; 1
+ 694:	f1 f7       	brne	.-4      	; 0x692 <_Z10CC_Receivev+0x28a>
+ 696:	00 c0       	rjmp	.+0      	; 0x698 <_Z10CC_Receivev+0x290>
+ 698:	00 00       	nop
+			_delay_ms(1);
+			ccxxx0_Strobe(CCxxx0_SFRX); // flush rx buf
+ 69a:	8a e3       	ldi	r24, 0x3A	; 58
+ 69c:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+			ccxxx0_Strobe(CCxxx0_SRX); // goto rx mode
+ 6a0:	84 e3       	ldi	r24, 0x34	; 52
+ 6a2:	0e 94 ae 00 	call	0x15c	; 0x15c <_Z13ccxxx0_Strobeh>
+ 6a6:	e0 ce       	rjmp	.-576    	; 0x468 <_Z10CC_Receivev+0x60>
+							pwm_set_B(current_status[9+toggle_count],current_status[10+toggle_count]);
+							PORTA ^=temp_toggle;
+						}
+						
+					}
+					if((toggle_count<=s_number) || (s_number+f_number<toggle_count && toggle_count<=s_number+f_number+c_number))
+ 6a8:	20 91 16 01 	lds	r18, 0x0116
+ 6ac:	30 91 17 01 	lds	r19, 0x0117
+ 6b0:	82 0f       	add	r24, r18
+ 6b2:	93 1f       	adc	r25, r19
+ 6b4:	7d cf       	rjmp	.-262    	; 0x5b0 <_Z10CC_Receivev+0x1a8>
+
+000006b6 <main>:
+
+/*****
+	MAIN program
+*****/
+int main(void) {
+	DDRC = 0x01;
+ 6b6:	81 e0       	ldi	r24, 0x01	; 1
+ 6b8:	84 bb       	out	0x14, r24	; 20
+	PORTC = 0xff;
+ 6ba:	8f ef       	ldi	r24, 0xFF	; 255
+ 6bc:	85 bb       	out	0x15, r24	; 21
+
+	/*uint8_t rssi_dec;
+	int16_t rssi_dBm;
+	uint8_t rssi_offset = 74; // CC1101 at 433 MHz*/
+	
+	cli(); 							//Clears the global interrupts			
+ 6be:	f8 94       	cli
+	ATMEGA_Init();
+ 6c0:	0e 94 6c 00 	call	0xd8	; 0xd8 <_Z11ATMEGA_Initv>
+	sei(); 
+ 6c4:	78 94       	sei
+
+	uart_puts((unsigned char *)"cc1101_PowerOnReset\r\n");
+ 6c6:	86 ed       	ldi	r24, 0xD6	; 214
+ 6c8:	90 e0       	ldi	r25, 0x00	; 0
+ 6ca:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+ 6ce:	2f e7       	ldi	r18, 0x7F	; 127
+ 6d0:	8a e1       	ldi	r24, 0x1A	; 26
+ 6d2:	96 e0       	ldi	r25, 0x06	; 6
+ 6d4:	21 50       	subi	r18, 0x01	; 1
+ 6d6:	80 40       	sbci	r24, 0x00	; 0
+ 6d8:	90 40       	sbci	r25, 0x00	; 0
+ 6da:	e1 f7       	brne	.-8      	; 0x6d4 <main+0x1e>
+ 6dc:	00 c0       	rjmp	.+0      	; 0x6de <main+0x28>
+ 6de:	00 00       	nop
+	_delay_ms(2000);
+	ccxxx0_PowerOnReset();
+ 6e0:	0e 94 e6 00 	call	0x1cc	; 0x1cc <_Z19ccxxx0_PowerOnResetv>
+	//PORTC=0x01;
+//	_delay_ms(1000);
+	uart_puts((unsigned char *)"cc1101_Setup\r\n");
+ 6e4:	8c ee       	ldi	r24, 0xEC	; 236
+ 6e6:	90 e0       	ldi	r25, 0x00	; 0
+ 6e8:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+	ccxxx0_Setup(&rfSettings);
+ 6ec:	81 e6       	ldi	r24, 0x61	; 97
+ 6ee:	90 e0       	ldi	r25, 0x00	; 0
+ 6f0:	0e 94 04 01 	call	0x208	; 0x208 <_Z12ccxxx0_SetupPK11RF_SETTINGS>
+	uart_puts((unsigned char *)"Started\r\n");
+ 6f4:	86 ec       	ldi	r24, 0xC6	; 198
+ 6f6:	90 e0       	ldi	r25, 0x00	; 0
+ 6f8:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+	unsigned char part = 'b';
+	part = ccxxx0_Read(CCxxx0_VERSION);
+ 6fc:	81 ef       	ldi	r24, 0xF1	; 241
+ 6fe:	0e 94 93 00 	call	0x126	; 0x126 <_Z11ccxxx0_Readh>
+ 702:	c8 2f       	mov	r28, r24
+	uart_puts((unsigned char*)"printing part number...\t");
+ 704:	8b ef       	ldi	r24, 0xFB	; 251
+ 706:	90 e0       	ldi	r25, 0x00	; 0
+ 708:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+	uart_putc(part);
+ 70c:	8c 2f       	mov	r24, r28
+ 70e:	0e 94 49 00 	call	0x92	; 0x92 <_Z9uart_putch>
+ 712:	e8 e7       	ldi	r30, 0x78	; 120
+ 714:	f0 e0       	ldi	r31, 0x00	; 0
+ 716:	aa e1       	ldi	r26, 0x1A	; 26
+ 718:	b1 e0       	ldi	r27, 0x01	; 1
+ 71a:	8f e7       	ldi	r24, 0x7F	; 127
+ 71c:	90 e0       	ldi	r25, 0x00	; 0
+	//PORTC=0x00;
+//	#ifdef Transmitter
+		//Override setup for TX
+		//ccxxx0_Write(CCxxx0_IOCFG0, 0x2F);
+	for (int i=0;i<7;i++)
+		current_status[i]=address[i];
+ 71e:	21 91       	ld	r18, Z+
+ 720:	2d 93       	st	X+, r18
+	uart_putc(part);
+	//PORTC=0x00;
+//	#ifdef Transmitter
+		//Override setup for TX
+		//ccxxx0_Write(CCxxx0_IOCFG0, 0x2F);
+	for (int i=0;i<7;i++)
+ 722:	e8 17       	cp	r30, r24
+ 724:	f9 07       	cpc	r31, r25
+ 726:	d9 f7       	brne	.-10     	; 0x71e <main+0x68>
+		current_status[i]=address[i];
+		uart_puts(address);
+ 728:	88 e7       	ldi	r24, 0x78	; 120
+ 72a:	90 e0       	ldi	r25, 0x00	; 0
+ 72c:	0e 94 4d 00 	call	0x9a	; 0x9a <_Z9uart_putsPh>
+
+		while(1)
+		{
+			toggle_ind=PINC;
+ 730:	83 b3       	in	r24, 0x13	; 19
+ 732:	80 93 92 01 	sts	0x0192, r24
+			CC_Receive();
+ 736:	0e 94 04 02 	call	0x408	; 0x408 <_Z10CC_Receivev>
+
+0000073a <strcpy>:
+ 73a:	fb 01       	movw	r30, r22
+ 73c:	dc 01       	movw	r26, r24
+ 73e:	01 90       	ld	r0, Z+
+ 740:	0d 92       	st	X+, r0
+ 742:	00 20       	and	r0, r0
+ 744:	e1 f7       	brne	.-8      	; 0x73e <strcpy+0x4>
+ 746:	08 95       	ret
+
+00000748 <_exit>:
+ 748:	f8 94       	cli
+
+0000074a <__stop_program>:
+ 74a:	ff cf       	rjmp	.-2      	; 0x74a <__stop_program>
