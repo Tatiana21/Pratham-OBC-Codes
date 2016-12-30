@@ -1,0 +1,2895 @@
+
+MasterOBC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000026  00800100  00001056  000010ea  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001056  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000083  00800126  00800126  00001110  2**0
+                  ALLOC
+  3 .comment      0000005c  00000000  00000000  00001110  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000001e8  00000000  00000000  0000116c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00002c00  00000000  00000000  00001354  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007c1  00000000  00000000  00003f54  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000018d6  00000000  00000000  00004715  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000474  00000000  00000000  00005fec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000007e0  00000000  00000000  00006460  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001aa5  00000000  00000000  00006c40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000001c8  00000000  00000000  000086e5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+       2:	00 00       	nop
+       4:	60 c0       	rjmp	.+192    	; 0xc6 <__bad_interrupt>
+       6:	00 00       	nop
+       8:	5e c0       	rjmp	.+188    	; 0xc6 <__bad_interrupt>
+       a:	00 00       	nop
+       c:	5c c0       	rjmp	.+184    	; 0xc6 <__bad_interrupt>
+       e:	00 00       	nop
+      10:	5a c0       	rjmp	.+180    	; 0xc6 <__bad_interrupt>
+      12:	00 00       	nop
+      14:	58 c0       	rjmp	.+176    	; 0xc6 <__bad_interrupt>
+      16:	00 00       	nop
+      18:	56 c0       	rjmp	.+172    	; 0xc6 <__bad_interrupt>
+      1a:	00 00       	nop
+      1c:	54 c0       	rjmp	.+168    	; 0xc6 <__bad_interrupt>
+      1e:	00 00       	nop
+      20:	52 c0       	rjmp	.+164    	; 0xc6 <__bad_interrupt>
+      22:	00 00       	nop
+      24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
+      26:	00 00       	nop
+      28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
+      2a:	00 00       	nop
+      2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
+      2e:	00 00       	nop
+      30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
+      32:	00 00       	nop
+      34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
+      36:	00 00       	nop
+      38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
+      3a:	00 00       	nop
+      3c:	44 c0       	rjmp	.+136    	; 0xc6 <__bad_interrupt>
+      3e:	00 00       	nop
+      40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
+      42:	00 00       	nop
+      44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
+      46:	00 00       	nop
+      48:	58 c1       	rjmp	.+688    	; 0x2fa <__vector_18>
+      4a:	00 00       	nop
+      4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
+      4e:	00 00       	nop
+      50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
+      52:	00 00       	nop
+      54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
+      56:	00 00       	nop
+      58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
+      5a:	00 00       	nop
+      5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
+      5e:	00 00       	nop
+      60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
+      62:	00 00       	nop
+      64:	30 c0       	rjmp	.+96     	; 0xc6 <__bad_interrupt>
+      66:	00 00       	nop
+      68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
+      6a:	00 00       	nop
+      6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
+      6e:	00 00       	nop
+      70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
+      72:	00 00       	nop
+      74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
+      76:	00 00       	nop
+      78:	f1 c1       	rjmp	.+994    	; 0x45c <__vector_30>
+      7a:	00 00       	nop
+      7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
+      7e:	00 00       	nop
+      80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
+      82:	00 00       	nop
+      84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
+      86:	00 00       	nop
+      88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+      8c:	11 24       	eor	r1, r1
+      8e:	1f be       	out	0x3f, r1	; 63
+      90:	cf ef       	ldi	r28, 0xFF	; 255
+      92:	d0 e1       	ldi	r29, 0x10	; 16
+      94:	de bf       	out	0x3e, r29	; 62
+      96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+      98:	11 e0       	ldi	r17, 0x01	; 1
+      9a:	a0 e0       	ldi	r26, 0x00	; 0
+      9c:	b1 e0       	ldi	r27, 0x01	; 1
+      9e:	e6 e5       	ldi	r30, 0x56	; 86
+      a0:	f0 e1       	ldi	r31, 0x10	; 16
+      a2:	00 e0       	ldi	r16, 0x00	; 0
+      a4:	0b bf       	out	0x3b, r16	; 59
+      a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+      a8:	07 90       	elpm	r0, Z+
+      aa:	0d 92       	st	X+, r0
+      ac:	a6 32       	cpi	r26, 0x26	; 38
+      ae:	b1 07       	cpc	r27, r17
+      b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+      b2:	21 e0       	ldi	r18, 0x01	; 1
+      b4:	a6 e2       	ldi	r26, 0x26	; 38
+      b6:	b1 e0       	ldi	r27, 0x01	; 1
+      b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+      ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+      bc:	a9 3a       	cpi	r26, 0xA9	; 169
+      be:	b2 07       	cpc	r27, r18
+      c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+      c2:	01 d2       	rcall	.+1026   	; 0x4c6 <main>
+      c4:	c6 c7       	rjmp	.+3980   	; 0x1052 <_exit>
+
+000000c6 <__bad_interrupt>:
+      c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+
+000000c8 <init_UART_MM>:
+      c8:	cf 93       	push	r28
+      ca:	df 93       	push	r29
+      cc:	cb e9       	ldi	r28, 0x9B	; 155
+      ce:	d0 e0       	ldi	r29, 0x00	; 0
+      d0:	18 82       	st	Y, r1
+      d2:	aa e9       	ldi	r26, 0x9A	; 154
+      d4:	b0 e0       	ldi	r27, 0x00	; 0
+      d6:	1c 92       	st	X, r1
+      d8:	ed e9       	ldi	r30, 0x9D	; 157
+      da:	f0 e0       	ldi	r31, 0x00	; 0
+      dc:	10 82       	st	Z, r1
+      de:	88 81       	ld	r24, Y
+      e0:	82 60       	ori	r24, 0x02	; 2
+      e2:	88 83       	st	Y, r24
+      e4:	8c 91       	ld	r24, X
+      e6:	88 69       	ori	r24, 0x98	; 152
+      e8:	8c 93       	st	X, r24
+      ea:	80 81       	ld	r24, Z
+      ec:	86 60       	ori	r24, 0x06	; 6
+      ee:	80 83       	st	Z, r24
+      f0:	87 e6       	ldi	r24, 0x67	; 103
+      f2:	80 93 99 00 	sts	0x0099, r24
+      f6:	10 92 98 00 	sts	0x0098, r1
+      fa:	df 91       	pop	r29
+      fc:	cf 91       	pop	r28
+      fe:	08 95       	ret
+
+00000100 <send_MM_cmd>:
+     100:	cf 93       	push	r28
+     102:	df 93       	push	r29
+     104:	fc 01       	movw	r30, r24
+     106:	20 81       	ld	r18, Z
+     108:	22 23       	and	r18, r18
+     10a:	69 f0       	breq	.+26     	; 0x126 <send_MM_cmd+0x26>
+     10c:	dc 01       	movw	r26, r24
+     10e:	11 96       	adiw	r26, 0x01	; 1
+     110:	eb e9       	ldi	r30, 0x9B	; 155
+     112:	f0 e0       	ldi	r31, 0x00	; 0
+     114:	cc e9       	ldi	r28, 0x9C	; 156
+     116:	d0 e0       	ldi	r29, 0x00	; 0
+     118:	80 81       	ld	r24, Z
+     11a:	85 ff       	sbrs	r24, 5
+     11c:	fd cf       	rjmp	.-6      	; 0x118 <send_MM_cmd+0x18>
+     11e:	28 83       	st	Y, r18
+     120:	2d 91       	ld	r18, X+
+     122:	21 11       	cpse	r18, r1
+     124:	f9 cf       	rjmp	.-14     	; 0x118 <send_MM_cmd+0x18>
+     126:	df 91       	pop	r29
+     128:	cf 91       	pop	r28
+     12a:	08 95       	ret
+
+0000012c <init_SPI>:
+	{
+		// Clear TWI interrupt flag, Put start condition on SDA, Enable TWI
+		TWCR= (1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+		while(!(TWCR & (1<<TWINT))); // wait till restart condition is transmitted
+		while((TWSR & 0xF8)!= 0x10); // Check for the acknoledgement
+	}
+     12c:	17 ba       	out	0x17, r1	; 23
+     12e:	86 e0       	ldi	r24, 0x06	; 6
+     130:	87 bb       	out	0x17, r24	; 23
+     132:	87 b3       	in	r24, 0x17	; 23
+     134:	81 63       	ori	r24, 0x31	; 49
+     136:	87 bb       	out	0x17, r24	; 23
+     138:	88 b3       	in	r24, 0x18	; 24
+     13a:	80 63       	ori	r24, 0x30	; 48
+     13c:	88 bb       	out	0x18, r24	; 24
+     13e:	c0 98       	cbi	0x18, 0	; 24
+     140:	8f e5       	ldi	r24, 0x5F	; 95
+     142:	8d b9       	out	0x0d, r24	; 13
+     144:	08 95       	ret
+
+00000146 <SPI_transfer>:
+     146:	8f b9       	out	0x0f, r24	; 15
+     148:	77 9b       	sbis	0x0e, 7	; 14
+     14a:	fe cf       	rjmp	.-4      	; 0x148 <SPI_transfer+0x2>
+     14c:	8f b1       	in	r24, 0x0f	; 15
+     14e:	08 95       	ret
+
+00000150 <transmitSunSensorUart>:
+     150:	cf 93       	push	r28
+     152:	c9 2f       	mov	r28, r25
+     154:	56 d7       	rcall	.+3756   	; 0x1002 <transmit_UART0>
+     156:	8c 2f       	mov	r24, r28
+     158:	54 d7       	rcall	.+3752   	; 0x1002 <transmit_UART0>
+     15a:	cf 91       	pop	r28
+     15c:	08 95       	ret
+
+0000015e <TWI_init_master>:
+     15e:	10 92 71 00 	sts	0x0071, r1
+     162:	10 92 74 00 	sts	0x0074, r1
+     166:	8c e0       	ldi	r24, 0x0C	; 12
+     168:	80 93 70 00 	sts	0x0070, r24
+     16c:	08 95       	ret
+
+0000016e <TWI_start>:
+     16e:	84 ea       	ldi	r24, 0xA4	; 164
+     170:	80 93 74 00 	sts	0x0074, r24
+     174:	e4 e7       	ldi	r30, 0x74	; 116
+     176:	f0 e0       	ldi	r31, 0x00	; 0
+     178:	80 81       	ld	r24, Z
+     17a:	88 23       	and	r24, r24
+     17c:	ec f7       	brge	.-6      	; 0x178 <TWI_start+0xa>
+     17e:	e1 e7       	ldi	r30, 0x71	; 113
+     180:	f0 e0       	ldi	r31, 0x00	; 0
+     182:	80 81       	ld	r24, Z
+     184:	88 7f       	andi	r24, 0xF8	; 248
+     186:	88 30       	cpi	r24, 0x08	; 8
+     188:	e1 f7       	brne	.-8      	; 0x182 <TWI_start+0x14>
+     18a:	08 95       	ret
+
+0000018c <TWI_write_address>:
+
+	void TWI_write_address(unsigned char data)//Function for Master side to send slave address for I2C
+	{
+
+		TWDR=data; // Address and write instruction
+     18c:	80 93 73 00 	sts	0x0073, r24
+		TWCR=(1<<TWINT)|(1<<TWEN);    // Clear TWI interrupt flag,Enable TWI
+     190:	84 e8       	ldi	r24, 0x84	; 132
+     192:	80 93 74 00 	sts	0x0074, r24
+		while (!(TWCR & (1<<TWINT)))// Wait till complete TWDR byte transmitted
+     196:	a4 e7       	ldi	r26, 0x74	; 116
+     198:	b0 e0       	ldi	r27, 0x00	; 0
+		while((TWSR & 0xF8)!= 0x18);  // Check for the acknowledgement
+     19a:	e1 e7       	ldi	r30, 0x71	; 113
+     19c:	f0 e0       	ldi	r31, 0x00	; 0
+	void TWI_write_address(unsigned char data)//Function for Master side to send slave address for I2C
+	{
+
+		TWDR=data; // Address and write instruction
+		TWCR=(1<<TWINT)|(1<<TWEN);    // Clear TWI interrupt flag,Enable TWI
+		while (!(TWCR & (1<<TWINT)))// Wait till complete TWDR byte transmitted
+     19e:	04 c0       	rjmp	.+8      	; 0x1a8 <TWI_write_address+0x1c>
+		while((TWSR & 0xF8)!= 0x18);  // Check for the acknowledgement
+     1a0:	80 81       	ld	r24, Z
+     1a2:	88 7f       	andi	r24, 0xF8	; 248
+     1a4:	88 31       	cpi	r24, 0x18	; 24
+     1a6:	e1 f7       	brne	.-8      	; 0x1a0 <TWI_write_address+0x14>
+	void TWI_write_address(unsigned char data)//Function for Master side to send slave address for I2C
+	{
+
+		TWDR=data; // Address and write instruction
+		TWCR=(1<<TWINT)|(1<<TWEN);    // Clear TWI interrupt flag,Enable TWI
+		while (!(TWCR & (1<<TWINT)))// Wait till complete TWDR byte transmitted
+     1a8:	8c 91       	ld	r24, X
+     1aa:	88 23       	and	r24, r24
+     1ac:	cc f7       	brge	.-14     	; 0x1a0 <TWI_write_address+0x14>
+		while((TWSR & 0xF8)!= 0x18);  // Check for the acknowledgement
+
+	}
+     1ae:	08 95       	ret
+
+000001b0 <TWI_read_address>:
+
+	void TWI_read_address(unsigned char data) //Function for slave side to read address sent by Master
+	{
+		TWDR=data; // Address and read instruction
+     1b0:	80 93 73 00 	sts	0x0073, r24
+		TWCR=(1<<TWINT)|(1<<TWEN);    // Clear TWI interrupt flag,Enable TWI
+     1b4:	84 e8       	ldi	r24, 0x84	; 132
+     1b6:	80 93 74 00 	sts	0x0074, r24
+		while (!(TWCR & (1<<TWINT))); // Wait till complete TWDR byte received
+     1ba:	e4 e7       	ldi	r30, 0x74	; 116
+     1bc:	f0 e0       	ldi	r31, 0x00	; 0
+     1be:	80 81       	ld	r24, Z
+     1c0:	88 23       	and	r24, r24
+     1c2:	ec f7       	brge	.-6      	; 0x1be <TWI_read_address+0xe>
+		while((TWSR & 0xF8)!= 0x40);  // Check for the acknoledgement
+     1c4:	e1 e7       	ldi	r30, 0x71	; 113
+     1c6:	f0 e0       	ldi	r31, 0x00	; 0
+     1c8:	80 81       	ld	r24, Z
+     1ca:	88 7f       	andi	r24, 0xF8	; 248
+     1cc:	80 34       	cpi	r24, 0x40	; 64
+     1ce:	e1 f7       	brne	.-8      	; 0x1c8 <TWI_read_address+0x18>
+	}
+     1d0:	08 95       	ret
+
+000001d2 <TWI_write_data>:
+
+	void TWI_write_data(unsigned char data)//Function to write data on I2C data line
+	{
+		TWDR=data; // put data in TWDR
+     1d2:	80 93 73 00 	sts	0x0073, r24
+		TWCR=(1<<TWINT)|(1<<TWEN);    // Clear TWI interrupt flag,Enable TWI
+     1d6:	84 e8       	ldi	r24, 0x84	; 132
+     1d8:	80 93 74 00 	sts	0x0074, r24
+		while (!(TWCR & (1<<TWINT))); // Wait till complete TWDR byte transmitted
+     1dc:	e4 e7       	ldi	r30, 0x74	; 116
+     1de:	f0 e0       	ldi	r31, 0x00	; 0
+     1e0:	80 81       	ld	r24, Z
+     1e2:	88 23       	and	r24, r24
+     1e4:	ec f7       	brge	.-6      	; 0x1e0 <TWI_write_data+0xe>
+		while((TWSR & 0xF8) != 0x28); // Check for the acknoledgement
+     1e6:	e1 e7       	ldi	r30, 0x71	; 113
+     1e8:	f0 e0       	ldi	r31, 0x00	; 0
+     1ea:	80 81       	ld	r24, Z
+     1ec:	88 7f       	andi	r24, 0xF8	; 248
+     1ee:	88 32       	cpi	r24, 0x28	; 40
+     1f0:	e1 f7       	brne	.-8      	; 0x1ea <TWI_write_data+0x18>
+	}
+     1f2:	08 95       	ret
+
+000001f4 <TWI_read_data>:
+
+	void TWI_read_data(void) //Function to read data from I2C data line
+	{
+		TWCR=(1<<TWINT)|(1<<TWEN);    // Clear TWI interrupt flag,Enable TWI
+     1f4:	84 e8       	ldi	r24, 0x84	; 132
+     1f6:	80 93 74 00 	sts	0x0074, r24
+		while (!(TWCR & (1<<TWINT))); // Wait till complete TWDR byte transmitted
+     1fa:	e4 e7       	ldi	r30, 0x74	; 116
+     1fc:	f0 e0       	ldi	r31, 0x00	; 0
+     1fe:	80 81       	ld	r24, Z
+     200:	88 23       	and	r24, r24
+     202:	ec f7       	brge	.-6      	; 0x1fe <TWI_read_data+0xa>
+		while((TWSR & 0xF8) != 0x58); // Check for the acknoledgement
+     204:	e1 e7       	ldi	r30, 0x71	; 113
+     206:	f0 e0       	ldi	r31, 0x00	; 0
+     208:	80 81       	ld	r24, Z
+     20a:	88 7f       	andi	r24, 0xF8	; 248
+     20c:	88 35       	cpi	r24, 0x58	; 88
+     20e:	e1 f7       	brne	.-8      	; 0x208 <TWI_read_data+0x14>
+		recv_data=TWDR;//PORTA=recv_data;
+     210:	20 91 73 00 	lds	r18, 0x0073
+     214:	20 93 9f 01 	sts	0x019F, r18
+		if(UniversalCycles % CyclesToCollectData == 0){transmit_UART0(recv_data);}
+     218:	80 91 0f 01 	lds	r24, 0x010F
+     21c:	90 91 10 01 	lds	r25, 0x0110
+     220:	60 91 0d 01 	lds	r22, 0x010D
+     224:	70 91 0e 01 	lds	r23, 0x010E
+     228:	00 d7       	rcall	.+3584   	; 0x102a <__udivmodhi4>
+     22a:	89 2b       	or	r24, r25
+     22c:	11 f4       	brne	.+4      	; 0x232 <TWI_read_data+0x3e>
+     22e:	82 2f       	mov	r24, r18
+     230:	e8 c6       	rjmp	.+3536   	; 0x1002 <transmit_UART0>
+     232:	08 95       	ret
+
+00000234 <TWI_stop>:
+	}
+
+	void TWI_stop(void)//Function to stop data transmission
+	{
+		// Clear TWI interrupt flag, Put stop condition on SDA, Enable TWI
+		TWCR= (1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+     234:	84 e9       	ldi	r24, 0x94	; 148
+     236:	80 93 74 00 	sts	0x0074, r24
+		while(!(TWCR & (1<<TWSTO)));  // Wait till stop condition is transmitted
+     23a:	e4 e7       	ldi	r30, 0x74	; 116
+     23c:	f0 e0       	ldi	r31, 0x00	; 0
+     23e:	80 81       	ld	r24, Z
+     240:	84 ff       	sbrs	r24, 4
+     242:	fd cf       	rjmp	.-6      	; 0x23e <TWI_stop+0xa>
+	}
+     244:	08 95       	ret
+
+00000246 <torquer_only_x_positive>:
+	
+	void torquer_only_x_positive(void){//Function to turn on only x-direction torquer. These functions are often meddled with. So don't be surprised if the definition doesn't match the desclaration	
+		reset_PWM();
+     246:	a3 d6       	rcall	.+3398   	; 0xf8e <reset_PWM>
+		Current_state.pwm.x_dir = 0;
+     248:	10 92 86 01 	sts	0x0186, r1
+		Current_state.pwm.x = 32786;
+     24c:	82 e1       	ldi	r24, 0x12	; 18
+     24e:	90 e8       	ldi	r25, 0x80	; 128
+     250:	90 93 81 01 	sts	0x0181, r25
+     254:	80 93 80 01 	sts	0x0180, r24
+		Current_state.pwm.y_dir = 0;
+     258:	10 92 87 01 	sts	0x0187, r1
+		Current_state.pwm.y = 0;
+     25c:	10 92 83 01 	sts	0x0183, r1
+     260:	10 92 82 01 	sts	0x0182, r1
+		Current_state.pwm.z_dir = 0;
+     264:	10 92 88 01 	sts	0x0188, r1
+		Current_state.pwm.z = 0;
+     268:	10 92 85 01 	sts	0x0185, r1
+     26c:	10 92 84 01 	sts	0x0184, r1
+		set_PWM ();
+     270:	60 c6       	rjmp	.+3264   	; 0xf32 <set_PWM>
+     272:	08 95       	ret
+
+00000274 <torquer_only_y_positive>:
+	}
+
+	void torquer_only_y_positive(void)//Function to turn on only y-direction torquer
+	{
+		reset_PWM();
+     274:	8c d6       	rcall	.+3352   	; 0xf8e <reset_PWM>
+		Current_state.pwm.x_dir = 0;
+     276:	10 92 86 01 	sts	0x0186, r1
+		Current_state.pwm.x = 0;
+     27a:	10 92 81 01 	sts	0x0181, r1
+     27e:	10 92 80 01 	sts	0x0180, r1
+		Current_state.pwm.y_dir = 0;
+     282:	10 92 87 01 	sts	0x0187, r1
+		Current_state.pwm.y = 32786;
+     286:	82 e1       	ldi	r24, 0x12	; 18
+     288:	90 e8       	ldi	r25, 0x80	; 128
+     28a:	90 93 83 01 	sts	0x0183, r25
+     28e:	80 93 82 01 	sts	0x0182, r24
+		Current_state.pwm.z_dir = 0;
+     292:	10 92 88 01 	sts	0x0188, r1
+		Current_state.pwm.z = 0;
+     296:	10 92 85 01 	sts	0x0185, r1
+     29a:	10 92 84 01 	sts	0x0184, r1
+		set_PWM ();
+     29e:	49 c6       	rjmp	.+3218   	; 0xf32 <set_PWM>
+     2a0:	08 95       	ret
+
+000002a2 <torquer_only_z_positive>:
+	}
+
+	void torquer_only_z_positive(void)//Function to turn on only z-direction torquer
+	{
+		reset_PWM();
+     2a2:	75 d6       	rcall	.+3306   	; 0xf8e <reset_PWM>
+		Current_state.pwm.x_dir = 0;
+     2a4:	10 92 86 01 	sts	0x0186, r1
+		Current_state.pwm.x = 0;
+     2a8:	10 92 81 01 	sts	0x0181, r1
+     2ac:	10 92 80 01 	sts	0x0180, r1
+		Current_state.pwm.y_dir = 0;
+     2b0:	10 92 87 01 	sts	0x0187, r1
+		Current_state.pwm.y = 0;
+     2b4:	10 92 83 01 	sts	0x0183, r1
+     2b8:	10 92 82 01 	sts	0x0182, r1
+		Current_state.pwm.z_dir = 0;
+     2bc:	10 92 88 01 	sts	0x0188, r1
+		Current_state.pwm.z = 32768;
+     2c0:	80 e0       	ldi	r24, 0x00	; 0
+     2c2:	90 e8       	ldi	r25, 0x80	; 128
+     2c4:	90 93 85 01 	sts	0x0185, r25
+     2c8:	80 93 84 01 	sts	0x0184, r24
+		set_PWM ();
+     2cc:	32 c6       	rjmp	.+3172   	; 0xf32 <set_PWM>
+     2ce:	08 95       	ret
+
+000002d0 <torquer_all_zeroes>:
+	}
+	
+	void torquer_all_zeroes(void)//Function to turn off all torquers
+	{
+		reset_PWM();
+     2d0:	5e d6       	rcall	.+3260   	; 0xf8e <reset_PWM>
+		Current_state.pwm.x_dir = 0;
+     2d2:	10 92 86 01 	sts	0x0186, r1
+		Current_state.pwm.x = 0;
+     2d6:	10 92 81 01 	sts	0x0181, r1
+     2da:	10 92 80 01 	sts	0x0180, r1
+		Current_state.pwm.y_dir = 0;
+     2de:	10 92 87 01 	sts	0x0187, r1
+		Current_state.pwm.y = 0;
+     2e2:	10 92 83 01 	sts	0x0183, r1
+     2e6:	10 92 82 01 	sts	0x0182, r1
+		Current_state.pwm.z_dir = 0;
+     2ea:	10 92 88 01 	sts	0x0188, r1
+		Current_state.pwm.z = 0;
+     2ee:	10 92 85 01 	sts	0x0185, r1
+     2f2:	10 92 84 01 	sts	0x0184, r1
+		set_PWM ();
+     2f6:	1d c6       	rjmp	.+3130   	; 0xf32 <set_PWM>
+     2f8:	08 95       	ret
+
+000002fa <__vector_18>:
+	}
+
+	
+ISR(USART0_RX_vect) //Interrupt vector for UART. UARTs received from the GPS and the external PC will be handled by this
+{
+     2fa:	1f 92       	push	r1
+     2fc:	0f 92       	push	r0
+     2fe:	0f b6       	in	r0, 0x3f	; 63
+     300:	0f 92       	push	r0
+     302:	11 24       	eor	r1, r1
+     304:	0b b6       	in	r0, 0x3b	; 59
+     306:	0f 92       	push	r0
+     308:	2f 93       	push	r18
+     30a:	3f 93       	push	r19
+     30c:	4f 93       	push	r20
+     30e:	5f 93       	push	r21
+     310:	6f 93       	push	r22
+     312:	7f 93       	push	r23
+     314:	8f 93       	push	r24
+     316:	9f 93       	push	r25
+     318:	af 93       	push	r26
+     31a:	bf 93       	push	r27
+     31c:	ef 93       	push	r30
+     31e:	ff 93       	push	r31
+	check = UDR0;
+     320:	8c b1       	in	r24, 0x0c	; 12
+     322:	80 93 a0 01 	sts	0x01A0, r24
+	//transmit_UART0(check);
+	if(check == '*'){PORTA = 0x11;//Instruction received to turn on downlink and uplink. Downlink will start immediately and then uplink and then there will be the cycle Normal - Downlink - Uplink
+     326:	80 91 a0 01 	lds	r24, 0x01A0
+     32a:	8a 32       	cpi	r24, 0x2A	; 42
+     32c:	e1 f4       	brne	.+56     	; 0x366 <__vector_18+0x6c>
+     32e:	81 e1       	ldi	r24, 0x11	; 17
+     330:	8b bb       	out	0x1b, r24	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     332:	2f ef       	ldi	r18, 0xFF	; 255
+     334:	81 e1       	ldi	r24, 0x11	; 17
+     336:	9a e7       	ldi	r25, 0x7A	; 122
+     338:	21 50       	subi	r18, 0x01	; 1
+     33a:	80 40       	sbci	r24, 0x00	; 0
+     33c:	90 40       	sbci	r25, 0x00	; 0
+     33e:	e1 f7       	brne	.-8      	; 0x338 <__vector_18+0x3e>
+     340:	00 c0       	rjmp	.+0      	; 0x342 <__vector_18+0x48>
+     342:	00 00       	nop
+		_delay_ms(5000);
+		StarReceived = 1;
+     344:	81 e0       	ldi	r24, 0x01	; 1
+     346:	90 e0       	ldi	r25, 0x00	; 0
+     348:	90 93 2c 01 	sts	0x012C, r25
+     34c:	80 93 2b 01 	sts	0x012B, r24
+		overGS = 1;
+     350:	90 93 30 01 	sts	0x0130, r25
+     354:	80 93 2f 01 	sts	0x012F, r24
+		CounterInsideGS = 0;
+     358:	10 92 2e 01 	sts	0x012E, r1
+     35c:	10 92 2d 01 	sts	0x012D, r1
+		BracketReceived = 0;
+     360:	10 92 26 01 	sts	0x0126, r1
+     364:	68 c0       	rjmp	.+208    	; 0x436 <__vector_18+0x13c>
+		//FirstStar = 1;
+		//counterforGS = CyclesToGS-1;
+	}
+	else if(check == '&')//Instruction received to turn off downlink indefinitely. It won't start till we transmit *
+     366:	80 91 a0 01 	lds	r24, 0x01A0
+     36a:	86 32       	cpi	r24, 0x26	; 38
+     36c:	79 f5       	brne	.+94     	; 0x3cc <__vector_18+0xd2>
+	{
+		PORTA = 0xCC;
+     36e:	8c ec       	ldi	r24, 0xCC	; 204
+     370:	8b bb       	out	0x1b, r24	; 27
+     372:	2f ef       	ldi	r18, 0xFF	; 255
+     374:	81 e1       	ldi	r24, 0x11	; 17
+     376:	9a e7       	ldi	r25, 0x7A	; 122
+     378:	21 50       	subi	r18, 0x01	; 1
+     37a:	80 40       	sbci	r24, 0x00	; 0
+     37c:	90 40       	sbci	r25, 0x00	; 0
+     37e:	e1 f7       	brne	.-8      	; 0x378 <__vector_18+0x7e>
+     380:	00 c0       	rjmp	.+0      	; 0x382 <__vector_18+0x88>
+     382:	00 00       	nop
+     384:	83 e0       	ldi	r24, 0x03	; 3
+     386:	90 e0       	ldi	r25, 0x00	; 0
+		_delay_ms(5000);
+		for(int i =0; i<3; i++){
+			SPDR = 0xD1;//Tell slave it's time to go back to normal mode
+     388:	21 ed       	ldi	r18, 0xD1	; 209
+     38a:	2f b9       	out	0x0f, r18	; 15
+			while(!(SPSR & (1<<SPIF) ));}
+     38c:	77 9b       	sbis	0x0e, 7	; 14
+     38e:	fe cf       	rjmp	.-4      	; 0x38c <__vector_18+0x92>
+     390:	01 97       	sbiw	r24, 0x01	; 1
+	}
+	else if(check == '&')//Instruction received to turn off downlink indefinitely. It won't start till we transmit *
+	{
+		PORTA = 0xCC;
+		_delay_ms(5000);
+		for(int i =0; i<3; i++){
+     392:	00 97       	sbiw	r24, 0x00	; 0
+     394:	d1 f7       	brne	.-12     	; 0x38a <__vector_18+0x90>
+			SPDR = 0xD1;//Tell slave it's time to go back to normal mode
+			while(!(SPSR & (1<<SPIF) ));}
+			PORTA = 0xAA;
+     396:	8a ea       	ldi	r24, 0xAA	; 170
+     398:	8b bb       	out	0x1b, r24	; 27
+			TWI_start(); // Function to send start condition
+     39a:	e9 de       	rcall	.-558    	; 0x16e <TWI_start>
+			PORTA=0b11000000;
+     39c:	80 ec       	ldi	r24, 0xC0	; 192
+     39e:	8b bb       	out	0x1b, r24	; 27
+			TWI_write_address(address); // Function to write address and data direction bit(write) on SDA
+     3a0:	80 91 17 01 	lds	r24, 0x0117
+     3a4:	f3 de       	rcall	.-538    	; 0x18c <TWI_write_address>
+
+			PORTA=0b01100000;
+     3a6:	80 e6       	ldi	r24, 0x60	; 96
+     3a8:	8b bb       	out	0x1b, r24	; 27
+			TWI_write_data(write_data);     // Function to write data in slave
+     3aa:	80 91 15 01 	lds	r24, 0x0115
+     3ae:	11 df       	rcall	.-478    	; 0x1d2 <TWI_write_data>
+			PORTA=0b10100000;
+     3b0:	80 ea       	ldi	r24, 0xA0	; 160
+     3b2:	8b bb       	out	0x1b, r24	; 27
+			TWI_stop();
+     3b4:	3f df       	rcall	.-386    	; 0x234 <TWI_stop>
+		StarReceived = 0;
+     3b6:	10 92 2c 01 	sts	0x012C, r1
+     3ba:	10 92 2b 01 	sts	0x012B, r1
+		BracketReceived = 0;
+     3be:	10 92 26 01 	sts	0x0126, r1
+		overGS = 0;
+     3c2:	10 92 30 01 	sts	0x0130, r1
+     3c6:	10 92 2f 01 	sts	0x012F, r1
+     3ca:	35 c0       	rjmp	.+106    	; 0x436 <__vector_18+0x13c>
+		//CounterInsideGS = 0;
+		}
+		else if(check == '^')//Instruction received to turn on Torquer. X,Y,Z are turned on serially for 30 seconds
+     3cc:	80 91 a0 01 	lds	r24, 0x01A0
+     3d0:	8e 35       	cpi	r24, 0x5E	; 94
+     3d2:	91 f4       	brne	.+36     	; 0x3f8 <__vector_18+0xfe>
+		{
+			PORTA = 0xEE;
+     3d4:	8e ee       	ldi	r24, 0xEE	; 238
+     3d6:	8b bb       	out	0x1b, r24	; 27
+     3d8:	2f ef       	ldi	r18, 0xFF	; 255
+     3da:	81 e1       	ldi	r24, 0x11	; 17
+     3dc:	9a e7       	ldi	r25, 0x7A	; 122
+     3de:	21 50       	subi	r18, 0x01	; 1
+     3e0:	80 40       	sbci	r24, 0x00	; 0
+     3e2:	90 40       	sbci	r25, 0x00	; 0
+     3e4:	e1 f7       	brne	.-8      	; 0x3de <__vector_18+0xe4>
+     3e6:	00 c0       	rjmp	.+0      	; 0x3e8 <__vector_18+0xee>
+     3e8:	00 00       	nop
+			_delay_ms(5000);
+			StartTorquer = 1;
+     3ea:	81 e0       	ldi	r24, 0x01	; 1
+     3ec:	90 e0       	ldi	r25, 0x00	; 0
+     3ee:	90 93 2a 01 	sts	0x012A, r25
+     3f2:	80 93 29 01 	sts	0x0129, r24
+     3f6:	1f c0       	rjmp	.+62     	; 0x436 <__vector_18+0x13c>
+		}
+		else if(check == '(')
+     3f8:	80 91 a0 01 	lds	r24, 0x01A0
+     3fc:	88 32       	cpi	r24, 0x28	; 40
+     3fe:	d9 f4       	brne	.+54     	; 0x436 <__vector_18+0x13c>
+		{
+			PORTA = 0x00;
+     400:	1b ba       	out	0x1b, r1	; 27
+     402:	2f ef       	ldi	r18, 0xFF	; 255
+     404:	81 e1       	ldi	r24, 0x11	; 17
+     406:	9a e7       	ldi	r25, 0x7A	; 122
+     408:	21 50       	subi	r18, 0x01	; 1
+     40a:	80 40       	sbci	r24, 0x00	; 0
+     40c:	90 40       	sbci	r25, 0x00	; 0
+     40e:	e1 f7       	brne	.-8      	; 0x408 <__vector_18+0x10e>
+     410:	00 c0       	rjmp	.+0      	; 0x412 <__vector_18+0x118>
+     412:	00 00       	nop
+			_delay_ms(5000);
+			BracketReceived = 1;
+     414:	81 e0       	ldi	r24, 0x01	; 1
+     416:	80 93 26 01 	sts	0x0126, r24
+			StarReceived = 0;
+     41a:	10 92 2c 01 	sts	0x012C, r1
+     41e:	10 92 2b 01 	sts	0x012B, r1
+			overGS = 1;
+     422:	81 e0       	ldi	r24, 0x01	; 1
+     424:	90 e0       	ldi	r25, 0x00	; 0
+     426:	90 93 30 01 	sts	0x0130, r25
+     42a:	80 93 2f 01 	sts	0x012F, r24
+			CounterInsideGS = 0;
+     42e:	10 92 2e 01 	sts	0x012E, r1
+     432:	10 92 2d 01 	sts	0x012D, r1
+			//FirstStar = 1;
+			//counterforGS = CyclesToGS-1;
+		}
+	
+}
+     436:	ff 91       	pop	r31
+     438:	ef 91       	pop	r30
+     43a:	bf 91       	pop	r27
+     43c:	af 91       	pop	r26
+     43e:	9f 91       	pop	r25
+     440:	8f 91       	pop	r24
+     442:	7f 91       	pop	r23
+     444:	6f 91       	pop	r22
+     446:	5f 91       	pop	r21
+     448:	4f 91       	pop	r20
+     44a:	3f 91       	pop	r19
+     44c:	2f 91       	pop	r18
+     44e:	0f 90       	pop	r0
+     450:	0b be       	out	0x3b, r0	; 59
+     452:	0f 90       	pop	r0
+     454:	0f be       	out	0x3f, r0	; 63
+     456:	0f 90       	pop	r0
+     458:	1f 90       	pop	r1
+     45a:	18 95       	reti
+
+0000045c <__vector_30>:
+
+ISR(USART1_RX_vect)//ISR for Magmeter UART
+{
+     45c:	1f 92       	push	r1
+     45e:	0f 92       	push	r0
+     460:	0f b6       	in	r0, 0x3f	; 63
+     462:	0f 92       	push	r0
+     464:	11 24       	eor	r1, r1
+     466:	0b b6       	in	r0, 0x3b	; 59
+     468:	0f 92       	push	r0
+     46a:	2f 93       	push	r18
+     46c:	3f 93       	push	r19
+     46e:	4f 93       	push	r20
+     470:	5f 93       	push	r21
+     472:	6f 93       	push	r22
+     474:	7f 93       	push	r23
+     476:	8f 93       	push	r24
+     478:	9f 93       	push	r25
+     47a:	af 93       	push	r26
+     47c:	bf 93       	push	r27
+     47e:	ef 93       	push	r30
+     480:	ff 93       	push	r31
+	uint8_t a =UDR1;
+     482:	20 91 9c 00 	lds	r18, 0x009C
+	if (UniversalCycles%CyclesToCollectData == 0) {transmit_UART0(a);}
+     486:	80 91 0f 01 	lds	r24, 0x010F
+     48a:	90 91 10 01 	lds	r25, 0x0110
+     48e:	60 91 0d 01 	lds	r22, 0x010D
+     492:	70 91 0e 01 	lds	r23, 0x010E
+     496:	c9 d5       	rcall	.+2962   	; 0x102a <__udivmodhi4>
+     498:	89 2b       	or	r24, r25
+     49a:	11 f4       	brne	.+4      	; 0x4a0 <__vector_30+0x44>
+     49c:	82 2f       	mov	r24, r18
+     49e:	b1 d5       	rcall	.+2914   	; 0x1002 <transmit_UART0>
+}
+     4a0:	ff 91       	pop	r31
+     4a2:	ef 91       	pop	r30
+     4a4:	bf 91       	pop	r27
+     4a6:	af 91       	pop	r26
+     4a8:	9f 91       	pop	r25
+     4aa:	8f 91       	pop	r24
+     4ac:	7f 91       	pop	r23
+     4ae:	6f 91       	pop	r22
+     4b0:	5f 91       	pop	r21
+     4b2:	4f 91       	pop	r20
+     4b4:	3f 91       	pop	r19
+     4b6:	2f 91       	pop	r18
+     4b8:	0f 90       	pop	r0
+     4ba:	0b be       	out	0x3b, r0	; 59
+     4bc:	0f 90       	pop	r0
+     4be:	0f be       	out	0x3f, r0	; 63
+     4c0:	0f 90       	pop	r0
+     4c2:	1f 90       	pop	r1
+     4c4:	18 95       	reti
+
+000004c6 <main>:
+int main (void)
+{
+	//watch_dog(T_POWER);
+//Start:
+//timer1_init();
+init_SPI();                 
+     4c6:	32 de       	rcall	.-924    	; 0x12c <init_SPI>
+init_UART0();               
+     4c8:	8b d5       	rcall	.+2838   	; 0xfe0 <init_UART0>
+init_UART_MM();
+     4ca:	fe dd       	rcall	.-1028   	; 0xc8 <init_UART_MM>
+configure_torquer();
+     4cc:	0c d5       	rcall	.+2584   	; 0xee6 <configure_torquer>
+//sei();
+DDRA=0xF0;
+     4ce:	80 ef       	ldi	r24, 0xF0	; 240
+     4d0:	8a bb       	out	0x1a, r24	; 26
+DDRB |= (1<<PB0)|(1<<PB5);//PB0 and PB5 are slave select pins for Slave OBC and ADC
+     4d2:	87 b3       	in	r24, 0x17	; 23
+     4d4:	81 62       	ori	r24, 0x21	; 33
+     4d6:	87 bb       	out	0x17, r24	; 23
+     4d8:	2f ef       	ldi	r18, 0xFF	; 255
+     4da:	33 ed       	ldi	r19, 0xD3	; 211
+     4dc:	80 e3       	ldi	r24, 0x30	; 48
+     4de:	21 50       	subi	r18, 0x01	; 1
+     4e0:	30 40       	sbci	r19, 0x00	; 0
+     4e2:	80 40       	sbci	r24, 0x00	; 0
+     4e4:	e1 f7       	brne	.-8      	; 0x4de <main+0x18>
+     4e6:	00 c0       	rjmp	.+0      	; 0x4e8 <main+0x22>
+     4e8:	00 00       	nop
+int j=1;   
+_delay_ms(2000);
+PORTA=0b11010000; //LED indicator for debugging
+     4ea:	80 ed       	ldi	r24, 0xD0	; 208
+     4ec:	8b bb       	out	0x1b, r24	; 27
+
+
+TWI_init_master(); // Function to initialize TWI
+     4ee:	37 de       	rcall	.-914    	; 0x15e <TWI_init_master>
+     4f0:	9f ef       	ldi	r25, 0xFF	; 255
+     4f2:	a3 ed       	ldi	r26, 0xD3	; 211
+     4f4:	b0 e3       	ldi	r27, 0x30	; 48
+     4f6:	91 50       	subi	r25, 0x01	; 1
+     4f8:	a0 40       	sbci	r26, 0x00	; 0
+     4fa:	b0 40       	sbci	r27, 0x00	; 0
+     4fc:	e1 f7       	brne	.-8      	; 0x4f6 <main+0x30>
+     4fe:	00 c0       	rjmp	.+0      	; 0x500 <main+0x3a>
+     500:	00 00       	nop
+uint16_t val4;
+uint16_t val5;
+_delay_ms(2000);
+//cli();
+
+sei(); //
+     502:	78 94       	sei
+{
+	PORTB |= (1<<PB5); 
+	PORTB &= ~(1<<PB0);
+	//SPCR |= (1<<SPE);
+	//write_data&= ~(1<<4);// Turn off both downlink and uplink
+	wdt_enable(WDTO_2S);
+     504:	0f 2e       	mov	r0, r31
+     506:	f8 e1       	ldi	r31, 0x18	; 24
+     508:	ef 2e       	mov	r14, r31
+     50a:	f1 2c       	mov	r15, r1
+     50c:	f0 2d       	mov	r31, r0
+     50e:	c9 ea       	ldi	r28, 0xA9	; 169
+     510:	d1 e0       	ldi	r29, 0x01	; 1
+     512:	02 ea       	ldi	r16, 0xA2	; 162
+     514:	11 e0       	ldi	r17, 0x01	; 1
+//cli();
+
+sei(); //
+while(1)
+{
+	timer_reset_two_sec();
+     516:	4f d5       	rcall	.+2718   	; 0xfb6 <timer_reset_two_sec>
+if(overGS==0)          //Check that the satellite does not have to transmit
+     518:	80 91 2f 01 	lds	r24, 0x012F
+     51c:	90 91 30 01 	lds	r25, 0x0130
+     520:	00 97       	sbiw	r24, 0x00	; 0
+     522:	09 f0       	breq	.+2      	; 0x526 <main+0x60>
+     524:	38 c2       	rjmp	.+1136   	; 0x996 <main+0x4d0>
+		// _delay_ms(5000);
+		 //StarReceived = 1;
+		 //FirstStar = 1;
+		 //counterforGS = CyclesToGS-1;
+		 //}
+		 wdt_enable(WDTO_2S);
+     526:	8f e0       	ldi	r24, 0x0F	; 15
+     528:	0f b6       	in	r0, 0x3f	; 63
+     52a:	f8 94       	cli
+     52c:	a8 95       	wdr
+     52e:	e1 bc       	out	0x21, r14	; 33
+     530:	0f be       	out	0x3f, r0	; 63
+     532:	81 bd       	out	0x21, r24	; 33
+		 wdt_reset();
+     534:	a8 95       	wdr
+		 
+	PORTB |= (1<<PB5); //Set slave select of ADC =1
+     536:	c5 9a       	sbi	0x18, 5	; 24
+	PORTB &= ~(1<<PB0);//Set slave select of Slave OBC = 0
+     538:	c0 98       	cbi	0x18, 0	; 24
+	//SPCR |= (1<<SPE);
+	write_data&= ~(1<<4);// Turn off both downlink
+	write_data&= ~(1<<1);//Turn off uplink
+     53a:	80 91 15 01 	lds	r24, 0x0115
+     53e:	8d 7e       	andi	r24, 0xED	; 237
+     540:	80 93 15 01 	sts	0x0115, r24
+	//write_data |= (1<<1); //Temporary jugaad
+	//transmit_UART0('a');
+PORTA = 0xAA;
+     544:	8a ea       	ldi	r24, 0xAA	; 170
+     546:	8b bb       	out	0x1b, r24	; 27
+TWI_start(); // Function to send start condition
+     548:	12 de       	rcall	.-988    	; 0x16e <TWI_start>
+PORTA=0b11000000;
+     54a:	80 ec       	ldi	r24, 0xC0	; 192
+     54c:	8b bb       	out	0x1b, r24	; 27
+TWI_write_address(address); // Function to write address and data direction bit(write) on SDA
+     54e:	80 91 17 01 	lds	r24, 0x0117
+     552:	1c de       	rcall	.-968    	; 0x18c <TWI_write_address>
+
+PORTA=0b01100000;
+     554:	80 e6       	ldi	r24, 0x60	; 96
+     556:	8b bb       	out	0x1b, r24	; 27
+TWI_write_data(write_data);     // Function to write data in slave
+     558:	80 91 15 01 	lds	r24, 0x0115
+     55c:	3a de       	rcall	.-908    	; 0x1d2 <TWI_write_data>
+PORTA=0b10100000;
+     55e:	80 ea       	ldi	r24, 0xA0	; 160
+     560:	8b bb       	out	0x1b, r24	; 27
+TWI_stop(); // Function to send stop condition
+     562:	68 de       	rcall	.-816    	; 0x234 <TWI_stop>
+//transmit_UART0('b');
+
+if (UniversalCycles%CyclesToCollectData == 0){transmit_string_UART0("PRA");}
+     564:	80 91 0f 01 	lds	r24, 0x010F
+     568:	90 91 10 01 	lds	r25, 0x0110
+     56c:	60 91 0d 01 	lds	r22, 0x010D
+     570:	70 91 0e 01 	lds	r23, 0x010E
+     574:	5a d5       	rcall	.+2740   	; 0x102a <__udivmodhi4>
+     576:	89 2b       	or	r24, r25
+     578:	19 f4       	brne	.+6      	; 0x580 <main+0xba>
+     57a:	88 e1       	ldi	r24, 0x18	; 24
+     57c:	91 e0       	ldi	r25, 0x01	; 1
+     57e:	49 d5       	rcall	.+2706   	; 0x1012 <transmit_string_UART0>
+     580:	ef e1       	ldi	r30, 0x1F	; 31
+     582:	fe e4       	ldi	r31, 0x4E	; 78
+     584:	31 97       	sbiw	r30, 0x01	; 1
+     586:	f1 f7       	brne	.-4      	; 0x584 <main+0xbe>
+     588:	00 c0       	rjmp	.+0      	; 0x58a <main+0xc4>
+     58a:	00 00       	nop
+     58c:	68 01       	movw	r12, r16
+_delay_ms(10); // Delay of 10 mili second
+//************************Get HM Data from Power Board*************************************
+for(int i=0;i<7;i=i+1) 
+{
+	TWI_start();
+     58e:	ef dd       	rcall	.-1058   	; 0x16e <TWI_start>
+	
+	TWI_read_address(address+read); // Function to write address and data direction bit(read) on SDA
+     590:	90 91 16 01 	lds	r25, 0x0116
+     594:	80 91 17 01 	lds	r24, 0x0117
+     598:	89 0f       	add	r24, r25
+     59a:	0a de       	rcall	.-1004   	; 0x1b0 <TWI_read_address>
+	TWI_read_data(); // Function to read data from slave
+     59c:	2b de       	rcall	.-938    	; 0x1f4 <TWI_read_data>
+	HM_Data[i] = recv_data;
+     59e:	80 91 9f 01 	lds	r24, 0x019F
+     5a2:	d6 01       	movw	r26, r12
+     5a4:	8d 93       	st	X+, r24
+     5a6:	6d 01       	movw	r12, r26
+	TWI_stop();
+     5a8:	45 de       	rcall	.-886    	; 0x234 <TWI_stop>
+//transmit_UART0('b');
+
+if (UniversalCycles%CyclesToCollectData == 0){transmit_string_UART0("PRA");}
+_delay_ms(10); // Delay of 10 mili second
+//************************Get HM Data from Power Board*************************************
+for(int i=0;i<7;i=i+1) 
+     5aa:	cc 16       	cp	r12, r28
+     5ac:	dd 06       	cpc	r13, r29
+     5ae:	79 f7       	brne	.-34     	; 0x58e <main+0xc8>
+     5b0:	ef e1       	ldi	r30, 0x1F	; 31
+     5b2:	fe e4       	ldi	r31, 0x4E	; 78
+     5b4:	31 97       	sbiw	r30, 0x01	; 1
+     5b6:	f1 f7       	brne	.-4      	; 0x5b4 <main+0xee>
+     5b8:	00 c0       	rjmp	.+0      	; 0x5ba <main+0xf4>
+     5ba:	00 00       	nop
+     5bc:	f8 01       	movw	r30, r16
+
+
+	for (uint8_t i =0;i<7;i++) {	
+			SPDR = HM_Data[i];
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+     5be:	9f ef       	ldi	r25, 0xFF	; 255
+}
+_delay_ms(10);
+
+
+	for (uint8_t i =0;i<7;i++) {	
+			SPDR = HM_Data[i];
+     5c0:	81 91       	ld	r24, Z+
+     5c2:	8f b9       	out	0x0f, r24	; 15
+			while(!(SPSR & (1<<SPIF) ));
+     5c4:	77 9b       	sbis	0x0e, 7	; 14
+     5c6:	fe cf       	rjmp	.-4      	; 0x5c4 <main+0xfe>
+			PORTA = 0xFF;
+     5c8:	9b bb       	out	0x1b, r25	; 27
+     5ca:	af ec       	ldi	r26, 0xCF	; 207
+     5cc:	b7 e0       	ldi	r27, 0x07	; 7
+     5ce:	11 97       	sbiw	r26, 0x01	; 1
+     5d0:	f1 f7       	brne	.-4      	; 0x5ce <main+0x108>
+     5d2:	00 c0       	rjmp	.+0      	; 0x5d4 <main+0x10e>
+     5d4:	00 00       	nop
+	TWI_stop();
+}
+_delay_ms(10);
+
+
+	for (uint8_t i =0;i<7;i++) {	
+     5d6:	ec 17       	cp	r30, r28
+     5d8:	fd 07       	cpc	r31, r29
+     5da:	91 f7       	brne	.-28     	; 0x5c0 <main+0xfa>
+			SPDR = HM_Data[i];
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+			_delay_ms(1);
+		}
+		PORTB |= (1<<PB0);
+     5dc:	c0 9a       	sbi	0x18, 0	; 24
+		PORTB &= ~(1<<PB5);
+     5de:	c5 98       	cbi	0x18, 5	; 24
+		wdt_reset();
+     5e0:	a8 95       	wdr
+		
+		//SPCR &= ~(1<<SPE);		
+		//****************************OC Check Block *************************************//
+		
+		if(counter1 == 0) //OC Check for Beacon
+     5e2:	80 91 37 01 	lds	r24, 0x0137
+     5e6:	90 91 38 01 	lds	r25, 0x0138
+     5ea:	89 2b       	or	r24, r25
+     5ec:	81 f4       	brne	.+32     	; 0x60e <main+0x148>
+		{
+			if((HM_Data[6]&(0x80)) == 0)
+     5ee:	e8 ea       	ldi	r30, 0xA8	; 168
+     5f0:	f1 e0       	ldi	r31, 0x01	; 1
+     5f2:	80 81       	ld	r24, Z
+     5f4:	88 23       	and	r24, r24
+     5f6:	4c f1       	brlt	.+82     	; 0x64a <main+0x184>
+			{
+				counter1 = 1;
+     5f8:	81 e0       	ldi	r24, 0x01	; 1
+     5fa:	90 e0       	ldi	r25, 0x00	; 0
+     5fc:	90 93 38 01 	sts	0x0138, r25
+     600:	80 93 37 01 	sts	0x0137, r24
+				write_data &= ~(1<<7);
+     604:	80 91 15 01 	lds	r24, 0x0115
+     608:	8f 77       	andi	r24, 0x7F	; 127
+     60a:	80 93 15 01 	sts	0x0115, r24
+				
+			}
+		}
+		
+		if((counter1 > 0) && (counter1 < 7))
+     60e:	80 91 37 01 	lds	r24, 0x0137
+     612:	90 91 38 01 	lds	r25, 0x0138
+     616:	9c 01       	movw	r18, r24
+     618:	21 50       	subi	r18, 0x01	; 1
+     61a:	31 09       	sbc	r19, r1
+     61c:	26 30       	cpi	r18, 0x06	; 6
+     61e:	31 05       	cpc	r19, r1
+     620:	28 f4       	brcc	.+10     	; 0x62c <main+0x166>
+		{
+			counter1 = counter1+1;
+     622:	01 96       	adiw	r24, 0x01	; 1
+     624:	90 93 38 01 	sts	0x0138, r25
+     628:	80 93 37 01 	sts	0x0137, r24
+		}
+		
+		if(counter1 == 7)
+     62c:	80 91 37 01 	lds	r24, 0x0137
+     630:	90 91 38 01 	lds	r25, 0x0138
+     634:	07 97       	sbiw	r24, 0x07	; 7
+     636:	49 f4       	brne	.+18     	; 0x64a <main+0x184>
+		{
+			counter1 = 0;
+     638:	10 92 38 01 	sts	0x0138, r1
+     63c:	10 92 37 01 	sts	0x0137, r1
+			write_data |= (1<<7);
+     640:	80 91 15 01 	lds	r24, 0x0115
+     644:	80 68       	ori	r24, 0x80	; 128
+     646:	80 93 15 01 	sts	0x0115, r24
+		}
+		
+		if(counter2 == 0) //OC check for Torquer
+     64a:	80 91 35 01 	lds	r24, 0x0135
+     64e:	90 91 36 01 	lds	r25, 0x0136
+     652:	89 2b       	or	r24, r25
+     654:	81 f4       	brne	.+32     	; 0x676 <main+0x1b0>
+		{
+			if((HM_Data[6]&(0x40)) == 0)
+     656:	a8 ea       	ldi	r26, 0xA8	; 168
+     658:	b1 e0       	ldi	r27, 0x01	; 1
+     65a:	8c 91       	ld	r24, X
+     65c:	86 fd       	sbrc	r24, 6
+     65e:	29 c0       	rjmp	.+82     	; 0x6b2 <main+0x1ec>
+			{
+				counter2 = 1;
+     660:	81 e0       	ldi	r24, 0x01	; 1
+     662:	90 e0       	ldi	r25, 0x00	; 0
+     664:	90 93 36 01 	sts	0x0136, r25
+     668:	80 93 35 01 	sts	0x0135, r24
+				write_data &= ~(1<<6);
+     66c:	80 91 15 01 	lds	r24, 0x0115
+     670:	8f 7b       	andi	r24, 0xBF	; 191
+     672:	80 93 15 01 	sts	0x0115, r24
+				
+			}
+		}
+		
+		if((counter2 > 0) && (counter2 < 7))
+     676:	80 91 35 01 	lds	r24, 0x0135
+     67a:	90 91 36 01 	lds	r25, 0x0136
+     67e:	9c 01       	movw	r18, r24
+     680:	21 50       	subi	r18, 0x01	; 1
+     682:	31 09       	sbc	r19, r1
+     684:	26 30       	cpi	r18, 0x06	; 6
+     686:	31 05       	cpc	r19, r1
+     688:	28 f4       	brcc	.+10     	; 0x694 <main+0x1ce>
+		{
+			counter2 = counter2+1;
+     68a:	01 96       	adiw	r24, 0x01	; 1
+     68c:	90 93 36 01 	sts	0x0136, r25
+     690:	80 93 35 01 	sts	0x0135, r24
+		}
+		
+		if(counter2 == 7)
+     694:	80 91 35 01 	lds	r24, 0x0135
+     698:	90 91 36 01 	lds	r25, 0x0136
+     69c:	07 97       	sbiw	r24, 0x07	; 7
+     69e:	49 f4       	brne	.+18     	; 0x6b2 <main+0x1ec>
+		{
+			counter2 = 0;
+     6a0:	10 92 36 01 	sts	0x0136, r1
+     6a4:	10 92 35 01 	sts	0x0135, r1
+			write_data |= (1<<6);
+     6a8:	80 91 15 01 	lds	r24, 0x0115
+     6ac:	80 64       	ori	r24, 0x40	; 64
+     6ae:	80 93 15 01 	sts	0x0115, r24
+		}
+		
+		if(counter3 == 0) //OC check for GPS
+     6b2:	80 91 33 01 	lds	r24, 0x0133
+     6b6:	90 91 34 01 	lds	r25, 0x0134
+     6ba:	89 2b       	or	r24, r25
+     6bc:	81 f4       	brne	.+32     	; 0x6de <main+0x218>
+		{
+			if((HM_Data[6]&(0x20)) == 0)
+     6be:	e8 ea       	ldi	r30, 0xA8	; 168
+     6c0:	f1 e0       	ldi	r31, 0x01	; 1
+     6c2:	80 81       	ld	r24, Z
+     6c4:	85 fd       	sbrc	r24, 5
+     6c6:	29 c0       	rjmp	.+82     	; 0x71a <main+0x254>
+			{
+				counter3 = 1;
+     6c8:	81 e0       	ldi	r24, 0x01	; 1
+     6ca:	90 e0       	ldi	r25, 0x00	; 0
+     6cc:	90 93 34 01 	sts	0x0134, r25
+     6d0:	80 93 33 01 	sts	0x0133, r24
+				write_data &= ~(1<<5);
+     6d4:	80 91 15 01 	lds	r24, 0x0115
+     6d8:	8f 7d       	andi	r24, 0xDF	; 223
+     6da:	80 93 15 01 	sts	0x0115, r24
+				
+			}
+		}
+		
+		if((counter3 > 0) && (counter3 < 7))
+     6de:	80 91 33 01 	lds	r24, 0x0133
+     6e2:	90 91 34 01 	lds	r25, 0x0134
+     6e6:	9c 01       	movw	r18, r24
+     6e8:	21 50       	subi	r18, 0x01	; 1
+     6ea:	31 09       	sbc	r19, r1
+     6ec:	26 30       	cpi	r18, 0x06	; 6
+     6ee:	31 05       	cpc	r19, r1
+     6f0:	28 f4       	brcc	.+10     	; 0x6fc <main+0x236>
+		{
+			counter3 = counter3+1;
+     6f2:	01 96       	adiw	r24, 0x01	; 1
+     6f4:	90 93 34 01 	sts	0x0134, r25
+     6f8:	80 93 33 01 	sts	0x0133, r24
+		}
+		
+		if(counter3 == 7)
+     6fc:	80 91 33 01 	lds	r24, 0x0133
+     700:	90 91 34 01 	lds	r25, 0x0134
+     704:	07 97       	sbiw	r24, 0x07	; 7
+     706:	49 f4       	brne	.+18     	; 0x71a <main+0x254>
+		{
+			counter3 = 0;
+     708:	10 92 34 01 	sts	0x0134, r1
+     70c:	10 92 33 01 	sts	0x0133, r1
+			write_data |= (1<<5);
+     710:	80 91 15 01 	lds	r24, 0x0115
+     714:	80 62       	ori	r24, 0x20	; 32
+     716:	80 93 15 01 	sts	0x0115, r24
+		}
+
+		if(counter4 == 0) //OC Check for Downlink
+     71a:	80 91 31 01 	lds	r24, 0x0131
+     71e:	90 91 32 01 	lds	r25, 0x0132
+     722:	89 2b       	or	r24, r25
+     724:	81 f4       	brne	.+32     	; 0x746 <main+0x280>
+		{
+			if((HM_Data[6]&(0x10)) == 0)
+     726:	a8 ea       	ldi	r26, 0xA8	; 168
+     728:	b1 e0       	ldi	r27, 0x01	; 1
+     72a:	8c 91       	ld	r24, X
+     72c:	84 fd       	sbrc	r24, 4
+     72e:	29 c0       	rjmp	.+82     	; 0x782 <main+0x2bc>
+			{
+				counter4 = 1;
+     730:	81 e0       	ldi	r24, 0x01	; 1
+     732:	90 e0       	ldi	r25, 0x00	; 0
+     734:	90 93 32 01 	sts	0x0132, r25
+     738:	80 93 31 01 	sts	0x0131, r24
+				write_data &= ~(1<<4);
+     73c:	80 91 15 01 	lds	r24, 0x0115
+     740:	8f 7e       	andi	r24, 0xEF	; 239
+     742:	80 93 15 01 	sts	0x0115, r24
+				
+			}
+		}
+		
+		if((counter4 > 0) && (counter4 < 7))
+     746:	80 91 31 01 	lds	r24, 0x0131
+     74a:	90 91 32 01 	lds	r25, 0x0132
+     74e:	9c 01       	movw	r18, r24
+     750:	21 50       	subi	r18, 0x01	; 1
+     752:	31 09       	sbc	r19, r1
+     754:	26 30       	cpi	r18, 0x06	; 6
+     756:	31 05       	cpc	r19, r1
+     758:	28 f4       	brcc	.+10     	; 0x764 <main+0x29e>
+		{
+			counter4 = counter4+1;
+     75a:	01 96       	adiw	r24, 0x01	; 1
+     75c:	90 93 32 01 	sts	0x0132, r25
+     760:	80 93 31 01 	sts	0x0131, r24
+		}
+		
+		if(counter4 == 7)
+     764:	80 91 31 01 	lds	r24, 0x0131
+     768:	90 91 32 01 	lds	r25, 0x0132
+     76c:	07 97       	sbiw	r24, 0x07	; 7
+     76e:	49 f4       	brne	.+18     	; 0x782 <main+0x2bc>
+		{
+			counter4 = 0;
+     770:	10 92 32 01 	sts	0x0132, r1
+     774:	10 92 31 01 	sts	0x0131, r1
+			write_data |= (1<<4);
+     778:	80 91 15 01 	lds	r24, 0x0115
+     77c:	80 61       	ori	r24, 0x10	; 16
+     77e:	80 93 15 01 	sts	0x0115, r24
+		}
+		//calluart(i);
+	//**********************************OC Check Block Ends*********************************************//	
+	//**********************************ADC Block Begins************************************************//
+	wdt_reset();	
+     782:	a8 95       	wdr
+	PORTB |= (1<<PB0);//Set Slave select of Slave OBC to 1
+     784:	c0 9a       	sbi	0x18, 0	; 24
+	PORTB &= ~(1<<PB5);// Set slave select of ADC to 0
+     786:	c5 98       	cbi	0x18, 5	; 24
+     788:	ef ec       	ldi	r30, 0xCF	; 207
+     78a:	f7 e0       	ldi	r31, 0x07	; 7
+     78c:	31 97       	sbiw	r30, 0x01	; 1
+     78e:	f1 f7       	brne	.-4      	; 0x78c <main+0x2c6>
+     790:	00 c0       	rjmp	.+0      	; 0x792 <main+0x2cc>
+     792:	00 00       	nop
+	//SPCR |=(1<<SPE);
+	_delay_ms(1);
+	data_r=SPI_transfer(0xFF); //Dummy transaction. Tell ADC that data transmission should begin now.
+     794:	8f ef       	ldi	r24, 0xFF	; 255
+     796:	d7 dc       	rcall	.-1618   	; 0x146 <SPI_transfer>
+     798:	8f ec       	ldi	r24, 0xCF	; 207
+     79a:	97 e0       	ldi	r25, 0x07	; 7
+     79c:	01 97       	sbiw	r24, 0x01	; 1
+     79e:	f1 f7       	brne	.-4      	; 0x79c <main+0x2d6>
+     7a0:	00 c0       	rjmp	.+0      	; 0x7a2 <main+0x2dc>
+     7a2:	00 00       	nop
+	_delay_ms(1);
+	//transmit_UART0(data_r);
+	PORTA = 0xFF;
+     7a4:	8f ef       	ldi	r24, 0xFF	; 255
+     7a6:	8b bb       	out	0x1b, r24	; 27
+	vall1=SPI_transfer(0xFF);//First data byte
+     7a8:	ce dc       	rcall	.-1636   	; 0x146 <SPI_transfer>
+     7aa:	68 2e       	mov	r6, r24
+     7ac:	af ec       	ldi	r26, 0xCF	; 207
+     7ae:	b7 e0       	ldi	r27, 0x07	; 7
+     7b0:	11 97       	sbiw	r26, 0x01	; 1
+     7b2:	f1 f7       	brne	.-4      	; 0x7b0 <main+0x2ea>
+     7b4:	00 c0       	rjmp	.+0      	; 0x7b6 <main+0x2f0>
+     7b6:	00 00       	nop
+	_delay_ms(1);
+	valh1=SPI_transfer(0xFF);
+     7b8:	8f ef       	ldi	r24, 0xFF	; 255
+     7ba:	c5 dc       	rcall	.-1654   	; 0x146 <SPI_transfer>
+     7bc:	58 2e       	mov	r5, r24
+     7be:	ef ec       	ldi	r30, 0xCF	; 207
+     7c0:	f7 e0       	ldi	r31, 0x07	; 7
+     7c2:	31 97       	sbiw	r30, 0x01	; 1
+     7c4:	f1 f7       	brne	.-4      	; 0x7c2 <main+0x2fc>
+     7c6:	00 c0       	rjmp	.+0      	; 0x7c8 <main+0x302>
+     7c8:	00 00       	nop
+	_delay_ms(1);
+
+
+	vall2=SPI_transfer(0xFF);
+     7ca:	8f ef       	ldi	r24, 0xFF	; 255
+     7cc:	bc dc       	rcall	.-1672   	; 0x146 <SPI_transfer>
+     7ce:	88 2e       	mov	r8, r24
+     7d0:	8f ec       	ldi	r24, 0xCF	; 207
+     7d2:	97 e0       	ldi	r25, 0x07	; 7
+     7d4:	01 97       	sbiw	r24, 0x01	; 1
+     7d6:	f1 f7       	brne	.-4      	; 0x7d4 <main+0x30e>
+     7d8:	00 c0       	rjmp	.+0      	; 0x7da <main+0x314>
+     7da:	00 00       	nop
+	_delay_ms(1);
+	valh2=SPI_transfer(0xFF);
+     7dc:	8f ef       	ldi	r24, 0xFF	; 255
+     7de:	b3 dc       	rcall	.-1690   	; 0x146 <SPI_transfer>
+     7e0:	78 2e       	mov	r7, r24
+     7e2:	af ec       	ldi	r26, 0xCF	; 207
+     7e4:	b7 e0       	ldi	r27, 0x07	; 7
+     7e6:	11 97       	sbiw	r26, 0x01	; 1
+     7e8:	f1 f7       	brne	.-4      	; 0x7e6 <main+0x320>
+     7ea:	00 c0       	rjmp	.+0      	; 0x7ec <main+0x326>
+     7ec:	00 00       	nop
+	_delay_ms(1);
+
+
+
+
+	vall3=SPI_transfer(0xFF);
+     7ee:	8f ef       	ldi	r24, 0xFF	; 255
+     7f0:	aa dc       	rcall	.-1708   	; 0x146 <SPI_transfer>
+     7f2:	a8 2e       	mov	r10, r24
+     7f4:	ef ec       	ldi	r30, 0xCF	; 207
+     7f6:	f7 e0       	ldi	r31, 0x07	; 7
+     7f8:	31 97       	sbiw	r30, 0x01	; 1
+     7fa:	f1 f7       	brne	.-4      	; 0x7f8 <main+0x332>
+     7fc:	00 c0       	rjmp	.+0      	; 0x7fe <main+0x338>
+     7fe:	00 00       	nop
+	_delay_ms(1);
+	valh3=SPI_transfer(0xFF);
+     800:	8f ef       	ldi	r24, 0xFF	; 255
+     802:	a1 dc       	rcall	.-1726   	; 0x146 <SPI_transfer>
+     804:	98 2e       	mov	r9, r24
+     806:	8f ec       	ldi	r24, 0xCF	; 207
+     808:	97 e0       	ldi	r25, 0x07	; 7
+     80a:	01 97       	sbiw	r24, 0x01	; 1
+     80c:	f1 f7       	brne	.-4      	; 0x80a <main+0x344>
+     80e:	00 c0       	rjmp	.+0      	; 0x810 <main+0x34a>
+     810:	00 00       	nop
+	_delay_ms(1);
+
+
+
+	vall4=SPI_transfer(0xFF);
+     812:	8f ef       	ldi	r24, 0xFF	; 255
+     814:	98 dc       	rcall	.-1744   	; 0x146 <SPI_transfer>
+     816:	c8 2e       	mov	r12, r24
+     818:	af ec       	ldi	r26, 0xCF	; 207
+     81a:	b7 e0       	ldi	r27, 0x07	; 7
+     81c:	11 97       	sbiw	r26, 0x01	; 1
+     81e:	f1 f7       	brne	.-4      	; 0x81c <main+0x356>
+     820:	00 c0       	rjmp	.+0      	; 0x822 <main+0x35c>
+     822:	00 00       	nop
+	_delay_ms(1);
+	valh4=SPI_transfer(0xFF);
+     824:	8f ef       	ldi	r24, 0xFF	; 255
+     826:	8f dc       	rcall	.-1762   	; 0x146 <SPI_transfer>
+     828:	b8 2e       	mov	r11, r24
+     82a:	ef ec       	ldi	r30, 0xCF	; 207
+     82c:	f7 e0       	ldi	r31, 0x07	; 7
+     82e:	31 97       	sbiw	r30, 0x01	; 1
+     830:	f1 f7       	brne	.-4      	; 0x82e <main+0x368>
+     832:	00 c0       	rjmp	.+0      	; 0x834 <main+0x36e>
+     834:	00 00       	nop
+	_delay_ms(1);
+
+
+
+	vall5=SPI_transfer(0xFF);
+     836:	8f ef       	ldi	r24, 0xFF	; 255
+     838:	86 dc       	rcall	.-1780   	; 0x146 <SPI_transfer>
+     83a:	48 2e       	mov	r4, r24
+     83c:	8f ec       	ldi	r24, 0xCF	; 207
+     83e:	97 e0       	ldi	r25, 0x07	; 7
+     840:	01 97       	sbiw	r24, 0x01	; 1
+     842:	f1 f7       	brne	.-4      	; 0x840 <main+0x37a>
+     844:	00 c0       	rjmp	.+0      	; 0x846 <main+0x380>
+     846:	00 00       	nop
+	_delay_ms(1);
+	valh5=SPI_transfer(0xFF);
+     848:	8f ef       	ldi	r24, 0xFF	; 255
+     84a:	7d dc       	rcall	.-1798   	; 0x146 <SPI_transfer>
+     84c:	d8 2e       	mov	r13, r24
+     84e:	af ec       	ldi	r26, 0xCF	; 207
+     850:	b7 e0       	ldi	r27, 0x07	; 7
+     852:	11 97       	sbiw	r26, 0x01	; 1
+     854:	f1 f7       	brne	.-4      	; 0x852 <main+0x38c>
+     856:	00 c0       	rjmp	.+0      	; 0x858 <main+0x392>
+     858:	00 00       	nop
+	_delay_ms(1);
+
+
+
+	vall6=SPI_transfer(0xFF);
+     85a:	8f ef       	ldi	r24, 0xFF	; 255
+     85c:	74 dc       	rcall	.-1816   	; 0x146 <SPI_transfer>
+     85e:	28 2e       	mov	r2, r24
+     860:	ef ec       	ldi	r30, 0xCF	; 207
+     862:	f7 e0       	ldi	r31, 0x07	; 7
+     864:	31 97       	sbiw	r30, 0x01	; 1
+     866:	f1 f7       	brne	.-4      	; 0x864 <main+0x39e>
+     868:	00 c0       	rjmp	.+0      	; 0x86a <main+0x3a4>
+     86a:	00 00       	nop
+	_delay_ms(1);
+	valh6=SPI_transfer(0xFF);
+     86c:	8f ef       	ldi	r24, 0xFF	; 255
+     86e:	6b dc       	rcall	.-1834   	; 0x146 <SPI_transfer>
+     870:	38 2e       	mov	r3, r24
+     872:	8f ec       	ldi	r24, 0xCF	; 207
+     874:	97 e0       	ldi	r25, 0x07	; 7
+     876:	01 97       	sbiw	r24, 0x01	; 1
+     878:	f1 f7       	brne	.-4      	; 0x876 <main+0x3b0>
+     87a:	00 c0       	rjmp	.+0      	; 0x87c <main+0x3b6>
+     87c:	00 00       	nop
+
+	//PORTB |= (1<<PB5);
+	//PORTB &= ~(1<<PB0);
+	//SPCR &= ~(1<<SPE);
+	//PORTA = (valh2<<4)&0xF0;
+	if(UniversalCycles%CyclesToCollectData == 0){transmit_string_UART0("PRC");} //PRC = Identifier for Sunsensor data for MATLAB GUI
+     87e:	80 91 0f 01 	lds	r24, 0x010F
+     882:	90 91 10 01 	lds	r25, 0x0110
+     886:	60 91 0d 01 	lds	r22, 0x010D
+     88a:	70 91 0e 01 	lds	r23, 0x010E
+     88e:	cd d3       	rcall	.+1946   	; 0x102a <__udivmodhi4>
+     890:	89 2b       	or	r24, r25
+     892:	19 f4       	brne	.+6      	; 0x89a <main+0x3d4>
+     894:	8c e1       	ldi	r24, 0x1C	; 28
+     896:	91 e0       	ldi	r25, 0x01	; 1
+     898:	bc d3       	rcall	.+1912   	; 0x1012 <transmit_string_UART0>
+	PORTA = 0xBB;
+     89a:	8b eb       	ldi	r24, 0xBB	; 187
+     89c:	8b bb       	out	0x1b, r24	; 27
+	val2=convert(vall3,valh3);
+	val3=convert(vall4,valh4);
+	val4=convert(vall5,valh5);
+	val5=convert(vall6,valh6);
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+     89e:	80 91 0f 01 	lds	r24, 0x010F
+     8a2:	90 91 10 01 	lds	r25, 0x0110
+     8a6:	60 91 0d 01 	lds	r22, 0x010D
+     8aa:	70 91 0e 01 	lds	r23, 0x010E
+     8ae:	bd d3       	rcall	.+1914   	; 0x102a <__udivmodhi4>
+     8b0:	89 2b       	or	r24, r25
+     8b2:	51 f5       	brne	.+84     	; 0x908 <main+0x442>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     8b4:	85 2d       	mov	r24, r5
+     8b6:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     8b8:	98 2f       	mov	r25, r24
+     8ba:	88 27       	eor	r24, r24
+	val4=convert(vall5,valh5);
+	val5=convert(vall6,valh6);
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+     8bc:	86 0d       	add	r24, r6
+     8be:	91 1d       	adc	r25, r1
+     8c0:	47 dc       	rcall	.-1906   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     8c2:	87 2d       	mov	r24, r7
+     8c4:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     8c6:	98 2f       	mov	r25, r24
+     8c8:	88 27       	eor	r24, r24
+	val5=convert(vall6,valh6);
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+     8ca:	88 0d       	add	r24, r8
+     8cc:	91 1d       	adc	r25, r1
+     8ce:	40 dc       	rcall	.-1920   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     8d0:	89 2d       	mov	r24, r9
+     8d2:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     8d4:	98 2f       	mov	r25, r24
+     8d6:	88 27       	eor	r24, r24
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+     8d8:	8a 0d       	add	r24, r10
+     8da:	91 1d       	adc	r25, r1
+     8dc:	39 dc       	rcall	.-1934   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     8de:	8b 2d       	mov	r24, r11
+     8e0:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     8e2:	98 2f       	mov	r25, r24
+     8e4:	88 27       	eor	r24, r24
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+	transmitSunSensorUart(val3);
+     8e6:	8c 0d       	add	r24, r12
+     8e8:	91 1d       	adc	r25, r1
+     8ea:	32 dc       	rcall	.-1948   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     8ec:	8d 2d       	mov	r24, r13
+     8ee:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     8f0:	98 2f       	mov	r25, r24
+     8f2:	88 27       	eor	r24, r24
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+	transmitSunSensorUart(val3);
+	transmitSunSensorUart(val4);
+     8f4:	84 0d       	add	r24, r4
+     8f6:	91 1d       	adc	r25, r1
+     8f8:	2b dc       	rcall	.-1962   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     8fa:	83 2d       	mov	r24, r3
+     8fc:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     8fe:	98 2f       	mov	r25, r24
+     900:	88 27       	eor	r24, r24
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+	transmitSunSensorUart(val3);
+	transmitSunSensorUart(val4);
+	transmitSunSensorUart(val5);
+     902:	82 0d       	add	r24, r2
+     904:	91 1d       	adc	r25, r1
+     906:	24 dc       	rcall	.-1976   	; 0x150 <transmitSunSensorUart>
+	}	//transmit_UART0(receive_UART0());
+	PORTB |= (1<<PB5);
+     908:	c5 9a       	sbi	0x18, 5	; 24
+	PORTB &= ~(1<<PB0);
+     90a:	c0 98       	cbi	0x18, 0	; 24
+	
+	//*********************************ADC Block Ends***********************************//
+	//*********************************GPS Block Begins*********************************//
+	//wdt_reset();
+	if (UniversalCycles%CyclesToCollectData == 0){
+     90c:	80 91 0f 01 	lds	r24, 0x010F
+     910:	90 91 10 01 	lds	r25, 0x0110
+     914:	60 91 0d 01 	lds	r22, 0x010D
+     918:	70 91 0e 01 	lds	r23, 0x010E
+     91c:	86 d3       	rcall	.+1804   	; 0x102a <__udivmodhi4>
+     91e:	89 2b       	or	r24, r25
+     920:	31 f4       	brne	.+12     	; 0x92e <main+0x468>
+	transmit_UART0('P');
+     922:	80 e5       	ldi	r24, 0x50	; 80
+     924:	6e d3       	rcall	.+1756   	; 0x1002 <transmit_UART0>
+	transmit_UART0('R');
+     926:	82 e5       	ldi	r24, 0x52	; 82
+     928:	6c d3       	rcall	.+1752   	; 0x1002 <transmit_UART0>
+	transmit_UART0('B');
+     92a:	82 e4       	ldi	r24, 0x42	; 66
+     92c:	6a d3       	rcall	.+1748   	; 0x1002 <transmit_UART0>
+	}
+	//send_MM_cmd("*00WE\r");
+	//send_MM_cmd("*00B\r");
+		cli(); //Turn of Global Interrupt so that the code won't enter ISR on reeiving data from GPS
+     92e:	f8 94       	cli
+	GPS_Received = receive_UART0();
+     930:	6c d3       	rcall	.+1752   	; 0x100a <receive_UART0>
+     932:	48 2f       	mov	r20, r24
+     934:	80 93 a1 01 	sts	0x01A1, r24
+	if (UniversalCycles%CyclesToCollectData == 0){transmit_UART0(GPS_Received);}
+     938:	80 91 0f 01 	lds	r24, 0x010F
+     93c:	90 91 10 01 	lds	r25, 0x0110
+     940:	60 91 0d 01 	lds	r22, 0x010D
+     944:	70 91 0e 01 	lds	r23, 0x010E
+     948:	70 d3       	rcall	.+1760   	; 0x102a <__udivmodhi4>
+     94a:	89 2b       	or	r24, r25
+     94c:	11 f4       	brne	.+4      	; 0x952 <main+0x48c>
+     94e:	84 2f       	mov	r24, r20
+     950:	58 d3       	rcall	.+1712   	; 0x1002 <transmit_UART0>
+	sei();//Turn on global interrupt
+     952:	78 94       	sei
+	//***********************************GPS Block Ends************************************//
+	//**********************************Magmeter Block begins******************************//
+	//wdt_reset();
+	if (UniversalCycles%CyclesToCollectData == 0)
+     954:	80 91 0f 01 	lds	r24, 0x010F
+     958:	90 91 10 01 	lds	r25, 0x0110
+     95c:	60 91 0d 01 	lds	r22, 0x010D
+     960:	70 91 0e 01 	lds	r23, 0x010E
+     964:	62 d3       	rcall	.+1732   	; 0x102a <__udivmodhi4>
+     966:	89 2b       	or	r24, r25
+     968:	31 f4       	brne	.+12     	; 0x976 <main+0x4b0>
+	{
+	transmit_UART0('P');
+     96a:	80 e5       	ldi	r24, 0x50	; 80
+     96c:	4a d3       	rcall	.+1684   	; 0x1002 <transmit_UART0>
+	transmit_UART0('R');
+     96e:	82 e5       	ldi	r24, 0x52	; 82
+     970:	48 d3       	rcall	.+1680   	; 0x1002 <transmit_UART0>
+	transmit_UART0('D');
+     972:	84 e4       	ldi	r24, 0x44	; 68
+     974:	46 d3       	rcall	.+1676   	; 0x1002 <transmit_UART0>
+	}
+	//initMagentometer();
+	//poll_MM1();
+	
+	send_MM_cmd("*00P\r"); //Poll the magmeter for data
+     976:	80 e2       	ldi	r24, 0x20	; 32
+     978:	91 e0       	ldi	r25, 0x01	; 1
+     97a:	c2 db       	rcall	.-2172   	; 0x100 <send_MM_cmd>
+	receive_MM();*/
+	//transmitMMUart();
+	//torquer_only_x_positive();
+	//torquer_only_y_positive();
+	//torquer_only_z_positive();
+	wdt_disable();
+     97c:	88 e1       	ldi	r24, 0x18	; 24
+     97e:	0f b6       	in	r0, 0x3f	; 63
+     980:	f8 94       	cli
+     982:	81 bd       	out	0x21, r24	; 33
+     984:	11 bc       	out	0x21, r1	; 33
+     986:	0f be       	out	0x3f, r0	; 63
+     988:	af e1       	ldi	r26, 0x1F	; 31
+     98a:	be e4       	ldi	r27, 0x4E	; 78
+     98c:	11 97       	sbiw	r26, 0x01	; 1
+     98e:	f1 f7       	brne	.-4      	; 0x98c <main+0x4c6>
+     990:	00 c0       	rjmp	.+0      	; 0x992 <main+0x4cc>
+     992:	00 00       	nop
+     994:	6e c2       	rjmp	.+1244   	; 0xe72 <main+0x9ac>
+			overGS=1;
+			counterforGS = 0;
+		}*/
+		_delay_ms(10);
+	
+}else if((overGS==1)&&((StarReceived == 1)||(BracketReceived == 1)))
+     996:	01 97       	sbiw	r24, 0x01	; 1
+     998:	09 f0       	breq	.+2      	; 0x99c <main+0x4d6>
+     99a:	65 c2       	rjmp	.+1226   	; 0xe66 <main+0x9a0>
+     99c:	80 91 2b 01 	lds	r24, 0x012B
+     9a0:	90 91 2c 01 	lds	r25, 0x012C
+     9a4:	01 97       	sbiw	r24, 0x01	; 1
+     9a6:	29 f0       	breq	.+10     	; 0x9b2 <main+0x4ec>
+     9a8:	80 91 26 01 	lds	r24, 0x0126
+     9ac:	81 30       	cpi	r24, 0x01	; 1
+     9ae:	09 f0       	breq	.+2      	; 0x9b2 <main+0x4ec>
+     9b0:	5a c2       	rjmp	.+1204   	; 0xe66 <main+0x9a0>
+{
+	PORTB |= (1<<PB5); 
+     9b2:	c5 9a       	sbi	0x18, 5	; 24
+	PORTB &= ~(1<<PB0);
+     9b4:	c0 98       	cbi	0x18, 0	; 24
+	//SPCR |= (1<<SPE);
+	//write_data&= ~(1<<4);// Turn off both downlink and uplink
+	wdt_enable(WDTO_2S);
+     9b6:	8f e0       	ldi	r24, 0x0F	; 15
+     9b8:	0f b6       	in	r0, 0x3f	; 63
+     9ba:	f8 94       	cli
+     9bc:	a8 95       	wdr
+     9be:	e1 bc       	out	0x21, r14	; 33
+     9c0:	0f be       	out	0x3f, r0	; 63
+     9c2:	81 bd       	out	0x21, r24	; 33
+	wdt_reset();
+     9c4:	a8 95       	wdr
+	PORTA = 0xAA;
+     9c6:	8a ea       	ldi	r24, 0xAA	; 170
+     9c8:	8b bb       	out	0x1b, r24	; 27
+	TWI_start(); // Function to send start condition
+     9ca:	d1 db       	rcall	.-2142   	; 0x16e <TWI_start>
+	PORTA=0b11000000;
+     9cc:	80 ec       	ldi	r24, 0xC0	; 192
+     9ce:	8b bb       	out	0x1b, r24	; 27
+	TWI_write_address(address); // Function to write address and data direction bit(write) on SDA
+     9d0:	80 91 17 01 	lds	r24, 0x0117
+     9d4:	db db       	rcall	.-2122   	; 0x18c <TWI_write_address>
+
+	PORTA=0b01100000;
+     9d6:	80 e6       	ldi	r24, 0x60	; 96
+     9d8:	8b bb       	out	0x1b, r24	; 27
+	TWI_write_data(write_data);     // Function to write data in slave
+     9da:	80 91 15 01 	lds	r24, 0x0115
+     9de:	f9 db       	rcall	.-2062   	; 0x1d2 <TWI_write_data>
+	PORTA=0b10100000;
+     9e0:	80 ea       	ldi	r24, 0xA0	; 160
+     9e2:	8b bb       	out	0x1b, r24	; 27
+	TWI_stop(); // Function to send stop condition
+     9e4:	27 dc       	rcall	.-1970   	; 0x234 <TWI_stop>
+
+	if(UniversalCycles%CyclesToCollectData == 0){transmit_string_UART0("PRA");}
+     9e6:	80 91 0f 01 	lds	r24, 0x010F
+     9ea:	90 91 10 01 	lds	r25, 0x0110
+     9ee:	60 91 0d 01 	lds	r22, 0x010D
+     9f2:	70 91 0e 01 	lds	r23, 0x010E
+     9f6:	19 d3       	rcall	.+1586   	; 0x102a <__udivmodhi4>
+     9f8:	89 2b       	or	r24, r25
+     9fa:	19 f4       	brne	.+6      	; 0xa02 <main+0x53c>
+     9fc:	88 e1       	ldi	r24, 0x18	; 24
+     9fe:	91 e0       	ldi	r25, 0x01	; 1
+     a00:	08 d3       	rcall	.+1552   	; 0x1012 <transmit_string_UART0>
+     a02:	ef e1       	ldi	r30, 0x1F	; 31
+     a04:	fe e4       	ldi	r31, 0x4E	; 78
+     a06:	31 97       	sbiw	r30, 0x01	; 1
+     a08:	f1 f7       	brne	.-4      	; 0xa06 <main+0x540>
+     a0a:	00 c0       	rjmp	.+0      	; 0xa0c <main+0x546>
+     a0c:	00 00       	nop
+     a0e:	68 01       	movw	r12, r16
+	_delay_ms(10); // Delay of 10 mili second
+	for(int i=0;i<7;i=i+1)
+	{
+		TWI_start();
+     a10:	ae db       	rcall	.-2212   	; 0x16e <TWI_start>
+		
+		TWI_read_address(address+read); // Function to write address and data direction bit(read) on SDA
+     a12:	90 91 16 01 	lds	r25, 0x0116
+     a16:	80 91 17 01 	lds	r24, 0x0117
+     a1a:	89 0f       	add	r24, r25
+     a1c:	c9 db       	rcall	.-2158   	; 0x1b0 <TWI_read_address>
+		TWI_read_data(); // Function to read data from slave
+     a1e:	ea db       	rcall	.-2092   	; 0x1f4 <TWI_read_data>
+		HM_Data[i] = recv_data;
+     a20:	80 91 9f 01 	lds	r24, 0x019F
+     a24:	d6 01       	movw	r26, r12
+     a26:	8d 93       	st	X+, r24
+     a28:	6d 01       	movw	r12, r26
+		TWI_stop();
+     a2a:	04 dc       	rcall	.-2040   	; 0x234 <TWI_stop>
+	PORTA=0b10100000;
+	TWI_stop(); // Function to send stop condition
+
+	if(UniversalCycles%CyclesToCollectData == 0){transmit_string_UART0("PRA");}
+	_delay_ms(10); // Delay of 10 mili second
+	for(int i=0;i<7;i=i+1)
+     a2c:	cc 16       	cp	r12, r28
+     a2e:	dd 06       	cpc	r13, r29
+     a30:	79 f7       	brne	.-34     	; 0xa10 <main+0x54a>
+		TWI_read_data(); // Function to read data from slave
+		HM_Data[i] = recv_data;
+		TWI_stop();
+	}
+	//_delay_ms(10);
+	wdt_reset();
+     a32:	a8 95       	wdr
+	
+	PORTB |= (1<<PB0);
+     a34:	c0 9a       	sbi	0x18, 0	; 24
+	PORTB &= ~(1<<PB5);
+     a36:	c5 98       	cbi	0x18, 5	; 24
+     a38:	ef ec       	ldi	r30, 0xCF	; 207
+     a3a:	f7 e0       	ldi	r31, 0x07	; 7
+     a3c:	31 97       	sbiw	r30, 0x01	; 1
+     a3e:	f1 f7       	brne	.-4      	; 0xa3c <main+0x576>
+     a40:	00 c0       	rjmp	.+0      	; 0xa42 <main+0x57c>
+     a42:	00 00       	nop
+	//SPCR |=(1<<SPE);
+	_delay_ms(1);
+	data_r=SPI_transfer(0xFF); //request first data
+     a44:	8f ef       	ldi	r24, 0xFF	; 255
+     a46:	7f db       	rcall	.-2306   	; 0x146 <SPI_transfer>
+     a48:	8f ec       	ldi	r24, 0xCF	; 207
+     a4a:	97 e0       	ldi	r25, 0x07	; 7
+     a4c:	01 97       	sbiw	r24, 0x01	; 1
+     a4e:	f1 f7       	brne	.-4      	; 0xa4c <main+0x586>
+     a50:	00 c0       	rjmp	.+0      	; 0xa52 <main+0x58c>
+     a52:	00 00       	nop
+	_delay_ms(1);
+	//transmit_UART0(data_r);
+	PORTA = 0xFF;
+     a54:	8f ef       	ldi	r24, 0xFF	; 255
+     a56:	8b bb       	out	0x1b, r24	; 27
+	vall1=SPI_transfer(0xFF);
+     a58:	76 db       	rcall	.-2324   	; 0x146 <SPI_transfer>
+     a5a:	68 2e       	mov	r6, r24
+     a5c:	af ec       	ldi	r26, 0xCF	; 207
+     a5e:	b7 e0       	ldi	r27, 0x07	; 7
+     a60:	11 97       	sbiw	r26, 0x01	; 1
+     a62:	f1 f7       	brne	.-4      	; 0xa60 <main+0x59a>
+     a64:	00 c0       	rjmp	.+0      	; 0xa66 <main+0x5a0>
+     a66:	00 00       	nop
+	_delay_ms(1);
+	valh1=SPI_transfer(0xFF);
+     a68:	8f ef       	ldi	r24, 0xFF	; 255
+     a6a:	6d db       	rcall	.-2342   	; 0x146 <SPI_transfer>
+     a6c:	58 2e       	mov	r5, r24
+     a6e:	ef ec       	ldi	r30, 0xCF	; 207
+     a70:	f7 e0       	ldi	r31, 0x07	; 7
+     a72:	31 97       	sbiw	r30, 0x01	; 1
+     a74:	f1 f7       	brne	.-4      	; 0xa72 <main+0x5ac>
+     a76:	00 c0       	rjmp	.+0      	; 0xa78 <main+0x5b2>
+     a78:	00 00       	nop
+	_delay_ms(1);
+
+
+	vall2=SPI_transfer(0xFF);
+     a7a:	8f ef       	ldi	r24, 0xFF	; 255
+     a7c:	64 db       	rcall	.-2360   	; 0x146 <SPI_transfer>
+     a7e:	88 2e       	mov	r8, r24
+     a80:	8f ec       	ldi	r24, 0xCF	; 207
+     a82:	97 e0       	ldi	r25, 0x07	; 7
+     a84:	01 97       	sbiw	r24, 0x01	; 1
+     a86:	f1 f7       	brne	.-4      	; 0xa84 <main+0x5be>
+     a88:	00 c0       	rjmp	.+0      	; 0xa8a <main+0x5c4>
+     a8a:	00 00       	nop
+	_delay_ms(1);
+	valh2=SPI_transfer(0xFF);
+     a8c:	8f ef       	ldi	r24, 0xFF	; 255
+     a8e:	5b db       	rcall	.-2378   	; 0x146 <SPI_transfer>
+     a90:	78 2e       	mov	r7, r24
+     a92:	af ec       	ldi	r26, 0xCF	; 207
+     a94:	b7 e0       	ldi	r27, 0x07	; 7
+     a96:	11 97       	sbiw	r26, 0x01	; 1
+     a98:	f1 f7       	brne	.-4      	; 0xa96 <main+0x5d0>
+     a9a:	00 c0       	rjmp	.+0      	; 0xa9c <main+0x5d6>
+     a9c:	00 00       	nop
+	_delay_ms(1);
+
+
+
+
+	vall3=SPI_transfer(0xFF);
+     a9e:	8f ef       	ldi	r24, 0xFF	; 255
+     aa0:	52 db       	rcall	.-2396   	; 0x146 <SPI_transfer>
+     aa2:	a8 2e       	mov	r10, r24
+     aa4:	ef ec       	ldi	r30, 0xCF	; 207
+     aa6:	f7 e0       	ldi	r31, 0x07	; 7
+     aa8:	31 97       	sbiw	r30, 0x01	; 1
+     aaa:	f1 f7       	brne	.-4      	; 0xaa8 <main+0x5e2>
+     aac:	00 c0       	rjmp	.+0      	; 0xaae <main+0x5e8>
+     aae:	00 00       	nop
+	_delay_ms(1);
+	valh3=SPI_transfer(0xFF);
+     ab0:	8f ef       	ldi	r24, 0xFF	; 255
+     ab2:	49 db       	rcall	.-2414   	; 0x146 <SPI_transfer>
+     ab4:	98 2e       	mov	r9, r24
+     ab6:	8f ec       	ldi	r24, 0xCF	; 207
+     ab8:	97 e0       	ldi	r25, 0x07	; 7
+     aba:	01 97       	sbiw	r24, 0x01	; 1
+     abc:	f1 f7       	brne	.-4      	; 0xaba <main+0x5f4>
+     abe:	00 c0       	rjmp	.+0      	; 0xac0 <main+0x5fa>
+     ac0:	00 00       	nop
+	_delay_ms(1);
+
+
+
+	vall4=SPI_transfer(0xFF);
+     ac2:	8f ef       	ldi	r24, 0xFF	; 255
+     ac4:	40 db       	rcall	.-2432   	; 0x146 <SPI_transfer>
+     ac6:	c8 2e       	mov	r12, r24
+     ac8:	af ec       	ldi	r26, 0xCF	; 207
+     aca:	b7 e0       	ldi	r27, 0x07	; 7
+     acc:	11 97       	sbiw	r26, 0x01	; 1
+     ace:	f1 f7       	brne	.-4      	; 0xacc <main+0x606>
+     ad0:	00 c0       	rjmp	.+0      	; 0xad2 <main+0x60c>
+     ad2:	00 00       	nop
+	_delay_ms(1);
+	valh4=SPI_transfer(0xFF);
+     ad4:	8f ef       	ldi	r24, 0xFF	; 255
+     ad6:	37 db       	rcall	.-2450   	; 0x146 <SPI_transfer>
+     ad8:	b8 2e       	mov	r11, r24
+     ada:	ef ec       	ldi	r30, 0xCF	; 207
+     adc:	f7 e0       	ldi	r31, 0x07	; 7
+     ade:	31 97       	sbiw	r30, 0x01	; 1
+     ae0:	f1 f7       	brne	.-4      	; 0xade <main+0x618>
+     ae2:	00 c0       	rjmp	.+0      	; 0xae4 <main+0x61e>
+     ae4:	00 00       	nop
+	_delay_ms(1);
+
+
+
+	vall5=SPI_transfer(0xFF);
+     ae6:	8f ef       	ldi	r24, 0xFF	; 255
+     ae8:	2e db       	rcall	.-2468   	; 0x146 <SPI_transfer>
+     aea:	48 2e       	mov	r4, r24
+     aec:	8f ec       	ldi	r24, 0xCF	; 207
+     aee:	97 e0       	ldi	r25, 0x07	; 7
+     af0:	01 97       	sbiw	r24, 0x01	; 1
+     af2:	f1 f7       	brne	.-4      	; 0xaf0 <main+0x62a>
+     af4:	00 c0       	rjmp	.+0      	; 0xaf6 <main+0x630>
+     af6:	00 00       	nop
+	_delay_ms(1);
+	valh5=SPI_transfer(0xFF);
+     af8:	8f ef       	ldi	r24, 0xFF	; 255
+     afa:	25 db       	rcall	.-2486   	; 0x146 <SPI_transfer>
+     afc:	d8 2e       	mov	r13, r24
+     afe:	af ec       	ldi	r26, 0xCF	; 207
+     b00:	b7 e0       	ldi	r27, 0x07	; 7
+     b02:	11 97       	sbiw	r26, 0x01	; 1
+     b04:	f1 f7       	brne	.-4      	; 0xb02 <main+0x63c>
+     b06:	00 c0       	rjmp	.+0      	; 0xb08 <main+0x642>
+     b08:	00 00       	nop
+	_delay_ms(1);
+
+
+
+	vall6=SPI_transfer(0xFF);
+     b0a:	8f ef       	ldi	r24, 0xFF	; 255
+     b0c:	1c db       	rcall	.-2504   	; 0x146 <SPI_transfer>
+     b0e:	28 2e       	mov	r2, r24
+     b10:	ef ec       	ldi	r30, 0xCF	; 207
+     b12:	f7 e0       	ldi	r31, 0x07	; 7
+     b14:	31 97       	sbiw	r30, 0x01	; 1
+     b16:	f1 f7       	brne	.-4      	; 0xb14 <main+0x64e>
+     b18:	00 c0       	rjmp	.+0      	; 0xb1a <main+0x654>
+     b1a:	00 00       	nop
+	_delay_ms(1);
+	valh6=SPI_transfer(0xFF);
+     b1c:	8f ef       	ldi	r24, 0xFF	; 255
+     b1e:	13 db       	rcall	.-2522   	; 0x146 <SPI_transfer>
+     b20:	38 2e       	mov	r3, r24
+     b22:	8f ec       	ldi	r24, 0xCF	; 207
+     b24:	97 e0       	ldi	r25, 0x07	; 7
+     b26:	01 97       	sbiw	r24, 0x01	; 1
+     b28:	f1 f7       	brne	.-4      	; 0xb26 <main+0x660>
+     b2a:	00 c0       	rjmp	.+0      	; 0xb2c <main+0x666>
+     b2c:	00 00       	nop
+
+	//PORTB |= (1<<PB5);
+	//PORTB &= ~(1<<PB0);
+	//SPCR &= ~(1<<SPE);
+	//PORTA = (valh2<<4)&0xF0;
+	if (UniversalCycles%CyclesToCollectData == 0) {transmit_string_UART0("PRC");}
+     b2e:	80 91 0f 01 	lds	r24, 0x010F
+     b32:	90 91 10 01 	lds	r25, 0x0110
+     b36:	60 91 0d 01 	lds	r22, 0x010D
+     b3a:	70 91 0e 01 	lds	r23, 0x010E
+     b3e:	75 d2       	rcall	.+1258   	; 0x102a <__udivmodhi4>
+     b40:	89 2b       	or	r24, r25
+     b42:	19 f4       	brne	.+6      	; 0xb4a <main+0x684>
+     b44:	8c e1       	ldi	r24, 0x1C	; 28
+     b46:	91 e0       	ldi	r25, 0x01	; 1
+     b48:	64 d2       	rcall	.+1224   	; 0x1012 <transmit_string_UART0>
+	PORTA = 0xBB;
+     b4a:	8b eb       	ldi	r24, 0xBB	; 187
+     b4c:	8b bb       	out	0x1b, r24	; 27
+	val2=convert(vall3,valh3);
+	val3=convert(vall4,valh4);
+	val4=convert(vall5,valh5);
+	val5=convert(vall6,valh6);
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+     b4e:	80 91 0f 01 	lds	r24, 0x010F
+     b52:	90 91 10 01 	lds	r25, 0x0110
+     b56:	60 91 0d 01 	lds	r22, 0x010D
+     b5a:	70 91 0e 01 	lds	r23, 0x010E
+     b5e:	65 d2       	rcall	.+1226   	; 0x102a <__udivmodhi4>
+     b60:	89 2b       	or	r24, r25
+     b62:	51 f5       	brne	.+84     	; 0xbb8 <main+0x6f2>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     b64:	85 2d       	mov	r24, r5
+     b66:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     b68:	98 2f       	mov	r25, r24
+     b6a:	88 27       	eor	r24, r24
+	val4=convert(vall5,valh5);
+	val5=convert(vall6,valh6);
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+     b6c:	86 0d       	add	r24, r6
+     b6e:	91 1d       	adc	r25, r1
+     b70:	ef da       	rcall	.-2594   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     b72:	87 2d       	mov	r24, r7
+     b74:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     b76:	98 2f       	mov	r25, r24
+     b78:	88 27       	eor	r24, r24
+	val5=convert(vall6,valh6);
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+     b7a:	88 0d       	add	r24, r8
+     b7c:	91 1d       	adc	r25, r1
+     b7e:	e8 da       	rcall	.-2608   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     b80:	89 2d       	mov	r24, r9
+     b82:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     b84:	98 2f       	mov	r25, r24
+     b86:	88 27       	eor	r24, r24
+
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+     b88:	8a 0d       	add	r24, r10
+     b8a:	91 1d       	adc	r25, r1
+     b8c:	e1 da       	rcall	.-2622   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     b8e:	8b 2d       	mov	r24, r11
+     b90:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     b92:	98 2f       	mov	r25, r24
+     b94:	88 27       	eor	r24, r24
+	if (UniversalCycles%CyclesToCollectData == 0)
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+	transmitSunSensorUart(val3);
+     b96:	8c 0d       	add	r24, r12
+     b98:	91 1d       	adc	r25, r1
+     b9a:	da da       	rcall	.-2636   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     b9c:	8d 2d       	mov	r24, r13
+     b9e:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     ba0:	98 2f       	mov	r25, r24
+     ba2:	88 27       	eor	r24, r24
+	{
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+	transmitSunSensorUart(val3);
+	transmitSunSensorUart(val4);
+     ba4:	84 0d       	add	r24, r4
+     ba6:	91 1d       	adc	r25, r1
+     ba8:	d3 da       	rcall	.-2650   	; 0x150 <transmitSunSensorUart>
+	}
+
+	uint16_t convert(uint8_t vall, uint8_t valh) //to convert 2 8 bit integer values to one 16 bit value
+	{
+		
+		uint16_t val= valh;
+     baa:	83 2d       	mov	r24, r3
+     bac:	90 e0       	ldi	r25, 0x00	; 0
+		val=(val<<8)+vall;
+     bae:	98 2f       	mov	r25, r24
+     bb0:	88 27       	eor	r24, r24
+	transmitSunSensorUart(val0);
+	transmitSunSensorUart(val1);
+	transmitSunSensorUart(val2);
+	transmitSunSensorUart(val3);
+	transmitSunSensorUart(val4);
+	transmitSunSensorUart(val5);	
+     bb2:	82 0d       	add	r24, r2
+     bb4:	91 1d       	adc	r25, r1
+     bb6:	cc da       	rcall	.-2664   	; 0x150 <transmitSunSensorUart>
+	}//transmit_UART0(receive_UART0());
+	PORTB |= (1<<PB5);
+     bb8:	c5 9a       	sbi	0x18, 5	; 24
+	PORTB &= ~(1<<PB0);
+     bba:	c0 98       	cbi	0x18, 0	; 24
+	wdt_reset();
+     bbc:	a8 95       	wdr
+	if (UniversalCycles%CyclesToCollectData == 0)
+     bbe:	80 91 0f 01 	lds	r24, 0x010F
+     bc2:	90 91 10 01 	lds	r25, 0x0110
+     bc6:	60 91 0d 01 	lds	r22, 0x010D
+     bca:	70 91 0e 01 	lds	r23, 0x010E
+     bce:	2d d2       	rcall	.+1114   	; 0x102a <__udivmodhi4>
+     bd0:	89 2b       	or	r24, r25
+     bd2:	31 f4       	brne	.+12     	; 0xbe0 <main+0x71a>
+	{
+	transmit_UART0('P');
+     bd4:	80 e5       	ldi	r24, 0x50	; 80
+     bd6:	15 d2       	rcall	.+1066   	; 0x1002 <transmit_UART0>
+	transmit_UART0('R');
+     bd8:	82 e5       	ldi	r24, 0x52	; 82
+     bda:	13 d2       	rcall	.+1062   	; 0x1002 <transmit_UART0>
+	transmit_UART0('B');
+     bdc:	82 e4       	ldi	r24, 0x42	; 66
+     bde:	11 d2       	rcall	.+1058   	; 0x1002 <transmit_UART0>
+	}
+	//for(int i=0;i<309;i++){
+	cli();
+     be0:	f8 94       	cli
+	GPS_Received = receive_UART0();
+     be2:	13 d2       	rcall	.+1062   	; 0x100a <receive_UART0>
+     be4:	48 2f       	mov	r20, r24
+     be6:	80 93 a1 01 	sts	0x01A1, r24
+	if (UniversalCycles%CyclesToCollectData == 0){transmit_UART0(GPS_Received);}
+     bea:	80 91 0f 01 	lds	r24, 0x010F
+     bee:	90 91 10 01 	lds	r25, 0x0110
+     bf2:	60 91 0d 01 	lds	r22, 0x010D
+     bf6:	70 91 0e 01 	lds	r23, 0x010E
+     bfa:	17 d2       	rcall	.+1070   	; 0x102a <__udivmodhi4>
+     bfc:	89 2b       	or	r24, r25
+     bfe:	11 f4       	brne	.+4      	; 0xc04 <main+0x73e>
+     c00:	84 2f       	mov	r24, r20
+     c02:	ff d1       	rcall	.+1022   	; 0x1002 <transmit_UART0>
+	sei();
+     c04:	78 94       	sei
+	wdt_reset();
+     c06:	a8 95       	wdr
+	if (UniversalCycles%CyclesToCollectData == 0)
+     c08:	80 91 0f 01 	lds	r24, 0x010F
+     c0c:	90 91 10 01 	lds	r25, 0x0110
+     c10:	60 91 0d 01 	lds	r22, 0x010D
+     c14:	70 91 0e 01 	lds	r23, 0x010E
+     c18:	08 d2       	rcall	.+1040   	; 0x102a <__udivmodhi4>
+     c1a:	89 2b       	or	r24, r25
+     c1c:	31 f4       	brne	.+12     	; 0xc2a <main+0x764>
+	{
+	transmit_UART0('P');
+     c1e:	80 e5       	ldi	r24, 0x50	; 80
+     c20:	f0 d1       	rcall	.+992    	; 0x1002 <transmit_UART0>
+	transmit_UART0('R');
+     c22:	82 e5       	ldi	r24, 0x52	; 82
+     c24:	ee d1       	rcall	.+988    	; 0x1002 <transmit_UART0>
+	transmit_UART0('D');
+     c26:	84 e4       	ldi	r24, 0x44	; 68
+     c28:	ec d1       	rcall	.+984    	; 0x1002 <transmit_UART0>
+	}
+	//initMagentometer();
+	//poll_MM1();
+	
+	
+	send_MM_cmd("*00P\r");
+     c2a:	80 e2       	ldi	r24, 0x20	; 32
+     c2c:	91 e0       	ldi	r25, 0x01	; 1
+     c2e:	68 da       	rcall	.-2864   	; 0x100 <send_MM_cmd>
+	//torquer_only_x_positive();
+	//torquer_only_y_positive();
+	//torquer_only_z_positive();
+	//wdt_reset();
+
+	if(CounterInsideGS == 0)
+     c30:	80 91 2d 01 	lds	r24, 0x012D
+     c34:	90 91 2e 01 	lds	r25, 0x012E
+     c38:	89 2b       	or	r24, r25
+     c3a:	b1 f4       	brne	.+44     	; 0xc68 <main+0x7a2>
+	{
+	write_data |= (1<<4); //Make downlink 1 in commandbyte and Uplink 0
+     c3c:	80 91 15 01 	lds	r24, 0x0115
+     c40:	80 61       	ori	r24, 0x10	; 16
+     c42:	80 93 15 01 	sts	0x0115, r24
+	wdt_reset();
+     c46:	a8 95       	wdr
+	//***********Tell Power To Turn On Downlink and Turn Off Uplink**************//
+	PORTA = 0xAA;
+     c48:	8a ea       	ldi	r24, 0xAA	; 170
+     c4a:	8b bb       	out	0x1b, r24	; 27
+	TWI_start(); // Function to send start condition
+     c4c:	90 da       	rcall	.-2784   	; 0x16e <TWI_start>
+	PORTA=0b11000000;
+     c4e:	80 ec       	ldi	r24, 0xC0	; 192
+     c50:	8b bb       	out	0x1b, r24	; 27
+	TWI_write_address(address); // Function to write address and data direction bit(write) on SDA
+     c52:	80 91 17 01 	lds	r24, 0x0117
+     c56:	9a da       	rcall	.-2764   	; 0x18c <TWI_write_address>
+
+	PORTA=0b01100000;
+     c58:	80 e6       	ldi	r24, 0x60	; 96
+     c5a:	8b bb       	out	0x1b, r24	; 27
+	TWI_write_data(write_data);     // Function to write data in slave
+     c5c:	80 91 15 01 	lds	r24, 0x0115
+     c60:	b8 da       	rcall	.-2704   	; 0x1d2 <TWI_write_data>
+	PORTA=0b10100000;
+     c62:	80 ea       	ldi	r24, 0xA0	; 160
+     c64:	8b bb       	out	0x1b, r24	; 27
+	TWI_stop();
+     c66:	e6 da       	rcall	.-2612   	; 0x234 <TWI_stop>
+	//***********Told***************************************//
+	}
+	if(CounterInsideGS==1) //Time to start downlink
+     c68:	80 91 2d 01 	lds	r24, 0x012D
+     c6c:	90 91 2e 01 	lds	r25, 0x012E
+     c70:	01 97       	sbiw	r24, 0x01	; 1
+     c72:	71 f5       	brne	.+92     	; 0xcd0 <main+0x80a>
+	{  
+		if(StarReceived == 1)
+     c74:	80 91 2b 01 	lds	r24, 0x012B
+     c78:	90 91 2c 01 	lds	r25, 0x012C
+     c7c:	01 97       	sbiw	r24, 0x01	; 1
+     c7e:	91 f4       	brne	.+36     	; 0xca4 <main+0x7de>
+     c80:	83 e0       	ldi	r24, 0x03	; 3
+     c82:	90 e0       	ldi	r25, 0x00	; 0
+		{
+		for(int i = 0; i<3; i++){
+			SPDR = 0xF1;//Tell slave it's time to start downlink
+     c84:	31 ef       	ldi	r19, 0xF1	; 241
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+     c86:	2f ef       	ldi	r18, 0xFF	; 255
+	if(CounterInsideGS==1) //Time to start downlink
+	{  
+		if(StarReceived == 1)
+		{
+		for(int i = 0; i<3; i++){
+			SPDR = 0xF1;//Tell slave it's time to start downlink
+     c88:	3f b9       	out	0x0f, r19	; 15
+			while(!(SPSR & (1<<SPIF) ));
+     c8a:	77 9b       	sbis	0x0e, 7	; 14
+     c8c:	fe cf       	rjmp	.-4      	; 0xc8a <main+0x7c4>
+			PORTA = 0xFF;
+     c8e:	2b bb       	out	0x1b, r18	; 27
+     c90:	af ec       	ldi	r26, 0xCF	; 207
+     c92:	b7 e0       	ldi	r27, 0x07	; 7
+     c94:	11 97       	sbiw	r26, 0x01	; 1
+     c96:	f1 f7       	brne	.-4      	; 0xc94 <main+0x7ce>
+     c98:	00 c0       	rjmp	.+0      	; 0xc9a <main+0x7d4>
+     c9a:	00 00       	nop
+     c9c:	01 97       	sbiw	r24, 0x01	; 1
+	}
+	if(CounterInsideGS==1) //Time to start downlink
+	{  
+		if(StarReceived == 1)
+		{
+		for(int i = 0; i<3; i++){
+     c9e:	00 97       	sbiw	r24, 0x00	; 0
+     ca0:	99 f7       	brne	.-26     	; 0xc88 <main+0x7c2>
+     ca2:	16 c0       	rjmp	.+44     	; 0xcd0 <main+0x80a>
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+			_delay_ms(1);	
+		}
+		}
+		else if(BracketReceived == 1)
+     ca4:	80 91 26 01 	lds	r24, 0x0126
+     ca8:	81 30       	cpi	r24, 0x01	; 1
+     caa:	09 f0       	breq	.+2      	; 0xcae <main+0x7e8>
+     cac:	43 c0       	rjmp	.+134    	; 0xd34 <main+0x86e>
+     cae:	83 e0       	ldi	r24, 0x03	; 3
+     cb0:	90 e0       	ldi	r25, 0x00	; 0
+		{
+			for(int i = 0; i<3; i++){
+				SPDR = 0xB1;//Tell slave it's time to start downlink
+				while(!(SPSR & (1<<SPIF) ));
+				PORTA = 0xFF;
+     cb2:	2f ef       	ldi	r18, 0xFF	; 255
+		}
+		}
+		else if(BracketReceived == 1)
+		{
+			for(int i = 0; i<3; i++){
+				SPDR = 0xB1;//Tell slave it's time to start downlink
+     cb4:	b1 eb       	ldi	r27, 0xB1	; 177
+     cb6:	bf b9       	out	0x0f, r27	; 15
+				while(!(SPSR & (1<<SPIF) ));
+     cb8:	77 9b       	sbis	0x0e, 7	; 14
+     cba:	fe cf       	rjmp	.-4      	; 0xcb8 <main+0x7f2>
+				PORTA = 0xFF;
+     cbc:	2b bb       	out	0x1b, r18	; 27
+     cbe:	ef ec       	ldi	r30, 0xCF	; 207
+     cc0:	f7 e0       	ldi	r31, 0x07	; 7
+     cc2:	31 97       	sbiw	r30, 0x01	; 1
+     cc4:	f1 f7       	brne	.-4      	; 0xcc2 <main+0x7fc>
+     cc6:	00 c0       	rjmp	.+0      	; 0xcc8 <main+0x802>
+     cc8:	00 00       	nop
+     cca:	01 97       	sbiw	r24, 0x01	; 1
+			_delay_ms(1);	
+		}
+		}
+		else if(BracketReceived == 1)
+		{
+			for(int i = 0; i<3; i++){
+     ccc:	00 97       	sbiw	r24, 0x00	; 0
+     cce:	91 f7       	brne	.-28     	; 0xcb4 <main+0x7ee>
+				_delay_ms(1);
+			}
+		}
+	}
+	//wdt_reset();
+	if((CounterInsideGS >1)&&(CounterInsideGS<(CyclesForDownlink+2)))//Send Lat-Long-Alt
+     cd0:	80 91 2d 01 	lds	r24, 0x012D
+     cd4:	90 91 2e 01 	lds	r25, 0x012E
+     cd8:	82 30       	cpi	r24, 0x02	; 2
+     cda:	91 05       	cpc	r25, r1
+     cdc:	58 f1       	brcs	.+86     	; 0xd34 <main+0x86e>
+     cde:	20 91 13 01 	lds	r18, 0x0113
+     ce2:	30 91 14 01 	lds	r19, 0x0114
+     ce6:	2e 5f       	subi	r18, 0xFE	; 254
+     ce8:	3f 4f       	sbci	r19, 0xFF	; 255
+     cea:	82 17       	cp	r24, r18
+     cec:	93 07       	cpc	r25, r19
+     cee:	10 f5       	brcc	.+68     	; 0xd34 <main+0x86e>
+     cf0:	f8 01       	movw	r30, r16
+	{
+		
+		for (uint8_t i =0;i<7;i++) {
+			SPDR = HM_Data[i];
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+     cf2:	9f ef       	ldi	r25, 0xFF	; 255
+	//wdt_reset();
+	if((CounterInsideGS >1)&&(CounterInsideGS<(CyclesForDownlink+2)))//Send Lat-Long-Alt
+	{
+		
+		for (uint8_t i =0;i<7;i++) {
+			SPDR = HM_Data[i];
+     cf4:	81 91       	ld	r24, Z+
+     cf6:	8f b9       	out	0x0f, r24	; 15
+			while(!(SPSR & (1<<SPIF) ));
+     cf8:	77 9b       	sbis	0x0e, 7	; 14
+     cfa:	fe cf       	rjmp	.-4      	; 0xcf8 <main+0x832>
+			PORTA = 0xFF;
+     cfc:	9b bb       	out	0x1b, r25	; 27
+     cfe:	af ec       	ldi	r26, 0xCF	; 207
+     d00:	b7 e0       	ldi	r27, 0x07	; 7
+     d02:	11 97       	sbiw	r26, 0x01	; 1
+     d04:	f1 f7       	brne	.-4      	; 0xd02 <main+0x83c>
+     d06:	00 c0       	rjmp	.+0      	; 0xd08 <main+0x842>
+     d08:	00 00       	nop
+	}
+	//wdt_reset();
+	if((CounterInsideGS >1)&&(CounterInsideGS<(CyclesForDownlink+2)))//Send Lat-Long-Alt
+	{
+		
+		for (uint8_t i =0;i<7;i++) {
+     d0a:	ce 17       	cp	r28, r30
+     d0c:	df 07       	cpc	r29, r31
+     d0e:	91 f7       	brne	.-28     	; 0xcf4 <main+0x82e>
+     d10:	e0 e0       	ldi	r30, 0x00	; 0
+     d12:	f1 e0       	ldi	r31, 0x01	; 1
+			_delay_ms(1);
+		}
+		for (uint8_t i =0;i<12;i++) {
+			SPDR = GPS_Data[i];
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+     d14:	9f ef       	ldi	r25, 0xFF	; 255
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+			_delay_ms(1);
+		}
+		for (uint8_t i =0;i<12;i++) {
+			SPDR = GPS_Data[i];
+     d16:	81 91       	ld	r24, Z+
+     d18:	8f b9       	out	0x0f, r24	; 15
+			while(!(SPSR & (1<<SPIF) ));
+     d1a:	77 9b       	sbis	0x0e, 7	; 14
+     d1c:	fe cf       	rjmp	.-4      	; 0xd1a <main+0x854>
+			PORTA = 0xFF;
+     d1e:	9b bb       	out	0x1b, r25	; 27
+     d20:	af ec       	ldi	r26, 0xCF	; 207
+     d22:	b7 e0       	ldi	r27, 0x07	; 7
+     d24:	11 97       	sbiw	r26, 0x01	; 1
+     d26:	f1 f7       	brne	.-4      	; 0xd24 <main+0x85e>
+     d28:	00 c0       	rjmp	.+0      	; 0xd2a <main+0x864>
+     d2a:	00 00       	nop
+			SPDR = HM_Data[i];
+			while(!(SPSR & (1<<SPIF) ));
+			PORTA = 0xFF;
+			_delay_ms(1);
+		}
+		for (uint8_t i =0;i<12;i++) {
+     d2c:	b1 e0       	ldi	r27, 0x01	; 1
+     d2e:	ec 30       	cpi	r30, 0x0C	; 12
+     d30:	fb 07       	cpc	r31, r27
+     d32:	89 f7       	brne	.-30     	; 0xd16 <main+0x850>
+			_delay_ms(1);
+		}
+		
+	}
+	//wdt_reset();
+	if(CounterInsideGS==(CyclesForDownlink+2))//Time to STOP Downlink transmission
+     d34:	20 91 13 01 	lds	r18, 0x0113
+     d38:	30 91 14 01 	lds	r19, 0x0114
+     d3c:	2e 5f       	subi	r18, 0xFE	; 254
+     d3e:	3f 4f       	sbci	r19, 0xFF	; 255
+     d40:	80 91 2d 01 	lds	r24, 0x012D
+     d44:	90 91 2e 01 	lds	r25, 0x012E
+     d48:	28 17       	cp	r18, r24
+     d4a:	39 07       	cpc	r19, r25
+     d4c:	89 f4       	brne	.+34     	; 0xd70 <main+0x8aa>
+     d4e:	83 e0       	ldi	r24, 0x03	; 3
+     d50:	90 e0       	ldi	r25, 0x00	; 0
+	{
+		for(int i=0; i<3; i++){
+		SPDR = 0xE1;//Tell slave it's time to stop downlink
+		while(!(SPSR & (1<<SPIF) ));
+		PORTA = 0xFF;
+     d52:	2f ef       	ldi	r18, 0xFF	; 255
+	}
+	//wdt_reset();
+	if(CounterInsideGS==(CyclesForDownlink+2))//Time to STOP Downlink transmission
+	{
+		for(int i=0; i<3; i++){
+		SPDR = 0xE1;//Tell slave it's time to stop downlink
+     d54:	e1 ee       	ldi	r30, 0xE1	; 225
+     d56:	ef b9       	out	0x0f, r30	; 15
+		while(!(SPSR & (1<<SPIF) ));
+     d58:	77 9b       	sbis	0x0e, 7	; 14
+     d5a:	fe cf       	rjmp	.-4      	; 0xd58 <main+0x892>
+		PORTA = 0xFF;
+     d5c:	2b bb       	out	0x1b, r18	; 27
+     d5e:	af ec       	ldi	r26, 0xCF	; 207
+     d60:	b7 e0       	ldi	r27, 0x07	; 7
+     d62:	11 97       	sbiw	r26, 0x01	; 1
+     d64:	f1 f7       	brne	.-4      	; 0xd62 <main+0x89c>
+     d66:	00 c0       	rjmp	.+0      	; 0xd68 <main+0x8a2>
+     d68:	00 00       	nop
+     d6a:	01 97       	sbiw	r24, 0x01	; 1
+		
+	}
+	//wdt_reset();
+	if(CounterInsideGS==(CyclesForDownlink+2))//Time to STOP Downlink transmission
+	{
+		for(int i=0; i<3; i++){
+     d6c:	00 97       	sbiw	r24, 0x00	; 0
+     d6e:	91 f7       	brne	.-28     	; 0xd54 <main+0x88e>
+		while(!(SPSR & (1<<SPIF) ));
+		PORTA = 0xFF;
+		_delay_ms(1);}
+	}
+	
+	if(CounterInsideGS==(CyclesForDownlink+3))//Tell Power to turn OFF Downlink and Start Uplink
+     d70:	20 91 13 01 	lds	r18, 0x0113
+     d74:	30 91 14 01 	lds	r19, 0x0114
+     d78:	2d 5f       	subi	r18, 0xFD	; 253
+     d7a:	3f 4f       	sbci	r19, 0xFF	; 255
+     d7c:	80 91 2d 01 	lds	r24, 0x012D
+     d80:	90 91 2e 01 	lds	r25, 0x012E
+     d84:	28 17       	cp	r18, r24
+     d86:	39 07       	cpc	r19, r25
+     d88:	b1 f4       	brne	.+44     	; 0xdb6 <main+0x8f0>
+	{
+		write_data&= ~(1<<4); //Make downlink 0 in commandbyte
+     d8a:	80 91 15 01 	lds	r24, 0x0115
+     d8e:	8f 7e       	andi	r24, 0xEF	; 239
+		write_data|= (1<<1);
+     d90:	82 60       	ori	r24, 0x02	; 2
+     d92:	80 93 15 01 	sts	0x0115, r24
+		//***********Tell Power To Turn Off Downlink**************//
+		PORTA = 0xAA;
+     d96:	8a ea       	ldi	r24, 0xAA	; 170
+     d98:	8b bb       	out	0x1b, r24	; 27
+		TWI_start(); // Function to send start condition
+     d9a:	e9 d9       	rcall	.-3118   	; 0x16e <TWI_start>
+		PORTA=0b11000000;
+     d9c:	80 ec       	ldi	r24, 0xC0	; 192
+     d9e:	8b bb       	out	0x1b, r24	; 27
+		TWI_write_address(address); // Function to write address and data direction bit(write) on SDA
+     da0:	80 91 17 01 	lds	r24, 0x0117
+     da4:	f3 d9       	rcall	.-3098   	; 0x18c <TWI_write_address>
+
+		PORTA=0b01100000;
+     da6:	80 e6       	ldi	r24, 0x60	; 96
+     da8:	8b bb       	out	0x1b, r24	; 27
+		TWI_write_data(write_data);     // Function to write data in slave
+     daa:	80 91 15 01 	lds	r24, 0x0115
+     dae:	11 da       	rcall	.-3038   	; 0x1d2 <TWI_write_data>
+		PORTA=0b10100000;
+     db0:	80 ea       	ldi	r24, 0xA0	; 160
+     db2:	8b bb       	out	0x1b, r24	; 27
+		TWI_stop();
+     db4:	3f da       	rcall	.-2946   	; 0x234 <TWI_stop>
+	}
+	//wdt_reset();
+	if((CounterInsideGS>(CyclesForDownlink+3))&&(CounterInsideGS<(CyclesForDownlink+4+CounterForUplink)))//Uplink
+	{}
+	
+	if(CounterInsideGS==(CyclesForDownlink+4+CounterForUplink))
+     db6:	20 91 13 01 	lds	r18, 0x0113
+     dba:	30 91 14 01 	lds	r19, 0x0114
+     dbe:	80 91 11 01 	lds	r24, 0x0111
+     dc2:	90 91 12 01 	lds	r25, 0x0112
+     dc6:	28 0f       	add	r18, r24
+     dc8:	39 1f       	adc	r19, r25
+     dca:	2c 5f       	subi	r18, 0xFC	; 252
+     dcc:	3f 4f       	sbci	r19, 0xFF	; 255
+     dce:	80 91 2d 01 	lds	r24, 0x012D
+     dd2:	90 91 2e 01 	lds	r25, 0x012E
+     dd6:	28 17       	cp	r18, r24
+     dd8:	39 07       	cpc	r19, r25
+     dda:	59 f5       	brne	.+86     	; 0xe32 <main+0x96c>
+	{
+		wdt_reset();
+     ddc:	a8 95       	wdr
+		write_data&= ~(1<<4);
+		write_data&= ~(1<<1); //Make downlink 0 in commandbyte and also uplink
+     dde:	80 91 15 01 	lds	r24, 0x0115
+     de2:	8d 7e       	andi	r24, 0xED	; 237
+     de4:	80 93 15 01 	sts	0x0115, r24
+		
+		//***********Tell Power To Turn Off Downlink and Uplink**************//
+		PORTA = 0xAA;
+     de8:	8a ea       	ldi	r24, 0xAA	; 170
+     dea:	8b bb       	out	0x1b, r24	; 27
+		TWI_start(); // Function to send start condition
+     dec:	c0 d9       	rcall	.-3200   	; 0x16e <TWI_start>
+		PORTA=0b11000000;
+     dee:	80 ec       	ldi	r24, 0xC0	; 192
+     df0:	8b bb       	out	0x1b, r24	; 27
+		TWI_write_address(address); // Function to write address and data direction bit(write) on SDA
+     df2:	80 91 17 01 	lds	r24, 0x0117
+     df6:	ca d9       	rcall	.-3180   	; 0x18c <TWI_write_address>
+
+		PORTA=0b01100000;
+     df8:	80 e6       	ldi	r24, 0x60	; 96
+     dfa:	8b bb       	out	0x1b, r24	; 27
+		TWI_write_data(write_data);     // Function to write data in slave
+     dfc:	80 91 15 01 	lds	r24, 0x0115
+     e00:	e8 d9       	rcall	.-3120   	; 0x1d2 <TWI_write_data>
+		PORTA=0b10100000;
+     e02:	80 ea       	ldi	r24, 0xA0	; 160
+     e04:	8b bb       	out	0x1b, r24	; 27
+		TWI_stop();
+     e06:	16 da       	rcall	.-3028   	; 0x234 <TWI_stop>
+     e08:	83 e0       	ldi	r24, 0x03	; 3
+     e0a:	90 e0       	ldi	r25, 0x00	; 0
+		//*******************Told Power to Turn on Downlink*********************//
+		
+		for(int i =0; i<3; i++){
+		SPDR = 0xD1;//Tell slave it's time to go back to normal mode
+		while(!(SPSR & (1<<SPIF) ));
+		PORTA = 0xFF;
+     e0c:	2f ef       	ldi	r18, 0xFF	; 255
+		PORTA=0b10100000;
+		TWI_stop();
+		//*******************Told Power to Turn on Downlink*********************//
+		
+		for(int i =0; i<3; i++){
+		SPDR = 0xD1;//Tell slave it's time to go back to normal mode
+     e0e:	b1 ed       	ldi	r27, 0xD1	; 209
+     e10:	bf b9       	out	0x0f, r27	; 15
+		while(!(SPSR & (1<<SPIF) ));
+     e12:	77 9b       	sbis	0x0e, 7	; 14
+     e14:	fe cf       	rjmp	.-4      	; 0xe12 <main+0x94c>
+		PORTA = 0xFF;
+     e16:	2b bb       	out	0x1b, r18	; 27
+     e18:	ef ec       	ldi	r30, 0xCF	; 207
+     e1a:	f7 e0       	ldi	r31, 0x07	; 7
+     e1c:	31 97       	sbiw	r30, 0x01	; 1
+     e1e:	f1 f7       	brne	.-4      	; 0xe1c <main+0x956>
+     e20:	00 c0       	rjmp	.+0      	; 0xe22 <main+0x95c>
+     e22:	00 00       	nop
+     e24:	01 97       	sbiw	r24, 0x01	; 1
+		TWI_write_data(write_data);     // Function to write data in slave
+		PORTA=0b10100000;
+		TWI_stop();
+		//*******************Told Power to Turn on Downlink*********************//
+		
+		for(int i =0; i<3; i++){
+     e26:	00 97       	sbiw	r24, 0x00	; 0
+     e28:	91 f7       	brne	.-28     	; 0xe0e <main+0x948>
+		SPDR = 0xD1;//Tell slave it's time to go back to normal mode
+		while(!(SPSR & (1<<SPIF) ));
+		PORTA = 0xFF;
+		_delay_ms(1);
+		}
+		overGS = 0;
+     e2a:	10 92 30 01 	sts	0x0130, r1
+     e2e:	10 92 2f 01 	sts	0x012F, r1
+	}
+	wdt_disable();
+     e32:	88 e1       	ldi	r24, 0x18	; 24
+     e34:	0f b6       	in	r0, 0x3f	; 63
+     e36:	f8 94       	cli
+     e38:	81 bd       	out	0x21, r24	; 33
+     e3a:	11 bc       	out	0x21, r1	; 33
+     e3c:	0f be       	out	0x3f, r0	; 63
+	CounterInsideGS = CounterInsideGS+1;
+     e3e:	80 91 2d 01 	lds	r24, 0x012D
+     e42:	90 91 2e 01 	lds	r25, 0x012E
+     e46:	01 96       	adiw	r24, 0x01	; 1
+     e48:	90 93 2e 01 	sts	0x012E, r25
+     e4c:	80 93 2d 01 	sts	0x012D, r24
+	if(overGS == 0)
+     e50:	80 91 2f 01 	lds	r24, 0x012F
+     e54:	90 91 30 01 	lds	r25, 0x0130
+     e58:	89 2b       	or	r24, r25
+     e5a:	59 f4       	brne	.+22     	; 0xe72 <main+0x9ac>
+	{CounterInsideGS = 0;}
+     e5c:	10 92 2e 01 	sts	0x012E, r1
+     e60:	10 92 2d 01 	sts	0x012D, r1
+     e64:	06 c0       	rjmp	.+12     	; 0xe72 <main+0x9ac>
+}
+else //If Star is not received and it's time to enter downlink mode
+{
+	//wdt_enable(WDTO_2S);
+	//wdt_reset();
+	overGS = 0;
+     e66:	10 92 30 01 	sts	0x0130, r1
+     e6a:	10 92 2f 01 	sts	0x012F, r1
+	PORTA = 0x77;
+     e6e:	87 e7       	ldi	r24, 0x77	; 119
+     e70:	8b bb       	out	0x1b, r24	; 27
+	//_delay_ms(1000);
+    //wdt_disable();
+}
+
+if(StartTorquer==1)//Block to handle torquer
+     e72:	80 91 29 01 	lds	r24, 0x0129
+     e76:	90 91 2a 01 	lds	r25, 0x012A
+     e7a:	01 97       	sbiw	r24, 0x01	; 1
+     e7c:	49 f5       	brne	.+82     	; 0xed0 <main+0xa0a>
+{
+	TorquerCycles = TorquerCycles+1;//Increment torquer cycles in each loop
+     e7e:	20 91 27 01 	lds	r18, 0x0127
+     e82:	30 91 28 01 	lds	r19, 0x0128
+     e86:	c9 01       	movw	r24, r18
+     e88:	01 96       	adiw	r24, 0x01	; 1
+     e8a:	90 93 28 01 	sts	0x0128, r25
+     e8e:	80 93 27 01 	sts	0x0127, r24
+	if(TorquerCycles <15){torquer_only_x_positive();}//Only X ON for first 15 loops
+     e92:	8f 30       	cpi	r24, 0x0F	; 15
+     e94:	91 05       	cpc	r25, r1
+     e96:	10 f4       	brcc	.+4      	; 0xe9c <main+0x9d6>
+     e98:	d6 d9       	rcall	.-3156   	; 0x246 <torquer_only_x_positive>
+     e9a:	1a c0       	rjmp	.+52     	; 0xed0 <main+0xa0a>
+	else if((TorquerCycles >= 15)&&(TorquerCycles<30)){torquer_only_y_positive();}//Y ON for next 15
+     e9c:	a9 01       	movw	r20, r18
+     e9e:	4e 50       	subi	r20, 0x0E	; 14
+     ea0:	51 09       	sbc	r21, r1
+     ea2:	4f 30       	cpi	r20, 0x0F	; 15
+     ea4:	51 05       	cpc	r21, r1
+     ea6:	10 f4       	brcc	.+4      	; 0xeac <main+0x9e6>
+     ea8:	e5 d9       	rcall	.-3126   	; 0x274 <torquer_only_y_positive>
+     eaa:	12 c0       	rjmp	.+36     	; 0xed0 <main+0xa0a>
+	else if((TorquerCycles >= 30)&&(TorquerCycles<45)){torquer_only_z_positive();}//Z ON for next 15
+     eac:	2d 51       	subi	r18, 0x1D	; 29
+     eae:	31 09       	sbc	r19, r1
+     eb0:	2f 30       	cpi	r18, 0x0F	; 15
+     eb2:	31 05       	cpc	r19, r1
+     eb4:	10 f4       	brcc	.+4      	; 0xeba <main+0x9f4>
+     eb6:	f5 d9       	rcall	.-3094   	; 0x2a2 <torquer_only_z_positive>
+     eb8:	0b c0       	rjmp	.+22     	; 0xed0 <main+0xa0a>
+	else if(TorquerCycles>= 45)
+     eba:	8d 97       	sbiw	r24, 0x2d	; 45
+     ebc:	48 f0       	brcs	.+18     	; 0xed0 <main+0xa0a>
+	{StartTorquer = 0;
+     ebe:	10 92 2a 01 	sts	0x012A, r1
+     ec2:	10 92 29 01 	sts	0x0129, r1
+	torquer_all_zeroes();
+     ec6:	04 da       	rcall	.-3064   	; 0x2d0 <torquer_all_zeroes>
+	 TorquerCycles = 0;}
+     ec8:	10 92 28 01 	sts	0x0128, r1
+     ecc:	10 92 27 01 	sts	0x0127, r1
+	
+}
+//transmit_UART0(UniversalCycles%CyclesToCollectData);
+
+ timer_wait_reset();
+     ed0:	82 d0       	rcall	.+260    	; 0xfd6 <timer_wait_reset>
+ UniversalCycles = UniversalCycles+1; //Increment Universal loop cycles
+     ed2:	80 91 0f 01 	lds	r24, 0x010F
+     ed6:	90 91 10 01 	lds	r25, 0x0110
+     eda:	01 96       	adiw	r24, 0x01	; 1
+     edc:	90 93 10 01 	sts	0x0110, r25
+     ee0:	80 93 0f 01 	sts	0x010F, r24
+}
+     ee4:	18 cb       	rjmp	.-2512   	; 0x516 <main+0x50>
+
+00000ee6 <configure_torquer>:
+     ee6:	84 b3       	in	r24, 0x14	; 20
+     ee8:	88 63       	ori	r24, 0x38	; 56
+     eea:	84 bb       	out	0x14, r24	; 20
+     eec:	82 b1       	in	r24, 0x02	; 2
+     eee:	88 63       	ori	r24, 0x38	; 56
+     ef0:	82 b9       	out	0x02, r24	; 2
+     ef2:	ab e8       	ldi	r26, 0x8B	; 139
+     ef4:	b0 e0       	ldi	r27, 0x00	; 0
+     ef6:	1c 92       	st	X, r1
+     ef8:	ea e8       	ldi	r30, 0x8A	; 138
+     efa:	f0 e0       	ldi	r31, 0x00	; 0
+     efc:	10 82       	st	Z, r1
+     efe:	10 92 8c 00 	sts	0x008C, r1
+     f02:	8c 91       	ld	r24, X
+     f04:	8a 6a       	ori	r24, 0xAA	; 170
+     f06:	8c 93       	st	X, r24
+     f08:	80 81       	ld	r24, Z
+     f0a:	81 61       	ori	r24, 0x11	; 17
+     f0c:	80 83       	st	Z, r24
+     f0e:	8f ef       	ldi	r24, 0xFF	; 255
+     f10:	9f ef       	ldi	r25, 0xFF	; 255
+     f12:	90 93 81 00 	sts	0x0081, r25
+     f16:	80 93 80 00 	sts	0x0080, r24
+     f1a:	e4 e8       	ldi	r30, 0x84	; 132
+     f1c:	f0 e0       	ldi	r31, 0x00	; 0
+     f1e:	11 82       	std	Z+1, r1	; 0x01
+     f20:	10 82       	st	Z, r1
+     f22:	11 82       	std	Z+1, r1	; 0x01
+     f24:	10 82       	st	Z, r1
+     f26:	11 82       	std	Z+1, r1	; 0x01
+     f28:	10 82       	st	Z, r1
+     f2a:	85 b3       	in	r24, 0x15	; 21
+     f2c:	87 7c       	andi	r24, 0xC7	; 199
+     f2e:	85 bb       	out	0x15, r24	; 21
+     f30:	08 95       	ret
+
+00000f32 <set_PWM>:
+     f32:	80 91 86 01 	lds	r24, 0x0186
+     f36:	88 23       	and	r24, r24
+     f38:	11 f0       	breq	.+4      	; 0xf3e <set_PWM+0xc>
+     f3a:	ad 9a       	sbi	0x15, 5	; 21
+     f3c:	01 c0       	rjmp	.+2      	; 0xf40 <set_PWM+0xe>
+     f3e:	ad 98       	cbi	0x15, 5	; 21
+     f40:	80 91 87 01 	lds	r24, 0x0187
+     f44:	88 23       	and	r24, r24
+     f46:	11 f0       	breq	.+4      	; 0xf4c <set_PWM+0x1a>
+     f48:	ac 9a       	sbi	0x15, 4	; 21
+     f4a:	01 c0       	rjmp	.+2      	; 0xf4e <set_PWM+0x1c>
+     f4c:	ac 98       	cbi	0x15, 4	; 21
+     f4e:	80 91 88 01 	lds	r24, 0x0188
+     f52:	88 23       	and	r24, r24
+     f54:	11 f0       	breq	.+4      	; 0xf5a <set_PWM+0x28>
+     f56:	ab 9a       	sbi	0x15, 3	; 21
+     f58:	01 c0       	rjmp	.+2      	; 0xf5c <set_PWM+0x2a>
+     f5a:	ab 98       	cbi	0x15, 3	; 21
+     f5c:	80 91 80 01 	lds	r24, 0x0180
+     f60:	90 91 81 01 	lds	r25, 0x0181
+     f64:	90 93 87 00 	sts	0x0087, r25
+     f68:	80 93 86 00 	sts	0x0086, r24
+     f6c:	80 91 82 01 	lds	r24, 0x0182
+     f70:	90 91 83 01 	lds	r25, 0x0183
+     f74:	90 93 85 00 	sts	0x0085, r25
+     f78:	80 93 84 00 	sts	0x0084, r24
+     f7c:	80 91 84 01 	lds	r24, 0x0184
+     f80:	90 91 85 01 	lds	r25, 0x0185
+     f84:	90 93 83 00 	sts	0x0083, r25
+     f88:	80 93 82 00 	sts	0x0082, r24
+     f8c:	08 95       	ret
+
+00000f8e <reset_PWM>:
+     f8e:	10 92 81 01 	sts	0x0181, r1
+     f92:	10 92 80 01 	sts	0x0180, r1
+     f96:	10 92 83 01 	sts	0x0183, r1
+     f9a:	10 92 82 01 	sts	0x0182, r1
+     f9e:	10 92 85 01 	sts	0x0185, r1
+     fa2:	10 92 84 01 	sts	0x0184, r1
+     fa6:	10 92 86 01 	sts	0x0186, r1
+     faa:	10 92 87 01 	sts	0x0187, r1
+     fae:	10 92 88 01 	sts	0x0188, r1
+     fb2:	bf cf       	rjmp	.-130    	; 0xf32 <set_PWM>
+     fb4:	08 95       	ret
+
+00000fb6 <timer_reset_two_sec>:
+     fb6:	86 b7       	in	r24, 0x36	; 54
+     fb8:	80 61       	ori	r24, 0x10	; 16
+     fba:	86 bf       	out	0x36, r24	; 54
+     fbc:	1e bc       	out	0x2e, r1	; 46
+     fbe:	1d bc       	out	0x2d, r1	; 45
+     fc0:	1c bc       	out	0x2c, r1	; 44
+     fc2:	88 e0       	ldi	r24, 0x08	; 8
+     fc4:	9d e3       	ldi	r25, 0x3D	; 61
+     fc6:	9b bd       	out	0x2b, r25	; 43
+     fc8:	8a bd       	out	0x2a, r24	; 42
+     fca:	1f bc       	out	0x2f, r1	; 47
+     fcc:	85 e0       	ldi	r24, 0x05	; 5
+     fce:	8e bd       	out	0x2e, r24	; 46
+     fd0:	10 92 7a 00 	sts	0x007A, r1
+     fd4:	08 95       	ret
+
+00000fd6 <timer_wait_reset>:
+     fd6:	06 b6       	in	r0, 0x36	; 54
+     fd8:	04 fe       	sbrs	r0, 4
+     fda:	fd cf       	rjmp	.-6      	; 0xfd6 <timer_wait_reset>
+     fdc:	ec cf       	rjmp	.-40     	; 0xfb6 <timer_reset_two_sec>
+     fde:	08 95       	ret
+
+00000fe0 <init_UART0>:
+     fe0:	1b b8       	out	0x0b, r1	; 11
+     fe2:	1a b8       	out	0x0a, r1	; 10
+     fe4:	e5 e9       	ldi	r30, 0x95	; 149
+     fe6:	f0 e0       	ldi	r31, 0x00	; 0
+     fe8:	10 82       	st	Z, r1
+     fea:	59 9a       	sbi	0x0b, 1	; 11
+     fec:	8a b1       	in	r24, 0x0a	; 10
+     fee:	88 69       	ori	r24, 0x98	; 152
+     ff0:	8a b9       	out	0x0a, r24	; 10
+     ff2:	80 81       	ld	r24, Z
+     ff4:	8e 60       	ori	r24, 0x0E	; 14
+     ff6:	80 83       	st	Z, r24
+     ff8:	87 e6       	ldi	r24, 0x67	; 103
+     ffa:	89 b9       	out	0x09, r24	; 9
+     ffc:	10 92 90 00 	sts	0x0090, r1
+    1000:	08 95       	ret
+
+00001002 <transmit_UART0>:
+    1002:	5d 9b       	sbis	0x0b, 5	; 11
+    1004:	fe cf       	rjmp	.-4      	; 0x1002 <transmit_UART0>
+    1006:	8c b9       	out	0x0c, r24	; 12
+    1008:	08 95       	ret
+
+0000100a <receive_UART0>:
+    100a:	5f 9b       	sbis	0x0b, 7	; 11
+    100c:	fe cf       	rjmp	.-4      	; 0x100a <receive_UART0>
+    100e:	8c b1       	in	r24, 0x0c	; 12
+    1010:	08 95       	ret
+
+00001012 <transmit_string_UART0>:
+    1012:	fc 01       	movw	r30, r24
+    1014:	20 81       	ld	r18, Z
+    1016:	22 23       	and	r18, r18
+    1018:	39 f0       	breq	.+14     	; 0x1028 <transmit_string_UART0+0x16>
+    101a:	31 96       	adiw	r30, 0x01	; 1
+    101c:	5d 9b       	sbis	0x0b, 5	; 11
+    101e:	fe cf       	rjmp	.-4      	; 0x101c <transmit_string_UART0+0xa>
+    1020:	2c b9       	out	0x0c, r18	; 12
+    1022:	21 91       	ld	r18, Z+
+    1024:	21 11       	cpse	r18, r1
+    1026:	fa cf       	rjmp	.-12     	; 0x101c <transmit_string_UART0+0xa>
+    1028:	08 95       	ret
+
+0000102a <__udivmodhi4>:
+    102a:	aa 1b       	sub	r26, r26
+    102c:	bb 1b       	sub	r27, r27
+    102e:	51 e1       	ldi	r21, 0x11	; 17
+    1030:	07 c0       	rjmp	.+14     	; 0x1040 <__udivmodhi4_ep>
+
+00001032 <__udivmodhi4_loop>:
+    1032:	aa 1f       	adc	r26, r26
+    1034:	bb 1f       	adc	r27, r27
+    1036:	a6 17       	cp	r26, r22
+    1038:	b7 07       	cpc	r27, r23
+    103a:	10 f0       	brcs	.+4      	; 0x1040 <__udivmodhi4_ep>
+    103c:	a6 1b       	sub	r26, r22
+    103e:	b7 0b       	sbc	r27, r23
+
+00001040 <__udivmodhi4_ep>:
+    1040:	88 1f       	adc	r24, r24
+    1042:	99 1f       	adc	r25, r25
+    1044:	5a 95       	dec	r21
+    1046:	a9 f7       	brne	.-22     	; 0x1032 <__udivmodhi4_loop>
+    1048:	80 95       	com	r24
+    104a:	90 95       	com	r25
+    104c:	bc 01       	movw	r22, r24
+    104e:	cd 01       	movw	r24, r26
+    1050:	08 95       	ret
+
+00001052 <_exit>:
+    1052:	f8 94       	cli
+
+00001054 <__stop_program>:
+    1054:	ff cf       	rjmp	.-2      	; 0x1054 <__stop_program>
