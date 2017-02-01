@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "hMaster_Torqtest", "hMaster_Torqtest.cproj", "{CCC516E0-7038-4567-8CCC-813ACA07650E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCC516E0-7038-4567-8CCC-813ACA07650E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CCC516E0-7038-4567-8CCC-813ACA07650E}.Debug|AVR.Build.0 = Debug|AVR
+		{CCC516E0-7038-4567-8CCC-813ACA07650E}.Release|AVR.ActiveCfg = Release|AVR
+		{CCC516E0-7038-4567-8CCC-813ACA07650E}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

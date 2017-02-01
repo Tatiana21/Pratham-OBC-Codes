@@ -67,6 +67,32 @@ int main(void)
 	PORTA = 0x50;
 	_delay_ms(500);
 	_delay_ms(1000);
+	
+	//begin OILS code to test whether matlab code compiles
+	
+	int size_mag = 0;
+	int size_sun = 0;
+	int size_gps = 0;
+	uint8_t mag[size_mag];
+	uint8_t sun[size_sun];
+	uint8_t gps[size_gps];
+	
+	init_UART0();
+	
+	for(int i=0; i<size_mag; i++){
+		mag[i] = receive_UART0();
+	}
+	
+	for(int i=0; i<size_sun; i++){
+		sun[i] = receive_UART0();
+	}
+	
+	for(int i=0; i<size_gps; i++){
+		gps[i] = receive_UART0();
+	}
+	
+	transmit_UART0((uint8_t)0);
+	
 	/*transmit_UART0('\r');
 	transmit_UART0('\r');
 	transmit_UART0('H');
