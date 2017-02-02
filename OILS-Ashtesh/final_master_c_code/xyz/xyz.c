@@ -266,7 +266,7 @@ int main(void){
 	
 	wdt_enable(WDTO_2S);
 	wdt_reset();
-	
+	/*
 PORTA = 0xAA;
 TWI_start(); // Function to send start condition
 PORTA=0b11000000;
@@ -291,7 +291,7 @@ for(int i=0;i<7;i=i+1)
 	HM_Data[i] = recv_data;
 	TWI_stop();
 }
-wdt_disable();
+wdt_disable();*/
 _delay_ms(10);
 ////////////////////////////////////////////////////////
 uint8_t G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12;

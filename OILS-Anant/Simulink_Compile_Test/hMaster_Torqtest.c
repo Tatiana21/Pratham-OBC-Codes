@@ -44,7 +44,13 @@ int main(void)
 	
 	configure_torquer();
 	
-
+	int size_mag = 0;
+	int size_sun = 0;
+	int size_gps = 0;
+	uint8_t mag[size_mag];
+	uint8_t sun[size_sun];
+	uint8_t gps[size_gps];
+	
 	while(1){              
 	PORTA = 0xA0;
 	_delay_ms(500);
@@ -53,14 +59,6 @@ int main(void)
 	_delay_ms(1000);
 	
 	//begin OILS code to test whether matlab code compiles
-	
-	int size_mag = 0;
-	int size_sun = 0;
-	int size_gps = 0;
-	uint8_t mag[size_mag];
-	uint8_t sun[size_sun];
-	uint8_t gps[size_gps];
-	
 	init_UART0();
 	
 	for(int i=0; i<size_mag; i++){

@@ -1,10 +1,10 @@
-Archive member included because of file (symbol)
+Archive member included to satisfy reference by file (symbol)
 
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
-                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o (exit)
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o (exit)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
                               gps.o (__do_copy_data)
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
                               gps.o (__do_clear_bss)
 
 Allocating common symbols
@@ -18,20 +18,35 @@ Time                0x8               gps.o
 
 Discarded input sections
 
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
  .text          0x00000000        0x0 gps.o
+ .data          0x00000000        0x0 gps.o
  .bss           0x00000000        0x0 gps.o
  .text.init_UART_GPS
                 0x00000000       0x22 gps.o
  .text          0x00000000        0x0 hm.o
+ .data          0x00000000        0x0 hm.o
  .bss           0x00000000        0x0 hm.o
  .text.get_HM_data
                 0x00000000       0x2a hm.o
  .text.send_loads
                 0x00000000        0xc hm.o
+ .debug_info    0x00000000      0x40f hm.o
+ .debug_abbrev  0x00000000      0x122 hm.o
+ .debug_loc     0x00000000       0x98 hm.o
+ .debug_aranges
+                0x00000000       0x28 hm.o
+ .debug_ranges  0x00000000       0x18 hm.o
+ .debug_line    0x00000000       0xeb hm.o
+ .debug_str     0x00000000      0x2d5 hm.o
+ .comment       0x00000000       0x31 hm.o
+ .debug_frame   0x00000000       0x48 hm.o
  .text          0x00000000        0x0 hMaster_Torqtest.o
+ .data          0x00000000        0x0 hMaster_Torqtest.o
  .bss           0x00000000        0x0 hMaster_Torqtest.o
  .text          0x00000000        0x0 mag.o
+ .data          0x00000000        0x0 mag.o
  .bss           0x00000000        0x0 mag.o
  .text.init_UART_MM
                 0x00000000       0x38 mag.o
@@ -43,10 +58,21 @@ Discarded input sections
                 0x00000000        0x6 mag.o
  .text.poll_MM  0x00000000       0x26 mag.o
  .bss.t         0x00000000        0x1 mag.o
+ .debug_info    0x00000000      0x49a mag.o
+ .debug_abbrev  0x00000000      0x157 mag.o
+ .debug_loc     0x00000000       0xdb mag.o
+ .debug_aranges
+                0x00000000       0x38 mag.o
+ .debug_ranges  0x00000000       0x28 mag.o
+ .debug_line    0x00000000      0x18b mag.o
+ .debug_str     0x00000000      0x2e2 mag.o
+ .comment       0x00000000       0x31 mag.o
+ .debug_frame   0x00000000       0x7c mag.o
  .text          0x00000000        0x0 peripherals.o
+ .data          0x00000000        0x0 peripherals.o
  .bss           0x00000000        0x0 peripherals.o
  .text.power_up_peripheral
-                0x00000000       0x22 peripherals.o
+                0x00000000       0x1e peripherals.o
  .text.power_down_peripheral
                 0x00000000       0x20 peripherals.o
  .text.read_GPS
@@ -59,6 +85,7 @@ Discarded input sections
                 0x00000000       0x2a peripherals.o
  .bss.PWM_init  0x00000000        0x1 peripherals.o
  .text          0x00000000        0x0 spi.o
+ .data          0x00000000        0x0 spi.o
  .bss           0x00000000        0x0 spi.o
  .text.init_SPI_slave
                 0x00000000        0xe spi.o
@@ -70,12 +97,34 @@ Discarded input sections
                 0x00000000       0x1c spi.o
  .text.SPI_transfer
                 0x00000000        0xa spi.o
+ .debug_info    0x00000000      0x14c spi.o
+ .debug_abbrev  0x00000000       0xca spi.o
+ .debug_loc     0x00000000       0x8a spi.o
+ .debug_aranges
+                0x00000000       0x40 spi.o
+ .debug_ranges  0x00000000       0x30 spi.o
+ .debug_line    0x00000000      0x14f spi.o
+ .debug_str     0x00000000      0x1cc spi.o
+ .comment       0x00000000       0x31 spi.o
+ .debug_frame   0x00000000       0x64 spi.o
  .text          0x00000000        0x0 sun.o
+ .data          0x00000000        0x0 sun.o
  .bss           0x00000000        0x0 sun.o
  .text.configure_SS
                 0x00000000        0x6 sun.o
- .text.poll_SS  0x00000000       0xc2 sun.o
+ .text.poll_SS  0x00000000       0xba sun.o
+ .debug_info    0x00000000      0x521 sun.o
+ .debug_abbrev  0x00000000      0x180 sun.o
+ .debug_loc     0x00000000       0x8d sun.o
+ .debug_aranges
+                0x00000000       0x28 sun.o
+ .debug_ranges  0x00000000       0x18 sun.o
+ .debug_line    0x00000000      0x1ce sun.o
+ .debug_str     0x00000000      0x30f sun.o
+ .comment       0x00000000       0x31 sun.o
+ .debug_frame   0x00000000       0x50 sun.o
  .text          0x00000000        0x0 twi.o
+ .data          0x00000000        0x0 twi.o
  .bss           0x00000000        0x0 twi.o
  .text.init_TWI
                 0x00000000       0x10 twi.o
@@ -83,7 +132,18 @@ Discarded input sections
                 0x00000000       0xd0 twi.o
  .text.TWI_send_byte
                 0x00000000       0xc6 twi.o
+ .debug_info    0x00000000      0x1bf twi.o
+ .debug_abbrev  0x00000000      0x123 twi.o
+ .debug_loc     0x00000000      0x100 twi.o
+ .debug_aranges
+                0x00000000       0x30 twi.o
+ .debug_ranges  0x00000000       0x20 twi.o
+ .debug_line    0x00000000      0x2cc twi.o
+ .debug_str     0x00000000      0x1e5 twi.o
+ .comment       0x00000000       0x31 twi.o
+ .debug_frame   0x00000000       0x44 twi.o
  .text          0x00000000        0x0 uart.o
+ .data          0x00000000        0x0 uart.o
  .bss           0x00000000        0x0 uart.o
  .text.init_UART1
                 0x00000000       0x38 uart.o
@@ -95,51 +155,54 @@ Discarded input sections
                 0x00000000        0x8 uart.o
  .text.transmit_string_UART1
                 0x00000000       0x2c uart.o
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
- .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
  .text.libgcc.mul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
- .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
  .text.libgcc.mul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -147,7 +210,7 @@ Name             Origin             Length             Attributes
 text             0x00000000         0x00020000         xr
 data             0x00800100         0x0000ff00         rw !x
 eeprom           0x00810000         0x00010000         rw !x
-fuse             0x00820000         0x00000400         rw !x
+fuse             0x00820000         0x00000003         rw !x
 lock             0x00830000         0x00000400         rw !x
 signature        0x00840000         0x00000400         rw !x
 user_signatures  0x00850000         0x00000400         rw !x
@@ -156,7 +219,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 Address of section .data set to 0x800100
-LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
 LOAD gps.o
 LOAD hm.o
 LOAD hMaster_Torqtest.o
@@ -167,13 +230,21 @@ LOAD sun.o
 LOAD twi.o
 LOAD uart.o
 START GROUP
-LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51\libm.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr51\libm.a
 END GROUP
 START GROUP
-LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a
-LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51\libm.a
-LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51\libc.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr51\libm.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr51\libc.a
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51\libatmega128.a
 END GROUP
+                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                0x0000ff00                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xff00
+                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
 
 .hash
  *(.hash)
@@ -265,9 +336,9 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x5f4
+.text           0x00000000      0x5f2
  *(.vectors)
- .vectors       0x00000000       0x8c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+ .vectors       0x00000000       0x8c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
@@ -278,6 +349,8 @@ END GROUP
  .trampolines   0x0000008c        0x0 linker stubs
  *(.trampolines*)
                 0x0000008c                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
  *(.progmem*)
                 0x0000008c                . = ALIGN (0x2)
  *(.jumptables)
@@ -293,20 +366,20 @@ END GROUP
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000008c        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+ .init0         0x0000008c        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
                 0x0000008c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000008c        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+ .init2         0x0000008c        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000098       0x1a c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
+ .init4         0x00000098       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_copy_data.o)
                 0x00000098                __do_copy_data
- .init4         0x000000b2       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
+ .init4         0x000000b2       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_clear_bss.o)
                 0x000000b2                __do_clear_bss
  *(.init4)
  *(.init5)
@@ -318,10 +391,10 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000c2        0x8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+ .init9         0x000000c2        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
  *(.init9)
  *(.text)
- .text          0x000000ca        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
+ .text          0x000000ca        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
                 0x000000ca                __vector_22
                 0x000000ca                __vector_28
                 0x000000ca                __vector_1
@@ -361,27 +434,27 @@ END GROUP
  .text.__vector_18
                 0x000000ce      0x2a0 gps.o
                 0x000000ce                __vector_18
- .text.main     0x0000036e      0x198 hMaster_Torqtest.o
+ .text.main     0x0000036e      0x196 hMaster_Torqtest.o
                 0x0000036e                main
  .text.configure_torquer
-                0x00000506       0x4c peripherals.o
-                0x00000506                configure_torquer
- .text.set_PWM  0x00000552       0x5c peripherals.o
-                0x00000552                set_PWM
+                0x00000504       0x4c peripherals.o
+                0x00000504                configure_torquer
+ .text.set_PWM  0x00000550       0x5c peripherals.o
+                0x00000550                set_PWM
  .text.init_UART0
-                0x000005ae       0x22 uart.o
-                0x000005ae                init_UART0
+                0x000005ac       0x22 uart.o
+                0x000005ac                init_UART0
  .text.transmit_UART0
-                0x000005d0        0x8 uart.o
-                0x000005d0                transmit_UART0
+                0x000005ce        0x8 uart.o
+                0x000005ce                transmit_UART0
  .text.transmit_string_UART0
-                0x000005d8       0x18 uart.o
-                0x000005d8                transmit_string_UART0
-                0x000005f0                . = ALIGN (0x2)
+                0x000005d6       0x18 uart.o
+                0x000005d6                transmit_string_UART0
+                0x000005ee                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000005f0        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
-                0x000005f0                _exit
-                0x000005f0                exit
+ .fini9         0x000005ee        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
+                0x000005ee                _exit
+                0x000005ee                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -400,26 +473,13 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000005f0        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
+ .fini0         0x000005ee        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x000005f4                _etext = .
+                0x000005f2                _etext = .
 
-.data           0x00800100       0x78 load address 0x000005f4
+.data           0x00800100       0x78 load address 0x000005f2
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr51/crtm128.o
- .data          0x00800100        0x0 gps.o
- .data          0x00800100        0x0 hm.o
- .data          0x00800100        0x0 hMaster_Torqtest.o
- .data          0x00800100        0x0 mag.o
- .data          0x00800100        0x0 peripherals.o
- .data          0x00800100        0x0 spi.o
- .data          0x00800100        0x0 sun.o
- .data          0x00800100        0x0 twi.o
- .data          0x00800100        0x0 uart.o
- .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_exit.o)
- .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_copy_data.o)
- .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1056/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr51\libgcc.a(_clear_bss.o)
  *(.data*)
  .data.pdop     0x00800100        0x2 gps.o
  .data.time     0x00800102        0x1 gps.o
@@ -453,15 +513,15 @@ END GROUP
                 0x00800201                Mode
                 0x00800202                Time
                 0x0080020a                PROVIDE (__bss_end, .)
-                0x000005f4                __data_load_start = LOADADDR (.data)
-                0x0000066c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000005f2                __data_load_start = LOADADDR (.data)
+                0x0000066a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080020a        0x0
-                0x0080020a                PROVIDE (__noinit_start, .)
+                [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080020a                PROVIDE (__noinit_end, .)
+                [!provide]                PROVIDE (__noinit_end, .)
                 0x0080020a                _end = .
-                0x0080020a                PROVIDE (__heap_start, .)
+                [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -504,14 +564,14 @@ END GROUP
  *(.comment)
  .comment       0x00000000       0x30 gps.o
                                  0x31 (size before relaxing)
- .comment       0x00000000       0x31 hm.o
- .comment       0x00000000       0x31 hMaster_Torqtest.o
- .comment       0x00000000       0x31 mag.o
- .comment       0x00000000       0x31 peripherals.o
- .comment       0x00000000       0x31 spi.o
- .comment       0x00000000       0x31 sun.o
- .comment       0x00000000       0x31 twi.o
- .comment       0x00000000       0x31 uart.o
+ .comment       0x00000030       0x31 hMaster_Torqtest.o
+ .comment       0x00000030       0x31 peripherals.o
+ .comment       0x00000030       0x31 uart.o
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x3c
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -528,110 +588,69 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x1f8
+.debug_aranges  0x00000000      0x100
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 gps.o
  .debug_aranges
-                0x00000028       0x28 hm.o
+                0x00000028       0x20 hMaster_Torqtest.o
  .debug_aranges
-                0x00000050       0x20 hMaster_Torqtest.o
+                0x00000048       0x60 peripherals.o
  .debug_aranges
-                0x00000070       0x38 mag.o
- .debug_aranges
-                0x000000a8       0x60 peripherals.o
- .debug_aranges
-                0x00000108       0x40 spi.o
- .debug_aranges
-                0x00000148       0x28 sun.o
- .debug_aranges
-                0x00000170       0x30 twi.o
- .debug_aranges
-                0x000001a0       0x58 uart.o
+                0x000000a8       0x58 uart.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x22a8
+.debug_info     0x00000000     0x195c
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x459 gps.o
- .debug_info    0x00000459      0x40f hm.o
- .debug_info    0x00000868      0x6d5 hMaster_Torqtest.o
- .debug_info    0x00000f3d      0x49a mag.o
- .debug_info    0x000013d7      0x509 peripherals.o
- .debug_info    0x000018e0      0x14c spi.o
- .debug_info    0x00001a2c      0x51e sun.o
- .debug_info    0x00001f4a      0x1bc twi.o
- .debug_info    0x00002106      0x1a2 uart.o
+ .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_info    0x00000780      0x459 gps.o
+ .debug_info    0x00000bd9      0x6d5 hMaster_Torqtest.o
+ .debug_info    0x000012ae      0x509 peripherals.o
+ .debug_info    0x000017b7      0x1a5 uart.o
 
-.debug_abbrev   0x00000000      0xa8c
+.debug_abbrev   0x00000000      0xbaf
  *(.debug_abbrev)
- .debug_abbrev  0x00000000       0xef gps.o
- .debug_abbrev  0x000000ef      0x122 hm.o
- .debug_abbrev  0x00000211      0x19e hMaster_Torqtest.o
- .debug_abbrev  0x000003af      0x157 mag.o
- .debug_abbrev  0x00000506      0x114 peripherals.o
- .debug_abbrev  0x0000061a       0xca spi.o
- .debug_abbrev  0x000006e4      0x180 sun.o
- .debug_abbrev  0x00000864      0x123 twi.o
- .debug_abbrev  0x00000987      0x105 uart.o
+ .debug_abbrev  0x00000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_abbrev  0x00000718       0xef gps.o
+ .debug_abbrev  0x00000807      0x19e hMaster_Torqtest.o
+ .debug_abbrev  0x000009a5      0x114 peripherals.o
+ .debug_abbrev  0x00000ab9       0xf6 uart.o
 
-.debug_line     0x00000000      0xc31
+.debug_line     0x00000000      0xa90
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x113 gps.o
- .debug_line    0x00000113       0xe4 hm.o
- .debug_line    0x000001f7      0x1e2 hMaster_Torqtest.o
- .debug_line    0x000003d9      0x119 mag.o
- .debug_line    0x000004f2      0x186 peripherals.o
- .debug_line    0x00000678       0xff spi.o
- .debug_line    0x00000777      0x187 sun.o
- .debug_line    0x000008fe      0x1da twi.o
- .debug_line    0x00000ad8      0x159 uart.o
+ .debug_line    0x00000000      0x169 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_line    0x00000169      0x235 gps.o
+ .debug_line    0x0000039e      0x281 hMaster_Torqtest.o
+ .debug_line    0x0000061f      0x257 peripherals.o
+ .debug_line    0x00000876      0x21a uart.o
 
-.debug_frame    0x00000000      0x3ac
+.debug_frame    0x00000000      0x1e8
  *(.debug_frame)
  .debug_frame   0x00000000       0x64 gps.o
- .debug_frame   0x00000064       0x48 hm.o
- .debug_frame   0x000000ac       0x34 hMaster_Torqtest.o
- .debug_frame   0x000000e0       0x7c mag.o
- .debug_frame   0x0000015c       0xa4 peripherals.o
- .debug_frame   0x00000200       0x64 spi.o
- .debug_frame   0x00000264       0x58 sun.o
- .debug_frame   0x000002bc       0x44 twi.o
- .debug_frame   0x00000300       0xac uart.o
+ .debug_frame   0x00000064       0x34 hMaster_Torqtest.o
+ .debug_frame   0x00000098       0xa4 peripherals.o
+ .debug_frame   0x0000013c       0xac uart.o
 
-.debug_str      0x00000000      0x531
+.debug_str      0x00000000      0x6c4
  *(.debug_str)
- .debug_str     0x00000000      0x276 gps.o
-                                0x2d4 (size before relaxing)
- .debug_str     0x00000276       0x46 hm.o
-                                0x2c5 (size before relaxing)
- .debug_str     0x000002bc       0xb5 hMaster_Torqtest.o
-                                0x34d (size before relaxing)
- .debug_str     0x00000371       0x46 mag.o
-                                0x2d2 (size before relaxing)
- .debug_str     0x000003b7       0x8a peripherals.o
-                                0x34a (size before relaxing)
- .debug_str     0x00000441       0x5d spi.o
-                                0x1bc (size before relaxing)
- .debug_str     0x0000049e       0x22 sun.o
-                                0x2ff (size before relaxing)
- .debug_str     0x000004c0       0x19 twi.o
-                                0x1d5 (size before relaxing)
- .debug_str     0x000004d9       0x58 uart.o
-                                0x1ee (size before relaxing)
+ .debug_str     0x00000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_str     0x0000027d      0x28e gps.o
+                                0x2e4 (size before relaxing)
+ .debug_str     0x0000050b       0xb5 hMaster_Torqtest.o
+                                0x35d (size before relaxing)
+ .debug_str     0x000005c0       0xac peripherals.o
+                                0x35a (size before relaxing)
+ .debug_str     0x0000066c       0x58 uart.o
+                                0x1fe (size before relaxing)
 
-.debug_loc      0x00000000      0x5f6
+.debug_loc      0x00000000      0x226
  *(.debug_loc)
  .debug_loc     0x00000000       0x8a gps.o
- .debug_loc     0x0000008a       0x98 hm.o
- .debug_loc     0x00000122       0x48 hMaster_Torqtest.o
- .debug_loc     0x0000016a       0xdb mag.o
- .debug_loc     0x00000245       0x8d peripherals.o
- .debug_loc     0x000002d2       0x8d spi.o
- .debug_loc     0x0000035f       0xa7 sun.o
- .debug_loc     0x00000406      0x100 twi.o
- .debug_loc     0x00000506       0xf0 uart.o
+ .debug_loc     0x0000008a       0x48 hMaster_Torqtest.o
+ .debug_loc     0x000000d2       0x8c peripherals.o
+ .debug_loc     0x0000015e       0xc8 uart.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -651,17 +670,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x168
+.debug_ranges   0x00000000       0xc0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x18 gps.o
- .debug_ranges  0x00000018       0x18 hm.o
- .debug_ranges  0x00000030       0x10 hMaster_Torqtest.o
- .debug_ranges  0x00000040       0x28 mag.o
- .debug_ranges  0x00000068       0x50 peripherals.o
- .debug_ranges  0x000000b8       0x30 spi.o
- .debug_ranges  0x000000e8       0x18 sun.o
- .debug_ranges  0x00000100       0x20 twi.o
- .debug_ranges  0x00000120       0x48 uart.o
+ .debug_ranges  0x00000018       0x10 hMaster_Torqtest.o
+ .debug_ranges  0x00000028       0x50 peripherals.o
+ .debug_ranges  0x00000078       0x48 uart.o
 
 .debug_macro
  *(.debug_macro)
