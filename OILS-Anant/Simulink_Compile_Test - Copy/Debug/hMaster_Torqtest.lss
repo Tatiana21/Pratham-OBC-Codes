@@ -3,31 +3,31 @@ hMaster_Torqtest.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000008  00800100  0000047c  00000510  2**0
+  0 .data         00000008  00800100  00000566  000005fa  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         0000047c  00000000  00000000  00000094  2**1
+  1 .text         00000566  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000092  00800108  00800108  00000518  2**0
+  2 .bss          00000092  00800108  00800108  00000602  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000518  2**0
+  3 .comment      00000030  00000000  00000000  00000602  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000548  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000634  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000100  00000000  00000000  00000584  2**0
+  5 .debug_aranges 00000100  00000000  00000000  00000670  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000187f  00000000  00000000  00000684  2**0
+  6 .debug_info   00001a6c  00000000  00000000  00000770  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000b9e  00000000  00000000  00001f03  2**0
+  7 .debug_abbrev 00000c1e  00000000  00000000  000021dc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000009db  00000000  00000000  00002aa1  2**0
+  8 .debug_line   00000aaf  00000000  00000000  00002dfa  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000001d8  00000000  00000000  0000347c  2**2
+  9 .debug_frame  000001d8  00000000  00000000  000038ac  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000717  00000000  00000000  00003654  2**0
+ 10 .debug_str    0000072d  00000000  00000000  00003a84  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000001de  00000000  00000000  00003d6b  2**0
+ 11 .debug_loc    0000064b  00000000  00000000  000041b1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000c0  00000000  00000000  00003f49  2**0
+ 12 .debug_ranges 00000150  00000000  00000000  000047fc  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -81,8 +81,8 @@ Disassembly of section .text:
   98:	11 e0       	ldi	r17, 0x01	; 1
   9a:	a0 e0       	ldi	r26, 0x00	; 0
   9c:	b1 e0       	ldi	r27, 0x01	; 1
-  9e:	ec e7       	ldi	r30, 0x7C	; 124
-  a0:	f4 e0       	ldi	r31, 0x04	; 4
+  9e:	e6 e6       	ldi	r30, 0x66	; 102
+  a0:	f5 e0       	ldi	r31, 0x05	; 5
   a2:	00 e0       	ldi	r16, 0x00	; 0
   a4:	0b bf       	out	0x3b, r16	; 59
   a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
@@ -106,7 +106,7 @@ Disassembly of section .text:
   be:	b2 07       	cpc	r27, r18
   c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
   c2:	0e 94 b7 01 	call	0x36e	; 0x36e <main>
-  c6:	0c 94 3c 02 	jmp	0x478	; 0x478 <_exit>
+  c6:	0c 94 b1 02 	jmp	0x562	; 0x562 <_exit>
 
 000000ca <__bad_interrupt>:
   ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -521,167 +521,358 @@ ISR(USART0_RX_vect)
 	_delay_ms(1000);
 	
 	init_UART0();
- 3c2:	0e 94 27 02 	call	0x44e	; 0x44e <init_UART0>
+ 3c2:	0e 94 98 02 	call	0x530	; 0x530 <init_UART0>
  
 	configure_torquer();
- 3c6:	0e 94 01 02 	call	0x402	; 0x402 <configure_torquer>
+ 3c6:	0e 94 72 02 	call	0x4e4	; 0x4e4 <configure_torquer>
+ 3ca:	8b e9       	ldi	r24, 0x9B	; 155
+ 3cc:	90 e0       	ldi	r25, 0x00	; 0
+ 3ce:	01 97       	sbiw	r24, 0x01	; 1
+	int size_sun = 12;
+	int size_gps = 155;
+	uint8_t mag[size_mag];
 	uint8_t sun[size_sun];
 	uint8_t gps[size_gps];
+		for(int i=0; i<size_gps; i++){
+ 3d0:	f1 f7       	brne	.-4      	; 0x3ce <main+0x60>
 	
 
 	while(1){              
-	PORTA = 0xA0;
- 3ca:	d0 ea       	ldi	r29, 0xA0	; 160
-	_delay_ms(1000);
-	PORTA = 0x50;
- 3cc:	c0 e5       	ldi	r28, 0x50	; 80
-	uint8_t sun[size_sun];
-	uint8_t gps[size_gps];
 	
-
-	while(1){              
-	PORTA = 0xA0;
- 3ce:	db bb       	out	0x1b, r29	; 27
- 3d0:	8f ef       	ldi	r24, 0xFF	; 255
- 3d2:	99 e6       	ldi	r25, 0x69	; 105
- 3d4:	28 e1       	ldi	r18, 0x18	; 24
- 3d6:	81 50       	subi	r24, 0x01	; 1
- 3d8:	90 40       	sbci	r25, 0x00	; 0
- 3da:	20 40       	sbci	r18, 0x00	; 0
- 3dc:	e1 f7       	brne	.-8      	; 0x3d6 <main+0x68>
- 3de:	00 c0       	rjmp	.+0      	; 0x3e0 <main+0x72>
- 3e0:	00 00       	nop
-	_delay_ms(1000);
-	PORTA = 0x50;
- 3e2:	cb bb       	out	0x1b, r28	; 27
- 3e4:	3f ef       	ldi	r19, 0xFF	; 255
- 3e6:	89 e6       	ldi	r24, 0x69	; 105
- 3e8:	98 e1       	ldi	r25, 0x18	; 24
- 3ea:	31 50       	subi	r19, 0x01	; 1
- 3ec:	80 40       	sbci	r24, 0x00	; 0
- 3ee:	90 40       	sbci	r25, 0x00	; 0
- 3f0:	e1 f7       	brne	.-8      	; 0x3ea <main+0x7c>
- 3f2:	00 c0       	rjmp	.+0      	; 0x3f4 <main+0x86>
- 3f4:	00 00       	nop
-	//_delay_ms(500);
-	_delay_ms(1000);
+		
+	init_UART0();
+ 3d2:	0f 2e       	mov	r0, r31
+ 3d4:	fb e9       	ldi	r31, 0x9B	; 155
+ 3d6:	ef 2e       	mov	r14, r31
+ 3d8:	f0 2d       	mov	r31, r0
+ 3da:	f1 2c       	mov	r15, r1
+		gps[i] = receive_UART0();
+		count = count + 1;
+	}
 	
-
+	for(int i=0; i<size_mag; i++){
+		mag[i] = receive_UART0();
+ 3dc:	0f 2e       	mov	r0, r31
+ 3de:	fc e0       	ldi	r31, 0x0C	; 12
+ 3e0:	bf 2e       	mov	r11, r31
+ 3e2:	f0 2d       	mov	r31, r0
+ 3e4:	c1 2c       	mov	r12, r1
+		count = count + 1;
+	}
+	
+	
+	for(int iter=0; iter<2; iter++){
+		PORTA = 0xA0;
+ 3e6:	00 ea       	ldi	r16, 0xA0	; 160
+		_delay_ms(1000);
+		PORTA = 0x50;
+ 3e8:	10 e5       	ldi	r17, 0x50	; 80
+		//_delay_ms(500);
+		_delay_ms(1000);
+	}	
 	
 	init_UART0();
- 3f6:	0e 94 27 02 	call	0x44e	; 0x44e <init_UART0>
+ 3ea:	d1 2c       	mov	r13, r1
+	
+
+	while(1){              
+	
+		
+	init_UART0();
+ 3ec:	0e 94 98 02 	call	0x530	; 0x530 <init_UART0>
+ 3f0:	ce 2d       	mov	r28, r14
+ 3f2:	df 2d       	mov	r29, r15
+	int count = 0;
 	
 	for(int i=0; i<size_gps; i++){
 		gps[i] = receive_UART0();
+ 3f4:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 3f8:	21 97       	sbiw	r28, 0x01	; 1
+	
+		
+	init_UART0();
+	int count = 0;
+	
+	for(int i=0; i<size_gps; i++){
+ 3fa:	e1 f7       	brne	.-8      	; 0x3f4 <main+0x86>
+		gps[i] = receive_UART0();
+		count = count + 1;
 	}
 	
-	transmit_UART0((uint8_t)0);
- 3fa:	80 e0       	ldi	r24, 0x00	; 0
- 3fc:	0e 94 38 02 	call	0x470	; 0x470 <transmit_UART0>
-
+	for(int i=0; i<size_mag; i++){
+		mag[i] = receive_UART0();
+ 3fc:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 400:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 404:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 408:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 40c:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 410:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 414:	cb 2d       	mov	r28, r11
+ 416:	dc 2d       	mov	r29, r12
+		count = count + 1;
 	}
- 400:	e6 cf       	rjmp	.-52     	; 0x3ce <main+0x60>
+	
+	for(int i=0; i<size_sun; i++){
+		sun[i] = receive_UART0();
+ 418:	0e 94 ad 02 	call	0x55a	; 0x55a <receive_UART0>
+ 41c:	21 97       	sbiw	r28, 0x01	; 1
+	for(int i=0; i<size_mag; i++){
+		mag[i] = receive_UART0();
+		count = count + 1;
+	}
+	
+	for(int i=0; i<size_sun; i++){
+ 41e:	e1 f7       	brne	.-8      	; 0x418 <__LOCK_REGION_LENGTH__+0x18>
+ 420:	35 c0       	rjmp	.+106    	; 0x48c <__LOCK_REGION_LENGTH__+0x8c>
+	
+	uint8_t send_digit = 1;
+	if(count == 173){
+	for(int iter=0; iter<6; iter++){
+		uint8_t send_digit = iter;
+		transmit_UART0(send_digit);
+ 422:	8c 2f       	mov	r24, r28
+ 424:	0e 94 a9 02 	call	0x552	; 0x552 <transmit_UART0>
+ 428:	8f ec       	ldi	r24, 0xCF	; 207
+ 42a:	97 e0       	ldi	r25, 0x07	; 7
+ 42c:	01 97       	sbiw	r24, 0x01	; 1
+ 42e:	f1 f7       	brne	.-4      	; 0x42c <__LOCK_REGION_LENGTH__+0x2c>
+ 430:	00 c0       	rjmp	.+0      	; 0x432 <__LOCK_REGION_LENGTH__+0x32>
+ 432:	00 00       	nop
+ 434:	cf 5f       	subi	r28, 0xFF	; 255
+	
+	init_UART0();
+	
+	uint8_t send_digit = 1;
+	if(count == 173){
+	for(int iter=0; iter<6; iter++){
+ 436:	c6 30       	cpi	r28, 0x06	; 6
+ 438:	a1 f7       	brne	.-24     	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
+		_delay_ms(1);
+	}
+	}
+	
+	for(int iter=0; iter<2; iter++){
+		PORTA = 0xA0;
+ 43a:	0b bb       	out	0x1b, r16	; 27
+ 43c:	9f ef       	ldi	r25, 0xFF	; 255
+ 43e:	24 e3       	ldi	r18, 0x34	; 52
+ 440:	3c e0       	ldi	r19, 0x0C	; 12
+ 442:	91 50       	subi	r25, 0x01	; 1
+ 444:	20 40       	sbci	r18, 0x00	; 0
+ 446:	30 40       	sbci	r19, 0x00	; 0
+ 448:	e1 f7       	brne	.-8      	; 0x442 <__LOCK_REGION_LENGTH__+0x42>
+ 44a:	00 c0       	rjmp	.+0      	; 0x44c <__LOCK_REGION_LENGTH__+0x4c>
+ 44c:	00 00       	nop
+		_delay_ms(500);
+		PORTA = 0x50;
+ 44e:	1b bb       	out	0x1b, r17	; 27
+ 450:	8f ef       	ldi	r24, 0xFF	; 255
+ 452:	94 e3       	ldi	r25, 0x34	; 52
+ 454:	2c e0       	ldi	r18, 0x0C	; 12
+ 456:	81 50       	subi	r24, 0x01	; 1
+ 458:	90 40       	sbci	r25, 0x00	; 0
+ 45a:	20 40       	sbci	r18, 0x00	; 0
+ 45c:	e1 f7       	brne	.-8      	; 0x456 <__LOCK_REGION_LENGTH__+0x56>
+ 45e:	00 c0       	rjmp	.+0      	; 0x460 <__LOCK_REGION_LENGTH__+0x60>
+ 460:	00 00       	nop
+		_delay_ms(1);
+	}
+	}
+	
+	for(int iter=0; iter<2; iter++){
+		PORTA = 0xA0;
+ 462:	0b bb       	out	0x1b, r16	; 27
+ 464:	3f ef       	ldi	r19, 0xFF	; 255
+ 466:	84 e3       	ldi	r24, 0x34	; 52
+ 468:	9c e0       	ldi	r25, 0x0C	; 12
+ 46a:	31 50       	subi	r19, 0x01	; 1
+ 46c:	80 40       	sbci	r24, 0x00	; 0
+ 46e:	90 40       	sbci	r25, 0x00	; 0
+ 470:	e1 f7       	brne	.-8      	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+ 472:	00 c0       	rjmp	.+0      	; 0x474 <__LOCK_REGION_LENGTH__+0x74>
+ 474:	00 00       	nop
+		_delay_ms(500);
+		PORTA = 0x50;
+ 476:	1b bb       	out	0x1b, r17	; 27
+ 478:	2f ef       	ldi	r18, 0xFF	; 255
+ 47a:	34 e3       	ldi	r19, 0x34	; 52
+ 47c:	8c e0       	ldi	r24, 0x0C	; 12
+ 47e:	21 50       	subi	r18, 0x01	; 1
+ 480:	30 40       	sbci	r19, 0x00	; 0
+ 482:	80 40       	sbci	r24, 0x00	; 0
+ 484:	e1 f7       	brne	.-8      	; 0x47e <__LOCK_REGION_LENGTH__+0x7e>
+ 486:	00 c0       	rjmp	.+0      	; 0x488 <__LOCK_REGION_LENGTH__+0x88>
+ 488:	00 00       	nop
+ 48a:	b0 cf       	rjmp	.-160    	; 0x3ec <main+0x7e>
+		count = count + 1;
+	}
+	
+	
+	for(int iter=0; iter<2; iter++){
+		PORTA = 0xA0;
+ 48c:	0b bb       	out	0x1b, r16	; 27
+ 48e:	9f ef       	ldi	r25, 0xFF	; 255
+ 490:	29 e6       	ldi	r18, 0x69	; 105
+ 492:	38 e1       	ldi	r19, 0x18	; 24
+ 494:	91 50       	subi	r25, 0x01	; 1
+ 496:	20 40       	sbci	r18, 0x00	; 0
+ 498:	30 40       	sbci	r19, 0x00	; 0
+ 49a:	e1 f7       	brne	.-8      	; 0x494 <__LOCK_REGION_LENGTH__+0x94>
+ 49c:	00 c0       	rjmp	.+0      	; 0x49e <__LOCK_REGION_LENGTH__+0x9e>
+ 49e:	00 00       	nop
+		_delay_ms(1000);
+		PORTA = 0x50;
+ 4a0:	1b bb       	out	0x1b, r17	; 27
+ 4a2:	8f ef       	ldi	r24, 0xFF	; 255
+ 4a4:	99 e6       	ldi	r25, 0x69	; 105
+ 4a6:	28 e1       	ldi	r18, 0x18	; 24
+ 4a8:	81 50       	subi	r24, 0x01	; 1
+ 4aa:	90 40       	sbci	r25, 0x00	; 0
+ 4ac:	20 40       	sbci	r18, 0x00	; 0
+ 4ae:	e1 f7       	brne	.-8      	; 0x4a8 <__LOCK_REGION_LENGTH__+0xa8>
+ 4b0:	00 c0       	rjmp	.+0      	; 0x4b2 <__LOCK_REGION_LENGTH__+0xb2>
+ 4b2:	00 00       	nop
+		count = count + 1;
+	}
+	
+	
+	for(int iter=0; iter<2; iter++){
+		PORTA = 0xA0;
+ 4b4:	0b bb       	out	0x1b, r16	; 27
+ 4b6:	3f ef       	ldi	r19, 0xFF	; 255
+ 4b8:	89 e6       	ldi	r24, 0x69	; 105
+ 4ba:	98 e1       	ldi	r25, 0x18	; 24
+ 4bc:	31 50       	subi	r19, 0x01	; 1
+ 4be:	80 40       	sbci	r24, 0x00	; 0
+ 4c0:	90 40       	sbci	r25, 0x00	; 0
+ 4c2:	e1 f7       	brne	.-8      	; 0x4bc <__LOCK_REGION_LENGTH__+0xbc>
+ 4c4:	00 c0       	rjmp	.+0      	; 0x4c6 <__LOCK_REGION_LENGTH__+0xc6>
+ 4c6:	00 00       	nop
+		_delay_ms(1000);
+		PORTA = 0x50;
+ 4c8:	1b bb       	out	0x1b, r17	; 27
+ 4ca:	2f ef       	ldi	r18, 0xFF	; 255
+ 4cc:	39 e6       	ldi	r19, 0x69	; 105
+ 4ce:	88 e1       	ldi	r24, 0x18	; 24
+ 4d0:	21 50       	subi	r18, 0x01	; 1
+ 4d2:	30 40       	sbci	r19, 0x00	; 0
+ 4d4:	80 40       	sbci	r24, 0x00	; 0
+ 4d6:	e1 f7       	brne	.-8      	; 0x4d0 <__LOCK_REGION_LENGTH__+0xd0>
+ 4d8:	00 c0       	rjmp	.+0      	; 0x4da <__LOCK_REGION_LENGTH__+0xda>
+ 4da:	00 00       	nop
+		//_delay_ms(500);
+		_delay_ms(1000);
+	}	
+	
+	init_UART0();
+ 4dc:	0e 94 98 02 	call	0x530	; 0x530 <init_UART0>
+ 4e0:	cd 2d       	mov	r28, r13
+ 4e2:	9f cf       	rjmp	.-194    	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
 
-00000402 <configure_torquer>:
+000004e4 <configure_torquer>:
 }
 
 void configure_torquer(void)
 {
   ///Configure the current direction pins as output
   DDRC |= _BV(DDC3) | _BV(DDC4) | _BV(DDC5);
- 402:	84 b3       	in	r24, 0x14	; 20
- 404:	88 63       	ori	r24, 0x38	; 56
- 406:	84 bb       	out	0x14, r24	; 20
+ 4e4:	84 b3       	in	r24, 0x14	; 20
+ 4e6:	88 63       	ori	r24, 0x38	; 56
+ 4e8:	84 bb       	out	0x14, r24	; 20
   
   ///Configure the PWM pins as output
   DDRE |= _BV(DDE3) | _BV(DDE4) | _BV(DDE5);
- 408:	82 b1       	in	r24, 0x02	; 2
- 40a:	88 63       	ori	r24, 0x38	; 56
- 40c:	82 b9       	out	0x02, r24	; 2
+ 4ea:	82 b1       	in	r24, 0x02	; 2
+ 4ec:	88 63       	ori	r24, 0x38	; 56
+ 4ee:	82 b9       	out	0x02, r24	; 2
   
   ///Configure PWM: Phase Correct mode Prescalar = 1 Frequency = 122Hz
   TCCR3A = 0;
- 40e:	ab e8       	ldi	r26, 0x8B	; 139
- 410:	b0 e0       	ldi	r27, 0x00	; 0
- 412:	1c 92       	st	X, r1
+ 4f0:	ab e8       	ldi	r26, 0x8B	; 139
+ 4f2:	b0 e0       	ldi	r27, 0x00	; 0
+ 4f4:	1c 92       	st	X, r1
   TCCR3B = 0;
- 414:	ea e8       	ldi	r30, 0x8A	; 138
- 416:	f0 e0       	ldi	r31, 0x00	; 0
- 418:	10 82       	st	Z, r1
+ 4f6:	ea e8       	ldi	r30, 0x8A	; 138
+ 4f8:	f0 e0       	ldi	r31, 0x00	; 0
+ 4fa:	10 82       	st	Z, r1
   TCCR3C = 0;
- 41a:	10 92 8c 00 	sts	0x008C, r1	; 0x80008c <__TEXT_REGION_LENGTH__+0x7e008c>
+ 4fc:	10 92 8c 00 	sts	0x008C, r1	; 0x80008c <__TEXT_REGION_LENGTH__+0x7e008c>
   TCCR3A |= _BV(COM3A1) | _BV(COM3B1) | _BV(COM3C1) | _BV(WGM31);
- 41e:	8c 91       	ld	r24, X
- 420:	8a 6a       	ori	r24, 0xAA	; 170
- 422:	8c 93       	st	X, r24
+ 500:	8c 91       	ld	r24, X
+ 502:	8a 6a       	ori	r24, 0xAA	; 170
+ 504:	8c 93       	st	X, r24
   TCCR3B |= _BV(WGM33) | _BV(CS30);
- 424:	80 81       	ld	r24, Z
- 426:	81 61       	ori	r24, 0x11	; 17
- 428:	80 83       	st	Z, r24
+ 506:	80 81       	ld	r24, Z
+ 508:	81 61       	ori	r24, 0x11	; 17
+ 50a:	80 83       	st	Z, r24
   
   ///Set top as MAX 16-bit
   ICR3 = 0xFFFF;
- 42a:	8f ef       	ldi	r24, 0xFF	; 255
- 42c:	9f ef       	ldi	r25, 0xFF	; 255
- 42e:	90 93 81 00 	sts	0x0081, r25	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
- 432:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7e0080>
+ 50c:	8f ef       	ldi	r24, 0xFF	; 255
+ 50e:	9f ef       	ldi	r25, 0xFF	; 255
+ 510:	90 93 81 00 	sts	0x0081, r25	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
+ 514:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7e0080>
   OCR3B = 0x0000;
- 436:	e4 e8       	ldi	r30, 0x84	; 132
- 438:	f0 e0       	ldi	r31, 0x00	; 0
- 43a:	11 82       	std	Z+1, r1	; 0x01
- 43c:	10 82       	st	Z, r1
+ 518:	e4 e8       	ldi	r30, 0x84	; 132
+ 51a:	f0 e0       	ldi	r31, 0x00	; 0
+ 51c:	11 82       	std	Z+1, r1	; 0x01
+ 51e:	10 82       	st	Z, r1
   OCR3B = 0x0000;
- 43e:	11 82       	std	Z+1, r1	; 0x01
- 440:	10 82       	st	Z, r1
+ 520:	11 82       	std	Z+1, r1	; 0x01
+ 522:	10 82       	st	Z, r1
   OCR3B = 0x0000;
- 442:	11 82       	std	Z+1, r1	; 0x01
- 444:	10 82       	st	Z, r1
+ 524:	11 82       	std	Z+1, r1	; 0x01
+ 526:	10 82       	st	Z, r1
   PORTC &= ~(_BV(PC3) | _BV(PC4) | _BV(PC5));
- 446:	85 b3       	in	r24, 0x15	; 21
- 448:	87 7c       	andi	r24, 0xC7	; 199
- 44a:	85 bb       	out	0x15, r24	; 21
- 44c:	08 95       	ret
+ 528:	85 b3       	in	r24, 0x15	; 21
+ 52a:	87 7c       	andi	r24, 0xC7	; 199
+ 52c:	85 bb       	out	0x15, r24	; 21
+ 52e:	08 95       	ret
 
-0000044e <init_UART0>:
-void transmit_UART1(char data)
+00000530 <init_UART0>:
+
+uint8_t receive_UART1(void)
 {
-  //* Wait for empty transmit buffer 
-  while ( !(UCSR1A & (_BV(UDRE1))) );
-  //* Start transmission
-  UDR1 = data;
- 44e:	1b b8       	out	0x0b, r1	; 11
- 450:	1a b8       	out	0x0a, r1	; 10
- 452:	e5 e9       	ldi	r30, 0x95	; 149
- 454:	f0 e0       	ldi	r31, 0x00	; 0
- 456:	10 82       	st	Z, r1
- 458:	59 9a       	sbi	0x0b, 1	; 11
- 45a:	8a b1       	in	r24, 0x0a	; 10
- 45c:	88 61       	ori	r24, 0x18	; 24
- 45e:	8a b9       	out	0x0a, r24	; 10
- 460:	80 81       	ld	r24, Z
- 462:	8e 60       	ori	r24, 0x0E	; 14
- 464:	80 83       	st	Z, r24
- 466:	87 e6       	ldi	r24, 0x67	; 103
- 468:	89 b9       	out	0x09, r24	; 9
- 46a:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
- 46e:	08 95       	ret
-
-00000470 <transmit_UART0>:
+  while ((UCSR1A & (1 << RXC1)) == 0);
+  return UDR1;
 }
+ 530:	1b b8       	out	0x0b, r1	; 11
+ 532:	1a b8       	out	0x0a, r1	; 10
+ 534:	e5 e9       	ldi	r30, 0x95	; 149
+ 536:	f0 e0       	ldi	r31, 0x00	; 0
+ 538:	10 82       	st	Z, r1
+ 53a:	59 9a       	sbi	0x0b, 1	; 11
+ 53c:	8a b1       	in	r24, 0x0a	; 10
+ 53e:	88 61       	ori	r24, 0x18	; 24
+ 540:	8a b9       	out	0x0a, r24	; 10
+ 542:	80 81       	ld	r24, Z
+ 544:	8e 60       	ori	r24, 0x0E	; 14
+ 546:	80 83       	st	Z, r24
+ 548:	87 e6       	ldi	r24, 0x67	; 103
+ 54a:	89 b9       	out	0x09, r24	; 9
+ 54c:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
+ 550:	08 95       	ret
 
-void transmit_UART0(char data)
+00000552 <transmit_UART0>:
+ 552:	5d 9b       	sbis	0x0b, 5	; 11
+ 554:	fe cf       	rjmp	.-4      	; 0x552 <transmit_UART0>
+ 556:	8c b9       	out	0x0c, r24	; 12
+ 558:	08 95       	ret
+
+0000055a <receive_UART0>:
+
+uint8_t receive_UART0(void)
 {
-  //* Wait for empty transmit buffer 
-  while ( !(UCSR0A & (_BV(UDRE0))) );
- 470:	5d 9b       	sbis	0x0b, 5	; 11
- 472:	fe cf       	rjmp	.-4      	; 0x470 <transmit_UART0>
-  //* Start transmission
-  UDR0 = data;
- 474:	8c b9       	out	0x0c, r24	; 12
- 476:	08 95       	ret
+  while ((UCSR0A & (1 << RXC0)) == 0);
+ 55a:	5f 9b       	sbis	0x0b, 7	; 11
+ 55c:	fe cf       	rjmp	.-4      	; 0x55a <receive_UART0>
+  return UDR0;
+ 55e:	8c b1       	in	r24, 0x0c	; 12
+}
+ 560:	08 95       	ret
 
-00000478 <_exit>:
- 478:	f8 94       	cli
+00000562 <_exit>:
+ 562:	f8 94       	cli
 
-0000047a <__stop_program>:
- 47a:	ff cf       	rjmp	.-2      	; 0x47a <__stop_program>
+00000564 <__stop_program>:
+ 564:	ff cf       	rjmp	.-2      	; 0x564 <__stop_program>
