@@ -1,0 +1,1841 @@
+
+nominal2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000006  00800100  00000c0a  00000c9e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000c0a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          000000de  00800106  00800106  00000ca4  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000ca4  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000cd4  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000038  00000000  00000000  00000d10  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000e25  00000000  00000000  00000d48  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000892  00000000  00000000  00001b6d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000604  00000000  00000000  000023ff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000078  00000000  00000000  00002a04  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000004af  00000000  00000000  00002a7c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000389  00000000  00000000  00002f2b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000028  00000000  00000000  000032b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+   2:	00 00       	nop
+   4:	60 c0       	rjmp	.+192    	; 0xc6 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	5e c0       	rjmp	.+188    	; 0xc6 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	5c c0       	rjmp	.+184    	; 0xc6 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	5a c0       	rjmp	.+180    	; 0xc6 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	58 c0       	rjmp	.+176    	; 0xc6 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	56 c0       	rjmp	.+172    	; 0xc6 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	54 c0       	rjmp	.+168    	; 0xc6 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	52 c0       	rjmp	.+164    	; 0xc6 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	44 c0       	rjmp	.+136    	; 0xc6 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	85 c0       	rjmp	.+266    	; 0x154 <__vector_18>
+  4a:	00 00       	nop
+  4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	30 c0       	rjmp	.+96     	; 0xc6 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	26 c0       	rjmp	.+76     	; 0xc6 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ea e0       	ldi	r30, 0x0A	; 10
+  a0:	fc e0       	ldi	r31, 0x0C	; 12
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a6 30       	cpi	r26, 0x06	; 6
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	a6 e0       	ldi	r26, 0x06	; 6
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a4 3e       	cpi	r26, 0xE4	; 228
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	1b d4       	rcall	.+2102   	; 0x8fa <main>
+  c4:	a0 c5       	rjmp	.+2880   	; 0xc06 <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+
+000000c8 <init_UART_GPS>:
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+  //* Start transmission
+  UDR0 = data;
+  c8:	1b b8       	out	0x0b, r1	; 11
+  ca:	1a b8       	out	0x0a, r1	; 10
+  cc:	e5 e9       	ldi	r30, 0x95	; 149
+  ce:	f0 e0       	ldi	r31, 0x00	; 0
+  d0:	10 82       	st	Z, r1
+  d2:	59 9a       	sbi	0x0b, 1	; 11
+  d4:	8a b1       	in	r24, 0x0a	; 10
+  d6:	88 69       	ori	r24, 0x98	; 152
+  d8:	8a b9       	out	0x0a, r24	; 10
+  da:	80 81       	ld	r24, Z
+  dc:	8e 60       	ori	r24, 0x0E	; 14
+  de:	80 83       	st	Z, r24
+  e0:	87 e6       	ldi	r24, 0x67	; 103
+  e2:	89 b9       	out	0x09, r24	; 9
+  e4:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
+  e8:	e4 e6       	ldi	r30, 0x64	; 100
+  ea:	f1 e0       	ldi	r31, 0x01	; 1
+  ec:	81 e0       	ldi	r24, 0x01	; 1
+  ee:	90 e0       	ldi	r25, 0x00	; 0
+  f0:	a0 e0       	ldi	r26, 0x00	; 0
+  f2:	b0 e0       	ldi	r27, 0x00	; 0
+  f4:	80 83       	st	Z, r24
+  f6:	91 83       	std	Z+1, r25	; 0x01
+  f8:	a2 83       	std	Z+2, r26	; 0x02
+  fa:	b3 83       	std	Z+3, r27	; 0x03
+  fc:	84 83       	std	Z+4, r24	; 0x04
+  fe:	95 83       	std	Z+5, r25	; 0x05
+ 100:	a6 83       	std	Z+6, r26	; 0x06
+ 102:	b7 83       	std	Z+7, r27	; 0x07
+ 104:	80 87       	std	Z+8, r24	; 0x08
+ 106:	91 87       	std	Z+9, r25	; 0x09
+ 108:	a2 87       	std	Z+10, r26	; 0x0a
+ 10a:	b3 87       	std	Z+11, r27	; 0x0b
+ 10c:	84 87       	std	Z+12, r24	; 0x0c
+ 10e:	95 87       	std	Z+13, r25	; 0x0d
+ 110:	a6 87       	std	Z+14, r26	; 0x0e
+ 112:	b7 87       	std	Z+15, r27	; 0x0f
+ 114:	80 8b       	std	Z+16, r24	; 0x10
+ 116:	91 8b       	std	Z+17, r25	; 0x11
+ 118:	a2 8b       	std	Z+18, r26	; 0x12
+ 11a:	b3 8b       	std	Z+19, r27	; 0x13
+ 11c:	84 8b       	std	Z+20, r24	; 0x14
+ 11e:	95 8b       	std	Z+21, r25	; 0x15
+ 120:	a6 8b       	std	Z+22, r26	; 0x16
+ 122:	b7 8b       	std	Z+23, r27	; 0x17
+ 124:	80 8f       	std	Z+24, r24	; 0x18
+ 126:	91 8f       	std	Z+25, r25	; 0x19
+ 128:	a2 8f       	std	Z+26, r26	; 0x1a
+ 12a:	b3 8f       	std	Z+27, r27	; 0x1b
+ 12c:	84 8f       	std	Z+28, r24	; 0x1c
+ 12e:	95 8f       	std	Z+29, r25	; 0x1d
+ 130:	a6 8f       	std	Z+30, r26	; 0x1e
+ 132:	b7 8f       	std	Z+31, r27	; 0x1f
+ 134:	80 a3       	std	Z+32, r24	; 0x20
+ 136:	91 a3       	std	Z+33, r25	; 0x21
+ 138:	a2 a3       	std	Z+34, r26	; 0x22
+ 13a:	b3 a3       	std	Z+35, r27	; 0x23
+ 13c:	84 a3       	std	Z+36, r24	; 0x24
+ 13e:	85 a3       	std	Z+37, r24	; 0x25
+ 140:	86 a3       	std	Z+38, r24	; 0x26
+ 142:	87 a3       	std	Z+39, r24	; 0x27
+ 144:	80 a7       	std	Z+40, r24	; 0x28
+ 146:	81 e0       	ldi	r24, 0x01	; 1
+ 148:	90 e0       	ldi	r25, 0x00	; 0
+ 14a:	92 a7       	std	Z+42, r25	; 0x2a
+ 14c:	81 a7       	std	Z+41, r24	; 0x29
+ 14e:	94 a7       	std	Z+44, r25	; 0x2c
+ 150:	83 a7       	std	Z+43, r24	; 0x2b
+ 152:	08 95       	ret
+
+00000154 <__vector_18>:
+volatile uint8_t crap = 0;
+
+// @brief Interrupt on receiving a byte through UART GPS
+ 
+ISR(USART0_RX_vect)
+{ 
+ 154:	1f 92       	push	r1
+ 156:	0f 92       	push	r0
+ 158:	0f b6       	in	r0, 0x3f	; 63
+ 15a:	0f 92       	push	r0
+ 15c:	11 24       	eor	r1, r1
+ 15e:	2f 93       	push	r18
+ 160:	8f 93       	push	r24
+ 162:	9f 93       	push	r25
+ 164:	af 93       	push	r26
+ 166:	bf 93       	push	r27
+	
+  PORTA ^= 0xf0;
+ 168:	9b b3       	in	r25, 0x1b	; 27
+ 16a:	80 ef       	ldi	r24, 0xF0	; 240
+ 16c:	89 27       	eor	r24, r25
+ 16e:	8b bb       	out	0x1b, r24	; 27
+  
+  ///Buffer the Received Byte
+  last_byte = UDR0;
+ 170:	8c b1       	in	r24, 0x0c	; 12
+ 172:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <last_byte>
+  
+  ///Put the received byte in the last 4-bytes buffer
+  buffer = buffer << 8;
+ 176:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 17a:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 17e:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 182:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 186:	ba 2f       	mov	r27, r26
+ 188:	a9 2f       	mov	r26, r25
+ 18a:	98 2f       	mov	r25, r24
+ 18c:	88 27       	eor	r24, r24
+ 18e:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <buffer>
+ 192:	90 93 0a 01 	sts	0x010A, r25	; 0x80010a <buffer+0x1>
+ 196:	a0 93 0b 01 	sts	0x010B, r26	; 0x80010b <buffer+0x2>
+ 19a:	b0 93 0c 01 	sts	0x010C, r27	; 0x80010c <buffer+0x3>
+  buffer &= 0xFFFFFF00;
+ 19e:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 1a2:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 1a6:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 1aa:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 1ae:	88 27       	eor	r24, r24
+ 1b0:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <buffer>
+ 1b4:	90 93 0a 01 	sts	0x010A, r25	; 0x80010a <buffer+0x1>
+ 1b8:	a0 93 0b 01 	sts	0x010B, r26	; 0x80010b <buffer+0x2>
+ 1bc:	b0 93 0c 01 	sts	0x010C, r27	; 0x80010c <buffer+0x3>
+  buffer |= (uint32_t) last_byte;
+ 1c0:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 1c4:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 1c8:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 1cc:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 1d0:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 1d4:	82 2b       	or	r24, r18
+ 1d6:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <buffer>
+ 1da:	90 93 0a 01 	sts	0x010A, r25	; 0x80010a <buffer+0x1>
+ 1de:	a0 93 0b 01 	sts	0x010B, r26	; 0x80010b <buffer+0x2>
+ 1e2:	b0 93 0c 01 	sts	0x010C, r27	; 0x80010c <buffer+0x3>
+  
+  ///Check if the last byte was for position
+  if(pos < 12)
+ 1e6:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 1ea:	8c 30       	cpi	r24, 0x0C	; 12
+ 1ec:	08 f0       	brcs	.+2      	; 0x1f0 <__vector_18+0x9c>
+ 1ee:	49 c0       	rjmp	.+146    	; 0x282 <__vector_18+0x12e>
+  {
+    
+    if(pos<4)
+ 1f0:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 1f4:	84 30       	cpi	r24, 0x04	; 4
+ 1f6:	08 f0       	brcs	.+2      	; 0x1fa <__vector_18+0xa6>
+ 1f8:	c9 c1       	rjmp	.+914    	; 0x58c <__LOCK_REGION_LENGTH__+0x18c>
+	{
+		Current_state.gps.x = Current_state.gps.x >> 8;
+ 1fa:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 1fe:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 202:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 206:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+ 20a:	89 2f       	mov	r24, r25
+ 20c:	9a 2f       	mov	r25, r26
+ 20e:	ab 2f       	mov	r26, r27
+ 210:	bb 27       	eor	r27, r27
+ 212:	a7 fd       	sbrc	r26, 7
+ 214:	ba 95       	dec	r27
+ 216:	80 93 64 01 	sts	0x0164, r24	; 0x800164 <Current_state>
+ 21a:	90 93 65 01 	sts	0x0165, r25	; 0x800165 <Current_state+0x1>
+ 21e:	a0 93 66 01 	sts	0x0166, r26	; 0x800166 <Current_state+0x2>
+ 222:	b0 93 67 01 	sts	0x0167, r27	; 0x800167 <Current_state+0x3>
+		Current_state.gps.x &= 0x00FFFFFF;
+ 226:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 22a:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 22e:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 232:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+ 236:	bb 27       	eor	r27, r27
+ 238:	80 93 64 01 	sts	0x0164, r24	; 0x800164 <Current_state>
+ 23c:	90 93 65 01 	sts	0x0165, r25	; 0x800165 <Current_state+0x1>
+ 240:	a0 93 66 01 	sts	0x0166, r26	; 0x800166 <Current_state+0x2>
+ 244:	b0 93 67 01 	sts	0x0167, r27	; 0x800167 <Current_state+0x3>
+        Current_state.gps.x |= ((uint32_t) last_byte)<<24;
+ 248:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 24c:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 250:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 254:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 258:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+ 25c:	b2 2b       	or	r27, r18
+ 25e:	80 93 64 01 	sts	0x0164, r24	; 0x800164 <Current_state>
+ 262:	90 93 65 01 	sts	0x0165, r25	; 0x800165 <Current_state+0x1>
+ 266:	a0 93 66 01 	sts	0x0166, r26	; 0x800166 <Current_state+0x2>
+ 26a:	b0 93 67 01 	sts	0x0167, r27	; 0x800167 <Current_state+0x3>
+		Current_state.gps.z &= 0x00FFFFFF;
+		Current_state.gps.z |= ((uint32_t) last_byte)<<24;
+		
+	}
+    ///* Increment position and terminate it if full
+    pos++;
+ 26e:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 272:	8f 5f       	subi	r24, 0xFF	; 255
+ 274:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <pos>
+    if(pos == 12)
+ 278:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 27c:	8c 30       	cpi	r24, 0x0C	; 12
+ 27e:	09 f4       	brne	.+2      	; 0x282 <__vector_18+0x12e>
+ 280:	22 c2       	rjmp	.+1092   	; 0x6c6 <__LOCK_REGION_LENGTH__+0x2c6>
+	   }
+	   
+  }
+  
+  ///Check if the last byte was for velocity
+  if(vel < 12)
+ 282:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 286:	8c 30       	cpi	r24, 0x0C	; 12
+ 288:	08 f0       	brcs	.+2      	; 0x28c <__vector_18+0x138>
+ 28a:	49 c0       	rjmp	.+146    	; 0x31e <__vector_18+0x1ca>
+  {
+	  
+    if(vel < 4)
+ 28c:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 290:	84 30       	cpi	r24, 0x04	; 4
+ 292:	08 f0       	brcs	.+2      	; 0x296 <__vector_18+0x142>
+ 294:	36 c1       	rjmp	.+620    	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
+	{
+		Current_state.gps.v_x = Current_state.gps.v_x >> 8;
+ 296:	80 91 70 01 	lds	r24, 0x0170	; 0x800170 <Current_state+0xc>
+ 29a:	90 91 71 01 	lds	r25, 0x0171	; 0x800171 <Current_state+0xd>
+ 29e:	a0 91 72 01 	lds	r26, 0x0172	; 0x800172 <Current_state+0xe>
+ 2a2:	b0 91 73 01 	lds	r27, 0x0173	; 0x800173 <Current_state+0xf>
+ 2a6:	89 2f       	mov	r24, r25
+ 2a8:	9a 2f       	mov	r25, r26
+ 2aa:	ab 2f       	mov	r26, r27
+ 2ac:	bb 27       	eor	r27, r27
+ 2ae:	a7 fd       	sbrc	r26, 7
+ 2b0:	ba 95       	dec	r27
+ 2b2:	80 93 70 01 	sts	0x0170, r24	; 0x800170 <Current_state+0xc>
+ 2b6:	90 93 71 01 	sts	0x0171, r25	; 0x800171 <Current_state+0xd>
+ 2ba:	a0 93 72 01 	sts	0x0172, r26	; 0x800172 <Current_state+0xe>
+ 2be:	b0 93 73 01 	sts	0x0173, r27	; 0x800173 <Current_state+0xf>
+		Current_state.gps.v_x &= 0x00FFFFFF;
+ 2c2:	80 91 70 01 	lds	r24, 0x0170	; 0x800170 <Current_state+0xc>
+ 2c6:	90 91 71 01 	lds	r25, 0x0171	; 0x800171 <Current_state+0xd>
+ 2ca:	a0 91 72 01 	lds	r26, 0x0172	; 0x800172 <Current_state+0xe>
+ 2ce:	b0 91 73 01 	lds	r27, 0x0173	; 0x800173 <Current_state+0xf>
+ 2d2:	bb 27       	eor	r27, r27
+ 2d4:	80 93 70 01 	sts	0x0170, r24	; 0x800170 <Current_state+0xc>
+ 2d8:	90 93 71 01 	sts	0x0171, r25	; 0x800171 <Current_state+0xd>
+ 2dc:	a0 93 72 01 	sts	0x0172, r26	; 0x800172 <Current_state+0xe>
+ 2e0:	b0 93 73 01 	sts	0x0173, r27	; 0x800173 <Current_state+0xf>
+        Current_state.gps.v_x |= ((uint32_t) last_byte)<<24;
+ 2e4:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 2e8:	80 91 70 01 	lds	r24, 0x0170	; 0x800170 <Current_state+0xc>
+ 2ec:	90 91 71 01 	lds	r25, 0x0171	; 0x800171 <Current_state+0xd>
+ 2f0:	a0 91 72 01 	lds	r26, 0x0172	; 0x800172 <Current_state+0xe>
+ 2f4:	b0 91 73 01 	lds	r27, 0x0173	; 0x800173 <Current_state+0xf>
+ 2f8:	b2 2b       	or	r27, r18
+ 2fa:	80 93 70 01 	sts	0x0170, r24	; 0x800170 <Current_state+0xc>
+ 2fe:	90 93 71 01 	sts	0x0171, r25	; 0x800171 <Current_state+0xd>
+ 302:	a0 93 72 01 	sts	0x0172, r26	; 0x800172 <Current_state+0xe>
+ 306:	b0 93 73 01 	sts	0x0173, r27	; 0x800173 <Current_state+0xf>
+		Current_state.gps.v_z = Current_state.gps.v_z >> 8;
+		Current_state.gps.v_z &= 0x00FFFFFF;
+        Current_state.gps.v_z |= ((uint32_t) last_byte)<<24;
+	}
+
+	vel++;
+ 30a:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 30e:	8f 5f       	subi	r24, 0xFF	; 255
+ 310:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <vel>
+    if(vel == 12)
+ 314:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 318:	8c 30       	cpi	r24, 0x0C	; 12
+ 31a:	09 f4       	brne	.+2      	; 0x31e <__vector_18+0x1ca>
+ 31c:	d8 c1       	rjmp	.+944    	; 0x6ce <__LOCK_REGION_LENGTH__+0x2ce>
+		  vel = 0xFF;
+	 }
+  }
+  
+  ///Check if the last byte was for PDOP
+  if(dop < 4)
+ 31e:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+ 322:	84 30       	cpi	r24, 0x04	; 4
+ 324:	60 f5       	brcc	.+88     	; 0x37e <__vector_18+0x22a>
+  {
+    if(dop >= 2)
+ 326:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+ 32a:	82 30       	cpi	r24, 0x02	; 2
+ 32c:	f0 f0       	brcs	.+60     	; 0x36a <__vector_18+0x216>
+    {
+		 Current_state.gps.pdop =  Current_state.gps.pdop >> 8;
+ 32e:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <Current_state+0x2b>
+ 332:	90 91 90 01 	lds	r25, 0x0190	; 0x800190 <Current_state+0x2c>
+ 336:	89 2f       	mov	r24, r25
+ 338:	99 27       	eor	r25, r25
+ 33a:	90 93 90 01 	sts	0x0190, r25	; 0x800190 <Current_state+0x2c>
+ 33e:	80 93 8f 01 	sts	0x018F, r24	; 0x80018f <Current_state+0x2b>
+		 Current_state.gps.pdop &= 0x00FF;
+ 342:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <Current_state+0x2b>
+ 346:	90 91 90 01 	lds	r25, 0x0190	; 0x800190 <Current_state+0x2c>
+ 34a:	99 27       	eor	r25, r25
+ 34c:	90 93 90 01 	sts	0x0190, r25	; 0x800190 <Current_state+0x2c>
+ 350:	80 93 8f 01 	sts	0x018F, r24	; 0x80018f <Current_state+0x2b>
+         Current_state.gps.pdop |= ((uint16_t) last_byte)<<8;
+ 354:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 358:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <Current_state+0x2b>
+ 35c:	90 91 90 01 	lds	r25, 0x0190	; 0x800190 <Current_state+0x2c>
+ 360:	92 2b       	or	r25, r18
+ 362:	90 93 90 01 	sts	0x0190, r25	; 0x800190 <Current_state+0x2c>
+ 366:	80 93 8f 01 	sts	0x018F, r24	; 0x80018f <Current_state+0x2b>
+     }
+
+	dop++;
+ 36a:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+ 36e:	8f 5f       	subi	r24, 0xFF	; 255
+ 370:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <dop>
+    if(dop == 4)
+ 374:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+ 378:	84 30       	cpi	r24, 0x04	; 4
+ 37a:	09 f4       	brne	.+2      	; 0x37e <__vector_18+0x22a>
+ 37c:	a0 c1       	rjmp	.+832    	; 0x6be <__LOCK_REGION_LENGTH__+0x2be>
+      dop = 0xFF;
+  }
+  
+  ///Check if the last byte was for Geodetic position
+  if(geo < 16)
+ 37e:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 382:	80 31       	cpi	r24, 0x10	; 16
+ 384:	78 f4       	brcc	.+30     	; 0x3a4 <__vector_18+0x250>
+  {
+	if(geo < 4);  
+ 386:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 38a:	84 30       	cpi	r24, 0x04	; 4
+ 38c:	08 f0       	brcs	.+2      	; 0x390 <__vector_18+0x23c>
+ 38e:	43 c1       	rjmp	.+646    	; 0x616 <__LOCK_REGION_LENGTH__+0x216>
+		Current_state.gps.alt = Current_state.gps.alt >> 8;
+		Current_state.gps.alt &= 0x00FFFFFF;
+		Current_state.gps.alt |= ((uint32_t) last_byte)<<24;
+	}
+	    
+    geo++;
+ 390:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 394:	8f 5f       	subi	r24, 0xFF	; 255
+ 396:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <geo>
+    if(geo == 16)
+ 39a:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 39e:	80 31       	cpi	r24, 0x10	; 16
+ 3a0:	09 f4       	brne	.+2      	; 0x3a4 <__vector_18+0x250>
+ 3a2:	89 c1       	rjmp	.+786    	; 0x6b6 <__LOCK_REGION_LENGTH__+0x2b6>
+      geo = 0xFF;
+	}
+  }
+  
+  ///Check if the last byte was for Time
+  if(time < 7)
+ 3a4:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3a8:	87 30       	cpi	r24, 0x07	; 7
+ 3aa:	90 f4       	brcc	.+36     	; 0x3d0 <__vector_18+0x27c>
+  {
+	  
+	  if(time == 0)
+ 3ac:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3b0:	81 11       	cpse	r24, r1
+ 3b2:	6f c0       	rjmp	.+222    	; 0x492 <__LOCK_REGION_LENGTH__+0x92>
+	  {
+		  Current_state.gps.hours = last_byte;
+ 3b4:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <last_byte>
+ 3b8:	80 93 88 01 	sts	0x0188, r24	; 0x800188 <Current_state+0x24>
+		  Current_state.gps.year &= 0x00FF;
+		  Current_state.gps.year |= ((uint16_t) last_byte)<<8;
+
+	  }
+    
+    time++;
+ 3bc:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3c0:	8f 5f       	subi	r24, 0xFF	; 255
+ 3c2:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+    if(time == 7)
+ 3c6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3ca:	87 30       	cpi	r24, 0x07	; 7
+ 3cc:	09 f4       	brne	.+2      	; 0x3d0 <__vector_18+0x27c>
+ 3ce:	83 c1       	rjmp	.+774    	; 0x6d6 <__LOCK_REGION_LENGTH__+0x2d6>
+    }
+  }
+  
+  ///Check the buffer against message ID's
+  ///Position
+  if(buffer == 0x3F3F04AC)
+ 3d0:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 3d4:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 3d8:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 3dc:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 3e0:	8c 3a       	cpi	r24, 0xAC	; 172
+ 3e2:	94 40       	sbci	r25, 0x04	; 4
+ 3e4:	af 43       	sbci	r26, 0x3F	; 63
+ 3e6:	bf 43       	sbci	r27, 0x3F	; 63
+ 3e8:	09 f4       	brne	.+2      	; 0x3ec <__vector_18+0x298>
+ 3ea:	5a c1       	rjmp	.+692    	; 0x6a0 <__LOCK_REGION_LENGTH__+0x2a0>
+  {
+    message_end = 0;
+    pos = 0;
+  }
+  ///Velocity
+  else if(buffer == 0x3F3F05AC)
+ 3ec:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 3f0:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 3f4:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 3f8:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 3fc:	8c 3a       	cpi	r24, 0xAC	; 172
+ 3fe:	95 40       	sbci	r25, 0x05	; 5
+ 400:	af 43       	sbci	r26, 0x3F	; 63
+ 402:	bf 43       	sbci	r27, 0x3F	; 63
+ 404:	09 f4       	brne	.+2      	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
+ 406:	51 c1       	rjmp	.+674    	; 0x6aa <__LOCK_REGION_LENGTH__+0x2aa>
+    vel = 0;
+  ///DOP
+  else if(buffer == 0x3F3F0BAC)
+ 408:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 40c:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 410:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 414:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 418:	8c 3a       	cpi	r24, 0xAC	; 172
+ 41a:	9b 40       	sbci	r25, 0x0B	; 11
+ 41c:	af 43       	sbci	r26, 0x3F	; 63
+ 41e:	bf 43       	sbci	r27, 0x3F	; 63
+ 420:	09 f4       	brne	.+2      	; 0x424 <__LOCK_REGION_LENGTH__+0x24>
+ 422:	46 c1       	rjmp	.+652    	; 0x6b0 <__LOCK_REGION_LENGTH__+0x2b0>
+    dop = 0;
+  ///Geodetic System
+  else if(buffer == 0x3F3F0EAC)
+ 424:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 428:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 42c:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 430:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 434:	8c 3a       	cpi	r24, 0xAC	; 172
+ 436:	9e 40       	sbci	r25, 0x0E	; 14
+ 438:	af 43       	sbci	r26, 0x3F	; 63
+ 43a:	bf 43       	sbci	r27, 0x3F	; 63
+ 43c:	09 f4       	brne	.+2      	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
+ 43e:	0b c2       	rjmp	.+1046   	; 0x856 <__LOCK_REGION_LENGTH__+0x456>
+    geo = 0;
+  ///Time
+  else if(buffer == 0x3F3F0FAC)
+ 440:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <buffer>
+ 444:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <buffer+0x1>
+ 448:	a0 91 0b 01 	lds	r26, 0x010B	; 0x80010b <buffer+0x2>
+ 44c:	b0 91 0c 01 	lds	r27, 0x010C	; 0x80010c <buffer+0x3>
+ 450:	8c 3a       	cpi	r24, 0xAC	; 172
+ 452:	9f 40       	sbci	r25, 0x0F	; 15
+ 454:	af 43       	sbci	r26, 0x3F	; 63
+ 456:	bf 43       	sbci	r27, 0x3F	; 63
+ 458:	09 f4       	brne	.+2      	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+ 45a:	f5 c1       	rjmp	.+1002   	; 0x846 <__LOCK_REGION_LENGTH__+0x446>
+    
+     Current_state.gps.pdop = 0xFFFF;
+    message_end = 0;
+    buffer = 0;
+  }*/
+   if( message_end==1)//&& ( Current_state.gps.pdop!=0)
+ 45c:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <message_end>
+ 460:	81 30       	cpi	r24, 0x01	; 1
+ 462:	69 f4       	brne	.+26     	; 0x47e <__LOCK_REGION_LENGTH__+0x7e>
+  {
+    
+    cli();          //disable interrupt
+ 464:	f8 94       	cli
+       
+     //Current_state.gps.pdop = 0xFFFF;
+    message_end = 0;
+ 466:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <message_end>
+    buffer = 0;
+ 46a:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <buffer>
+ 46e:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <buffer+0x1>
+ 472:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <buffer+0x2>
+ 476:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <buffer+0x3>
+	crap = 1;     //flag set to 1 to enable transmit when message ends
+ 47a:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <__data_end>
+	
+  }
+ 
+}
+ 47e:	bf 91       	pop	r27
+ 480:	af 91       	pop	r26
+ 482:	9f 91       	pop	r25
+ 484:	8f 91       	pop	r24
+ 486:	2f 91       	pop	r18
+ 488:	0f 90       	pop	r0
+ 48a:	0f be       	out	0x3f, r0	; 63
+ 48c:	0f 90       	pop	r0
+ 48e:	1f 90       	pop	r1
+ 490:	18 95       	reti
+	  
+	  if(time == 0)
+	  {
+		  Current_state.gps.hours = last_byte;
+	  }
+	  else if(time == 1)
+ 492:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 496:	81 30       	cpi	r24, 0x01	; 1
+ 498:	09 f4       	brne	.+2      	; 0x49c <__LOCK_REGION_LENGTH__+0x9c>
+ 49a:	d8 c1       	rjmp	.+944    	; 0x84c <__LOCK_REGION_LENGTH__+0x44c>
+	  {
+		  Current_state.gps.minutes = last_byte;
+	  }
+	  else if(time == 2)
+ 49c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 4a0:	82 30       	cpi	r24, 0x02	; 2
+ 4a2:	09 f4       	brne	.+2      	; 0x4a6 <__LOCK_REGION_LENGTH__+0xa6>
+ 4a4:	1b c2       	rjmp	.+1078   	; 0x8dc <__LOCK_REGION_LENGTH__+0x4dc>
+	  {
+		  Current_state.gps.seconds = last_byte;
+	  }
+	  else if(time == 3)
+ 4a6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 4aa:	83 30       	cpi	r24, 0x03	; 3
+ 4ac:	09 f4       	brne	.+2      	; 0x4b0 <__LOCK_REGION_LENGTH__+0xb0>
+ 4ae:	1b c2       	rjmp	.+1078   	; 0x8e6 <__LOCK_REGION_LENGTH__+0x4e6>
+	  {
+		  Current_state.gps.date = last_byte;
+	  }else if(time == 4)
+ 4b0:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 4b4:	84 30       	cpi	r24, 0x04	; 4
+ 4b6:	09 f4       	brne	.+2      	; 0x4ba <__LOCK_REGION_LENGTH__+0xba>
+ 4b8:	1b c2       	rjmp	.+1078   	; 0x8f0 <__LOCK_REGION_LENGTH__+0x4f0>
+	  {
+		  Current_state.gps.month = last_byte;
+	  }else if(time > 4)
+ 4ba:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 4be:	85 30       	cpi	r24, 0x05	; 5
+ 4c0:	08 f4       	brcc	.+2      	; 0x4c4 <__LOCK_REGION_LENGTH__+0xc4>
+ 4c2:	7c cf       	rjmp	.-264    	; 0x3bc <__vector_18+0x268>
+	  {
+		  Current_state.gps.year = Current_state.gps.year >> 8;
+ 4c4:	80 91 8d 01 	lds	r24, 0x018D	; 0x80018d <Current_state+0x29>
+ 4c8:	90 91 8e 01 	lds	r25, 0x018E	; 0x80018e <Current_state+0x2a>
+ 4cc:	89 2f       	mov	r24, r25
+ 4ce:	99 27       	eor	r25, r25
+ 4d0:	90 93 8e 01 	sts	0x018E, r25	; 0x80018e <Current_state+0x2a>
+ 4d4:	80 93 8d 01 	sts	0x018D, r24	; 0x80018d <Current_state+0x29>
+		  Current_state.gps.year &= 0x00FF;
+ 4d8:	80 91 8d 01 	lds	r24, 0x018D	; 0x80018d <Current_state+0x29>
+ 4dc:	90 91 8e 01 	lds	r25, 0x018E	; 0x80018e <Current_state+0x2a>
+ 4e0:	99 27       	eor	r25, r25
+ 4e2:	90 93 8e 01 	sts	0x018E, r25	; 0x80018e <Current_state+0x2a>
+ 4e6:	80 93 8d 01 	sts	0x018D, r24	; 0x80018d <Current_state+0x29>
+		  Current_state.gps.year |= ((uint16_t) last_byte)<<8;
+ 4ea:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 4ee:	80 91 8d 01 	lds	r24, 0x018D	; 0x80018d <Current_state+0x29>
+ 4f2:	90 91 8e 01 	lds	r25, 0x018E	; 0x80018e <Current_state+0x2a>
+ 4f6:	92 2b       	or	r25, r18
+ 4f8:	90 93 8e 01 	sts	0x018E, r25	; 0x80018e <Current_state+0x2a>
+ 4fc:	80 93 8d 01 	sts	0x018D, r24	; 0x80018d <Current_state+0x29>
+ 500:	5d cf       	rjmp	.-326    	; 0x3bc <__vector_18+0x268>
+		Current_state.gps.v_x = Current_state.gps.v_x >> 8;
+		Current_state.gps.v_x &= 0x00FFFFFF;
+        Current_state.gps.v_x |= ((uint32_t) last_byte)<<24;
+		
+	}
+	else if(vel < 8)
+ 502:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 506:	88 30       	cpi	r24, 0x08	; 8
+ 508:	08 f4       	brcc	.+2      	; 0x50c <__LOCK_REGION_LENGTH__+0x10c>
+ 50a:	ec c0       	rjmp	.+472    	; 0x6e4 <__LOCK_REGION_LENGTH__+0x2e4>
+		
+		Current_state.gps.v_y = Current_state.gps.v_y >> 8;
+		Current_state.gps.v_y &= 0x00FFFFFF;
+        Current_state.gps.v_y |= ((uint32_t) last_byte)<<24;
+	}
+	else if(vel < 12)
+ 50c:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 510:	8c 30       	cpi	r24, 0x0C	; 12
+ 512:	08 f0       	brcs	.+2      	; 0x516 <__LOCK_REGION_LENGTH__+0x116>
+ 514:	fa ce       	rjmp	.-524    	; 0x30a <__vector_18+0x1b6>
+	{
+		Current_state.gps.v_z = Current_state.gps.v_z >> 8;
+ 516:	80 91 78 01 	lds	r24, 0x0178	; 0x800178 <Current_state+0x14>
+ 51a:	90 91 79 01 	lds	r25, 0x0179	; 0x800179 <Current_state+0x15>
+ 51e:	a0 91 7a 01 	lds	r26, 0x017A	; 0x80017a <Current_state+0x16>
+ 522:	b0 91 7b 01 	lds	r27, 0x017B	; 0x80017b <Current_state+0x17>
+ 526:	89 2f       	mov	r24, r25
+ 528:	9a 2f       	mov	r25, r26
+ 52a:	ab 2f       	mov	r26, r27
+ 52c:	bb 27       	eor	r27, r27
+ 52e:	a7 fd       	sbrc	r26, 7
+ 530:	ba 95       	dec	r27
+ 532:	80 93 78 01 	sts	0x0178, r24	; 0x800178 <Current_state+0x14>
+ 536:	90 93 79 01 	sts	0x0179, r25	; 0x800179 <Current_state+0x15>
+ 53a:	a0 93 7a 01 	sts	0x017A, r26	; 0x80017a <Current_state+0x16>
+ 53e:	b0 93 7b 01 	sts	0x017B, r27	; 0x80017b <Current_state+0x17>
+		Current_state.gps.v_z &= 0x00FFFFFF;
+ 542:	80 91 78 01 	lds	r24, 0x0178	; 0x800178 <Current_state+0x14>
+ 546:	90 91 79 01 	lds	r25, 0x0179	; 0x800179 <Current_state+0x15>
+ 54a:	a0 91 7a 01 	lds	r26, 0x017A	; 0x80017a <Current_state+0x16>
+ 54e:	b0 91 7b 01 	lds	r27, 0x017B	; 0x80017b <Current_state+0x17>
+ 552:	bb 27       	eor	r27, r27
+ 554:	80 93 78 01 	sts	0x0178, r24	; 0x800178 <Current_state+0x14>
+ 558:	90 93 79 01 	sts	0x0179, r25	; 0x800179 <Current_state+0x15>
+ 55c:	a0 93 7a 01 	sts	0x017A, r26	; 0x80017a <Current_state+0x16>
+ 560:	b0 93 7b 01 	sts	0x017B, r27	; 0x80017b <Current_state+0x17>
+        Current_state.gps.v_z |= ((uint32_t) last_byte)<<24;
+ 564:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 568:	80 91 78 01 	lds	r24, 0x0178	; 0x800178 <Current_state+0x14>
+ 56c:	90 91 79 01 	lds	r25, 0x0179	; 0x800179 <Current_state+0x15>
+ 570:	a0 91 7a 01 	lds	r26, 0x017A	; 0x80017a <Current_state+0x16>
+ 574:	b0 91 7b 01 	lds	r27, 0x017B	; 0x80017b <Current_state+0x17>
+ 578:	b2 2b       	or	r27, r18
+ 57a:	80 93 78 01 	sts	0x0178, r24	; 0x800178 <Current_state+0x14>
+ 57e:	90 93 79 01 	sts	0x0179, r25	; 0x800179 <Current_state+0x15>
+ 582:	a0 93 7a 01 	sts	0x017A, r26	; 0x80017a <Current_state+0x16>
+ 586:	b0 93 7b 01 	sts	0x017B, r27	; 0x80017b <Current_state+0x17>
+ 58a:	bf ce       	rjmp	.-642    	; 0x30a <__vector_18+0x1b6>
+		Current_state.gps.x = Current_state.gps.x >> 8;
+		Current_state.gps.x &= 0x00FFFFFF;
+        Current_state.gps.x |= ((uint32_t) last_byte)<<24;
+		
+	}
+	else if (pos<8)
+ 58c:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 590:	88 30       	cpi	r24, 0x08	; 8
+ 592:	08 f4       	brcc	.+2      	; 0x596 <__LOCK_REGION_LENGTH__+0x196>
+ 594:	1d c1       	rjmp	.+570    	; 0x7d0 <__LOCK_REGION_LENGTH__+0x3d0>
+		Current_state.gps.y = Current_state.gps.y >> 8;
+		Current_state.gps.y &= 0x00FFFFFF;
+		Current_state.gps.y |= ((uint32_t) last_byte)<<24;
+	}
+	
+	else if(pos<12)
+ 596:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 59a:	8c 30       	cpi	r24, 0x0C	; 12
+ 59c:	08 f0       	brcs	.+2      	; 0x5a0 <__LOCK_REGION_LENGTH__+0x1a0>
+ 59e:	67 ce       	rjmp	.-818    	; 0x26e <__vector_18+0x11a>
+	{
+		Current_state.gps.z = Current_state.gps.z >> 8;
+ 5a0:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ 5a4:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ 5a8:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ 5ac:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+ 5b0:	89 2f       	mov	r24, r25
+ 5b2:	9a 2f       	mov	r25, r26
+ 5b4:	ab 2f       	mov	r26, r27
+ 5b6:	bb 27       	eor	r27, r27
+ 5b8:	a7 fd       	sbrc	r26, 7
+ 5ba:	ba 95       	dec	r27
+ 5bc:	80 93 6c 01 	sts	0x016C, r24	; 0x80016c <Current_state+0x8>
+ 5c0:	90 93 6d 01 	sts	0x016D, r25	; 0x80016d <Current_state+0x9>
+ 5c4:	a0 93 6e 01 	sts	0x016E, r26	; 0x80016e <Current_state+0xa>
+ 5c8:	b0 93 6f 01 	sts	0x016F, r27	; 0x80016f <Current_state+0xb>
+		Current_state.gps.z &= 0x00FFFFFF;
+ 5cc:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ 5d0:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ 5d4:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ 5d8:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+ 5dc:	bb 27       	eor	r27, r27
+ 5de:	80 93 6c 01 	sts	0x016C, r24	; 0x80016c <Current_state+0x8>
+ 5e2:	90 93 6d 01 	sts	0x016D, r25	; 0x80016d <Current_state+0x9>
+ 5e6:	a0 93 6e 01 	sts	0x016E, r26	; 0x80016e <Current_state+0xa>
+ 5ea:	b0 93 6f 01 	sts	0x016F, r27	; 0x80016f <Current_state+0xb>
+		Current_state.gps.z |= ((uint32_t) last_byte)<<24;
+ 5ee:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 5f2:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ 5f6:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ 5fa:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ 5fe:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+ 602:	b2 2b       	or	r27, r18
+ 604:	80 93 6c 01 	sts	0x016C, r24	; 0x80016c <Current_state+0x8>
+ 608:	90 93 6d 01 	sts	0x016D, r25	; 0x80016d <Current_state+0x9>
+ 60c:	a0 93 6e 01 	sts	0x016E, r26	; 0x80016e <Current_state+0xa>
+ 610:	b0 93 6f 01 	sts	0x016F, r27	; 0x80016f <Current_state+0xb>
+ 614:	2c ce       	rjmp	.-936    	; 0x26e <__vector_18+0x11a>
+  
+  ///Check if the last byte was for Geodetic position
+  if(geo < 16)
+  {
+	if(geo < 4);  
+    else if(geo < 8)
+ 616:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 61a:	88 30       	cpi	r24, 0x08	; 8
+ 61c:	08 f4       	brcc	.+2      	; 0x620 <__LOCK_REGION_LENGTH__+0x220>
+ 61e:	9d c0       	rjmp	.+314    	; 0x75a <__LOCK_REGION_LENGTH__+0x35a>
+	{
+		Current_state.gps.lat = Current_state.gps.lat >> 8;
+		Current_state.gps.lat &= 0x00FFFFFF;
+		Current_state.gps.lat |= ((uint32_t) last_byte)<<24;
+	}
+	else if(geo < 12)
+ 620:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 624:	8c 30       	cpi	r24, 0x0C	; 12
+ 626:	08 f0       	brcs	.+2      	; 0x62a <__LOCK_REGION_LENGTH__+0x22a>
+ 628:	19 c1       	rjmp	.+562    	; 0x85c <__LOCK_REGION_LENGTH__+0x45c>
+	{
+		Current_state.gps.lon = Current_state.gps.lon >> 8;
+ 62a:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ 62e:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ 632:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ 636:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+ 63a:	89 2f       	mov	r24, r25
+ 63c:	9a 2f       	mov	r25, r26
+ 63e:	ab 2f       	mov	r26, r27
+ 640:	bb 27       	eor	r27, r27
+ 642:	a7 fd       	sbrc	r26, 7
+ 644:	ba 95       	dec	r27
+ 646:	80 93 80 01 	sts	0x0180, r24	; 0x800180 <Current_state+0x1c>
+ 64a:	90 93 81 01 	sts	0x0181, r25	; 0x800181 <Current_state+0x1d>
+ 64e:	a0 93 82 01 	sts	0x0182, r26	; 0x800182 <Current_state+0x1e>
+ 652:	b0 93 83 01 	sts	0x0183, r27	; 0x800183 <Current_state+0x1f>
+		Current_state.gps.lon &= 0x00FFFFFF;
+ 656:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ 65a:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ 65e:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ 662:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+ 666:	bb 27       	eor	r27, r27
+ 668:	80 93 80 01 	sts	0x0180, r24	; 0x800180 <Current_state+0x1c>
+ 66c:	90 93 81 01 	sts	0x0181, r25	; 0x800181 <Current_state+0x1d>
+ 670:	a0 93 82 01 	sts	0x0182, r26	; 0x800182 <Current_state+0x1e>
+ 674:	b0 93 83 01 	sts	0x0183, r27	; 0x800183 <Current_state+0x1f>
+		Current_state.gps.lon |= ((uint32_t) last_byte)<<24;
+ 678:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 67c:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ 680:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ 684:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ 688:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+ 68c:	b2 2b       	or	r27, r18
+ 68e:	80 93 80 01 	sts	0x0180, r24	; 0x800180 <Current_state+0x1c>
+ 692:	90 93 81 01 	sts	0x0181, r25	; 0x800181 <Current_state+0x1d>
+ 696:	a0 93 82 01 	sts	0x0182, r26	; 0x800182 <Current_state+0x1e>
+ 69a:	b0 93 83 01 	sts	0x0183, r27	; 0x800183 <Current_state+0x1f>
+ 69e:	78 ce       	rjmp	.-784    	; 0x390 <__vector_18+0x23c>
+  
+  ///Check the buffer against message ID's
+  ///Position
+  if(buffer == 0x3F3F04AC)
+  {
+    message_end = 0;
+ 6a0:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <message_end>
+    pos = 0;
+ 6a4:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <pos>
+ 6a8:	d9 ce       	rjmp	.-590    	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+  }
+  ///Velocity
+  else if(buffer == 0x3F3F05AC)
+    vel = 0;
+ 6aa:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <vel>
+ 6ae:	d6 ce       	rjmp	.-596    	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+  ///DOP
+  else if(buffer == 0x3F3F0BAC)
+    dop = 0;
+ 6b0:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <dop>
+ 6b4:	d3 ce       	rjmp	.-602    	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+	}
+	    
+    geo++;
+    if(geo == 16)
+	{
+      geo = 0xFF;
+ 6b6:	8f ef       	ldi	r24, 0xFF	; 255
+ 6b8:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <geo>
+ 6bc:	73 ce       	rjmp	.-794    	; 0x3a4 <__vector_18+0x250>
+         Current_state.gps.pdop |= ((uint16_t) last_byte)<<8;
+     }
+
+	dop++;
+    if(dop == 4)
+      dop = 0xFF;
+ 6be:	8f ef       	ldi	r24, 0xFF	; 255
+ 6c0:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <dop>
+ 6c4:	5c ce       	rjmp	.-840    	; 0x37e <__vector_18+0x22a>
+	}
+    ///* Increment position and terminate it if full
+    pos++;
+    if(pos == 12)
+	{
+      pos = 0xFF;
+ 6c6:	8f ef       	ldi	r24, 0xFF	; 255
+ 6c8:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <pos>
+ 6cc:	da cd       	rjmp	.-1100   	; 0x282 <__vector_18+0x12e>
+	}
+
+	vel++;
+    if(vel == 12)
+     {
+		  vel = 0xFF;
+ 6ce:	8f ef       	ldi	r24, 0xFF	; 255
+ 6d0:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <vel>
+ 6d4:	24 ce       	rjmp	.-952    	; 0x31e <__vector_18+0x1ca>
+	  }
+    
+    time++;
+    if(time == 7)
+    {
+      time = 0xFF;
+ 6d6:	8f ef       	ldi	r24, 0xFF	; 255
+ 6d8:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+      ///* * The Entire message has been read
+      message_end = 1;
+ 6dc:	81 e0       	ldi	r24, 0x01	; 1
+ 6de:	80 93 07 01 	sts	0x0107, r24	; 0x800107 <message_end>
+ 6e2:	76 ce       	rjmp	.-788    	; 0x3d0 <__vector_18+0x27c>
+		
+	}
+	else if(vel < 8)
+	{
+		
+		Current_state.gps.v_y = Current_state.gps.v_y >> 8;
+ 6e4:	80 91 74 01 	lds	r24, 0x0174	; 0x800174 <Current_state+0x10>
+ 6e8:	90 91 75 01 	lds	r25, 0x0175	; 0x800175 <Current_state+0x11>
+ 6ec:	a0 91 76 01 	lds	r26, 0x0176	; 0x800176 <Current_state+0x12>
+ 6f0:	b0 91 77 01 	lds	r27, 0x0177	; 0x800177 <Current_state+0x13>
+ 6f4:	89 2f       	mov	r24, r25
+ 6f6:	9a 2f       	mov	r25, r26
+ 6f8:	ab 2f       	mov	r26, r27
+ 6fa:	bb 27       	eor	r27, r27
+ 6fc:	a7 fd       	sbrc	r26, 7
+ 6fe:	ba 95       	dec	r27
+ 700:	80 93 74 01 	sts	0x0174, r24	; 0x800174 <Current_state+0x10>
+ 704:	90 93 75 01 	sts	0x0175, r25	; 0x800175 <Current_state+0x11>
+ 708:	a0 93 76 01 	sts	0x0176, r26	; 0x800176 <Current_state+0x12>
+ 70c:	b0 93 77 01 	sts	0x0177, r27	; 0x800177 <Current_state+0x13>
+		Current_state.gps.v_y &= 0x00FFFFFF;
+ 710:	80 91 74 01 	lds	r24, 0x0174	; 0x800174 <Current_state+0x10>
+ 714:	90 91 75 01 	lds	r25, 0x0175	; 0x800175 <Current_state+0x11>
+ 718:	a0 91 76 01 	lds	r26, 0x0176	; 0x800176 <Current_state+0x12>
+ 71c:	b0 91 77 01 	lds	r27, 0x0177	; 0x800177 <Current_state+0x13>
+ 720:	bb 27       	eor	r27, r27
+ 722:	80 93 74 01 	sts	0x0174, r24	; 0x800174 <Current_state+0x10>
+ 726:	90 93 75 01 	sts	0x0175, r25	; 0x800175 <Current_state+0x11>
+ 72a:	a0 93 76 01 	sts	0x0176, r26	; 0x800176 <Current_state+0x12>
+ 72e:	b0 93 77 01 	sts	0x0177, r27	; 0x800177 <Current_state+0x13>
+        Current_state.gps.v_y |= ((uint32_t) last_byte)<<24;
+ 732:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 736:	80 91 74 01 	lds	r24, 0x0174	; 0x800174 <Current_state+0x10>
+ 73a:	90 91 75 01 	lds	r25, 0x0175	; 0x800175 <Current_state+0x11>
+ 73e:	a0 91 76 01 	lds	r26, 0x0176	; 0x800176 <Current_state+0x12>
+ 742:	b0 91 77 01 	lds	r27, 0x0177	; 0x800177 <Current_state+0x13>
+ 746:	b2 2b       	or	r27, r18
+ 748:	80 93 74 01 	sts	0x0174, r24	; 0x800174 <Current_state+0x10>
+ 74c:	90 93 75 01 	sts	0x0175, r25	; 0x800175 <Current_state+0x11>
+ 750:	a0 93 76 01 	sts	0x0176, r26	; 0x800176 <Current_state+0x12>
+ 754:	b0 93 77 01 	sts	0x0177, r27	; 0x800177 <Current_state+0x13>
+ 758:	d8 cd       	rjmp	.-1104   	; 0x30a <__vector_18+0x1b6>
+  if(geo < 16)
+  {
+	if(geo < 4);  
+    else if(geo < 8)
+	{
+		Current_state.gps.lat = Current_state.gps.lat >> 8;
+ 75a:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ 75e:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ 762:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ 766:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+ 76a:	89 2f       	mov	r24, r25
+ 76c:	9a 2f       	mov	r25, r26
+ 76e:	ab 2f       	mov	r26, r27
+ 770:	bb 27       	eor	r27, r27
+ 772:	a7 fd       	sbrc	r26, 7
+ 774:	ba 95       	dec	r27
+ 776:	80 93 7c 01 	sts	0x017C, r24	; 0x80017c <Current_state+0x18>
+ 77a:	90 93 7d 01 	sts	0x017D, r25	; 0x80017d <Current_state+0x19>
+ 77e:	a0 93 7e 01 	sts	0x017E, r26	; 0x80017e <Current_state+0x1a>
+ 782:	b0 93 7f 01 	sts	0x017F, r27	; 0x80017f <Current_state+0x1b>
+		Current_state.gps.lat &= 0x00FFFFFF;
+ 786:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ 78a:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ 78e:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ 792:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+ 796:	bb 27       	eor	r27, r27
+ 798:	80 93 7c 01 	sts	0x017C, r24	; 0x80017c <Current_state+0x18>
+ 79c:	90 93 7d 01 	sts	0x017D, r25	; 0x80017d <Current_state+0x19>
+ 7a0:	a0 93 7e 01 	sts	0x017E, r26	; 0x80017e <Current_state+0x1a>
+ 7a4:	b0 93 7f 01 	sts	0x017F, r27	; 0x80017f <Current_state+0x1b>
+		Current_state.gps.lat |= ((uint32_t) last_byte)<<24;
+ 7a8:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 7ac:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ 7b0:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ 7b4:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ 7b8:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+ 7bc:	b2 2b       	or	r27, r18
+ 7be:	80 93 7c 01 	sts	0x017C, r24	; 0x80017c <Current_state+0x18>
+ 7c2:	90 93 7d 01 	sts	0x017D, r25	; 0x80017d <Current_state+0x19>
+ 7c6:	a0 93 7e 01 	sts	0x017E, r26	; 0x80017e <Current_state+0x1a>
+ 7ca:	b0 93 7f 01 	sts	0x017F, r27	; 0x80017f <Current_state+0x1b>
+ 7ce:	e0 cd       	rjmp	.-1088   	; 0x390 <__vector_18+0x23c>
+        Current_state.gps.x |= ((uint32_t) last_byte)<<24;
+		
+	}
+	else if (pos<8)
+	{
+		Current_state.gps.y = Current_state.gps.y >> 8;
+ 7d0:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 7d4:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 7d8:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 7dc:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+ 7e0:	89 2f       	mov	r24, r25
+ 7e2:	9a 2f       	mov	r25, r26
+ 7e4:	ab 2f       	mov	r26, r27
+ 7e6:	bb 27       	eor	r27, r27
+ 7e8:	a7 fd       	sbrc	r26, 7
+ 7ea:	ba 95       	dec	r27
+ 7ec:	80 93 68 01 	sts	0x0168, r24	; 0x800168 <Current_state+0x4>
+ 7f0:	90 93 69 01 	sts	0x0169, r25	; 0x800169 <Current_state+0x5>
+ 7f4:	a0 93 6a 01 	sts	0x016A, r26	; 0x80016a <Current_state+0x6>
+ 7f8:	b0 93 6b 01 	sts	0x016B, r27	; 0x80016b <Current_state+0x7>
+		Current_state.gps.y &= 0x00FFFFFF;
+ 7fc:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 800:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 804:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 808:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+ 80c:	bb 27       	eor	r27, r27
+ 80e:	80 93 68 01 	sts	0x0168, r24	; 0x800168 <Current_state+0x4>
+ 812:	90 93 69 01 	sts	0x0169, r25	; 0x800169 <Current_state+0x5>
+ 816:	a0 93 6a 01 	sts	0x016A, r26	; 0x80016a <Current_state+0x6>
+ 81a:	b0 93 6b 01 	sts	0x016B, r27	; 0x80016b <Current_state+0x7>
+		Current_state.gps.y |= ((uint32_t) last_byte)<<24;
+ 81e:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 822:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 826:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 82a:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 82e:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+ 832:	b2 2b       	or	r27, r18
+ 834:	80 93 68 01 	sts	0x0168, r24	; 0x800168 <Current_state+0x4>
+ 838:	90 93 69 01 	sts	0x0169, r25	; 0x800169 <Current_state+0x5>
+ 83c:	a0 93 6a 01 	sts	0x016A, r26	; 0x80016a <Current_state+0x6>
+ 840:	b0 93 6b 01 	sts	0x016B, r27	; 0x80016b <Current_state+0x7>
+ 844:	14 cd       	rjmp	.-1496   	; 0x26e <__vector_18+0x11a>
+  ///Geodetic System
+  else if(buffer == 0x3F3F0EAC)
+    geo = 0;
+  ///Time
+  else if(buffer == 0x3F3F0FAC)
+    time = 0;
+ 846:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_start>
+ 84a:	08 ce       	rjmp	.-1008   	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+	  {
+		  Current_state.gps.hours = last_byte;
+	  }
+	  else if(time == 1)
+	  {
+		  Current_state.gps.minutes = last_byte;
+ 84c:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <last_byte>
+ 850:	80 93 89 01 	sts	0x0189, r24	; 0x800189 <Current_state+0x25>
+ 854:	b3 cd       	rjmp	.-1178   	; 0x3bc <__vector_18+0x268>
+  ///DOP
+  else if(buffer == 0x3F3F0BAC)
+    dop = 0;
+  ///Geodetic System
+  else if(buffer == 0x3F3F0EAC)
+    geo = 0;
+ 856:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <geo>
+ 85a:	00 ce       	rjmp	.-1024   	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+	{
+		Current_state.gps.lon = Current_state.gps.lon >> 8;
+		Current_state.gps.lon &= 0x00FFFFFF;
+		Current_state.gps.lon |= ((uint32_t) last_byte)<<24;
+	}
+	else if(geo < 16 )
+ 85c:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 860:	80 31       	cpi	r24, 0x10	; 16
+ 862:	08 f0       	brcs	.+2      	; 0x866 <__LOCK_REGION_LENGTH__+0x466>
+ 864:	95 cd       	rjmp	.-1238   	; 0x390 <__vector_18+0x23c>
+	{
+		Current_state.gps.alt = Current_state.gps.alt >> 8;
+ 866:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ 86a:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ 86e:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ 872:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+ 876:	89 2f       	mov	r24, r25
+ 878:	9a 2f       	mov	r25, r26
+ 87a:	ab 2f       	mov	r26, r27
+ 87c:	bb 27       	eor	r27, r27
+ 87e:	a7 fd       	sbrc	r26, 7
+ 880:	ba 95       	dec	r27
+ 882:	80 93 84 01 	sts	0x0184, r24	; 0x800184 <Current_state+0x20>
+ 886:	90 93 85 01 	sts	0x0185, r25	; 0x800185 <Current_state+0x21>
+ 88a:	a0 93 86 01 	sts	0x0186, r26	; 0x800186 <Current_state+0x22>
+ 88e:	b0 93 87 01 	sts	0x0187, r27	; 0x800187 <Current_state+0x23>
+		Current_state.gps.alt &= 0x00FFFFFF;
+ 892:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ 896:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ 89a:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ 89e:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+ 8a2:	bb 27       	eor	r27, r27
+ 8a4:	80 93 84 01 	sts	0x0184, r24	; 0x800184 <Current_state+0x20>
+ 8a8:	90 93 85 01 	sts	0x0185, r25	; 0x800185 <Current_state+0x21>
+ 8ac:	a0 93 86 01 	sts	0x0186, r26	; 0x800186 <Current_state+0x22>
+ 8b0:	b0 93 87 01 	sts	0x0187, r27	; 0x800187 <Current_state+0x23>
+		Current_state.gps.alt |= ((uint32_t) last_byte)<<24;
+ 8b4:	20 91 08 01 	lds	r18, 0x0108	; 0x800108 <last_byte>
+ 8b8:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ 8bc:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ 8c0:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ 8c4:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+ 8c8:	b2 2b       	or	r27, r18
+ 8ca:	80 93 84 01 	sts	0x0184, r24	; 0x800184 <Current_state+0x20>
+ 8ce:	90 93 85 01 	sts	0x0185, r25	; 0x800185 <Current_state+0x21>
+ 8d2:	a0 93 86 01 	sts	0x0186, r26	; 0x800186 <Current_state+0x22>
+ 8d6:	b0 93 87 01 	sts	0x0187, r27	; 0x800187 <Current_state+0x23>
+ 8da:	5a cd       	rjmp	.-1356   	; 0x390 <__vector_18+0x23c>
+	  {
+		  Current_state.gps.minutes = last_byte;
+	  }
+	  else if(time == 2)
+	  {
+		  Current_state.gps.seconds = last_byte;
+ 8dc:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <last_byte>
+ 8e0:	80 93 8a 01 	sts	0x018A, r24	; 0x80018a <Current_state+0x26>
+ 8e4:	6b cd       	rjmp	.-1322   	; 0x3bc <__vector_18+0x268>
+	  }
+	  else if(time == 3)
+	  {
+		  Current_state.gps.date = last_byte;
+ 8e6:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <last_byte>
+ 8ea:	80 93 8b 01 	sts	0x018B, r24	; 0x80018b <Current_state+0x27>
+ 8ee:	66 cd       	rjmp	.-1332   	; 0x3bc <__vector_18+0x268>
+	  }else if(time == 4)
+	  {
+		  Current_state.gps.month = last_byte;
+ 8f0:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <last_byte>
+ 8f4:	80 93 8c 01 	sts	0x018C, r24	; 0x80018c <Current_state+0x28>
+ 8f8:	61 cd       	rjmp	.-1342   	; 0x3bc <__vector_18+0x268>
+
+000008fa <main>:
+}
+
+	
+int main(void)
+{
+	init_UART_GPS();
+ 8fa:	e6 db       	rcall	.-2100   	; 0xc8 <init_UART_GPS>
+	sei();
+ 8fc:	78 94       	sei
+	
+	uint8_t a,b,c,d;
+	while (1)
+	{
+		if (crap==1)
+ 8fe:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <__data_end>
+ 902:	81 30       	cpi	r24, 0x01	; 1
+ 904:	e1 f7       	brne	.-8      	; 0x8fe <main+0x4>
+		{
+	
+		a = (uint8_t)Current_state.gps.x;
+ 906:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 90a:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 90e:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 912:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 916:	5d 9b       	sbis	0x0b, 5	; 11
+ 918:	fe cf       	rjmp	.-4      	; 0x916 <main+0x1c>
+  //* Start transmission
+  UDR0 = data;
+ 91a:	8c b9       	out	0x0c, r24	; 12
+		{
+	
+		a = (uint8_t)Current_state.gps.x;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.x>>8);
+ 91c:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 920:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 924:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 928:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+ 92c:	89 2f       	mov	r24, r25
+ 92e:	9a 2f       	mov	r25, r26
+ 930:	ab 2f       	mov	r26, r27
+ 932:	bb 27       	eor	r27, r27
+ 934:	a7 fd       	sbrc	r26, 7
+ 936:	ba 95       	dec	r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 938:	5d 9b       	sbis	0x0b, 5	; 11
+ 93a:	fe cf       	rjmp	.-4      	; 0x938 <main+0x3e>
+  //* Start transmission
+  UDR0 = data;
+ 93c:	8c b9       	out	0x0c, r24	; 12
+		a = (uint8_t)Current_state.gps.x;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.x>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.x>>16);
+ 93e:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 942:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 946:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 94a:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+ 94e:	cd 01       	movw	r24, r26
+ 950:	bb 27       	eor	r27, r27
+ 952:	97 fd       	sbrc	r25, 7
+ 954:	b0 95       	com	r27
+ 956:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 958:	5d 9b       	sbis	0x0b, 5	; 11
+ 95a:	fe cf       	rjmp	.-4      	; 0x958 <main+0x5e>
+  //* Start transmission
+  UDR0 = data;
+ 95c:	8c b9       	out	0x0c, r24	; 12
+		
+		b = (uint8_t)(Current_state.gps.x>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.x>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.x>>24);
+ 95e:	80 91 64 01 	lds	r24, 0x0164	; 0x800164 <Current_state>
+ 962:	90 91 65 01 	lds	r25, 0x0165	; 0x800165 <Current_state+0x1>
+ 966:	a0 91 66 01 	lds	r26, 0x0166	; 0x800166 <Current_state+0x2>
+ 96a:	b0 91 67 01 	lds	r27, 0x0167	; 0x800167 <Current_state+0x3>
+ 96e:	8b 2f       	mov	r24, r27
+ 970:	bb 27       	eor	r27, r27
+ 972:	87 fd       	sbrc	r24, 7
+ 974:	b0 95       	com	r27
+ 976:	9b 2f       	mov	r25, r27
+ 978:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 97a:	5d 9b       	sbis	0x0b, 5	; 11
+ 97c:	fe cf       	rjmp	.-4      	; 0x97a <main+0x80>
+  //* Start transmission
+  UDR0 = data;
+ 97e:	8c b9       	out	0x0c, r24	; 12
+		c = (uint8_t)(Current_state.gps.x>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.x>>24);
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.y;
+ 980:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 984:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 988:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 98c:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 990:	5d 9b       	sbis	0x0b, 5	; 11
+ 992:	fe cf       	rjmp	.-4      	; 0x990 <main+0x96>
+  //* Start transmission
+  UDR0 = data;
+ 994:	8c b9       	out	0x0c, r24	; 12
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.y;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.y>>8);
+ 996:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 99a:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 99e:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 9a2:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+ 9a6:	89 2f       	mov	r24, r25
+ 9a8:	9a 2f       	mov	r25, r26
+ 9aa:	ab 2f       	mov	r26, r27
+ 9ac:	bb 27       	eor	r27, r27
+ 9ae:	a7 fd       	sbrc	r26, 7
+ 9b0:	ba 95       	dec	r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 9b2:	5d 9b       	sbis	0x0b, 5	; 11
+ 9b4:	fe cf       	rjmp	.-4      	; 0x9b2 <main+0xb8>
+  //* Start transmission
+  UDR0 = data;
+ 9b6:	8c b9       	out	0x0c, r24	; 12
+		a = (uint8_t)Current_state.gps.y;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.y>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.y>>16);
+ 9b8:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 9bc:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 9c0:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 9c4:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+ 9c8:	cd 01       	movw	r24, r26
+ 9ca:	bb 27       	eor	r27, r27
+ 9cc:	97 fd       	sbrc	r25, 7
+ 9ce:	b0 95       	com	r27
+ 9d0:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 9d2:	5d 9b       	sbis	0x0b, 5	; 11
+ 9d4:	fe cf       	rjmp	.-4      	; 0x9d2 <main+0xd8>
+  //* Start transmission
+  UDR0 = data;
+ 9d6:	8c b9       	out	0x0c, r24	; 12
+		
+		b = (uint8_t)(Current_state.gps.y>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.y>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.y>>24);
+ 9d8:	80 91 68 01 	lds	r24, 0x0168	; 0x800168 <Current_state+0x4>
+ 9dc:	90 91 69 01 	lds	r25, 0x0169	; 0x800169 <Current_state+0x5>
+ 9e0:	a0 91 6a 01 	lds	r26, 0x016A	; 0x80016a <Current_state+0x6>
+ 9e4:	b0 91 6b 01 	lds	r27, 0x016B	; 0x80016b <Current_state+0x7>
+ 9e8:	8b 2f       	mov	r24, r27
+ 9ea:	bb 27       	eor	r27, r27
+ 9ec:	87 fd       	sbrc	r24, 7
+ 9ee:	b0 95       	com	r27
+ 9f0:	9b 2f       	mov	r25, r27
+ 9f2:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 9f4:	5d 9b       	sbis	0x0b, 5	; 11
+ 9f6:	fe cf       	rjmp	.-4      	; 0x9f4 <main+0xfa>
+  //* Start transmission
+  UDR0 = data;
+ 9f8:	8c b9       	out	0x0c, r24	; 12
+		c = (uint8_t)(Current_state.gps.y>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.y>>24);
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.z;
+ 9fa:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ 9fe:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ a02:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ a06:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ a0a:	5d 9b       	sbis	0x0b, 5	; 11
+ a0c:	fe cf       	rjmp	.-4      	; 0xa0a <main+0x110>
+  //* Start transmission
+  UDR0 = data;
+ a0e:	8c b9       	out	0x0c, r24	; 12
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.z;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.z>>8);
+ a10:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ a14:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ a18:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ a1c:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+ a20:	89 2f       	mov	r24, r25
+ a22:	9a 2f       	mov	r25, r26
+ a24:	ab 2f       	mov	r26, r27
+ a26:	bb 27       	eor	r27, r27
+ a28:	a7 fd       	sbrc	r26, 7
+ a2a:	ba 95       	dec	r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ a2c:	5d 9b       	sbis	0x0b, 5	; 11
+ a2e:	fe cf       	rjmp	.-4      	; 0xa2c <main+0x132>
+  //* Start transmission
+  UDR0 = data;
+ a30:	8c b9       	out	0x0c, r24	; 12
+		a = (uint8_t)Current_state.gps.z;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.z>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.z>>16);
+ a32:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ a36:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ a3a:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ a3e:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+ a42:	cd 01       	movw	r24, r26
+ a44:	bb 27       	eor	r27, r27
+ a46:	97 fd       	sbrc	r25, 7
+ a48:	b0 95       	com	r27
+ a4a:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ a4c:	5d 9b       	sbis	0x0b, 5	; 11
+ a4e:	fe cf       	rjmp	.-4      	; 0xa4c <main+0x152>
+  //* Start transmission
+  UDR0 = data;
+ a50:	8c b9       	out	0x0c, r24	; 12
+		
+		b = (uint8_t)(Current_state.gps.z>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.z>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.z>>24);
+ a52:	80 91 6c 01 	lds	r24, 0x016C	; 0x80016c <Current_state+0x8>
+ a56:	90 91 6d 01 	lds	r25, 0x016D	; 0x80016d <Current_state+0x9>
+ a5a:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <Current_state+0xa>
+ a5e:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <Current_state+0xb>
+ a62:	8b 2f       	mov	r24, r27
+ a64:	bb 27       	eor	r27, r27
+ a66:	87 fd       	sbrc	r24, 7
+ a68:	b0 95       	com	r27
+ a6a:	9b 2f       	mov	r25, r27
+ a6c:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ a6e:	5d 9b       	sbis	0x0b, 5	; 11
+ a70:	fe cf       	rjmp	.-4      	; 0xa6e <main+0x174>
+  //* Start transmission
+  UDR0 = data;
+ a72:	8c b9       	out	0x0c, r24	; 12
+		c = (uint8_t)(Current_state.gps.z>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.z>>24);
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.pdop;
+ a74:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <Current_state+0x2b>
+ a78:	90 91 90 01 	lds	r25, 0x0190	; 0x800190 <Current_state+0x2c>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ a7c:	5d 9b       	sbis	0x0b, 5	; 11
+ a7e:	fe cf       	rjmp	.-4      	; 0xa7c <main+0x182>
+  //* Start transmission
+  UDR0 = data;
+ a80:	8c b9       	out	0x0c, r24	; 12
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.pdop;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.pdop>>8);
+ a82:	80 91 8f 01 	lds	r24, 0x018F	; 0x80018f <Current_state+0x2b>
+ a86:	90 91 90 01 	lds	r25, 0x0190	; 0x800190 <Current_state+0x2c>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ a8a:	5d 9b       	sbis	0x0b, 5	; 11
+ a8c:	fe cf       	rjmp	.-4      	; 0xa8a <main+0x190>
+  //* Start transmission
+  UDR0 = data;
+ a8e:	9c b9       	out	0x0c, r25	; 12
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.pdop>>8);
+		transmit_UART0(b);
+	
+		a = (uint8_t)Current_state.gps.lat;
+ a90:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ a94:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ a98:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ a9c:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ aa0:	5d 9b       	sbis	0x0b, 5	; 11
+ aa2:	fe cf       	rjmp	.-4      	; 0xaa0 <main+0x1a6>
+  //* Start transmission
+  UDR0 = data;
+ aa4:	8c b9       	out	0x0c, r24	; 12
+		transmit_UART0(b);
+	
+		a = (uint8_t)Current_state.gps.lat;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.lat>>8);
+ aa6:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ aaa:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ aae:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ ab2:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+ ab6:	89 2f       	mov	r24, r25
+ ab8:	9a 2f       	mov	r25, r26
+ aba:	ab 2f       	mov	r26, r27
+ abc:	bb 27       	eor	r27, r27
+ abe:	a7 fd       	sbrc	r26, 7
+ ac0:	ba 95       	dec	r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ ac2:	5d 9b       	sbis	0x0b, 5	; 11
+ ac4:	fe cf       	rjmp	.-4      	; 0xac2 <main+0x1c8>
+  //* Start transmission
+  UDR0 = data;
+ ac6:	8c b9       	out	0x0c, r24	; 12
+		a = (uint8_t)Current_state.gps.lat;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.lat>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.lat>>16);
+ ac8:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ acc:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ ad0:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ ad4:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+ ad8:	cd 01       	movw	r24, r26
+ ada:	bb 27       	eor	r27, r27
+ adc:	97 fd       	sbrc	r25, 7
+ ade:	b0 95       	com	r27
+ ae0:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ ae2:	5d 9b       	sbis	0x0b, 5	; 11
+ ae4:	fe cf       	rjmp	.-4      	; 0xae2 <main+0x1e8>
+  //* Start transmission
+  UDR0 = data;
+ ae6:	8c b9       	out	0x0c, r24	; 12
+		
+		b = (uint8_t)(Current_state.gps.lat>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.lat>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.lat>>24);
+ ae8:	80 91 7c 01 	lds	r24, 0x017C	; 0x80017c <Current_state+0x18>
+ aec:	90 91 7d 01 	lds	r25, 0x017D	; 0x80017d <Current_state+0x19>
+ af0:	a0 91 7e 01 	lds	r26, 0x017E	; 0x80017e <Current_state+0x1a>
+ af4:	b0 91 7f 01 	lds	r27, 0x017F	; 0x80017f <Current_state+0x1b>
+ af8:	8b 2f       	mov	r24, r27
+ afa:	bb 27       	eor	r27, r27
+ afc:	87 fd       	sbrc	r24, 7
+ afe:	b0 95       	com	r27
+ b00:	9b 2f       	mov	r25, r27
+ b02:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ b04:	5d 9b       	sbis	0x0b, 5	; 11
+ b06:	fe cf       	rjmp	.-4      	; 0xb04 <main+0x20a>
+  //* Start transmission
+  UDR0 = data;
+ b08:	8c b9       	out	0x0c, r24	; 12
+		c = (uint8_t)(Current_state.gps.lat>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.lat>>24);
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.lon;
+ b0a:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ b0e:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ b12:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ b16:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ b1a:	5d 9b       	sbis	0x0b, 5	; 11
+ b1c:	fe cf       	rjmp	.-4      	; 0xb1a <main+0x220>
+  //* Start transmission
+  UDR0 = data;
+ b1e:	8c b9       	out	0x0c, r24	; 12
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.lon;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.lon>>8);
+ b20:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ b24:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ b28:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ b2c:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+ b30:	89 2f       	mov	r24, r25
+ b32:	9a 2f       	mov	r25, r26
+ b34:	ab 2f       	mov	r26, r27
+ b36:	bb 27       	eor	r27, r27
+ b38:	a7 fd       	sbrc	r26, 7
+ b3a:	ba 95       	dec	r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ b3c:	5d 9b       	sbis	0x0b, 5	; 11
+ b3e:	fe cf       	rjmp	.-4      	; 0xb3c <main+0x242>
+  //* Start transmission
+  UDR0 = data;
+ b40:	8c b9       	out	0x0c, r24	; 12
+		a = (uint8_t)Current_state.gps.lon;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.lon>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.lon>>16);
+ b42:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ b46:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ b4a:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ b4e:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+ b52:	cd 01       	movw	r24, r26
+ b54:	bb 27       	eor	r27, r27
+ b56:	97 fd       	sbrc	r25, 7
+ b58:	b0 95       	com	r27
+ b5a:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ b5c:	5d 9b       	sbis	0x0b, 5	; 11
+ b5e:	fe cf       	rjmp	.-4      	; 0xb5c <main+0x262>
+  //* Start transmission
+  UDR0 = data;
+ b60:	8c b9       	out	0x0c, r24	; 12
+		
+		b = (uint8_t)(Current_state.gps.lon>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.lon>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.lon>>24);
+ b62:	80 91 80 01 	lds	r24, 0x0180	; 0x800180 <Current_state+0x1c>
+ b66:	90 91 81 01 	lds	r25, 0x0181	; 0x800181 <Current_state+0x1d>
+ b6a:	a0 91 82 01 	lds	r26, 0x0182	; 0x800182 <Current_state+0x1e>
+ b6e:	b0 91 83 01 	lds	r27, 0x0183	; 0x800183 <Current_state+0x1f>
+ b72:	8b 2f       	mov	r24, r27
+ b74:	bb 27       	eor	r27, r27
+ b76:	87 fd       	sbrc	r24, 7
+ b78:	b0 95       	com	r27
+ b7a:	9b 2f       	mov	r25, r27
+ b7c:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ b7e:	5d 9b       	sbis	0x0b, 5	; 11
+ b80:	fe cf       	rjmp	.-4      	; 0xb7e <main+0x284>
+  //* Start transmission
+  UDR0 = data;
+ b82:	8c b9       	out	0x0c, r24	; 12
+		c = (uint8_t)(Current_state.gps.lon>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.lon>>24);
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.alt;
+ b84:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ b88:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ b8c:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ b90:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ b94:	5d 9b       	sbis	0x0b, 5	; 11
+ b96:	fe cf       	rjmp	.-4      	; 0xb94 <main+0x29a>
+  //* Start transmission
+  UDR0 = data;
+ b98:	8c b9       	out	0x0c, r24	; 12
+		transmit_UART0(d);
+	
+		a = (uint8_t)Current_state.gps.alt;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.alt>>8);
+ b9a:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ b9e:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ ba2:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ ba6:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+ baa:	89 2f       	mov	r24, r25
+ bac:	9a 2f       	mov	r25, r26
+ bae:	ab 2f       	mov	r26, r27
+ bb0:	bb 27       	eor	r27, r27
+ bb2:	a7 fd       	sbrc	r26, 7
+ bb4:	ba 95       	dec	r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ bb6:	5d 9b       	sbis	0x0b, 5	; 11
+ bb8:	fe cf       	rjmp	.-4      	; 0xbb6 <main+0x2bc>
+  //* Start transmission
+  UDR0 = data;
+ bba:	8c b9       	out	0x0c, r24	; 12
+		a = (uint8_t)Current_state.gps.alt;
+		transmit_UART0(a);
+		
+		b = (uint8_t)(Current_state.gps.alt>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.alt>>16);
+ bbc:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ bc0:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ bc4:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ bc8:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+ bcc:	cd 01       	movw	r24, r26
+ bce:	bb 27       	eor	r27, r27
+ bd0:	97 fd       	sbrc	r25, 7
+ bd2:	b0 95       	com	r27
+ bd4:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ bd6:	5d 9b       	sbis	0x0b, 5	; 11
+ bd8:	fe cf       	rjmp	.-4      	; 0xbd6 <main+0x2dc>
+  //* Start transmission
+  UDR0 = data;
+ bda:	8c b9       	out	0x0c, r24	; 12
+		
+		b = (uint8_t)(Current_state.gps.alt>>8);
+		transmit_UART0(b);
+		c = (uint8_t)(Current_state.gps.alt>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.alt>>24);
+ bdc:	80 91 84 01 	lds	r24, 0x0184	; 0x800184 <Current_state+0x20>
+ be0:	90 91 85 01 	lds	r25, 0x0185	; 0x800185 <Current_state+0x21>
+ be4:	a0 91 86 01 	lds	r26, 0x0186	; 0x800186 <Current_state+0x22>
+ be8:	b0 91 87 01 	lds	r27, 0x0187	; 0x800187 <Current_state+0x23>
+ bec:	8b 2f       	mov	r24, r27
+ bee:	bb 27       	eor	r27, r27
+ bf0:	87 fd       	sbrc	r24, 7
+ bf2:	b0 95       	com	r27
+ bf4:	9b 2f       	mov	r25, r27
+ bf6:	ab 2f       	mov	r26, r27
+
+
+void transmit_UART0(uint8_t data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ bf8:	5d 9b       	sbis	0x0b, 5	; 11
+ bfa:	fe cf       	rjmp	.-4      	; 0xbf8 <main+0x2fe>
+  //* Start transmission
+  UDR0 = data;
+ bfc:	8c b9       	out	0x0c, r24	; 12
+		c = (uint8_t)(Current_state.gps.alt>>16);
+		transmit_UART0(c);
+		d = (uint8_t)(Current_state.gps.alt>>24);
+		transmit_UART0(d);
+	
+		crap =0;    //set flag to zero and enable interrupt after transmission
+ bfe:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <__data_end>
+		sei();
+ c02:	78 94       	sei
+ c04:	7c ce       	rjmp	.-776    	; 0x8fe <main+0x4>
+
+00000c06 <_exit>:
+ c06:	f8 94       	cli
+
+00000c08 <__stop_program>:
+ c08:	ff cf       	rjmp	.-2      	; 0xc08 <__stop_program>
